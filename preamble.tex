@@ -1,0 +1,211 @@
+%!TEX root = main.tex
+
+% load necessary packages
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,,amssymb,amsthm,amsfonts,amsxtra,mathtools}
+\usepackage{amsfonts}
+\usepackage[margin =3.25cm]{geometry}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage[mathscr]{euscript}
+\usepackage[english]{babel}
+% \usepackage{cite}
+\usepackage{lmodern}
+\usepackage{appendix}
+%Auflistungen ändern
+\usepackage{enumerate}
+\usepackage{titlesec}
+\usepackage{titletoc}
+\usepackage{fancyhdr} %header package
+\usepackage{setspace}
+\usepackage{todonotes}
+\usepackage{hyperref}
+\usepackage{adjustbox}
+
+% section formating
+\titleformat{\chapter}[display]
+  {\normalfont\huge\bfseries}{}{0pt}{\Huge}
+\renewcommand\thesection{\arabic{section}}
+\renewcommand{\headrulewidth}{0pt}
+\titlecontents{chapter}
+  [0em]{\addvspace{10pt}\bfseries}
+  {}{}{\titlerule*[1000pc]{.}\contentspage}
+
+%set page style and define header
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\nouppercase{\rightmark}}
+\fancyfoot[C]{\thepage}
+
+%bibliography
+\usepackage[
+    backend=biber,
+    natbib=true,
+    style=alphabetic,
+    mincitenames = 4,
+    maxcitenames = 6,
+    minbibnames = 4,
+    maxbibnames = 6,
+    sorting=nty,
+    url = false,
+    doi = false,
+    isbn = false,
+    eprint =false
+]{biblatex}
+\addbibresource{bibliography.bib}
+
+%delete p &pp in before optional argument
+% \DeclareFieldFormat{postnote}{#1}
+% \DeclareFieldFormat{multipostnote}{#1}
+% \DeclareFieldFormat[article, incollection]{title}{#1}
+
+% hspace für bl;de Fehler bei Defs, etc
+\newcommand{\h}{\hspace{-0.5mm}}
+
+%nices lifting symbol
+\usepackage{tikz}
+  \newlength\squareheight
+  \setlength\squareheight{3.5pt}
+  \newcommand\squareslash{\tikz{\draw (0,0) rectangle (\squareheight,\squareheight);\draw(0,0) -- (\squareheight,\squareheight)}}
+% \newcommand{\pr}{to [out=0,in=180]}
+% \usetikzlibrary{math}
+% \usetikzlibrary{decorations.markings}
+% \usetikzlibrary{decorations.pathreplacing}
+% \usetikzlibrary{arrows,shapes,positioning}
+% %%multiple arrow options
+% \tikzstyle directed=[postaction={decorate,decoration={markings,
+%     mark=at position #1 with {\arrow{>}}}}]
+% \tikzstyle rdirected=[postaction={decorate,decoration={markings,
+%     mark=at position #1 with {\arrow{<}}}}]
+
+% \tikzset{
+%     anchorbase/.style={baseline={([yshift=-0.5ex]current bounding box.center)}},
+%     tinynodes/.style={font=\tiny,text height=0.75ex,text depth=0.15ex},
+%     smallnodes/.style={font=\scriptsize,text height=0.75ex,text depth=0.15ex},
+%     >={Latex[length=1mm, width=1.5mm]},
+%     rd/.style={red, line width=.5mm},
+%     bl/.style={blue, line width=.5mm},
+%     gr/.style={green, line width=.5mm},
+%     pu/.style={purple, line width=.5mm},
+%     or/.style={orange, line width=.5mm},
+%     web/.style={very thick},
+%     dweb/.style={double},
+%     wh/.style={white,line width=.15cm}
+%   }
+% \tikzcdset{arrow style=tikz, diagrams={>=stealth}}
+% \tikzcdset{scale cd/.style={every label/.append style={scale=#1},
+%     cells={nodes={scale=#1}}}}
+
+
+%Grafiken, Farben,...
+\usepackage{xcolor}
+\usepackage{tikz}
+\usetikzlibrary{braids}
+\usetikzlibrary{matrix}
+\usepackage{tikz-cd}
+\usepackage{subfigure}
+\usepackage[arrow, matrix, curve]{xy}
+
+%Style plain für Theoreme, Sätze, Lemma, Propositionen,...
+\theoremstyle{plain}
+\newtheorem{thm}{Theorem}[section]
+\newtheorem{prop}[thm]{Proposition}
+\newtheorem{lem}[thm]{Lemma}
+\newtheorem{cor}[thm]{Corollary}
+\newtheorem{cla}[thm]{Claim}
+
+%Style definition für Definitionen und Beispiele...
+\theoremstyle{definition}
+\newtheorem{defin}[thm]{Definition}
+\newtheorem{eg}[thm]{Example}
+\newtheorem{egs}[thm]{Examples}
+\newtheorem{rem}[thm]{Remark}
+\newtheorem{nota}[thm]{Notation}
+
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+%Mathoperators
+\DeclareMathOperator{\Set}{\textbf{Set}}
+\DeclareMathOperator{\Plop}{\textbf{PlanarOp}}
+\DeclareMathOperator{\Ch}{\textbf{Ch}}
+\DeclareMathOperator{\Mod}{\textbf{-mod}}
+\DeclareMathOperator{\Grp}{\textbf{Grp}}
+\DeclareMathOperator{\Top}{\textbf{Top}}
+\DeclareMathOperator{\Cat}{\textbf{Cat}}
+\DeclareMathOperator{\Vect}{\textbf{Vect}}
+\DeclareMathOperator{\id}{Id}
+\DeclareMathOperator{\op}{op}
+\DeclareMathOperator*{\colim}{colim}
+\DeclareMathOperator{\Mul}{Mul}
+\DeclareMathOperator{\Map}{Map}
+\DeclareMathOperator{\Hom}{Hom}
+\DeclareMathOperator{\HHom}{\underline{Hom}}
+\DeclareMathOperator{\Emb}{Emb}
+\DeclareMathOperator{\End}{End}
+\DeclareMathOperator{\Ev}{Ev}
+\DeclareMathOperator{\Cyl}{Cyl}
+\DeclareMathOperator{\Path}{Path}
+\DeclareMathOperator{\Fun}{Fun}
+\DeclareMathOperator{\Ass}{Ass^{\otimes}}
+\DeclareMathOperator{\dd}{D}
+\DeclareMathOperator{\E}{E}
+\DeclareMathOperator{\Ex}{\E_2^{\otimes}}
+\DeclareMathOperator{\Comm}{Comm^{\otimes}}
+\DeclareMathOperator{\Ho}{Ho}
+\DeclareMathOperator{\coker}{coker}
+\DeclareMathOperator{\T}{T}
+\DeclareMathOperator{\I}{I}
+\DeclareMathOperator{\inter}{int}
+
+
+
+
+%nice Buchstaben fuer categorien
+\usepackage[mathscr]{euscript}
+% \renewcommand{\S}{\mathscr{S}}
+\renewcommand{\P}{\mathscr{P}}
+\renewcommand{\S}{\mathscr{S}}
+\newcommand{\C}{\mathscr{C}}
+\renewcommand{\O}{\mathscr{O}}
+\newcommand{\B}{\mathscr{B}}
+\newcommand{\D}{\mathscr{D}}
+\newcommand{\nerv}{\mathscr{N}}
+\newcommand{\W}{\mathscr{W}}
+\newcommand{\Fib}{\mathscr{F} \text{ib}}
+\newcommand{\Cof}{\mathscr{C} \text{of}}
+\newcommand{\M}{\mathscr{M}}
+\newcommand{\X}{\mathcal{X}}
+\newcommand{\ind}{\text{ind-}\C}
+% \newcommand{\I}{\mathcal{I}}
+\newcommand{\chains}{\Ch_k^\I}
+\newcommand{\Cotimes}{\mathscr{C}^{\otimes}}
+\newcommand{\Ox}{\mathscr{O}^{\otimes}}
+\newcommand{\Fin}{\mathscr{F} \text{in}_*}
+\newcommand{\deltast}{\Delta_{\ast}}
+
+
+%cocolon
+\newcommand*\cocolon{%
+        \nobreak
+        \mskip6mu plus1mu
+        \mathpunct{}%
+        \nonscript
+        \mkern-\thinmuskip
+        {:}%
+        \mskip2mu
+        \relax
+}
+
+\tikzcdset{scale cd/.style={every label/.append style={scale=#1},
+    cells={nodes={scale=#1}}}}
+
+\numberwithin{equation}{section}
+%bloedes Epsilon, Phi weg
+\renewcommand{\epsilon}{\varepsilon}
+% \renewcommand{\phi}{\varphi}
+
+%Klickbare Links
+\usepackage{hyperref}

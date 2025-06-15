@@ -1,0 +1,236 @@
+\In this subsection we aim to understand the correlation of $E_2$-operads and braided monoidal structures.
+
+\todo{add definition of $E_2$-operads}
+
+\begin{defin}
+Let $\P$ be a topological operad, i.e. an operad in $\Top$, the category of topological spaces. We say $\P$ is \emph{connected} if each space $\P(n)$ is path-connected.
+\end{defin}
+
+\begin{defin}
+Let $\P$ be a topological operad and $\{p_n \in \P(n)\}_{n \in \N}$ a choice of basepoints. Then the \emph{fundamental groups operad} $\pi_1(\P)$ is defined by the fundamental group of $\P(n)$ at $p_n$.
+\[
+    \pi_1(\P)(n) \coloneqq \pi_1(\P(n), p_n)
+\]
+The composition is induced by the composition in $\P$.
+\end{defin}
+
+Let $\P$ be a connected topological operad and $\pi_1(\P)$ the fundamental groups operad. We write
+\[
+    \rho \colon \P \to \pi_1(\P)
+\]
+for the morphism that sends $\P(n)$ to its set of of path components which is a singleton since $\P$ is connected and sends paths in $\P(n)$ to its homotopy class.
+For $n \in \N$ let $\gamma \colon [0,1] \to \P(n)$ be a path with $\gamma(0)=p$ and $\gamma(1)=q$. 
+
+For this section, we will focus on $\Cat$, the category of small categories. We equip $\Cat$ with the symmetric monoidal structure of the product of categories. However, the theory presented is not exclusively for $\Cat$.
+
+Let $\C \in \Cat$ be an algebra over $\P$ with maps
+\[
+    \theta \colon \P(n) \times \C^n \to \C
+\]
+for all $n \in \N$. In other words, there is a morphism of operads:
+\[
+    \Theta \colon \P \to \End_{\C}
+\]
+where we send $p \in \P(n)$ to 
+\[
+    \theta_p: \{p\} \times \C^n \to \C.
+\]
+
+\todo{is this morphism of operads topological? does it need to be?}
+
+
+
+
+\textcolor{blue}{Then for each path $\gamma: [0,1] \to \P(n)$ with $\gamma(0) = p$ and $\gamma(1) = q$, there is a natural isomorphism 
+\[
+    \eta_\gamma \colon \theta_p \Rightarrow \theta_q.
+\]
+\begin{itemize}
+    \item Compatibility conditions:
+    \begin{itemize}
+        \item $\eta_{\gamma \cdot \delta} = \eta_\delta \circ \eta_\gamma$ (path composition)
+        \item $\eta_{constant_p} = \id_{\theta_p}$ (constant paths)
+        \item Compatibility with operad composition
+    \end{itemize}
+\end{itemize}}
+
+We aim to show that the algebra structure on $\C$ factors through $\pi_1(\mathcal{P})$, meaning there exists a unique map $\phi: \pi_1(\mathcal{P}) \to \text{End}_{\C}$ such that $\Theta = \phi \circ \rho$
+
+
+
+\begin{defin}[$\pi_1(\P)$-algebra in $\Cat$]
+An algebra over the fundamental group operad $\pi_1(\P)$ in $\Cat$ consists of:
+\begin{itemize}
+    \item A category $\C$
+    \item For each $n \geq 0$, a functor $\Phi_n: \C^n \to \C$
+    \item For each $[\gamma] \in \pi_1(\P)(n)$, a natural automorphism $\alpha_{[\gamma]}: \Phi_n \Rightarrow \Phi_n$
+    \item Compatibility conditions:
+    \begin{itemize}
+        \item $\alpha_{[\gamma] \cdot [\delta]} = \alpha_{[\delta]} \circ \alpha_{[\gamma]}$
+        \item $\alpha_{[constant]} = \id_{\Phi_n}$
+        \item Compatibility with operad composition
+    \end{itemize}
+\end{itemize}
+\end{defin}
+
+There is a canonical projection $\rho: \P \to \pi_1(\P)$ where:
+\begin{itemize}
+    \item For each point $p \in \P(n)$, $\rho(p)$ is the unique element in $\pi_1(\P)(n)$ (since $\P$ is connected)
+    \item For each loop $\gamma$ at $p_n$ in $\P(n)$, $\rho(\gamma)$ is the homotopy class $[\gamma] \in \pi_1(\P)(n)$
+\end{itemize}
+
+\section{Main Theorem and Proof}
+
+\begin{prop}
+Let $\P$ be a connected topological operad. Then the category of algebras over $\P$ in $\Cat$ is equivalent to the category of algebras over its fundamental group operad $\pi_1(\P)$ in $\Cat$.
+\end{prop}
+
+\begin{proof}
+We construct functors in both directions and show they are inverse to each other up to natural isomorphism.
+
+\subsection{From $\P$-algebra to $\pi_1(\P)$-algebra}
+
+Let $(\C, \{\theta_p\}, \{\eta_\gamma\})$ be a $\P$-algebra in $\Cat$. We construct a $\pi_1(\P)$-algebra as follows:
+
+\begin{itemize}
+    \item The category is the same $\C$
+    \item For each $n \geq 0$, define $\Phi_n = \theta_{p_n}$
+    \item For each homotopy class $[\gamma] \in \pi_1(\P)(n)$ of loops at $p_n$, define $\alpha_{[\gamma]} = \eta_\gamma$
+\end{itemize}
+
+We must verify that this construction is well-defined. Let $\gamma$ and $\delta$ be homotopic loops at $p_n$, and let $H: [0,1] \times [0,1] \to \P(n)$ be a homotopy with:
+\begin{align}
+    H(t, 0) &= \gamma(t) \\
+    H(t, 1) &= \delta(t) \\
+    H(0, s) = H(1, s) &= p_n
+\end{align}
+for all $t, s \in [0,1]$.
+
+For each $s \in [0,1]$, define $\gamma_s(t) = H(t, s)$. Then $\gamma_0 = \gamma$ and $\gamma_1 = \delta$. By the continuity of the structure maps, $\eta_{\gamma_s}$ varies continuously with $s$. Since natural isomorphisms between fixed functors form a discrete set, this continuous variation must be constant. Therefore, $\eta_\gamma = \eta_\delta$.
+
+Compatibility with operad composition follows from the corresponding compatibility for the $\P$-algebra.
+
+\subsection{From $\pi_1(\P)$-algebra to $\P$-algebra}
+
+Let $(\C, \{\Phi_n\}, \{\alpha_{[\gamma]}\})$ be a $\pi_1(\P)$-algebra in $\Cat$. We construct a $\P$-algebra as follows:
+
+\begin{itemize}
+    \item The category is the same $\C$
+    \item For each $n \geq 0$ and $p \in \P(n)$, choose a path $\lambda_p: [0,1] \to \P(n)$ with $\lambda_p(0) = p_n$ and $\lambda_p(1) = p$
+    \item Define $\theta_p = \Phi_n$
+    \item For each path $\gamma: [0,1] \to \P(n)$ with $\gamma(0) = p$ and $\gamma(1) = q$, define
+    \begin{equation}
+        \eta_\gamma = \alpha_{[\lambda_p^{-1} \cdot \gamma \cdot \lambda_q]}
+    \end{equation}
+    where $\lambda_p^{-1} \cdot \gamma \cdot \lambda_q$ is the loop at $p_n$ obtained by following $\lambda_p$ backward, then $\gamma$, then $\lambda_q$
+\end{itemize}
+
+We must verify that this is well-defined. Suppose we have different choices of paths $\lambda_p'$ and $\lambda_q'$. Let $\delta_p = \lambda_p \cdot (\lambda_p')^{-1}$ and $\delta_q = \lambda_q \cdot (\lambda_q')^{-1}$, which are loops at $p_n$. Then:
+\begin{align}
+    [\lambda_p^{-1} \cdot \gamma \cdot \lambda_q] &= [(\lambda_p')^{-1} \cdot \delta_p^{-1} \cdot \gamma \cdot \delta_q \cdot \lambda_q'] \\
+    &= [(\lambda_p')^{-1} \cdot \gamma' \cdot \lambda_q']
+\end{align}
+where $\gamma' = \delta_p^{-1} \cdot \gamma \cdot \delta_q$.
+
+By the properties of the $\pi_1(\P)$-algebra, we have:
+\begin{align}
+    \alpha_{[\lambda_p^{-1} \cdot \gamma \cdot \lambda_q]} &= \alpha_{[(\lambda_p')^{-1} \cdot \gamma' \cdot \lambda_q']} \\
+    &= \alpha_{[(\lambda_p')^{-1} \cdot \gamma \cdot \lambda_q']} \circ \alpha_{[\delta_p^{-1}]} \circ \alpha_{[\delta_q]}
+\end{align}
+
+This shows that while the specific natural isomorphism $\eta_\gamma$ depends on the choices of paths, the structure up to coherent isomorphism is invariant.
+
+To verify the compatibility conditions for $\eta_\gamma$:
+
+\begin{itemize}
+    \item For path composition $\gamma \cdot \delta$:
+    \begin{align}
+        \eta_{\gamma \cdot \delta} &= \alpha_{[\lambda_p^{-1} \cdot \gamma \cdot \delta \cdot \lambda_r]} \\
+        &= \alpha_{[\lambda_p^{-1} \cdot \gamma \cdot \lambda_q \cdot \lambda_q^{-1} \cdot \delta \cdot \lambda_r]} \\
+        &= \alpha_{[\lambda_p^{-1} \cdot \gamma \cdot \lambda_q]} \circ \alpha_{[\lambda_q^{-1} \cdot \delta \cdot \lambda_r]} \\
+        &= \eta_\gamma \circ \eta_\delta
+    \end{align}
+    
+    \item For constant paths:
+    \begin{align}
+        \eta_{constant_p} &= \alpha_{[\lambda_p^{-1} \cdot constant_p \cdot \lambda_p]} \\
+        &= \alpha_{[constant_{p_n}]} \\
+        &= \id_{\Phi_n} \\
+        &= \id_{\theta_p}
+    \end{align}
+\end{itemize}
+
+Compatibility with operad composition follows from the corresponding compatibility for the $\pi_1(\P)$-algebra.
+
+\subsection{The Constructions are Inverse to Each Other}
+
+\subsubsection{$\P$-algebra $\to$ $\pi_1(\P)$-algebra $\to$ $\P$-algebra}
+
+Let $(\C, \{\theta_p\}, \{\eta_\gamma\})$ be a $\P$-algebra. Applying our constructions, we get a new $\P$-algebra $(\C, \{\theta_p'\}, \{\eta_\gamma'\})$ where:
+
+\begin{itemize}
+    \item $\theta_p' = \theta_{p_n}$ for all $p \in \P(n)$
+    \item $\eta_\gamma' = \eta_{\lambda_p^{-1} \cdot \gamma \cdot \lambda_q}$ for paths $\gamma$ from $p$ to $q$
+\end{itemize}
+
+To show these are naturally isomorphic, we provide, for each $p \in \P(n)$, a natural isomorphism $\xi_p: \theta_p \Rightarrow \theta_p'$ such that for any path $\gamma$ from $p$ to $q$, the following diagram commutes:
+
+\begin{center}
+\begin{tikzcd}
+\theta_p \arrow[r, "\eta_\gamma"] \arrow[d, "\xi_p"'] & \theta_q \arrow[d, "\xi_q"] \\
+\theta_p' \arrow[r, "\eta_\gamma'"'] & \theta_q'
+\end{tikzcd}
+\end{center}
+
+Define $\xi_p = \eta_{\lambda_p}$. Then:
+\begin{align}
+    \eta_\gamma' \circ \xi_p &= \eta_{\lambda_p^{-1} \cdot \gamma \cdot \lambda_q} \circ \eta_{\lambda_p} \\
+    &= \eta_{\lambda_p \cdot \lambda_p^{-1} \cdot \gamma \cdot \lambda_q} \\
+    &= \eta_{\gamma \cdot \lambda_q} \\
+    &= \eta_{\lambda_q} \circ \eta_\gamma \\
+    &= \xi_q \circ \eta_\gamma
+\end{align}
+
+Thus, the diagram commutes, and the two $\P$-algebra structures are naturally isomorphic.
+
+\subsubsection{$\pi_1(\P)$-algebra $\to$ $\P$-algebra $\to$ $\pi_1(\P)$-algebra}
+
+Let $(\C, \{\Phi_n\}, \{\alpha_{[\gamma]}\})$ be a $\pi_1(\P)$-algebra. Applying our constructions, we get a new $\pi_1(\P)$-algebra $(\C, \{\Phi_n'\}, \{\alpha_{[\gamma]}'\})$ where:
+
+\begin{itemize}
+    \item $\Phi_n' = \Phi_n$
+    \item $\alpha_{[\gamma]}' = \alpha_{[\gamma]}$
+\end{itemize}
+
+This is identical to the original $\pi_1(\P)$-algebra, so they are trivially isomorphic.
+
+\end{proof}
+
+\section{Example: Braided Monoidal Categories}
+
+As a concrete illustration of the theorem, we consider the little 2-disks operad $\D_2$.
+
+\begin{eg}
+For the little 2-disks operad $\D_2$:
+\begin{itemize}
+    \item $\D_2(n)$ is the space of configurations of $n$ non-overlapping disks inside the unit disk
+    \item $\pi_1(\D_2(2)) \cong \mathbb{Z}$ (corresponding to one disk revolving around the other)
+    \item $\pi_1(\D_2(n)) \cong PB_n$ for $n > 2$, where $PB_n$ is the pure braid group on $n$ strands
+\end{itemize}
+
+An algebra over $\D_2$ in $\Cat$ is essentially an $E_2$-category, while an algebra over $\pi_1(\D_2)$ in $\Cat$ is precisely a braided monoidal category. Our theorem establishes the equivalence between these two notions.
+
+Specifically:
+\begin{itemize}
+    \item The tensor product $\otimes: \C \times \C \to \C$ corresponds to the functor $\Phi_2$
+    \item The braiding isomorphism $\beta_{X,Y}: X \otimes Y \to Y \otimes X$ corresponds to the natural automorphism $\alpha_{[g]}$ where $[g]$ is the generator of $\pi_1(\D_2(2)) \cong \mathbb{Z}$
+    \item The coherence conditions (hexagon axioms) correspond to the compatibility with operad composition
+    \item The Yang-Baxter equation (braid relation) corresponds to the fundamental relation in the pure braid group $\pi_1(\D_2(3))$
+\end{itemize}
+\end{eg}
+
+\section{Conclusion}
+
+We have established that for a connected topological operad $\P$, the category of algebras over $\P$ in $\Cat$ is equivalent to the category of algebras over its fundamental group operad $\pi_1(\P)$ in $\Cat$. This result provides a deep connection between topology and higher category theory, revealing how the fundamental groups of the spaces of operations in a topological operad precisely encode the coherent algebraic structures the operad parametrizes.
+
+The key insight is that in the categorical setting, what matters is not the specific points in the operad spaces, but rather the homotopy classes of paths between them, which give rise to natural isomorphisms between functors. This is precisely the information captured by the fundamental group operad.

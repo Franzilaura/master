@@ -1,0 +1,9 @@
+\babel@toc {english}{}\relax 
+\contentsline {section}{\numberline {1}Operads}{3}{section.0.1}%
+\contentsline {subsection}{\numberline {1.1}Planar and Symmetric Operads}{4}{subsection.0.1.1}%
+\contentsline {subsection}{\numberline {1.2}Colored Operads}{12}{subsection.0.1.2}%
+\contentsline {section}{\numberline {2}Braided Operads}{22}{section.0.2}%
+\contentsline {subsection}{\numberline {2.1}Action Operad}{23}{subsection.0.2.1}%
+\contentsline {subsection}{\numberline {2.2}Outlook}{24}{subsection.0.2.2}%
+\contentsline {subsection}{\numberline {2.3}Braided monoidal structure}{25}{subsection.0.2.3}%
+\contentsfinish 

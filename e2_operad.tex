@@ -1,0 +1,216 @@
+\subsection{Braided monoidal structure}
+
+In the following we will construct a braided monoidal structure obtained from a cofibration over $\Ex$. To do so we will need to choose paths in $\Ex$ on various occations. We will refrain from specifying the paths in detail but rather describe the paths enough to understand from which homotopy class we choose a path.
+\begin{rem}
+    Let us recall the definition of $\Ex$. For each $n \in \N$ we have an object $\langle n \rangle$. A mophism $\langle n \rangle \to \langle m \rangle$ in $\Ex$ consists of a morphism 
+    $\alpha \colon \langle n \rangle \to \langle m \rangle$ in $\Fin$ and a collection of configurations $\{c_j \in \E_2(|\alpha^{-1}(j)|)\}_{1 \leq j \leq m}$ where each configuration is labeled by $\alpha^{-1}(j))$.
+    So for example, let \begin{align*}
+    \alpha \colon \langle 3 \rangle &\to \langle 2 \rangle \\
+    1 &\mapsto 1 \\
+    2 &\mapsto 2 \\
+    3 &\mapsto 1 \\
+    \end{align*}
+    and
+    \begin{center}
+    \begin{tikzpicture}
+                        % First element (left)
+                        \draw[thick] (-3,0) circle (2);
+                        \draw[thick] (-3.8, 1) circle (0.5);
+                        \draw[thick] (-3, -0.5) circle (1);
+                        \node at (-3.8, 1) {\small $1$};
+                        \node at (-3, -0.5) {\small $3$};
+                        \node at (0,-2) {,};
+                        % Second element (right)
+                        \draw[thick] (3,0) circle (2);
+                        \draw[thick] (2,0.7) circle (0.5);
+                        \node at (2,0.7) {\small $2$};
+        \end{tikzpicture}
+    \end{center}
+    We denote the trivial configuration with label $x$ by $\id^x \in \E_2(1)$.
+\end{rem}
+
+
+\begin{defin}
+    Let $\Cotimes$ be a category with a Grothendieck cofibration
+    \[
+        \Cotimes \to \Ex
+    \]
+    satisfying the (M2) condition:
+    For $\C \coloneqq \Cotimes_{\langle 1 \rangle}$, we have $\Cotimes_{\langle n \rangle} \cong \C^n$. Then we call $\Cotimes$ with $\pi$ a $\E_2$-operad.
+\end{defin}
+
+Let $\pi \colon \Cotimes \to \Ex$ be a $\E_2$-operad. We denote $\C \coloneqq \Cotimes_{\langle 1 \rangle}$. In the following section we aim to define a braided monoidal structure on $\C$.
+
+Note that for a diagram in $\Ex$
+\[
+\begin{tikzcd}
+\langle n \rangle \arrow[r, "c_1"] \arrow[rd, "c_2"] & \langle 1 \rangle \arrow[d, "\id"] \\
+                                                     & \langle 1 \rangle                 
+\end{tikzcd}
+\]
+with $c_1$ and $c_2$ being configurations in $\E_2(n)$, commutativity means choosing a path from $c_1$ to $c_2$.
+Let $\beta$ denote the following morphism in $\Ex$
+     \begin{align*}
+         \beta \colon \langle 2 \rangle &\to \langle 2 \rangle \\
+         1 &\mapsto 2 \\
+         2 &\mapsto 1. \\
+     \end{align*}
+with the trivial collection $(\id^2, \id^1)$.
+Further, let \[
+\mu \colon \langle 2 \rangle \to \langle 1 \rangle
+\] be the morphism with the following configuration which we refer to as the basepoint configuration:
+\begin{center}
+    \begin{tikzpicture}
+                        % First element (left)
+                        \node at (1, 0) {\small $2$};
+                        \node at (-1, 0) {\small $1$};
+                        
+                        \draw[thick] (0,0) circle (2);
+                        \draw[thick] (1, 0) circle (0.75);
+                        \draw[thick] (-1, 0) circle (0.75);
+                        \draw[dotted](-2, 0)--(2, 0);       
+        \end{tikzpicture}
+\end{center}
+
+Since $\pi$ satisfies (M1) and (M2), we have that for any $(A,B) \in \C^2 \cong \Cotimes_{\langle 2 \rangle}$ there is a cocartesian lift $(A,B) \to A \otimes B$ which defines a functor
+\[
+    \otimes \colon \C^2 \to \C.
+\]
+
+Then, we consider the following diagramm in $\Ex$
+\[
+    \begin{tikzcd}
+        \langle 2 \rangle \arrow[r, "\beta"] \arrow[d, "\mu"] & \langle 2 \rangle \arrow[d, "\mu"] \\
+        \langle 1 \rangle  \arrow[r, dashed]                  & \langle 1 \rangle.                 
+    \end{tikzcd}
+\]
+Filling the diagram, i.e. giving commutativity means choosing a path from the basepoint configuration $\mu$ to the twisted basepoint configuration $\mu \circ \beta$. We choose this to be the half twist.
+
+\begin{center}
+    \begin{tikzpicture}
+                        % basepoint
+                        \node at (1, 0) {\small $2$};
+                        \node at (-1, 0) {\small $1$};
+                        
+                        \draw[thick] (0,0) circle (2);
+                        \draw[thick] (1, 0) circle (0.75);
+                        \draw[thick] (-1, 0) circle (0.75);
+                        \draw[dotted](-2, 0)--(2, 0);
+                        \draw[thick, dotted, red] (-1, 0.75) to [bend left=50] (1, 1);
+                        \draw[thick, dotted, red] (1, -0.75) to [bend left=50] (-1, -1);
+
+                        \node at (3.5, 0) {$\rightsquigarrow$};
+                        
+                        % twisted basepoint
+                        \node at (8, 0) {\small $1$};
+                        \node at (6, 0) {\small $2$};
+                        
+                        \draw[thick] (7,0) circle (2);
+                        \draw[thick] (8, 0) circle (0.75);
+                        \draw[thick] (6, 0) circle (0.75);
+                        \draw[dotted](5, 0)--(9, 0);  
+                        
+        \end{tikzpicture}
+\end{center}
+
+Note, that for a different choice of path instead of this half twist, we would obtain in the following a different braiding. So, this choice is essential for our construction.
+Again using the (M1) property of $\pi$ we obtain a commuting diagram in $\Cotimes$
+
+\[
+\begin{tikzcd}
+{(A,B)} \arrow[r, "\beta"] \arrow[d, "\otimes"] & {(B,A)} \arrow[d, "\otimes"] \\
+A \otimes B \arrow[r, "b"]                  & B \otimes A                 
+\end{tikzcd}
+\]
+The induced morphism $b$ is a unique isomorphism due to the fact that $\otimes$ and $\beta$ are cocartesian morphisms.
+
+For the associator we consider the following diagram in $\Ex$:
+    \[
+    \begin{tikzcd}
+        \langle 3 \rangle \arrow[r, "\tau_2^3"] \arrow[d, "\tau^3_1"] & \langle 2 \rangle \arrow[d] \\
+        \langle 2 \rangle \arrow[r]                                   & \langle 1 \rangle          
+    \end{tikzcd}
+    \]
+    where the associated configurations are either the trivial configuration or the basepoint configuration.
+    To fill the diagram, we choose a path $\gamma$ that onlz translates the middle points of the disc along the horizontal line and shrinks or expanse the discs as needed.
+
+
+    % \begin{tikzpicture}
+    %                     % First element (left)
+    %                     \draw[thick] (0,0) circle (2);
+    %                     \draw[thick] (1.25, 0) circle (0.5);
+    %                     \draw[thick] (0, 0) circle (0.5);
+    %                     \draw[thick] (-1.25, 0) circle (0.5);
+    %                     \node at (1.25, 0) {\small $1$};
+    %                     \node at (0, 0) {\small $2$};
+    %                     \node at (-1.25, 0) {\small $3$};
+    %     \end{tikzpicture}
+
+
+
+    \begin{center}
+        \begin{tikzpicture}
+                        % First element (left)
+                        \node at (-1, 0) {\small $1$};
+                        \node at (0.625, 0) {\small $2$};
+                        \node at (1.375, 0) {\small $3$};
+                        \draw[thick] (0,0) circle (2);
+                        \draw[thick] (-1, 0) circle (0.75);
+                        \draw[thick] (0.625, 0) circle (0.275);
+                        \draw[thick] (1.375, 0) circle (0.275);
+                        \draw[dotted] (1, 0) circle (0.75);
+                        \draw[dotted](-2, 0)--(2, 0);
+
+                        \node at (3.5, 0) {$\overset{\gamma}{\rightsquigarrow}$};
+
+                        % Second element (left)
+                        \node at (5.625, 0) {\small $1$};
+                        \node at (6.375, 0) {\small $2$};
+                        \node at (8, 0) {\small $3$};
+                        \draw[thick] (7,0) circle (2);
+                        \draw[dotted] (6, 0) circle (0.75);
+                        \draw[thick] (6.325, 0) circle (0.275);
+                        \draw[thick] (5.675, 0) circle (0.275);
+                        \draw[thick] (8, 0) circle (0.75);
+                        \draw[dotted](5, 0)--(9, 0);     
+        \end{tikzpicture}
+    \end{center}
+
+Again using the (M1) property of $\pi$ we obtain a commuting diagram in $\Cotimes$
+\[
+\begin{tikzcd}
+{(A \otimes B, C)} \arrow[d, "\otimes"] & {(A,B,C)} \arrow[r, "{(\id, \otimes)}"] \arrow[l, "{(\otimes, \id)}"'] & {(A, B \otimes C)} \arrow[d, "\otimes"] \\
+(A \otimes B) \otimes C \arrow[rr, "a"] &                                                                        & A \otimes (B \otimes C)                
+\end{tikzcd}
+\]
+
+\todo{tensor unit is missing}
+ 
+\begin{prop}
+    The category $\C$ equipped with $(\otimes, b, a, \mathbf{1})$ defines a braided monoidal category.
+\end{prop}
+
+\begin{proof}
+    First, we observe that the associator refers to $\E_1$ being embedded into $\E_2$ along the horizontal line. So, the pentagon identity holds as $\E_1$ is the associative operad.
+    Hence, we focus the hexagone identities
+    \begin{enumerate}
+        \item 
+        \[
+                    \begin{tikzcd}
+                                                                                & A \otimes (B \otimes C) \arrow[r, "b"] & (B \otimes C) \otimes A  \arrow[rd, "a"]            &                         \\
+            (A \otimes B) \otimes C \arrow[ru, "a"] \arrow[rd, "b \otimes \id"] &                                        &                                                     & B \otimes (C \otimes A) \\
+                                                                                & (B \otimes A) \otimes C \arrow[r, "a"] & B \otimes (A \otimes C) \arrow[ru, "\id \otimes b"] &                        
+            \end{tikzcd}
+        \]
+        \item 
+        \[
+            \begin{tikzcd}
+                                                                                & (A \otimes B) \otimes C \arrow[r, "b"] & C \otimes (A \otimes B) \arrow[rd, "a"]             &                         \\
+            A \otimes (B \otimes C) \arrow[ru, "a"] \arrow[rd, "\id \otimes b"] &                                        &                                                     & (C \otimes A) \otimes B \\
+                                                                                & A \otimes (C \otimes B) \arrow[r, "a"] & (A \otimes C) \otimes B \arrow[ru, "b \otimes \id"] &                        
+            \end{tikzcd}
+        \]
+    \end{enumerate}
+
+    whbdwibc
+\end{proof}
