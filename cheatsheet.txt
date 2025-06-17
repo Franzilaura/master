@@ -1,0 +1,4 @@
+latex:
+code to pdf jump: cmd + option + j
+pdf to code: cmd click
+

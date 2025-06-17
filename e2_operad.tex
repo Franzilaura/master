@@ -135,16 +135,7 @@ For the associator we consider the following diagram in $\Ex$:
     To fill the diagram, we choose a path $\gamma$ that onlz translates the middle points of the disc along the horizontal line and shrinks or expanse the discs as needed.
 
 
-    % \begin{tikzpicture}
-    %                     % First element (left)
-    %                     \draw[thick] (0,0) circle (2);
-    %                     \draw[thick] (1.25, 0) circle (0.5);
-    %                     \draw[thick] (0, 0) circle (0.5);
-    %                     \draw[thick] (-1.25, 0) circle (0.5);
-    %                     \node at (1.25, 0) {\small $1$};
-    %                     \node at (0, 0) {\small $2$};
-    %                     \node at (-1.25, 0) {\small $3$};
-    %     \end{tikzpicture}
+ 
 
 
 
@@ -191,12 +182,12 @@ Again using the (M1) property of $\pi$ we obtain a commuting diagram in $\Cotime
 \end{prop}
 
 \begin{proof}
-    First, we observe that the associator refers to $\E_1$ being embedded into $\E_2$ along the horizontal line. So, the pentagon identity holds as $\E_1$ is the associative operad.
-    Hence, we focus the hexagone identities
+    First, we observe that the associator refers to $\E_1$ being embedded into $\E_2$ along the horizontal line. So, the pentagon identity holds as $\E_1$ is the associative operad. \todo{include a proof here if spare time}
+    Hence, we focus on the hexagone identities
     \begin{enumerate}
         \item 
         \[
-                    \begin{tikzcd}
+            \begin{tikzcd}
                                                                                 & A \otimes (B \otimes C) \arrow[r, "b"] & (B \otimes C) \otimes A  \arrow[rd, "a"]            &                         \\
             (A \otimes B) \otimes C \arrow[ru, "a"] \arrow[rd, "b \otimes \id"] &                                        &                                                     & B \otimes (C \otimes A) \\
                                                                                 & (B \otimes A) \otimes C \arrow[r, "a"] & B \otimes (A \otimes C) \arrow[ru, "\id \otimes b"] &                        
@@ -211,6 +202,349 @@ Again using the (M1) property of $\pi$ we obtain a commuting diagram in $\Cotime
             \end{tikzcd}
         \]
     \end{enumerate}
+    Each edge in the hexagone diagrams refers to a commuting diagram in $\Ex$ of the form
 
-    whbdwibc
+    \[
+        \begin{tikzcd}
+                                            & \langle 3 \rangle \arrow[ldd, "c_{A \otimes B \otimes C}"', bend right] \arrow[d, "c_{(A \otimes B) \otimes C}" description] \arrow[rdd, "c_{C \otimes (A\otimes B)}", bend left] &                   \\
+                                            & \langle 1 \rangle \arrow[ld, "\id"] \arrow[rd, "\id"']                                                                                                                            &                   \\
+        \langle 1 \rangle \arrow[rr, "\id"] &                                                                                                                                                                                   & \langle 1 \rangle
+        \end{tikzcd}
+    \]
+   
+    with configurations
+    \begin{center}
+        \begin{tikzpicture}
+            \node at (0,-2.5) {$c_{(A \otimes B) \otimes C}$};
+            \node at (-5,-2.5) {$c_{A \otimes B \otimes C}$};
+            \node at (5,-2.5) {$c_{C \otimes (A \otimes B)}$};
+
+
+            % left configuration (left)
+            \draw[thick] (-5,0) circle (2);
+            \draw[thick] (-3.75, 0) circle (0.5);
+            \draw[thick] (-5, 0) circle (0.5);
+            \draw[thick] (-6.25, 0) circle (0.5);
+            \node at (-6.25, 0) {\small $1$};
+            \node at (-5, 0) {\small $2$};
+            \node at (-3.75, 0) {\small $3$};
+
+            % second configuration (middle)
+            \node at (-0.675, 0) {\small $2$};
+            \node at (-1.325, 0) {\small $1$};
+            \node at (1, 0) {\small $3$};
+            \draw[thick] (0,0) circle (2);
+            \draw[dotted] (-1, 0) circle (0.75);
+            \draw[thick] (-0.675, 0) circle (0.275);
+            \draw[thick] (-1.325, 0) circle (0.275);
+            \draw[thick] (1, 0) circle (0.75);
+            \draw[dotted](-2, 0)--(2, 0);
+
+            % third element (right)
+            \node at (4, 0) {\small $3$};
+            \node at (5.625, 0) {\small $1$};
+            \node at (6.375, 0) {\small $2$};
+            \draw[thick] (5,0) circle (2);
+            \draw[thick] (4, 0) circle (0.75);
+            \draw[thick] (5.625, 0) circle (0.275);
+            \draw[thick] (6.375, 0) circle (0.275);
+            \draw[dotted] (6, 0) circle (0.75);
+            \draw[dotted](3, 0)--(7, 0);  
+
+        \end{tikzpicture}
+    \end{center}
+
+    The commutativity of the triangle diagrams "on the side" mean choosing a path from one configuration to another while filling the tetrahedron in $\Ex$ means having a homotopy between the the different paths. As it turns out we do not make any new choices of paths but the paths are induced by the half twist we chose for $\otimes$.
+    The paths are chosen such that the configurations are homotopic to the basepoint configuration. 
+
+    \begin{center}
+        \begin{tikzpicture}
+            %arrow
+            \node at (-2, -0) {$\rightsquigarrow$};
+
+            % left side paths
+            \draw[thick] (-5,0) circle (2);
+            \draw[thick, orange] (-3.75, 0) circle (0.5);
+            \draw[thick, red] (-5, 0) circle (0.5);
+            \draw[thick, blue] (-6.25, 0) circle (0.5);
+            \node at (-6.25, 0) {\small $1$};
+            \node at (-5, 0) {\small $2$};
+            \node at (-3.75, 0) {\small $3$};
+
+            %right side paths
+            \draw[thick] (1,0) circle (2);
+            \draw[thick, purple] (2.25, 0) circle (0.5);
+            \draw[thick, purple] (1, 0) circle (0.5);
+            \draw[thick, blue] (-0.25, 0) circle (0.5);
+            \node at (-0.25, 0) {\small $1$};
+            \node at (1, 0) {\small $2$};
+            \node at (2.25, 0) {\small $3$};
+
+            % paths
+            \draw[dotted, thick, orange] (-3.75, 0.5) to [bend right=70] (-5, 0.5);
+            \draw[dotted, thick, red] (-5, 0.5) to [bend right=70] (-6.25, 0.5);
+            \draw[dotted, thick, blue] (-6.25, -0.5) to [bend right=70] (-5, -0.5);
+            \draw[dotted, thick, blue] (-5, -0.5) to [bend right=70] (-3.75, -0.5);
+            \draw[dotted, thick, purple] (2.25, 0.5) to [bend right=70] (1, 0.5);
+            \draw[dotted, thick, purple] (1, 0.5) to [bend right=70] (-0.25, 0.5);
+            \draw[dotted, thick, blue] (-0.25, -0.5) to [bend right=70] (2.25, -0.5);
+        \end{tikzpicture}
+    \end{center}
+
+    \newpage
+    
+    The paths described above follow from the following diagram which is the translation of the first hexagon identity to the corresponding configuration.
+        \begin{center}
+        \begin{tikzpicture}
+            %arrows
+            \node at (-2.5, -2) {\rotatebox{-135}{$\rightsquigarrow$}};
+            \node at (2.5, -2) {\rotatebox{-45}{$\rightsquigarrow$}};
+            \node at (-5, -7) {\rotatebox{-90}{$\rightsquigarrow$}};
+            \node at (5, -7) {\rotatebox{-90}{$\rightsquigarrow$}};
+            \node at (2.5, -12) {\rotatebox{-135}{$\rightsquigarrow$}};
+            \node at (-2.5, -12) {\rotatebox{-45}{$\rightsquigarrow$}};
+
+            % top
+            \node at (-0.675, 0) {\small $2$};
+            \node at (-1.325, 0) {\small $1$};
+            \node at (1, 0) {\small $3$};
+            \draw[thick] (0,0) circle (2);
+            \draw[dotted] (-1, 0) circle (0.75);
+            \draw[thick] (-0.675, 0) circle (0.275);
+            \draw[thick] (-1.325, 0) circle (0.275);
+            \draw[thick] (1, 0) circle (0.75);
+            \draw[dotted](-2, 0)--(2, 0);
+
+            % right first
+            \node at (4, -4) {\small $1$};
+            \node at (5.625, -4) {\small $2$};
+            \node at (6.375, -4) {\small $3$};
+            \draw[thick] (5,-4) circle (2);
+            \draw[thick] (4, -4) circle (0.75);
+            \draw[thick] (5.625, -4) circle (0.275);
+            \draw[thick] (6.375, -4) circle (0.275);
+            \draw[dotted] (6, -4) circle (0.75);
+            \draw[dotted](3, -4)--(7, -4); 
+                 
+            % left first
+            \node at (-5.675, -4) {\small $1$};
+            \node at (-6.325, -4) {\small $2$};
+            \node at (-4, -4) {\small $3$};
+            \draw[thick] (-5,-4) circle (2);
+            \draw[dotted] (-6, -4) circle (0.75);
+            \draw[thick] (-5.675, -4) circle (0.275);
+            \draw[thick] (-6.325, -4) circle (0.275);
+            \draw[thick] (-4, -4) circle (0.75);
+            \draw[dotted](-7, -4)--(-3, -4);
+
+            % right second
+            \node at (4.325, -10) {\small $3$};
+            \node at (3.675, -10) {\small $2$};
+            \node at (6, -10) {\small $1$};
+            \draw[thick] (5,-10) circle (2);
+            \draw[dotted] (4, -10) circle (0.75);
+            \draw[thick] (4.325, -10) circle (0.275);
+            \draw[thick] (3.675, -10) circle (0.275);
+            \draw[thick] (6, -10) circle (0.75);
+            \draw[dotted](3, -10)--(7, -10);
+
+            % left second
+            \node at (-6, -10) {\small $2$};
+            \node at (-4.375, -10) {\small $1$};
+            \node at (-3.625, -10) {\small $3$};
+            \draw[thick] (-5,-10) circle (2);
+            \draw[thick] (-6, -10) circle (0.75);
+            \draw[thick] (-4.375, -10) circle (0.275);
+            \draw[thick] (-3.625, -10) circle (0.275);
+            \draw[dotted] (-4, -10) circle (0.75);
+            \draw[dotted](-7, -10)--(-3, -10);
+
+            %bottom
+            \node at (-1, -14) {\small $2$};
+            \node at (0.625, -14) {\small $3$};
+            \node at (1.375, -14) {\small $1$};
+            \draw[thick] (0,-14) circle (2);
+            \draw[thick] (-1, -14) circle (0.75);
+            \draw[thick] (0.625, -14) circle (0.275);
+            \draw[thick] (1.375, -14) circle (0.275);
+            \draw[dotted] (1, -14) circle (0.75);
+            \draw[dotted](-2, -14)--(2, -14);
+
+            % paths visualisation #1
+            \draw (-4,-0.5) circle (1);
+            %\draw[dotted] (-1, 0) circle (0.375);
+            \draw[blue] (-4.7, -0.5) circle (0.13525);
+            \draw[red] (-4.3, -0.5) circle (0.13525);
+            \draw (-3.5, -0.5) circle (0.375);
+            \draw[dotted, red] (-4.3, -0.375) to [bend right=70] (-4.7, -0.3);
+            \draw[dotted, blue] (-4.7, -0.625) to [bend right=70] (-4.3, -0.7);
+
+            % paths visualisation #2
+            \draw (-4,-13.5) circle (1);
+            %\draw[dotted] (-1, 0) circle (0.375);
+            \draw[orange] (-3.3, -13.5) circle (0.13525);
+            \draw[blue] (-3.7, -13.5) circle (0.13525);
+            \draw (-4.5, -13.5) circle (0.375);
+            \draw[dotted, blue] (-3.7, -13.625) to [bend right=70] (-3.3, -13.7);
+            \draw[dotted, orange] (-3.3, -13.375) to [bend right=70] (-3.7, -13.3);
+
+            % paths visualisation #3
+            \draw (7,-7) circle (1);
+            \draw[dotted, purple] (7.5, -7) circle (0.375);
+            \draw[orange] (7.7, -7) circle (0.13525);
+            \draw[red] (7.3, -7) circle (0.13525);
+            \draw[blue] (6.5, -7) circle (0.375);
+            \draw[dotted, purple] (7.5, -6.625) to [bend right=70] (6.5, -6.5);
+            \draw[dotted, blue] (6.5, -7.375) to [bend right=70] (7.5, -7.5);
+        \end{tikzpicture}
+    \end{center}
+
+    \newpage
+
+    For the second hexagon identity we consider the following diagram in $\Ex$:
+    \begin{center}
+        \begin{tikzpicture}
+            %arrows
+            \node at (-2.5, -2) {\rotatebox{-135}{$\rightsquigarrow$}};
+            \node at (2.5, -2) {\rotatebox{-45}{$\rightsquigarrow$}};
+            \node at (-5, -7) {\rotatebox{-90}{$\rightsquigarrow$}};
+            \node at (5, -7) {\rotatebox{-90}{$\rightsquigarrow$}};
+            \node at (2.5, -12) {\rotatebox{-135}{$\rightsquigarrow$}};
+            \node at (-2.5, -12) {\rotatebox{-45}{$\rightsquigarrow$}};
+
+            % top
+            \node at (0.675, 0) {\small $2$};
+            \node at (1.325, 0) {\small $3$};
+            \node at (-1, 0) {\small $1$};
+            \draw[thick] (0,0) circle (2);
+            \draw[dotted] (1, 0) circle (0.75);
+            \draw[thick] (0.675, 0) circle (0.275);
+            \draw[thick] (1.325, 0) circle (0.275);
+            \draw[thick] (-1, 0) circle (0.75);
+            \draw[dotted](-2, 0)--(2, 0);
+
+            % right first
+            \node at (6, -4) {\small $3$};
+            \node at (3.625, -4) {\small $1$};
+            \node at (4.375, -4) {\small $2$};
+            \draw[thick] (5,-4) circle (2);
+            \draw[thick] (6, -4) circle (0.75);
+            \draw[thick] (3.625, -4) circle (0.275);
+            \draw[thick] (4.375, -4) circle (0.275);
+            \draw[dotted] (4, -4) circle (0.75);
+            \draw[dotted](3, -4)--(7, -4); 
+                 
+            % left first
+            \node at (-3.675, -4) {\small $2$};
+            \node at (-4.325, -4) {\small $3$};
+            \node at (-6, -4) {\small $1$};
+            \draw[thick] (-5,-4) circle (2);
+            \draw[dotted] (-4, -4) circle (0.75);
+            \draw[thick] (-3.675, -4) circle (0.275);
+            \draw[thick] (-4.325, -4) circle (0.275);
+            \draw[thick] (-6, -4) circle (0.75);
+            \draw[dotted](-7, -4)--(-3, -4);
+
+            % right second
+            \node at (6.325, -10) {\small $2$};
+            \node at (5.675, -10) {\small $1$};
+            \node at (4, -10) {\small $3$};
+            \draw[thick] (5,-10) circle (2);
+            \draw[dotted] (6, -10) circle (0.75);
+            \draw[thick] (6.325, -10) circle (0.275);
+            \draw[thick] (5.675, -10) circle (0.275);
+            \draw[thick] (4, -10) circle (0.75);
+            \draw[dotted](3, -10)--(7, -10);
+
+            % left second
+            \node at (-4, -10) {\small $2$};
+            \node at (-6.375, -10) {\small $1$};
+            \node at (-5.625, -10) {\small $3$};
+            \draw[thick] (-5,-10) circle (2);
+            \draw[thick] (-4, -10) circle (0.75);
+            \draw[thick] (-6.375, -10) circle (0.275);
+            \draw[thick] (-5.625, -10) circle (0.275);
+            \draw[dotted] (-6, -10) circle (0.75);
+            \draw[dotted](-7, -10)--(-3, -10);
+
+            %bottom
+            \node at (1, -14) {\small $2$};
+            \node at (-0.625, -14) {\small $1$};
+            \node at (-1.375, -14) {\small $3$};
+            \draw[thick] (0,-14) circle (2);
+            \draw[thick] (1, -14) circle (0.75);
+            \draw[thick] (-0.625, -14) circle (0.275);
+            \draw[thick] (-1.375, -14) circle (0.275);
+            \draw[dotted] (-1, -14) circle (0.75);
+            \draw[dotted](-2, -14)--(2, -14);
+
+            % paths visualisation #1
+            \draw (-4,-0.5) circle (1);
+            %\draw[dotted] (-1, 0) circle (0.375);
+            \draw[red] (-3.7, -0.5) circle (0.13525);
+            \draw[orange] (-3.3, -0.5) circle (0.13525);
+            \draw (-4.5, -0.5) circle (0.375);
+            \draw[dotted, orange] (-3.3, -0.375) to [bend right=70] (-3.7, -0.3);
+            \draw[dotted, red] (-3.7, -0.625) to [bend right=70] (-3.3, -0.7);
+
+            % paths visualisation #2
+            \draw (-4,-13.5) circle (1);
+            %\draw[dotted] (-1, 0) circle (0.375);
+            \draw[orange] (-4.3, -13.5) circle (0.13525);
+            \draw[blue] (-4.7, -13.5) circle (0.13525);
+            \draw (-3.5, -13.5) circle (0.375);
+            \draw[dotted, blue] (-4.7, -13.625) to [bend right=70] (-4.3, -13.7);
+            \draw[dotted, orange] (-4.3, -13.375) to [bend right=70] (-4.7, -13.3);
+
+            % paths visualisation #3
+            \draw (7,-7) circle (1);
+            \draw[dotted, purple] (6.5, -7) circle (0.375);
+            \draw[red] (6.7, -7) circle (0.13525);
+            \draw[blue] (6.3, -7) circle (0.13525);
+            \draw[orange] (7.5, -7) circle (0.375);
+            \draw[dotted, purple] (6.5, -7.375) to [bend right=70] (7.5, -7.5);
+            \draw[dotted, orange] (7.5, -6.625) to [bend right=70] (6.5, -6.5);
+        \end{tikzpicture}
+    \end{center}
+
+    \newpage
+
+    The resulting paths are again homotopic equivalent and therefore the second hexagon identity holds.
+
+    \begin{center}
+        \begin{tikzpicture}
+            %arrows
+            \node at (-2, -0) {$\rightsquigarrow$};
+
+            % left side paths
+            \draw[thick] (-5,0) circle (2);
+            \draw[thick, orange] (-3.75, 0) circle (0.5);
+            \draw[thick, red] (-5, 0) circle (0.5);
+            \draw[thick, blue] (-6.25, 0) circle (0.5);
+            \node at (-6.25, 0) {\small $1$};
+            \node at (-5, 0) {\small $2$};
+            \node at (-3.75, 0) {\small $3$};
+
+            %right side paths
+            \draw[thick] (1,0) circle (2);
+            \draw[thick, orange] (2.25, 0) circle (0.5);
+            \draw[thick, purple] (1, 0) circle (0.5);
+            \draw[thick, purple] (-0.25, 0) circle (0.5);
+            \node at (-0.25, 0) {\small $1$};
+            \node at (1, 0) {\small $2$};
+            \node at (2.25, 0) {\small $3$};
+
+            % paths
+            \draw[dotted, thick, orange] (-3.75, 0.5) to [bend right=70] (-5, 0.5);
+            \draw[dotted, thick, orange] (-5, 0.5) to [bend right=70] (-6.25, 0.5);
+            \draw[dotted, thick, blue] (-6.25, -0.5) to [bend right=70] (-5, -0.5);
+            \draw[dotted, thick, red] (-5, -0.5) to [bend right=70] (-3.75, -0.5);
+            \draw[dotted, thick, purple] (2.25, -0.5) to [bend left=70] (1, -0.5);
+            \draw[dotted, thick, purple] (1, -0.5) to [bend left=70] (-0.25, -0.5);
+            \draw[dotted, thick, orange] (-0.25, 0.5) to [bend left=70] (2.25, 0.5);
+        \end{tikzpicture}
+    \end{center}
+    This concludes the proof that $\Ex$ induces a braided monoidal structure on $\C$.
+
 \end{proof}
+ 

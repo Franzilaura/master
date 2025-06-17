@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.4.8)  18 JUN 2025 00:20
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.4.8)  17 JUN 2025 23:09
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -998,7 +998,8 @@ Package biblatex Warning: 'babel/polyglossia' detected but 'csquotes' missing.
 LaTeX Font Info:    Trying to load font information for T1+lmr on input line 4.
 (/usr/local/texlive/2025/texmf-dist/tex/latex/lm/t1lmr.fd
 File: t1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-) (./main.aux)
+)
+No file main.aux.
 \openout1 = `main.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 4.
@@ -1019,7 +1020,6 @@ LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 4.
 LaTeX Font Info:    ... okay on input line 4.
 LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 4.
 LaTeX Font Info:    ... okay on input line 4.
-
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
 *geometry* verbose mode - [ preamble ] result:
@@ -1080,7 +1080,6 @@ Package grfext Info: Graphics extension search list:
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 ))
 Package hyperref Info: Link coloring OFF on input line 4.
- (./main.out) (./main.out)
 \@outlinefile=\write6
 \openout6 = `main.out'.
 
@@ -1139,7 +1138,8 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 
 [1
 
-{/usr/local/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}] (./main.toc)
+{/usr/local/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}]
+No file main.toc.
 \tf@toc=\write7
 \openout7 = `main.toc'.
 
@@ -1165,9 +1165,17 @@ File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 
 [6]
 
+LaTeX Warning: Reference `planaroperad' on page 7 undefined on input line 328.
+
+
+
 [7]
 
 [8]
+
+LaTeX Warning: Reference `egs_planar_operad' on page 9 undefined on input line 417.
+
+
 
 [9]
 LaTeX Font Info:    External font `lmex10' loaded for size
@@ -1190,6 +1198,13 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 
 [16]
 
+LaTeX Warning: Reference `m1m2' on page 17 undefined on input line 907.
+
+
+LaTeX Warning: Reference `SymMonBijection' on page 17 undefined on input line 917.
+
+
+
 [17]
 Overfull \hbox (14.9283pt too wide) in paragraph at lines 926--927
 []\T1/lmr/m/n/10 For ev-ery fi-nite col-lec-tion of ob-jects $\OMS/lmsy/m/n/10 f\OML/lmm/m/it/10 X[]\OMS/lmsy/m/n/10 g[]$ \T1/lmr/m/n/10 and ob-ject $\OML/lmm/m/it/10 Y$ \T1/lmr/m/n/10 in $\U/eus/m/n/10 O$\T1/lmr/m/n/10 , there is a set $[][]\OT1/lmr/m/n/10 (\OMS/lmsy/m/n/10 f\OML/lmm/m/it/10 X[]\OMS/lmsy/m/n/10 g[]\OML/lmm/m/it/10 ; Y\OT1/lmr/m/n/10 )$
@@ -1201,23 +1216,69 @@ Overfull \hbox (23.62477pt too wide) in paragraph at lines 947--955
  []
 
 
+LaTeX Warning: Reference `coloroperad' on page 18 undefined on input line 960.
+
+
 
 [18]
 
+LaTeX Warning: Reference `operad' on page 19 undefined on input line 973.
+
+
+LaTeX Warning: Reference `planaroperad' on page 19 undefined on input line 991.
+
+
+
 [19]
 
-[20])
+LaTeX Warning: Reference `m1m2' on page 20 undefined on input line 1023.
+
+
+LaTeX Warning: Reference `SymMonBijection' on page 20 undefined on input line 1023.
+
+
+LaTeX Warning: Reference `Cxdef' on page 20 undefined on input line 1065.
+
+
+LaTeX Warning: Reference `m1m2' on page 20 undefined on input line 1070.
+
+
+
+[20]
+
+LaTeX Warning: Reference `m1m2' on page 21 undefined on input line 1081.
+
+)
 
 [21] (./braided_operads.tex
 
+LaTeX Warning: Reference `planaroperad' on page 22 undefined on input line 21.
+
+
+LaTeX Warning: Reference `module' on page 22 undefined on input line 56.
+
+
+
 [22]
+
+LaTeX Warning: Reference `braidop' on page 23 undefined on input line 70.
+
+
+LaTeX Warning: Reference `egop' on page 23 undefined on input line 93.
+
+
+LaTeX Warning: Reference `egop' on page 23 undefined on input line 107.
+
+
+LaTeX Warning: Reference `braidop' on page 23 undefined on input line 113.
+
+
+LaTeX Warning: Reference `braidfacts' on page 23 undefined on input line 125.
+
+
 
 [23]
 Package hyperref Info: bookmark level for unknown todo defaults to 0 on input line 174.
-
-
-LaTeX Warning: Marginpar on page 24 moved.
-
 )
 
 [24] (./e2_operad.tex
@@ -1227,55 +1288,90 @@ LaTeX Warning: Marginpar on page 24 moved.
 [26]
 
 [27]
+Overfull \hbox (14.82617pt too wide) in paragraph at lines 367--368
+ [] 
+ []
+
+
 
 [28]
-Overfull \hbox (14.82617pt too wide) in paragraph at lines 399--400
+./e2_operad.tex:382: Missing number, treated as zero.
+<to be read again> 
+                   p
+l.382             \draw[thick] (-,0)
+                                     circle (2);
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+./e2_operad.tex:382: Missing number, treated as zero.
+<to be read again> 
+                   p
+l.382             \draw[thick] (-,0)
+                                     circle (2);
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+
+Overfull \hbox (14.82617pt too wide) in paragraph at lines 500--501
  [] 
  []
 
 
 
-[29]
-Overfull \hbox (14.82617pt too wide) in paragraph at lines 507--508
- [] 
- []
+[29])
 
-
-
-[30])
-
-[31]
+[30]
 LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 26.
  (/usr/local/texlive/2025/texmf-dist/tex/latex/lm/t1lmtt.fd
 File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 
-[32
+[31
 
 ] (./main.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
  ***********
-Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 20A2F8D73B82990FB80642B4E762C7CE;974.
+
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+
+Package rerunfilecheck Warning: File `main.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `main.out':
+(rerunfilecheck)             Before: <no file>
+(rerunfilecheck)             After:  20A2F8D73B82990FB80642B4E762C7CE;974.
+
+Package biblatex Warning: Please (re)run Biber on the file:
+(biblatex)                main
+(biblatex)                and rerun LaTeX afterwards.
+
 Package logreq Info: Writing requests to 'main.run.xml'.
 \openout1 = `main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 39673 strings out of 473190
- 763867 string characters out of 5715801
- 1564442 words of memory out of 5000000
- 62151 multiletter control sequences out of 15000+600000
+ 39612 strings out of 473190
+ 762612 string characters out of 5715801
+ 1562162 words of memory out of 5000000
+ 62100 multiletter control sequences out of 15000+600000
  662942 words of font info for 108 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 104i,17n,104p,1453b,1792s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 104i,17n,104p,1453b,1818s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/euler/eusm10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/euler/eusm5.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/euler/eusm7.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmbx7.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmex10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmmi10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmmi5.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmmi7.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr17.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr5.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr7.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr9.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmri10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmsy5.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmsy7.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmtt10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb>
-Output written on main.pdf (32 pages, 509218 bytes).
+Output written on main.pdf (31 pages, 504764 bytes).
 PDF statistics:
- 486 PDF objects out of 1000 (max. 8388607)
- 396 compressed objects within 4 object streams
- 144 named destinations out of 1000 (max. 500000)
- 69 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 433 PDF objects out of 1000 (max. 8388607)
+ 344 compressed objects within 4 object streams
+ 142 named destinations out of 1000 (max. 500000)
+ 13 words of extra memory for PDF output out of 10000 (max. 10000000)
 
