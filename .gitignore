@@ -1,0 +1,50 @@
+# Alle Dateien ignorieren
+*
+
+# Aber diese Dateitypen explizit einschließen
+!*.tex
+!*.bib
+!*.pdf
+
+# Ordner nicht ignorieren (damit Git in Unterordner schauen kann)
+!*/
+
+# Häufige LaTeX-Hilfsdateien trotzdem ignorieren
+*.aux
+*.log
+*.out
+*.toc
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+*.bbl
+*.blg
+*.bcf
+*.run.xml
+*.nav
+*.snm
+*.vrb
+*.figlist
+*.makefile
+*.lot
+*.lof
+*.idx
+*.ind
+*.ilg
+*.glo
+*.gls
+*.ist
+*.acn
+*.acr
+*.alg
+*.glg
+*.xdy
+
+# Versteckte Dateien und Ordner
+.*
+!.gitignore
+
+# Betriebssystem-spezifische Dateien
+.DS_Store
+Thumbs.db
+desktop.ini

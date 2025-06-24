@@ -1,12 +1,12 @@
 %!TEX root = main.tex
 
 \section{Braided Operads}
-    Braided operads were first mentioned by Fiedorowicz in his paper \cite{EO} on construction of $\E_n$ operads. Let $A$ be an operad in the  category of compactly generated Hausdorff spaces. The first theorem states:
+    Braided operads were first mentioned by Fiedorowicz in his paper \cite{EO} on the construction of $\E_n$ operads. Let $A$ be an operad in the  category of compactly generated Hausdorff spaces. The first theorem states:
 
     \begin{thm}[Recognition principles for $E_n$ operads]
         $A$ is an $\E_2$ operad iff $A(k)$ is connected and the collection of universal covering spaces $\{\Tilde{A}(k)\}_{k \in \N}$ forms a $B_{\infty}$ operad, i.e.:
         \begin{enumerate}[(1)]
-            \item For all $k \in \N$ $\Tilde{A}(k)$ is contractible.
+            \item For all $k \in \N$, the space $\Tilde{A}(k)$ is contractible.
             \item The braid group  $B_k$ acts freely on $\Tilde{A}(k)$ for each $k \in \N$.
         \end{enumerate}
     \end{thm}
@@ -73,7 +73,9 @@
 \end{eg}
 
 \subsection{Action Operad}
-For this section, we remain in the symmetric monoidal category of small sets equipped with the direct product as the monoidal product. We will introduce an action operad that acts on planar operads and we will see how this relates to braided operads following \cite{yau}.
+For this section, we remain in the symmetric monoidal category of sets equipped with the cartesian 
+symmetric monoidal structure. We will introduce an action operad that acts on planar operads and we will see 
+how this relates to braided operads following \cite{yau}.
 
 \begin{defin}
     An {\em action operad} is a tuple
@@ -84,14 +86,15 @@ For this section, we remain in the symmetric monoidal category of small sets equ
     \begin{enumerate}[(i)]
         \item For all $n \in \N$, $G(n)$ is a group with unit $\id_n$.
         \item There is a group homomorphism $\omega \colon G(n) \to S_n$ for all $n$ which we call augmentation. For each $g \in G(n)$ we call $\omega(g)$ the underlying permutation of $g$.
-        \item $(\{G(n)\}_{n \in \N}, \gamma^G, 1^G)$ is a one-colored planar operad in $\Set$ which we denote by $G$. It fulfills the following conditions:
+        \item The tuple $(\{G(n)\}_{n \in \N}, \gamma^G, 1^G)$ is a one-colored planar operad in $\Set$ which we denote by $G$. It fulfills the following conditions:
         \begin{enumerate}[(a)]
             \item The augmentation
             \[
             \omega \colon G \to \S
             \]
             is a morphism of planar operads in $\Set$ where $\S$ denotes the symmetry operad from \ref{egop}.
-            \item For $n \geq 1$, let $\sigma, \rho \in G(n)$ and for $k_j \in \N$, $1 \leq j \leq n$ let $\tau_j, \tau_j' \in G(k_j)$ . Then the following equation holds in $G(k)$ for $ \sum_{1 \leq j \leq n} k_j = k$:
+            \item For $n \geq 1$, let $\sigma, \rho \in G(n)$ and for $k_j \in \N$, $1 \leq j \leq n$ let $\tau_j, \tau_j' \in G(k_j)$
+            . Then the following equation holds in $G(k)$ for $ \sum_{1 \leq j \leq n} k_j = k$:
             \[
                 \gamma^G(\sigma \rho, \tau_1 \tau_1', \dots, \tau_n \tau_n') = \gamma^G(\sigma, \tau_{\bar{\rho}^{-1}(1)}, \dots, \tau_{\bar{\rho}^{-1}(n)}) \cdot \gamma^G(\rho, \tau_1', \dots, \tau_n')
             \]
@@ -125,52 +128,5 @@ We call the condition (iii)(b) the action operad equation.
     We note that $\pi(\id_1)$ is the trivial permutation and $\pi$ preserves the operadic composition as it perserves the group multiplication. The action operad equation follows from \ref{braidfacts}.
 \end{proof}
 
-\subsection{Outlook}
-    We want to define braided operads as fibrations over a suitable category. A first intuition led us to the assumption that colored braided operads might fiber over the crossed simplicial braid group as defined in \cite{Dyckerhoff}.
-    
-\begin{defin}\label{crossed_braid} The {\em crossed simplicial braid group} is a category $\Delta B$ equipped with an embedding
-	$\iota:\Delta \to \Delta B$ such that:
-	\begin{enumerate}
-		\item the functor $\iota$ is bijective on objects,
-		\item any morphism $u: \iota[m] \to \iota[n]$ in $\Delta B$ can be uniquely expressed as 
-			a composition $\iota(\phi) \circ b$ where $\phi: [m] \to [n]$ is a morphism in
-			$\Delta$ and $b \in B_m$ is acting on $\iota[m]$ in $\Delta B$.
-	\end{enumerate}
-    Note that we sometimes refer to $\iota[m]$ by writing $[m]$ instead.
-\end{defin}
 
-\begin{rem}
-    To understand composition in the category $\Delta B$ let us consider two morphisms
-    \[
-    f \colon [m] \to [n] \quad \text{and} \quad g \colon [n] \to [l]
-    \]
-    with the factorization $f = \phi_f \circ b_f$ and $g = \phi_g \circ b_g$. 
-    We define for every $j \in [n]$ an $f$-pencil $p_j$ as a collection $[j, i_1, \dots i_s]$ with $\phi_f^{-1}(j) = \{i_1 < \dots < i_s\}$. We call $s$ the width of the pencil. Note that we say it is an empty pencil $p_j$ if $\phi_f^{-1}(j) = \emptyset$.
-    
-    Then we obtain a braid on $m$ strands in the following way:
-    First, we consider $p_1, \dots, p_n$ as $n$ strand such that we can braid by $b_g$. Then, we forget the empty pencil strands; in other words we restrict the action of $b_g$ to the subset $J \subset [n]$ such that $p_j$ is not empty for all $j \in J$. However, for notation reason and without loss of generality, we assume that there are no empty pencils.    
-    We obtain a braiding on $m$ strands if we consider the action of $b_g$ on the pencils as a block braiding on $m$ strand. Each pencil corresponds to a block having the length of the pencils width. The blocks are ordered by $[n]$.
-
-    Geometrically this can be thought of as braiding the pencils. Then, as the order within the pencil remains unchanged, we can cut a pencil $[j, j_1, \dots, j_s]$ into its $s$ underlying strands. The resulting braid corresponds to $b_g(s_1, \dots, s_n) \circ b_f$ where $s_j$ is the width of the pencil $p_j$ for $j \in [n]$.
-    Thus, we define
-    \[
-        g \circ f \coloneqq \phi_g \circ (b_g(s_1, \dots, s_n) \circ b_f).
-    \]
-\end{rem}
-
-We can define a new colored operad with the crossed simplicial braid group as its indexing sets. However, this causes some issues. A braided monoidal category is supposed to be an example of the new colored operad, meaning we require a morphism in $\Delta B$, inducing the braiding in the braided monoidal category. Thus, the following diagram would have to commute in $\Delta B$:
-
-\begin{center}
-    \begin{tikzcd}
-        {[1]} \arrow[r, "\tau^1_0"] \arrow[d, "\sigma_0"'] & {[0]} \\
-        {[1]} \arrow[ru, "\tau^1_0"']                      &      
-    \end{tikzcd}
-\end{center}
-
-which is not the case. 
-
-The next step will be to investigate whether we can identify further relations to define a suitable category related to $\Delta B$.
-
-\todo{add potential fix and explain the contradiction of braid action on cartesian product}
-\todo{put outlook into Apendix}
 

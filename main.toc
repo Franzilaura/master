@@ -4,6 +4,7 @@
 \contentsline {subsection}{\numberline {1.2}Colored Operads}{12}{subsection.0.1.2}%
 \contentsline {section}{\numberline {2}Braided Operads}{22}{section.0.2}%
 \contentsline {subsection}{\numberline {2.1}Action Operad}{23}{subsection.0.2.1}%
-\contentsline {subsection}{\numberline {2.2}Outlook}{24}{subsection.0.2.2}%
-\contentsline {subsection}{\numberline {2.3}Braided monoidal structure}{25}{subsection.0.2.3}%
+\contentsline {subsection}{\numberline {2.2}Braided monoidal structure}{25}{subsection.0.2.2}%
+\contentsline {subsection}{\numberline {2.3}Universal Covering of $\E _2$}{31}{subsection.0.2.3}%
+\contentsline {section}{\numberline {3}Appendix}{34}{section.0.3}%
 \contentsfinish 

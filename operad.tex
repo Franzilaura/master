@@ -1,16 +1,17 @@
 %!TEX root = main.tex
 
-
-
-
-        
 % \begin{document}
-\section{Operads}
+\section{Operads}\label{sec:operads}
     % \cite{ha}
-    Operads are a concept that originally occurred when studying loop spaces. Let $\Omega X$ be the space of based loops in a topological space $X$. 
+    Operads are a concept that originally occurred when studying loop spaces. 
+    Let $\Omega X$ be the space of based loops in a topological space $X$. 
     Its structure reflects an interesting form of algebraic composition. 
-    The composition of loops is only associative up to homotopy equivalence meaning that loop spaces behave like a monoid in a homotopy-theoretic sense, but not in a strict algebraic sense.  
-    In algebraic topology there is a need for a framework that formalizes composition up to homotopy, which is where operads come in. An operad can be thought of as a structure that encodes a family of operations, each of which has a certain number of inputs, and a way to compose these operations together. The composition of operations in an operad satisfies associativity and unit laws. 
+    The composition of loops is only associative up to homotopy equivalence meaning 
+    that loop spaces behave like a monoid in a homotopy-theoretic
+    sense, but not in a strict algebraic sense. An operad can be thought of 
+    as a structure that encodes a family of operations, each of which has a 
+    certain number of inputs, and a way to compose these operations together. 
+    The composition of operations in an operad satisfies associativity and unit laws. 
 
     Let $\alpha \colon [0,1] \to X$ and $\beta\colon [0,1] \to X$ be loops in $X$ having the same base point $x_0$. Their composition $\beta \circ \alpha$ is usually defined by splitting the unit interval in half, i.e.
     \[ \beta \circ \alpha (s) \coloneqq
@@ -62,13 +63,21 @@
                 \sum_{1 \leq s \leq k} j_s = j, ~ \sum_{1 \leq r \leq j} i_r = i, \ g_s = \sum_{0 \leq l \leq s} j_l \ \text{and} \ h_s = \sum_{1 \leq q \leq j_s} i_{g_{s-1}+q}.
             \]
     
-    Further composing with the identity embedding in $\E(1)$ does nothing. Thus, we have seen our first example of an operad, providing a framework in which the composition of loop spaces satisfies associativity.
+    Further composing with the identity embedding in $\E(1)$ does nothing. Thus, we have seen our 
+    first example of an operad, providing a framework in which the composition of loop spaces 
+    satisfies associativity.
 
-    In this way, operads provide a more general and flexible formalism for capturing the algebraic structures found in loop spaces and other topological constructs where composition occurs up to homotopy. 
-    Similarly to monoids that can be considered as single object categories, operads can be considered as single object multicategories. 
-    In this section, we will introdue the notion of a planar and a symmetric operad as they were introduced by May in \cite{may}. Then, we will move on to the more general notion of a colored operad following \cite{ha}. We will establish a second equivalent definition of a colored operad that is purely functorial, meaning we can therefore also phrase it in an $\infty$-categorial context.
-    In the next section we will then consider braided operads and we work towards defining braided colored operads.
-    Ultimately, our goal is a purely functorial definition of a braided colored operad such that we can lift the concept to an $\infty$-categorial context as well.
+    In this way, operads provide a more general and flexible formalism for capturing the algebraic 
+    structures found in loop spaces and other topological constructs where composition occurs up to 
+    homotopy. Similarly to monoids that can be considered as single object categories, operads can be 
+    considered as single object multicategories. 
+    In this section, we will introdue the notion of a planar and a symmetric operad as they were 
+    introduced by May in \cite{may}. Then, we will move on to the more general notion of a colored 
+    operad following \cite{ha}. We will establish a second equivalent definition of a colored operad 
+    that is purely categorical, meaning we can therefore also phrase it in an $\infty$-categorial context.
+    In the next section we will then consider braided operads and we work towards defining braided 
+    colored operads. Ultimately, our goal is a purely functorial definition of a braided colored operad 
+    such that we can lift the concept to an $\infty$-categorial context as well.
 
     \subsection{Planar and Symmetric Operads}
 
@@ -98,7 +107,7 @@
                     \P(k) \otimes (\bigotimes_{s=1}^k (\P(j_s) \otimes \bigotimes_{q=1}^{j_s} \P(i_{g_{s-1}+q})) \arrow[rr, "\id \otimes (\otimes_s \gamma)"'] &  & \P(k) \otimes ((\bigotimes_{s=1}^k \P(h_s)) \arrow[u, "\gamma"']
                 \end{tikzcd}
                 \end{center}
-                where $s$ shuffles the tensor product.
+                where $s$ shuffles the entries of the tensor product.
         
                 
             \item For all $j \in \N$ the following diagrams commute:
@@ -112,25 +121,34 @@
     \end{defin}
 
     \begin{egs}\label{egs_planar_operad}
+        Let us consider some examples of planar operads in a symmetric monoidal category $\C$:
         \begin{enumerate} 
-            \item Later we will define what it means to be an algebra over an operad. The \textit{associative operad} $\Ass$ is the operad whose algebras are monoids. 
-            The associative planar operad in $\C$ is the operad $\Ass_{\C}(n) = \I$ for all $i \in \N$ with $\id_{\I}$ being the unit and the composition map being the canonical isomorphism. Hence, for $\C=\Set$, the category of small sets equipped with the cartesian product, we obtain exactly one $n$-ary operation for each $n$: $\Ass_{\Set}$ is defined by $\Ass_{\Set}(n) = \ast$ for all $n$.
-            Similarly, for $\C = \Vect_K$ we get the free abelian vector space over $\ast$, i.e. $K$.
+            \item Later we will define what it means to be an algebra over an operad. The \textit{associative operad} 
+            $\Ass$ is the operad whose algebras are associative monoids. The associative planar operad in $\C$ is 
+            the operad $\Ass_{\C}(n) = \I$ for all $i \in \N$ with $\id_{\I}$ being the unit and the composition 
+            map being the canonical isomorphism. Hence, for $\C=\Set$, the category of sets equipped with 
+            the cartesian symmetric monoidal structure, we obtain exactly one $n$-ary operation for each $n$: $\Ass_{\Set}$
+            is defined by $\Ass_{\Set}(n) = \ast$ for all $n$. Similarly, for $\C = \Vect_K$ we get the free abelian 
+            vector space over $\ast$, i.e. $K$.
             
         
-            \item At the beginning of the section we already saw that the concatenation of loops defines an operad: Let $\C = \Top$. Then we can define the \textit{operad of little interval} $\E$ as
+            \item At the beginning of the section we already saw that the concatenation of loops defines an operad: 
+            Let $\C = \Top$. Then we can define the \textit{operad of little interval} $\E$ as
             \[
                 \E(n) = \Emb(I_1, \dots, I_n, I),
             \]
-            the set of orientation-preserving embeddings of $n$ disjoint intervals into the unit interval $I$. We equip $\E(n)$ with the subspace topology from being a subset of $\R^n$. Composition is defined by inserting the intervals into another interval as we have seen above.
+            the set of orientation-preserving embeddings of $n$ disjoint intervals into the unit interval $I$. 
+            We equip $\E(n)$ with the subspace topology of $\R^n$. Composition is defined 
+            by inserting the intervals into another interval as we have seen above.
             
-            \item For $\C$ being closed, i.e. having an internal hom functor $\HHom(-, -)$, we can define another planar operad $\End_X$ for any object $X \in \C$:
+            \item For $\C$ being closed, i.e. having an internal hom functor $\HHom(-, -)$, we can define 
+            another planar operad $\End_X$ for any object $X \in \C$:
             \[
-                \End_X(n) \coloneqq \HHom(X^{\otimes n}, X).
+                \End_X(n) \coloneqq \HHom(X^{\otimes n}, X)
             \]
             The unit morphism $\eta$ is given by the image of $\id_X$ under the adjunction:
             \[
-                \Hom(X,X) \cong \Hom(I, \HHom(X,X)).
+                \Hom(X,X) \cong \Hom(I, \HHom(X,X))
             \]
             Further, the composition morphism 
             \[
@@ -338,7 +356,7 @@
                 
                 \begin{center}
                 \begin{tikzcd}
-                    \O(k) \otimes \O(j_1) \otimes \cdots \otimes \O(j_k) \arrow[d, "\gamma"'] \arrow[rr, "\id \otimes \tau_1 \otimes \cdots \otimes \tau_k"] &  & \O(k) \otimes \O(j_{\sigma(1)}) \otimes \cdots \otimes \O(j_{\sigma(k)}) \arrow[d, "\gamma"] \\
+                    \O(k) \otimes \O(j_1) \otimes \cdots \otimes \O(j_k) \arrow[d, "\gamma"'] \arrow[rr, "\id \otimes \tau_1 \otimes \cdots \otimes \tau_k"] &  & \O(k) \otimes \O(j_1) \otimes \cdots \otimes \O(j_k) \arrow[d, "\gamma"] \\
                     \O(j) \arrow[rr, "\tau_1 \oplus \cdots \oplus \tau_k"']                                                                                &  & \O(j).                                                                                     
                 \end{tikzcd}
                 \end{center}
@@ -347,32 +365,32 @@
     As already mentioned we introduce operads as a tool to generally encode algebraic structure.
         
     \begin{defin}
-        Let $O$ be an operad in $C$. An $O${\em -algebra} is an object A in $C$ with maps
+        Let $\O$ be an operad in $C$. An $\O${\em -algebra} is an object A in $C$ with maps
         \[
-            \theta \colon O(j) \otimes A^j \rightarrow A
+            \theta \colon \O(j) \otimes A^j \rightarrow A
         \]
         for $j \in \N$ such that the following associativity, unitality and equivariant conditions hold:
         \begin{itemize}
             \item Associative:
                 \begin{center}
                     \begin{tikzcd}
-                        O(k) \otimes O(j_1) \otimes \cdots \otimes O(j_k) \otimes A^j \arrow[rr, "\gamma \otimes \id"] \arrow[dd, "s"'] &  & O(j) \otimes A^j \arrow[d, "\theta"]  \\
+                        \O(k) \otimes \O(j_1) \otimes \cdots \otimes \O(j_k) \otimes A^j \arrow[rr, "\gamma \otimes \id"] \arrow[dd, "s"'] &  & \O(j) \otimes A^j \arrow[d, "\theta"]  \\
                         &  & A  \\
-                        O(k) \otimes (\bigotimes (O(j_l) \otimes A^{j_l})) \arrow[rr, "\id \otimes \theta^k"']               &  & O(k) \otimes A^k \arrow[u, "\theta"']
+                        \O(k) \otimes (\bigotimes (\O(j_l) \otimes A^{j_l})) \arrow[rr, "\id \otimes \theta^k"']               &  & \O(k) \otimes A^k \arrow[u, "\theta"']
                     \end{tikzcd}
                 \end{center}
             \item Unital:
                 \begin{center}
                     \begin{tikzcd}
                         \I \otimes A \arrow[d, "\eta \otimes \id"'] \arrow[r, "\cong"] & A \\
-                        O(1) \otimes A \arrow[ru, "\theta"']                          &  
+                        \O(1) \otimes A \arrow[ru, "\theta"']                          &  
                     \end{tikzcd}
                 \end{center}
             \item Equivariant:
                 For all $j \in \N$ and $\sigma \in S_j$:
                 \begin{center}
                     \begin{tikzcd}
-                        O(j) \otimes A^j \arrow[rr, "\sigma \otimes \sigma^{-1}"] \arrow[rd, "\theta"'] &   & O(j) \otimes A^j \arrow[ld, "\theta"] \\
+                        \O(j) \otimes A^j \arrow[rr, "\sigma \otimes \sigma^{-1}"] \arrow[rd, "\theta"'] &   & \O(j) \otimes A^j \arrow[ld, "\theta"] \\
                         & A &     
                     \end{tikzcd}
                 \end{center} 
@@ -380,18 +398,18 @@
     \end{defin}
 
     \begin{defin}\label{module}
-        Let $O$ be an operad in $\C$, $A$ an $O$-algebra. We call an object $M$ in $\C$ with maps
+        Let $\O$ be an operad in $\C$, $A$ an $\O$-algebra. We call an object $M$ in $\C$ with maps
         \[
-            \omega \colon O(j) \otimes A^{j-1} \otimes M \rightarrow M 
+            \omega \colon \O(j) \otimes A^{j-1} \otimes M \rightarrow M 
         \]
         an $A${\em-module} if it satisfies the following associativity, unitality and equivariance conditions:
         \begin{itemize}
             \item Associative: For all $\sum j_l = j$ in $\N$ the following diagrams commute:
                 \begin{center}
                 \begin{tikzcd}
-                    O(k) \otimes O(j_1) \otimes \cdots \otimes O(j_k) \otimes A^{j-1} \otimes M \arrow[rr, "\gamma \otimes \id"] \arrow[dd, "s"']                                   &  & O(j) \otimes A^{j-1} \otimes M \arrow[d, "\omega"]  \\
+                    \O(k) \otimes \O(j_1) \otimes \cdots \otimes \O(j_k) \otimes A^{j-1} \otimes M \arrow[rr, "\gamma \otimes \id"] \arrow[dd, "s"']                                   &  & \O(j) \otimes A^{j-1} \otimes M \arrow[d, "\omega"]  \\
                     &  & M  \\
-                    O(k) \otimes \left(\bigotimes_{l=1}^{k-1} O(j_l) \otimes A^{j_l}\right) \otimes O(j_k) \otimes A^{j_k -1} \otimes M \arrow[rr, "\id \otimes \theta^{k-1} \otimes \omega"'] &  & O(k) \otimes A^{k-1} \otimes M \arrow[u, "\omega"']
+                    \O(k) \otimes \left(\bigotimes_{l=1}^{k-1} \O(j_l) \otimes A^{j_l}\right) \otimes \O(j_k) \otimes A^{j_k -1} \otimes M \arrow[rr, "\id \otimes \theta^{k-1} \otimes \omega"'] &  & \O(k) \otimes A^{k-1} \otimes M \arrow[u, "\omega"']
                 \end{tikzcd}
                 \end{center}
                 
@@ -399,14 +417,14 @@
                 \begin{center}
                 \begin{tikzcd}
                     \I \otimes M \arrow[r, "\cong"] \arrow[d, "\eta \otimes \id"'] & M \\
-                    O(1) \otimes A^0 \otimes M \arrow[ru, "\omega"']              &  
+                    \O(1) \otimes A^0 \otimes M \arrow[ru, "\omega"']              &  
                 \end{tikzcd}
                 \end{center}
         
             \item Equivariant: For all $j \in \N$ and $\sigma \in S_{j-1} \subset S_j$, the following diagram commutes:
                 \begin{center}
                 \begin{tikzcd}
-                    O(j) \otimes A^{j-1} \otimes M \arrow[rd, "\omega"'] \arrow[rr, "\sigma \otimes \sigma^{-1} \otimes \id"] &   & O(j) \otimes A^{j-1} \otimes M \arrow[ld, "\omega"] \\
+                    \O(j) \otimes A^{j-1} \otimes M \arrow[rd, "\omega"'] \arrow[rr, "\sigma \otimes \sigma^{-1} \otimes \id"] &   & \O(j) \otimes A^{j-1} \otimes M \arrow[ld, "\omega"] \\
                      & M &                                                    
                 \end{tikzcd}
                 \end{center}
@@ -436,10 +454,10 @@
         \begin{enumerate} \label{egop}
             \item A natural question is whether the associative planar operad and the associative operad in a category $\C$ coincide.
             % However, this is not the case. 
-            For $\C = \Set$, we can equip the 
+            For $\C = \Set$, we can equip the associative operad
             $$\Ass_{\Set}^{\text{planar}}(n) = \ast$$ 
             with the trivial action of $S_n$. Yet this appears to be too restrictive:
-            The equivariance condition implies that algebras over this operad are not just monoids but commutative monoids. To distinguish operations after acting by $S_n$, we can think of a more suited candidate: $\Ass(n)=S_n$ for all $n \in \N$ where $S_n$ acts on $\Ass(n)$ by composition. The composition map is defined by considering a sum of permutations and then permuting $k$ blocks of length $j_i$ for $1 \leq i \leq k$: 
+            The equivariance condition implies that algebras over this operad are not just monoids but commutative monoids. To distinguish operations after acting by $S_n$, we can think of a more suited candidate: $\Ass(n)=S_n$ for all $n \in \N$ where $S_n$ acts on $\Ass(n)$ by translation. The composition map is defined by considering a sum of permutations and then permuting $k$ blocks of length $j_i$ for $1 \leq i \leq k$: 
             \begin{align*}
                 \gamma \colon \Ass(k) \times \Ass(j_1) 
                 \times \dots \times \Ass(j_k) & \to \Ass(k)\\
@@ -455,7 +473,7 @@
             \[
                 \dd^n = \left\{ (r_1, \dots, r_n) \in \R^n \colon r_1^2 + \dots + r_n^2 \leq 1\right\} \subset \R^n
             \]
-            is the closed unit $n$-disc. A little $n$-disc is defined as the embedding $f \colon \dd^n \to \dd^n$ of the following form:
+            is the closed unit $n$-disk. A little $n$-disk is defined as the embedding $f \colon \dd^n \to \dd^n$ of the following form:
             \[
              f(r_1, \dots, r_n) \coloneqq (c_1, \dots, c_n) 
             + \lambda(r_1, \dots, r_n)
@@ -464,7 +482,7 @@
             \[
                 0 < \lambda \leq 1 - \sum_{i=1}^{n} c_i^2.     
             \]
-            We denote the interior of a little disc by $\inter(f)$ and define for $k > 0$:
+            We denote the interior of a little disk by $\inter(f)$ and define for $k > 0$:
             \[
                 \dd_n(k) \coloneqq \left\{ f_1 \sqcup \dots \sqcup f_n \in C\left(\bigsqcup_{i=1}^k \dd^n, \dd^n\right) \colon \inter(f_i) \cap \inter(f_j) = \emptyset \text{ for all } i \not= j\right\} 
             \]
@@ -490,7 +508,7 @@
                 \item Start with a configuration in $\dd_n(k)$, which gives $k$ disks inside the unit disk.
                 \item Each of the $k$ disks is treated as a new "unit disk" in which a configuration from $\dd_n(l_1), \dd_n(l_2), \dots, \dd_n(l_k)$ can be inserted.
                 \item The configurations from $\dd_n(l_1), \dd_n(l_2), \dots, \dd_n(l_k)$ are scaled down to fit inside the respective disks from the configuration in $\dd_n(k)$, and they are inserted.
-                \item After placing all configurations inside the $k$ disks, the seams are erased, yielding a new configuration in $\dd_n(n_1 + \dots + n_k)$.
+                \item After placing all configurations inside the $k$ disks, the boundary are erased, yielding a new configuration in $\dd_n(n_1 + \dots + n_k)$.
             \end{itemize}
             
             \begin{center}
@@ -551,10 +569,9 @@
             This satisfies the unitality condition for operads by definition, where inserting a single disk into another disk does not alter any configuration:
                 $\gamma((f, (\id)_{1 \leq i \leq k})) = f$
             and 
-                $\gamma(\id, g) = g$.
+                $\gamma((\id, g)) = g$.
             
             The composition map satisfies the associativity condition by definition.
-            In other words inserting disks into one another is associative.
 
             The disks are labeled, and there is an action of the symmetric group $S_k$ on $\dd_n(k)$, which permutes the labels of the disks: 
             For $f_1 \sqcup \dots \sqcup f_k \in \dd_n(k)$ and $\sigma \in S_k$:
@@ -606,7 +623,11 @@
 
     \subsection{Colored Operads}
     
-    Following \cite{ha}, the goal of this section is to introduce colored operads in such a way that we can define colored infinite operads later on. As we will see, a symmetric monoidal category is an example of a colored operad. Thus, we will focus on this special case first. We will show that a symmetric monoidal category can be defined in a purely functorial way. After that we will then follow this approach and define the notion of a colored operad in a similar way.
+    Following \cite{ha}, the goal of this section is to introduce colored operads in such a way that we 
+    can define colored $\infty$-operads later on. A symmetric monoidal category is an 
+    example of a colored operad. Thus, we will focus on this special case first. We will show that a symmetric 
+    monoidal category can be defined in a purely functorial way. After that we will then follow this approach 
+    and define the notion of a colored operad in a similar way.
     
     Let us start by introducing some terminology.
     
@@ -636,7 +657,7 @@
 
     \begin{defin}
         Let $P \colon \C \to \D$ be a functor. $P$ is called a {\em (Grothendieck) fibration} if for every object y in $\C$ and morphisms $f' \colon x' \to P(y)$ there exists a cartesian morphism $f \colon x \to y$ such that $f' = P(f)$.
-        We call $f$ a cartesian lifting of $f'$ and $f'$ a cleavage.
+        We call $f$ a cartesian lift of $f'$ and $f'$ a cleavage.
         Dually we define the notion of a {\em (Grothendieck) cofibration}, i.e. $P$ is a cofibration if for every object $x$ in $\C$ and morphism $f' \colon P(x) \to y'$ there exists a cocartesian morphism $f \colon x \to y$ such that $P(f)=f'$.
     \end{defin}
 
@@ -669,7 +690,7 @@
     \begin{defin}
         We define $\Fin$, the {\em category of finite pointed sets}, as follows:
         \begin{itemize}
-            \item For each $n \in \N$ we have $\langle n \rangle^{\circ} := \{1, \dots, n\}$. We define the objects of $\Fin$ as $ \langle n \rangle := \langle n \rangle^{\circ}_*$.
+            \item For each $n \in \N$ we write $\langle n \rangle^{\circ} := \{1, \dots, n\}$. We define the objects of $\Fin$ as $ \langle n \rangle := \langle n \rangle^{\circ}_*$.
             \item A morphism $\alpha \colon \langle n \rangle \to \langle m \rangle$ is a map of finite sets where $\alpha(*)=*$
         \end{itemize}
     \end{defin}
@@ -742,17 +763,26 @@
             $$\omega \colon [C_1', \dots, C_m'] \to [C_1'', \dots, C_l'']$$
             
             such that $g = \omega \circ f$ and $P(\omega) = \omega'$.
-            We are forced to define $\alpha_{\omega}:= \omega'|_{S_{\omega}}$ where $$S_{\omega} = \omega'^{-1}(\langle l \rangle ^{\circ}).$$
-            By construction we have $\alpha_g = \alpha_{\omega} \circ \alpha_f$ and by definition of $C_j'$ we are forced to define for all $1 \leq j \leq l$:
+            We are forced to define $\alpha_{\omega}:= \omega'|_{S_{\omega}}$ where 
+            $$S_{\omega} = \omega'^{-1}(\langle l \rangle ^{\circ}).$$
+            By construction we have $\alpha_g = \alpha_{\omega} \circ \alpha_f$ and by definition of $C_j'$ 
+            we are forced to define for all $1 \leq j \leq l$:
             \[
              \omega_j \colon \bigotimes_{\alpha_{\omega}(k)=j} C_k' \cong \bigotimes_{\alpha_{\omega}(k)=j} \bigotimes_{\alpha_f(i)=k} C_i \cong \bigotimes_{\alpha_g(k)=j} C_k \xrightarrow{g_j} C_j''
             \]
-            Uniqueness of $\omega$ follows from $\C$ being a symmetric monoidal category. Hence, $f$ is cocartesian.
+            Uniqueness of $\omega$ follows from $\C$ being a symmetric monoidal category. 
+            Hence, $f$ is cocartesian.
             
-            \item Let $F \colon \Cotimes_{\langle 1 \rangle} \to \C$ be a functor that sends $[C]$ to $C$. Let $f \colon [C] \to [C']$ be a morphism in $\Cotimes_{\langle 1 \rangle}$, then $\alpha_f = \id_{\{1\}}$ and there is just one morphism $f_1 \colon C \to C'$ corresponding to $f$. So, we define $F(f) = f_1$. It follows by definition that $F$ is fully faithful and essentially surjective, i.e. an equivalence of categories.
+            \item Let $F \colon \Cotimes_{\langle 1 \rangle} \to \C$ be a functor that sends $[C]$ to $C$. Let
+            $f \colon [C] \to [C']$ be a morphism in $\Cotimes_{\langle 1 \rangle}$, then $\alpha_f = \id_{\{1\}}$ 
+            and there is just one morphism $f_1 \colon C \to C'$ corresponding to $f$. So, we define $F(f) = f_1$. 
+            It follows by definition that $F$ is fully faithful and essentially surjective, i.e. an equivalence of 
+            categories.
 
-            First, we will show that for any morphism $\langle n \rangle \to \langle m \rangle$ (M1) induces a functor of fiber categories $A \colon \Cotimes_{\langle n \rangle} \to \Cotimes_{\langle m \rangle}$:
-            Let $\alpha \colon \langle n \rangle \to \langle m \rangle$ be a morphism in $\Fin$ and $[C_1, \dots, C_n]$ an object in $\Cotimes_{\langle n \rangle}$. By (M1), we can find a cocartesian morphism 
+            First, we will show that for any morphism $\langle n \rangle \to \langle m \rangle$ the cofibration condition (M1) 
+            induces a functor of fiber categories $A \colon \Cotimes_{\langle n \rangle} \to \Cotimes_{\langle m \rangle}$:
+            Let $\alpha \colon \langle n \rangle \to \langle m \rangle$ be a morphism in $\Fin$ and $[C_1, \dots, C_n]$
+            an object in $\Cotimes_{\langle n \rangle}$. By (M1), we can find a cocartesian morphism 
             $$f_{\alpha} \colon [C_1, \dots, C_n] \to [C_1', \dots, C_m'].$$
             Therefore, we can define 
             \[
@@ -765,9 +795,15 @@
             \[
             g \colon [C_1', \dots, C_m'] \to [\tilde{C_1'}, \dots, \tilde{C_m'}] \quad \text{and} \quad g' \colon [\tilde{C_1'}, \dots, \tilde{C_m'}] \to [C_1', \dots, C_m']
             \]
-            corresponding to the cocartesian property of $f_{\alpha}$ and $f_{\alpha}'$ respectively. Because of uniqueness we obtain $g \circ g'  = \id_{[\tilde{C_1'}, \dots, \tilde{C_m'}]}$ and $g' \circ g = \id_{[C_1', \dots, C_m']}$. Therefore, the choice of a cocartesian morphism is unique up to isomorphism.
+            corresponding to the cocartesian property of $f_{\alpha}$ and $f_{\alpha}'$ respectively. 
+            Because of uniqueness we obtain $g \circ g'  = \id_{[\tilde{C_1'}, \dots, \tilde{C_m'}]}$ and 
+            $g' \circ g = \id_{[C_1', \dots, C_m']}$. Therefore, the choice of a cocartesian morphism is 
+            unique up to isomorphism.
             
-            Let $f \colon [C_1, \dots, C_n] \to [\bar{C_1}, \dots, \bar{C_n}]$ be a morphism in $\Cotimes_{\langle n \rangle}$. We obtain a unique morphism $f' \colon [C_1', \dots, C_m'] \to [\bar{C_1'}, \dots, \bar{C_m'}]$ from the fact that $f_{\alpha}$ is cocartesian.
+            Let $f \colon [C_1, \dots, C_n] \to [\bar{C_1}, \dots, \bar{C_n}]$ be a morphism in 
+            $\Cotimes_{\langle n \rangle}$. We obtain a unique morphism 
+            $f' \colon [C_1', \dots, C_m'] \to [\bar{C_1'}, \dots, \bar{C_m'}]$ from the fact 
+            that $f_{\alpha}$ is cocartesian.
             
             \begin{center}
                 \begin{tikzcd}
@@ -776,9 +812,12 @@
                 \end{tikzcd}
             \end{center}
 
-            Hence, we can define $A(f) \coloneqq f'$. Due to uniqueness of $f'$, $A$ preserves composition and maps identities to identities.
+            Hence, we can define $A(f) \coloneqq f'$. Due to uniqueness of $f'$, $A$ preserves composition and 
+            maps identities to identities.
 
-            Let $P^i \colon \Cotimes_{\langle n \rangle} \to \Cotimes_{\langle 1 \rangle} \cong \C$ be the functor corresponding to $\rho^i \colon \langle n \rangle \to \langle 1 \rangle$ which we defined previously for all $1 \leq i \leq n$. Then from the universal property of the product, it follows that 
+            Let $P^i \colon \Cotimes_{\langle n \rangle} \to \Cotimes_{\langle 1 \rangle} \cong \C$ be the functor 
+            corresponding to $\rho^i \colon \langle n \rangle \to \langle 1 \rangle$ which we defined previously 
+            for all $1 \leq i \leq n$. Then from the universal property of the product, it follows that 
             \[
             \prod_{1 \leq i \leq n} P^i \colon \Cotimes_{\langle n \rangle} \to \C^n
             \] is an equivalence of categories. 
@@ -794,9 +833,15 @@
         \end{enumerate}
     \end{proof}
 
-    Note that in the following we might refer to the constructed functor $\Cotimes_{\langle n \rangle} \to \Cotimes_{\langle m \rangle}$ originated from $\alpha \colon \langle n \rangle \to \langle m \rangle$ also by $\alpha$.
+    Note that in the following we might refer to the constructed functor 
+    $\Cotimes_{\langle n \rangle} \to \Cotimes_{\langle m \rangle}$ originated from 
+    $\alpha \colon \langle n \rangle \to \langle m \rangle$ also by $\alpha$.
 
-We are now well prepared to see that the symmetric monoidal structure on $\C$ is decoded in $\Cotimes$ and its forgetful functor $P \colon \Cotimes \to \Fin$ satisfying the above conditions. In other words, for any category $\D$ together with a functor $P \colon \D \to \Fin$ satisfying (M1) and (M2), we can construct a symmetric monoidal  category $\C$ such that $\D \cong \Cotimes$ and $P$ is the usual forgetful functor. The right candidate for $\C$ is clearly $\D_{\langle 1 \rangle}$.
+We are now well prepared to see that the symmetric monoidal structure on $\C$ is encoded in $\Cotimes$ and 
+its forgetful functor $P \colon \Cotimes \to \Fin$ satisfying the above conditions. In other words, for 
+any category $\D$ together with a functor $P \colon \D \to \Fin$ satisfying (M1) and (M2), we can construct
+a symmetric monoidal  category $\C$ such that $\D \cong \Cotimes$ and $P$ is the usual forgetful functor. 
+The right candidate for $\C$ is clearly $\D_{\langle 1 \rangle}$.
 
  \begin{prop}\label{SymMonBijection}
     There is a bijection
@@ -806,14 +851,19 @@ We are now well prepared to see that the symmetric monoidal structure on $\C$ is
  \end{prop}
 
  \begin{proof}
-    Let $\D$ be a category and $P \colon \D \to \Fin$ a functor satisfying (M1) and (M2). We will equip $\C \coloneqq \D_{\langle 1 \rangle}$ with a symmetric monoidal structure and see that there is an equivalence of categories $\Cotimes \cong \D$.
+    Let $\D$ be a category and $P \colon \D \to \Fin$ a functor satisfying (M1) and (M2). We will equip 
+    $\C \coloneqq \D_{\langle 1 \rangle}$ with a symmetric monoidal structure and see that there is an 
+    equivalence of categories $\Cotimes \cong \D$.
     \begin{enumerate}
-    \item For the map $\alpha \colon \langle 2 \rangle \to \langle 1 \rangle$ with $\alpha^{-1}(1) = \{1,2\}$ we obtain the following functor using (M2):
+    \item For the map $\alpha \colon \langle 2 \rangle \to \langle 1 \rangle$ with $\alpha^{-1}(1) = \{1,2\}$ 
+    we obtain the following functor using (M2):
         \[
             \bigotimes \colon \C \times \C \cong \D_{\langle 2 \rangle} \overset{\alpha}\rightarrow \C
         \]
         
-    \item There is a unique morphism $\eta \colon \langle 0 \rangle \to \langle 1 \rangle$ in $\Fin$ defining a functor $\D_{\langle 0 \rangle} \to \C$ which gives us a unique object $I$ in $\C$. This object $I$ will serve as the tensor unit which follows from the following commuting diagram:
+    \item There is a unique morphism $\eta \colon \langle 0 \rangle \to \langle 1 \rangle$ in $\Fin$ 
+    defining a functor $\D_{\langle 0 \rangle} \to \C$ which gives us a unique object $I$ in $\C$. 
+    This object $I$ will serve as the tensor unit which follows from the following commuting diagram:
     \begin{center}
         \begin{tikzcd}
         \D_{\langle 0 \rangle} \times \D_{\langle 1 \rangle} \arrow[r, "\eta \times \id"] & \D_{\langle 1 \rangle} \times \D_{\langle 1 \rangle} \arrow[r, "\cong"] & \D_{\langle 2 \rangle} \arrow[rd, "\otimes"] &                        \\
@@ -886,12 +936,17 @@ We are now well prepared to see that the symmetric monoidal structure on $\C$ is
 
 \begin{rem}
     With some adjustments this construction can also be done for a monoidal category $\C$. 
-    The category $\Cotimes$ is defined analoguously to the symmetric case. But we choose ordered indexing sets $[n]^{\circ} \coloneqq \{0 < \dots < n\}$ and for a morphism $f \colon [C_1, \dots, C_n] \to [C_1', \dots, C_m']$ we require that $\alpha_f$ preserves the order.
+    The category $\Cotimes$ is defined analoguously to the symmetric case. But we choose ordered 
+    indexing sets $[n]^{\circ} \coloneqq \{0 < \dots < n\}$ and for a morphism 
+    $f \colon [C_1, \dots, C_n] \to [C_1', \dots, C_m']$ we require that $\alpha_f$ preserves the order.
     Further, we can define the {\em pointed simplex category} $\deltast$ as follows:
     \begin{itemize}
-        \item For each $n \in \N$ we define an object in $\deltast$ as $[n] \coloneqq [n]^{\circ} \sqcup \{\ast\}$.
-        \item The single pointed set $\{ \ast \}$ is an object in $\deltast$. There are morphisms $\{\ast\} \hookrightarrow [n]$ for all $n$.
-        \item A morphism $\alpha \colon [n] \to [m]$ is a order preserving map on $\alpha^{-1}([m])$ and $\alpha(\ast) = \ast$.
+        \item For each $n \in \N$ we define an object in $\deltast$ as 
+        $[n] \coloneqq [n]^{\circ} \sqcup \{\ast\}$.
+        \item The single pointed set $\{ \ast \}$ is an object in $\deltast$. There are morphisms 
+        $\{\ast\} \hookrightarrow [n]$ for all $n$.
+        \item A morphism $\alpha \colon [n] \to [m]$ is a order preserving map on $\alpha^{-1}([m])$ 
+        and $\alpha(\ast) = \ast$.
     \end{itemize}
     Note that for all pairs $0 \leq i \leq n$, we have $\rho^i \colon [n] \to [0]$ in $\deltast$ with
     \[
@@ -904,31 +959,39 @@ We are now well prepared to see that the symmetric monoidal structure on $\C$ is
     \[
         P \colon \Cotimes \to \deltast
     \]
-    This functor is a cofibration. The proof in \ref{m1m2} applies. Note that for the proof the fact that morphisms in $\deltast$ preserve order is essential, otherwise we could not define
+    This functor is a cofibration. The proof in \ref{m1m2} applies. Note that for the proof the fact 
+    that morphisms in $\deltast$ preserve order is essential, otherwise we could not define
     \[
              \omega_j \colon \bigotimes_{\alpha_{\omega}(k)=j} C_k' \cong \bigotimes_{\alpha_{\omega}(k)=j} \bigotimes_{\alpha_f(i)=k} C_i \cong \bigotimes_{\alpha_g(k)=j} C_k \xrightarrow{g_j} C_j''
             \]
     in a monoidal category $\C$.
-    Further, the (M2) property applies as it is a result of the (M1) property and the fact that $\rho^i$ is a morphism in $\deltast$.
+    Further, the (M2) property applies as it is a result of the (M1) property and the fact that $\rho^i$ is 
+    a morphism in $\deltast$.
     It then also follows that there is a bijection
     \[
     \{\text{monoidal categories}\} \cong \{\text{cofibration } \D \to \deltast \text{ satisfying (M2)}\}
     \]
-    The proof for this is analoguously to \ref{SymMonBijection} as all morphisms in $\Fin$ that induce a monoidal structure on $\C$ are order preserving and can be considered in $\deltast$.
+    The proof for this is analoguously to \ref{SymMonBijection} as all morphisms in $\Fin$ that induce a 
+    monoidal structure on $\C$ are order preserving and can be considered in $\deltast$.
 \end{rem}
 
-We will now introduce the notion of a colored operad and will move on to see that, similarly to describing a symmetric monoidal structure via a functor satisfying (M1) an (M2), there is also a functor satisfying similar properties that encode the datum of a colored operad.
+We will now introduce the notion of a colored operad and will move on to see that, similarly to describing 
+a symmetric monoidal structure via a functor satisfying (M1) an (M2), there is also a functor satisfying 
+similar properties that encode the datum of a colored operad.
 
 \begin{defin}\label{coloroperad}
     A {\em colored operad} $\O$ consists of the following data:
     \begin{enumerate}[(i)]
         \item A collection $\{X,Y,Z; \dots\}$ which we call objects or colors of the operad.
-        \item For every finite collection of objects $\{X_i\}_{i \in I}$ and object $Y$ in $\O$, there is a set $\Mul_{\O}(\{X_i\}_{i \in I}, Y)$ called the set of morphisms from $\{X_i\}_{i \in I}$ to $Y$.
-        \item For any finite map $I \to J$ with fibers denoted by $I_j$ for all $j \in J$, collections of objects $\{X_i\}_{i \in I}$ and $\{Y_j\}_{j \in J}$ and object $Z$, there is a composition map
+        \item For every finite collection of objects $\{X_i\}_{i \in I}$ and object $Y$ in $\O$, there is 
+        a set $\Mul_{\O}(\{X_i\}_{i \in I}, Y)$ called the set of morphisms from $\{X_i\}_{i \in I}$ to $Y$.
+        \item For any finite map $I \to J$ with fibers denoted by $I_j$ for all $j \in J$, collections of 
+        objects $\{X_i\}_{i \in I}$ and $\{Y_j\}_{j \in J}$ and object $Z$, there is a composition map
         \[
             \prod_{j \in J} \Mul_{\O}(\{X_i\}_{i \in I_j}, Y_j) \times \Mul_{\O}(\{Y_j\}_{j\in J}, Z) \to \Mul_{\O}(\{X_i\}_{i \in I}, Z)  
         \]
-        \item There is a collection of morphisms $\{ \id_X \in \Mul_{\O}(\{X\}, X)\}_{X \in \O}$ being a left and right unit in the composition, i.e. the following diagrams commute:
+        \item There is a collection of morphisms $\{ \id_X \in \Mul_{\O}(\{X\}, X)\}_{X \in \O}$ being a left 
+        and right unit in the composition, i.e. the following diagrams commute:
         \begin{center}
             \begin{tikzcd}
                 {\Mul_{\P}(X_I, Y)} \arrow[r, "\cong"] \arrow[d, "\id"] & {\Mul_{\P}(X_I, Y) \times \{\id_Y\}} \arrow[d, hook]           \\
@@ -942,7 +1005,9 @@ We will now introduce the notion of a colored operad and will move on to see tha
                 {\Mul_{\P}(X_I, Y)}                                     & {(\prod_{i \in I} \Mul_{\P}((X_i), X_i)) \times \Mul_{\P}(X_I, Y)} \arrow[l, hook]
             \end{tikzcd}                                             
         \end{center}
-        \item For every sequence of finite maps $I \to J \to K$, collections of objects $X_I = \{X_i\}_{i \in I}$, $Y_J = \{Y_j\}_{j \in J}$, $W_K = \{W_k\}_{k \in K}$ and object $Z \in \O$ the following diagram commutes:
+        \item For every sequence of finite maps $I \to J \to K$, collections of objects 
+        $X_I = \{X_i\}_{i \in I}$, $Y_J = \{Y_j\}_{j \in J}$, $W_K = \{W_k\}_{k \in K}$ and object $Z \in \O$ 
+        the following diagram commutes:
         \begin{center}
         \begin{adjustbox}{max width=\textwidth}
             \begin{tikzcd}
@@ -957,48 +1022,73 @@ We will now introduce the notion of a colored operad and will move on to see tha
 \end{defin}
 
 \begin{rem}
-    When we drop the symmetric structure we obtain a definition of a colored operad what we call colored planar operad. In other word we consider the indexing sets $I$ in \ref{coloroperad} to be finite ordered sets and maps between indexing sets have to be order preserving.
+    When we drop the symmetric structure we obtain a definition of a colored operad what we call colored 
+    planar operad. In other word we consider the indexing sets $I$ in \ref{coloroperad} to be finite 
+    ordered sets and maps between indexing sets have to be order preserving.
 \end{rem}
 
 \begin{rem}
-    We note that there is a forgetful functor from the categories of colored operads to the category of small categories. Hence, for every colored operad $\O$ there is an underlying category which we also denote by $\O$. Its objects are the colors of $\O$ and for $X, Y \in \O$ we define the morphisms 
+    We note that there is a forgetful functor from the categories of colored operads to the category of 
+    small categories. Hence, for every colored operad $\O$ there is an underlying category which we also 
+    denote by $\O$. Its objects are the colors of $\O$ and for $X, Y \in \O$ we define the morphisms 
     \[
     \Hom(X,Y) \coloneqq \Mul_{\O}(\{X\}, Y).
     \]
-    Composition and identity hold since they hold in $\O$. Thus, a colored operad can be viewed as a category with additional structure. Since we have some sort of collection of multilinear maps, some also refer to colored operads by multicategories.
+    Composition and identity hold since they hold in $\O$. Thus, a colored operad can be viewed as a 
+    category with additional structure. Since we have some sort of collection of multilinear maps, some 
+    also refer to colored operads as multicategories.
 \end{rem}
 
 \begin{egs}
     \begin{enumerate}
-        \item A colored operad with one color is a symmetric operad in $\Set$ as defined in \ref{operad}. Let $\O$ be a colored operad with one color $X$. We will construct a symmetric operad $\P$ from $\O$. Since $\O$ is a colored operad with only one color, we define the family of objects $\P(n)$ for $n \in \mathbb{N}$ as:
+        \item A colored operad with one color is a symmetric operad in $\Set$ as defined in \ref{operad}. 
+        Let $\O$ be a colored operad with one color $X$. We will construct a symmetric operad $\P$ from 
+        $\O$. Since $\O$ is a colored operad with only one color, we define the family of objects $\P(n)$ 
+        for $n \in \mathbb{N}$ as:
         \[
             \P(n) \coloneqq \Mul_{\O}(\{X\}_{1\leq i \leq n}, X).
         \]
-        The composition maps from $\O$ for natural number indexing then defines the composition maps of $\P$ 
+        The composition maps from $\O$ for natural number indexing then defines the composition maps 
+        of $\P$ 
         \[
             \gamma: \P(k) \times \P(j_1) \times \cdots \times \P(j_k) \to \P(j)
         \]
-        where $j = \sum_{i=1}^k j_i$ and $\eta \colon \{\ast\} \to \P(1)$ is given by $\id_X$. Unitality and associativity follow the corresponding conditions in $\O$.
-        However, in a colored operad (even with one color), the set of morphisms depends not only on $n$, the cardinality of the indexing set, but also on the specific choice of finite indexing set. Thus, for two sets $N_1$ and $N_2$ with the same number of elements, you could potentially have different morphism sets:
+        where $j = \sum_{i=1}^k j_i$ and $\eta \colon \{\ast\} \to \P(1)$ is given by $\id_X$. Unitality 
+        and associativity follow from the corresponding conditions in $\O$.
+        However, in a colored operad (even with one color), the set of morphisms depends not only on $n$, 
+        the cardinality of the indexing set, but also on the specific choice of finite indexing set. Thus, 
+        for two sets $N_1$ and $N_2$ with the same number of elements, you could potentially have different 
+        morphism sets:
         \[
         \Mul_{\O}(\{X_i\}_{i \in N_1}, Y) \quad \text{and} \quad \Mul_{\O}(\{X_i\}_{i \in N_2}, Y).
         \]
         This raises the question of how the structures of a colored operad and an operad reconcile.
-        The reason these two different setups are still equivalent lies in the symmetric group action on the set of morphisms.
-        The permuation of the inputs ensures that any specific labeling of the inputs (as represented by the different finite sets $N_1$ and $N_2$) can be transformed into each other via the action of $S_n$. Hence, although the morphisms in the colored operad are indexed by specific sets, they behave the same way up to this permutation action. 
-        Therefore, the group action effectively collapses the dependence on the specific finite sets. So, while the morphism sets in a colored operad are technically different for different finite sets, the permutation symmetry makes these differences irrelevant, aligning the structure with that of an operad.
+        The reason these two different setups are still equivalent lies in the symmetric group action 
+        on the set of morphisms.
+        The permuation of the inputs ensures that any specific labeling of the inputs (as represented 
+        by the different finite sets $N_1$ and $N_2$) can be transformed into each other via the action 
+        of $S_n$. Hence, although the morphisms in the colored operad are indexed by specific sets, they 
+        behave the same way up to this permutation action. 
+        Therefore, the group action effectively collapses the dependence on the specific finite sets. 
+        So, while the morphism sets in a colored operad are technically different for different finite 
+        sets, the permutation symmetry makes these differences irrelevant, aligning the structure with 
+        that of an operad.
     
-        \item A colored planar operad with one color is a planar operad in $\Set$ as defined in \ref{planaroperad}. Let $\P$ be a colored planar operad $\P$. We set for $n \in \N$:
+        \item A colored planar operad with one color is a planar operad in $\Set$ as defined 
+        in \ref{planaroperad}. Let $\P$ be a colored planar operad $\P$. We set for $n \in \N$:
         \[
          \P(n) \coloneqq \Mul_{\P}((X)_{1\leq i \leq n}, X)
         \]
-        The composition map and operadic unit we obtain similarly as in the example for a one colored operad. However, as the indexing maps need to be order preserving we will not obtain a permutation of labels as there is only one bijective order preserving map between finite ordered sets.
+        The composition map and operadic unit we obtain similarly as in the example for a one colored 
+        operad. However, as the indexing maps need to be order preserving we will not obtain a permutation 
+        of labels as there is only one bijective order preserving map between finite ordered sets.
     \end{enumerate}
 \end{egs}
 
 \begin{egs}
     \begin{enumerate}
-        \item Let $\C$ be a symmetric monoidal category. By setting for a finite family of objects $\{X_i\}_{i \in I}$ and object $Y$ in $\C$
+        \item Let $\C$ be a symmetric monoidal category. By setting for a finite family of objects 
+        $\{X_i\}_{i \in I}$ and object $Y$ in $\C$
         \[
             \Mul_{\C}(\{X_i\}_{i \in I}, Y) \coloneqq \Hom(\otimes_{i \in I} X_i, Y)
         \]
@@ -1008,19 +1098,28 @@ We will now introduce the notion of a colored operad and will move on to see tha
             \prod_{j \in J} \Hom(\otimes_{i \in I_j} X_i, Y_j) \times \Hom(\otimes_{j \in J} Y_j, Z) &\to \Hom(\otimes_{i \in I} X_i, Z) \\
             ((f_j)_{j \in J}, g) &\mapsto g \circ (\otimes_{j \in J} f_j) \\
         \end{align*}
-        with $\{ \id_X\}_{X \in \C}$ being the unit and associativity holds since for $(f_j \colon \bigotimes_{i \in I_j} X_i \to Y_j)_{j \in J}$, $(g_k \colon \bigotimes_{j \in J_k} Y_j \to W_k)_{k \in K}$, $h \colon \bigotimes_{k \in K} W_k \to Z$ we have
+        with $\{ \id_X\}_{X \in \C}$ being the unit and associativity holds since for 
+        $(f_j \colon \bigotimes_{i \in I_j} X_i \to Y_j)_{j \in J}$, 
+        $(g_k \colon \bigotimes_{j \in J_k} Y_j \to W_k)_{k \in K}$, 
+        $h \colon \bigotimes_{k \in K} W_k \to Z$ we have
         \[
             h \circ \bigotimes_{k \in K} \left(g_k \circ \bigotimes_{j \in J_k} f_j\right) = h \circ \bigotimes_{k \in K} g_k \circ \bigotimes_{j \in J} f_j.
         \]
     
         Further, we can reconstruct the symmetric monoidal structure of $\C$ from this colored operad:
-        Let $F_{X,Y} \colon \C \to \Set$ be the functor sending an object $Z$ to $\Mul_{\C}(\{X,Y\},Z)$ then by definition and from Yonedas lemma follows that $F$ is uniquely (up to isomorphism) represented by $X \otimes Y$. Let $f \colon X \to X'$ and $g \colon Y \to Y'$ be morphisms in $\C$ and 
+        Let $F_{X,Y} \colon \C \to \Set$ be the functor sending an object $Z$ to $\Mul_{\C}(\{X,Y\},Z)$ 
+        then by definition and from Yonedas lemma follows that $F$ is uniquely (up to isomorphism) 
+        represented by $X \otimes Y$. Let $f \colon X \to X'$ and $g \colon Y \to Y'$ be morphisms in 
+        $\C$ and 
         \[
             \Mul_{\C}(\{X\},X') \times \Mul_{\C}(\{Y\},Y') \times \Mul_{\C}(\{X', Y'\},X'\otimes Y') \overset{\gamma}{\rightarrow} \Mul_{\C}(\{X,Y\},X'\otimes Y')
         \]
         the compositon map. Then, we define $f \otimes g \coloneqq \gamma((f,g,\id))$.
-        The tensor unit $I$ is the representing object of the functor sending an object $Z$ in $\C$ to $\Mul_{\C}(\emptyset, Z)$.
-        This example is even clearer when we have the functorial definition of a colored operad later on. As it will be a generalization of \ref{m1m2} and $\ref{SymMonBijection}$ illustrates how to reconstruct the symmetric monoidal category.
+        The tensor unit $I$ is the representing object of the functor sending an object $Z$ in $\C$ to 
+        $\Mul_{\C}(\emptyset, Z)$.
+        This example is even clearer when we have the functorial definition of a colored operad later on. 
+        As it will be a generalization of \ref{m1m2} and $\ref{SymMonBijection}$ illustrates how to reconstruct 
+        the symmetric monoidal category.
         
         % where we obtain canonical isomorphism from the image of $\id$ in $\Hom(X \otimes I, X) \cong \Hom(X, X)$.
         % \[
@@ -1041,47 +1140,70 @@ We will now introduce the notion of a colored operad and will move on to see tha
         \[
             \phi \colon \{X_i\}_{1 \leq i \leq m} \to \{Y_j\}_{1 \leq j \leq n}
         \]
-        is given by a map $\alpha \colon \langle m \rangle \to \langle n \rangle$ in $\Fin$ together with a family of morphisms
+        is given by a map $\alpha \colon \langle m \rangle \to \langle n \rangle$ in $\Fin$ together with a 
+        family of morphisms
         \[
             \{ \phi_j \in \Mul_{\O}(\{X_i\}_{i \in \alpha^{-1}(j)}, Y_j)\}_{1 \leq j \leq n}
         \]
         in $\O$.
-        \item Composition of morphisms is determined by the composition in $\Fin$ and $\O$, i.e. for morphisms $\phi \colon X \to Y$ and $\phi' \colon Y \to Z$ in $\Ox$  with $\alpha \colon \langle n \rangle \to \langle m \rangle$ and $\alpha' \colon \langle m \rangle \to \langle k \rangle$, we have $\bar{\alpha} = \alpha'\circ \alpha$ and
+        \item Composition of morphisms is determined by the composition in $\Fin$ and $\O$, i.e. for morphisms 
+        $\phi \colon X \to Y$ and $\phi' \colon Y \to Z$ in $\Ox$  with $\alpha \colon \langle n \rangle \to \langle m \rangle$ 
+        and $\alpha' \colon \langle m \rangle \to \langle k \rangle$, we have $\bar{\alpha} = \alpha'\circ \alpha$ and
         \[
             \{(\phi' \circ \phi)_l \in  \Mul_{\O}(\{X_i\}_{i \in \bar{\alpha}^{-1}(l)}, Z_l)\}_{1 \leq l \leq k}
         \]
         where $(\phi' \circ \phi)_l$ is applying the composition map 
         \[
-        \gamma \colon \prod_{j \in \alpha'^{-1}(l)} \Mul_{\O}(\{X_i\}_{i \in \alpha^{-1}(j)},Y_j) \times \Mul_{\O}(\{Y_i\}_{i \in \alpha'^{-1}(l)},Z_l) \to \Mul_{\O}(\{X_i\}_{i \in \bar{\alpha}^{-1}(l)},Z_l)
+            \gamma \colon \prod_{j \in \alpha'^{-1}(l)} \Mul_{\O}(\{X_i\}_{i \in \alpha^{-1}(j)},Y_j) \times \Mul_{\O}(\{Y_i\}_{i \in \alpha'^{-1}(l)},Z_l) \to \Mul_{\O}(\{X_i\}_{i \in \bar{\alpha}^{-1}(l)},Z_l)
         \] 
         %to $((\phi_i)_{i \in \alpha^{-1}(l)}, \phi'_l)$.
     \end{enumerate}
 \end{defin}
 
 \begin{rem}
-    For a planar colored operad $\P$, we can similarly define a category $\P^{\otimes}$ by requiring $\alpha \colon [m] \to [n]$ to be morphism in the simplex category with a distinguished point $\Delta_{\ast}$.   
+    For a planar colored operad $\P$, we can similarly define a category $\P^{\otimes}$ by requiring 
+    $\alpha \colon [m] \to [n]$ to be morphism in the simplex category with a distinguished point 
+    $\Delta_{\ast}$.   
 \end{rem}
 
 Let $\O$ be a colored operad. Then similarly as in \ref{Cxdef} we have a forgetful functor 
 \[
 \pi \colon \Ox \to \Fin
 \]
-from which we can reconstruct the underlying colored operad $O$ (up to canonical equivalence):
-First, note that in general $\pi$ does not have to be a cofibration. For an arbitrary morphism $\alpha \colon \langle n \rangle \to \langle m \rangle$ and a collection $\{X_i\}_{i \in \langle n \rangle}$ there is no canonical choice for a collection $\{X'_j\}_{j \in \langle m \rangle}$ with morphism $f \colon \{X_i\}_{i \in \langle n \rangle} \to \{X'_j\}_{j \in \langle m \rangle}$ such that $\pi(f)=\alpha$ as in the proof of \ref{m1m2}. 
-However, there is a canonical choice if $\alpha$ is a bijection on $\alpha^{-1}(\langle m \rangle^{\circ})$. Then for all $j \in \langle m \rangle$ there is exactly one $i_j \in \langle n \rangle$ with $\alpha(i_j) = j$. Hence, we define $X'_j \coloneqq X_{i_j}$ and for all $j \in J$ we have $f_j = \id_{X_{i_j}}$. This defines a morphism $f \colon \{X_i\}_{i \in I} \to \{X'_j\}_{j \in J}$.
+from which we can reconstruct the underlying colored operad $\O$ (up to canonical equivalence):
+First, note that in general $\pi$ does not have to be a cofibration. For an arbitrary morphism 
+$\alpha \colon \langle n \rangle \to \langle m \rangle$ and a collection $\{X_i\}_{i \in \langle n \rangle}$ 
+there is no canonical choice for a collection $\{X'_j\}_{j \in \langle m \rangle}$ with morphism 
+$f \colon \{X_i\}_{i \in \langle n \rangle} \to \{X'_j\}_{j \in \langle m \rangle}$ such that 
+$\pi(f)=\alpha$ as in the proof of \ref{m1m2}. 
+However, there is a canonical choice if $\alpha$ is a bijection on $\alpha^{-1}(\langle m \rangle^{\circ})$. 
+Then for all $j \in \langle m \rangle$ there is exactly one $i_j \in \langle n \rangle$ with $\alpha(i_j) = j$. 
+Hence, we define $X'_j \coloneqq X_{i_j}$ and for all $j \in J$ we have $f_j = \id_{X_{i_j}}$. This defines 
+a morphism $f \colon \{X_i\}_{i \in I} \to \{X'_j\}_{j \in J}$.
 
-It is left to show that $f$ is in fact cocartesian. Let $g \colon \{X_i\}_{i \in I} \to \{X''_k\}_{k \in \langle  l \rangle}$ be a morphism in $\Ox$ and $\omega \colon \langle m \rangle \to \langle l \rangle$ a morphisn in $\Fin$ such that $\pi(g) = \omega \circ \pi(f)$. Due to the fact of $\pi(f)$ being a bijection on the restriction, we observe that $\omega$ is determined by $\pi(g)$. It follows that
+It is left to show that $f$ is in fact cocartesian. Let 
+$g \colon \{X_i\}_{i \in I} \to \{X''_k\}_{k \in \langle  l \rangle}$ be a morphism in $\Ox$
+and $\omega \colon \langle m \rangle \to \langle l \rangle$ a morphisn in $\Fin$ such that 
+$\pi(g) = \omega \circ \pi(f)$. Due to the fact of $\pi(f)$ being a bijection on the restriction, we 
+observe that $\omega$ is determined by $\pi(g)$. It follows that
 \[
     \Mul(\{X_j'\}_{j \in \omega^{-1}(k)}, X_k'') = \Mul(\{X_{a_j}\}_{j \in \omega^{-1}(k)}, X_k'') = \Mul(\{X_i\}_{i \in \pi(g)^{-1}(k)}, X_k'')
 \]
 and we can define for all $k \in \langle l \rangle$ $h_k = g_k$. So, we have constructed a morphism 
 $$h \colon \{X_j'\}_{j \in \langle m \rangle} \to \{X''_k\}_{k \in \langle  l \rangle}$$
 such that $h \circ f = g$ and $\pi(h)=\omega$.
-The underlying category of $\O$ is the fiber category $\O_{\langle 1 \rangle}$ as the objects are 1-collections of colors and a morphism from $X$ to $Y$ is defined by $\id_{\langle 1 \rangle}$ with $\phi \in \Mul_{\O}(\{X\}, Y)$.
-Furthermore, the equivalence $\O_{\langle n \rangle} \cong \O^n$ holds as the weaker (M1) property still suffices to admit the proof given in \ref{m1m2}. 
+The underlying category of $\O$ is the fiber category $\O_{\langle 1 \rangle}$ as the objects are 
+1-collections of colors and a morphism from $X$ to $Y$ is defined by $\id_{\langle 1 \rangle}$ with 
+$\phi \in \Mul_{\O}(\{X\}, Y)$.
+Furthermore, the equivalence $\O_{\langle n \rangle} \cong \O^n$ holds as the weaker (M1) property 
+still suffices to admit the proof given in \ref{m1m2}. 
 
-Further, let $\{X_i\}_{i \in \langle n \rangle}$ be a collection of colors,  $\Vec{X}$ denoting the corresponding object in $\Ox_{\langle n \rangle}$ and $Y \in \O$. The set $\Mul_{\O}(\{X_i\}_{i \in \langle n \rangle}, Y)$ can be identified with the set of morphisms $f \colon \Vec{X} \to Y$ in $\Ox$ such that $\pi(f)$ being the morphism with $\pi(f)^{-1} (\ast)= \{ \ast \}$.
-In addition, the composition law for morphisms in the colored operad $\O$ can be reconstructed from the composition law in $\Ox$.
+Further, let $\{X_i\}_{i \in \langle n \rangle}$ be a collection of colors,  $\Vec{X}$ denoting the 
+corresponding object in $\Ox_{\langle n \rangle}$ and $Y \in \O$. 
+The set $\Mul_{\O}(\{X_i\}_{i \in \langle n \rangle}, Y)$ can be identified with the set of morphisms 
+$f \colon \Vec{X} \to Y$ in $\Ox$ such that $\pi(f)$ being the morphism with $\pi(f)^{-1} (\ast)= \{ \ast \}$.
+In addition, the composition law for morphisms in the colored operad $\O$ can be reconstructed from 
+the composition law in $\Ox$.
 % \todo{reconstruct composition law}
 
 \begin{rem}
@@ -1093,24 +1215,39 @@ In addition, the composition law for morphisms in the colored operad $\O$ can be
 \end{rem}
 
 
-This gives us an alternative definition of a colored operad. Instead of seeing a colored operad as a categorical structure $\O$ equipped with an extensive notion of morphisms, we can now view colored operads as a category $\Ox$ equipped with a forgetful functor $\pi \colon \Ox \to \Fin$ satisfying conditions such as
-$\Ox_{\langle n \rangle} \cong (\Ox_{\langle 1 \rangle})^n$ and $\O = \Ox_{\langle 1 \rangle}$ inherit the structure of a colored operad.
-Even though the conditions $\pi$ has to satisfy seem tedious, the second definition is phrased entirely in the language of category theory and can therefore be generalized to a $\infty$-categorical notion of a colored operad. 
+This gives us an alternative definition of a colored operad. Instead of seeing a colored operad as a 
+categorical structure $\O$ equipped with an extensive notion of morphisms, we can now view colored operads 
+as a category $\Ox$ equipped with a forgetful functor $\pi \colon \Ox \to \Fin$ satisfying conditions such as
+$\Ox_{\langle n \rangle} \cong (\Ox_{\langle 1 \rangle})^n$ and $\O = \Ox_{\langle 1 \rangle}$ inherit the 
+structure of a colored operad.
+Even though the conditions $\pi$ has to satisfy seem tedious, the second definition is phrased entirely in 
+the language of category theory and can therefore be generalized to an $\infty$-categorical notion of a 
+colored operad. 
 
 \begin{defin}
-    A morphism $f \colon \langle n \rangle \to \langle m \rangle$ is called {\em inert} if for every $i \in \langle m \rangle^{\circ}$ the inverse image $f^{-1}(i)$ has exactly one element.
+    A morphism $f \colon \langle n \rangle \to \langle m \rangle$ is called {\em inert} if for every 
+    $i \in \langle m \rangle^{\circ}$ the inverse image $f^{-1}(i)$ has exactly one element.
 \end{defin}
 
 \begin{defin}
-    An $\infty${\em-operad} is a functor $p \colon \Ox \to \nerv(\Fin)$ between $\infty$-categories satisfying the following conditions:
+    An $\infty${\em-operad} is a functor $p \colon \Ox \to \nerv(\Fin)$ between $\infty$-categories satisfying 
+    the following conditions:
     \begin{enumerate}[(i)]
-        \item For every inert morphism $f \colon \langle n \rangle \to \langle m \rangle$ in $\nerv(\Fin)$ and object $C \in \Ox_{\langle m \rangle}$ there exists a $p$-cocartesian morphism $f \colon C \to C'$ in $\Ox$ lifting $f$. In particular $f$ induces a functor $f_{!} \colon \Ox_{\langle n \rangle} \to \Ox_{\langle m \rangle}$.
-        \item Let $C \in \Ox_{\langle m \rangle}$ and $C' \in \Ox_{\langle n \rangle}$ be objects, $f : \langle m \rangle \to \langle n \rangle$ be a morphism in $\Fin$ and let $\Map_{\Ox}^f(C, C')$ be the union of connected components of $\Map_{\Ox}(C, C')$ which lie over $f$. Choose $p$-cocartesian morphisms $C' \to C'_i$ lying over the inert morphism $\rho^i \colon \langle n \rangle \to \langle 1 \rangle$ for $1 \leq i \leq n$. Then the induced map
+        \item For every inert morphism $f \colon \langle n \rangle \to \langle m \rangle$ in $\nerv(\Fin)$ 
+        and object $C \in \Ox_{\langle m \rangle}$ there exists a $p$-cocartesian morphism $f \colon C \to C'$ 
+        in $\Ox$ lifting $f$. In particular $f$ induces a functor $f_{!} \colon \Ox_{\langle n \rangle} \to \Ox_{\langle m \rangle}$.
+        \item Let $C \in \Ox_{\langle m \rangle}$ and $C' \in \Ox_{\langle n \rangle}$ be objects, 
+        $f : \langle m \rangle \to \langle n \rangle$ be a morphism in $\Fin$ and let $\Map_{\Ox}^f(C, C')$ be the 
+        union of connected components of $\Map_{\Ox}(C, C')$ which lie over $f$. Choose $p$-cocartesian morphisms 
+        $C' \to C'_i$ lying over the inert morphism $\rho^i \colon \langle n \rangle \to \langle 1 \rangle$ for 
+        $1 \leq i \leq n$. Then the induced map
         \[
             \Map_{\Ox}^f(C, C') \to \prod_{1 \leq i \leq n} \Map_{\Ox}^{\rho^i \circ f}(C, C_i')
         \]
         is a homotopy equivalence
-        \item For every finite collection of objects $C_1, \dots, C_n \in \Ox_{\langle 1 \rangle}$, there exists an object $C \in \Ox_{\langle n \rangle}$ and a collection of $p$-cocartesian morphism $C \to C_i$ covering $\rho^i \colon \langle n \rangle \to \langle 1 \rangle$.
+        \item For every finite collection of objects $C_1, \dots, C_n \in \Ox_{\langle 1 \rangle}$, there exists 
+        an object $C \in \Ox_{\langle n \rangle}$ and a collection of $p$-cocartesian morphism $C \to C_i$ covering 
+        $\rho^i \colon \langle n \rangle \to \langle 1 \rangle$.
     \end{enumerate}
 \end{defin}
 

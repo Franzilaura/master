@@ -1,16 +1,26 @@
 \subsection{Braided monoidal structure}
 
-In the following we will construct a braided monoidal structure obtained from a cofibration over $\Ex$. To do so we will need to choose paths in $\Ex$ on various occations. We will refrain from specifying the paths in detail but rather describe the paths enough to understand from which homotopy class we choose a path.
+In the following we will construct a braided monoidal structure obtained from a cofibration over $\Ex$.
+To do so, we will need to choose paths in $\Ex$ on various occasions. We will refrain from specifying
+the paths in detail but rather describe the paths enough to understand from which homotopy class we
+choose a path and why some are homotopy equivalent. Also, we do not care much about the size of the
+disks as we can expand and shrink them continuously as needed.
+So, for this section we assume a basic topological understanding which for instance can be found in \todo{topo reference?}
+
 \begin{rem}
-    Let us recall the definition of $\Ex$. For each $n \in \N$ we have an object $\langle n \rangle$. A mophism $\langle n \rangle \to \langle m \rangle$ in $\Ex$ consists of a morphism 
-    $\alpha \colon \langle n \rangle \to \langle m \rangle$ in $\Fin$ and a collection of configurations $\{c_j \in \E_2(|\alpha^{-1}(j)|)\}_{1 \leq j \leq m}$ where each configuration is labeled by $\alpha^{-1}(j))$.
-    So for example, let \begin{align*}
-    \alpha \colon \langle 3 \rangle &\to \langle 2 \rangle \\
-    1 &\mapsto 1 \\
-    2 &\mapsto 2 \\
-    3 &\mapsto 1 \\
+    Let us recall the definition of $\Ex$. For each $n \in \N$ we have an object $\langle n \rangle$. 
+    A mophism $\langle n \rangle \to \langle m \rangle$ in $\Ex$ consists of a morphism 
+    $\alpha \colon \langle n \rangle \to \langle m \rangle$ in $\Fin$ and a collection of configurations
+    $$\{c_j \in \E_2(|\alpha^{-1}(j)|)\}_{1 \leq j \leq m}$$
+    where each configuration is labeled by $\alpha^{-1}(j))$.
+    So for example, 
+    \begin{align*}
+        \alpha \colon \langle 3 \rangle &\to \langle 2 \rangle \\
+        1 &\mapsto 1 \\
+        2 &\mapsto 2 \\
+        3 &\mapsto 1 \\
     \end{align*}
-    and
+    together with the configurations
     \begin{center}
     \begin{tikzpicture}
                         % First element (left)
@@ -29,24 +39,32 @@ In the following we will construct a braided monoidal structure obtained from a 
     We denote the trivial configuration with label $x$ by $\id^x \in \E_2(1)$.
 \end{rem}
 
+We will follow now the same approach as in the symmetic monoidal case in section \ref{sec:operads}, i.e. we will define a category $\Cotimes$ and a functor $\pi \colon \Cotimes \to \Ex$ such that $\pi$ is a cofibration and the fibers of $\pi$ are given by the categories $\C^n \coloneqq \Cotimes_{\langle n \rangle}$ for $n \geq 1$.
+
 
 \begin{defin}
-    Let $\Cotimes$ be a category with a Grothendieck cofibration
+    An $\E_2$-operad is a category $\Cotimes$ with a functor
     \[
         \Cotimes \to \Ex
     \]
-    satisfying the (M2) condition:
-    For $\C \coloneqq \Cotimes_{\langle 1 \rangle}$, we have $\Cotimes_{\langle n \rangle} \cong \C^n$. Then we call $\Cotimes$ with $\pi$ a $\E_2$-operad.
+    satisfying
+        \begin{enumerate}[(M1)]
+            \item The functor $\pi$ is a cofibration.
+            \item For $\C \coloneqq \Cotimes_{\langle 1 \rangle}$, we have $\Cotimes_{\langle n \rangle} \cong \C^n$ for all $n \geq 1$. 
+        \end{enumerate}
+
 \end{defin}
 
-Let $\pi \colon \Cotimes \to \Ex$ be a $\E_2$-operad. We denote $\C \coloneqq \Cotimes_{\langle 1 \rangle}$. In the following section we aim to define a braided monoidal structure on $\C$.
 
-Note that for a diagram in $\Ex$
+
+So for the next part, let $\pi \colon \Cotimes \to \Ex$ be a $\E_2$-operad and we denote $\C \coloneqq \Cotimes_{\langle 1 \rangle}$.
+In the following section we aim to define a braided monoidal structure on $\C$.
+First, note that for a diagram in $\Ex$ of the following form
 \[
-\begin{tikzcd}
-\langle n \rangle \arrow[r, "c_1"] \arrow[rd, "c_2"] & \langle 1 \rangle \arrow[d, "\id"] \\
-                                                     & \langle 1 \rangle                 
-\end{tikzcd}
+    \begin{tikzcd}
+        \langle n \rangle \arrow[r, "c_1"] \arrow[rd, "c_2"] & \langle 1 \rangle \arrow[d, "\id"] \\
+                                                            & \langle 1 \rangle                                                               
+    \end{tikzcd}
 \]
 with $c_1$ and $c_2$ being configurations in $\E_2(n)$, commutativity means choosing a path from $c_1$ to $c_2$.
 Let $\beta$ denote the following morphism in $\Ex$
@@ -56,9 +74,15 @@ Let $\beta$ denote the following morphism in $\Ex$
          2 &\mapsto 1. \\
      \end{align*}
 with the trivial collection $(\id^2, \id^1)$.
-Further, let \[
-\mu \colon \langle 2 \rangle \to \langle 1 \rangle
-\] be the morphism with the following configuration which we refer to as the basepoint configuration:
+Further, let 
+\begin{align*}
+    \mu \colon \langle 2 \rangle &\to \langle 1 \rangle \\
+    1 &\mapsto 1 \\
+    2 &\mapsto 1 \\
+\end{align*}
+be the morphism with the following configuration which we refer to as the 
+basepoint configuration in $\E_2(2)$:
+
 \begin{center}
     \begin{tikzpicture}
                         % First element (left)
@@ -72,20 +96,28 @@ Further, let \[
         \end{tikzpicture}
 \end{center}
 
-Since $\pi$ satisfies (M1) and (M2), we have that for any $(A,B) \in \C^2 \cong \Cotimes_{\langle 2 \rangle}$ there is a cocartesian lift $(A,B) \to A \otimes B$ which defines a functor
+Since $\pi$ satisfies (M1) and (M2), we have that for any $(A,B) \in \C^2 \cong \Cotimes_{\langle 2 \rangle}$ 
+there is a cocartesian lift $(A,B) \to A \otimes B$. This choice is unique up to isomorphism. 
+So, we obtain a well-defined functor
 \[
     \otimes \colon \C^2 \to \C.
 \]
 
-Then, we consider the following diagramm in $\Ex$
+Further, we consider the following diagramm in $\Ex$
 \[
     \begin{tikzcd}
         \langle 2 \rangle \arrow[r, "\beta"] \arrow[d, "\mu"] & \langle 2 \rangle \arrow[d, "\mu"] \\
         \langle 1 \rangle  \arrow[r, dashed]                  & \langle 1 \rangle.                 
     \end{tikzcd}
 \]
-Filling the diagram, i.e. giving commutativity means choosing a path from the basepoint configuration $\mu$ to the twisted basepoint configuration $\mu \circ \beta$. We choose this to be the half twist.
+Filling the diagram, i.e. giving commutativity means choosing a path 
+from the basepoint configuration corresponding to $\mu$ 
+to the twisted basepoint configuration corresponding to $\mu \circ \beta$. 
+We choose this to be the half twist.
 
+\todo{define at least half twist in more detail? and then skip details for the rest of the paths?}
+\textcolor{blue}{How much detail is necessaary? giving every path seems tedious and not beneficial to the reader..}
+\todo{fix half twist: wrong direction}
 \begin{center}
     \begin{tikzpicture}
                         % basepoint
@@ -96,8 +128,8 @@ Filling the diagram, i.e. giving commutativity means choosing a path from the ba
                         \draw[thick] (1, 0) circle (0.75);
                         \draw[thick] (-1, 0) circle (0.75);
                         \draw[dotted](-2, 0)--(2, 0);
-                        \draw[thick, dotted, red] (-1, 0.75) to [bend left=50] (1, 1);
-                        \draw[thick, dotted, red] (1, -0.75) to [bend left=50] (-1, -1);
+                        \draw[thick, dotted, red] (-1, -0.75) to [bend right=50] (1, -1);
+                        \draw[thick, dotted, red] (1, 0.75) to [bend right=50] (-1, 1);
 
                         \node at (3.5, 0) {$\rightsquigarrow$};
                         
@@ -114,7 +146,7 @@ Filling the diagram, i.e. giving commutativity means choosing a path from the ba
 \end{center}
 
 Note, that for a different choice of path instead of this half twist, we would obtain in the following a different braiding. So, this choice is essential for our construction.
-Again using the (M1) property of $\pi$ we obtain a commuting diagram in $\Cotimes$
+Again using the (M1) property of $\pi$, we obtain a commuting diagram in $\Cotimes$
 
 \[
 \begin{tikzcd}
@@ -132,7 +164,7 @@ For the associator we consider the following diagram in $\Ex$:
     \end{tikzcd}
     \]
     where the associated configurations are either the trivial configuration or the basepoint configuration.
-    To fill the diagram, we choose a path $\gamma$ that onlz translates the middle points of the disc along the horizontal line and shrinks or expanse the discs as needed.
+    To fill the diagram, we choose a path $\gamma$ that only translates the middle points of the disks along the horizontal line and shrinks or expands the disks as needed.
 
 
  
@@ -183,7 +215,7 @@ Again using the (M1) property of $\pi$ we obtain a commuting diagram in $\Cotime
 
 \begin{proof}
     First, we observe that the associator refers to $\E_1$ being embedded into $\E_2$ along the horizontal line. So, the pentagon identity holds as $\E_1$ is the associative operad. \todo{include a proof here if spare time}
-    Hence, we focus on the hexagone identities
+    Hence, we focus on the hexagon identities
     \begin{enumerate}
         \item 
         \[
@@ -202,7 +234,7 @@ Again using the (M1) property of $\pi$ we obtain a commuting diagram in $\Cotime
             \end{tikzcd}
         \]
     \end{enumerate}
-    Each edge in the hexagone diagrams refers to a commuting diagram in $\Ex$ of the form
+    Each edge in the hexagon diagrams refers to a commuting diagram in $\Ex$ of the form
 
     \[
         \begin{tikzcd}
@@ -212,7 +244,7 @@ Again using the (M1) property of $\pi$ we obtain a commuting diagram in $\Cotime
         \end{tikzcd}
     \]
    
-    with configurations
+    with configurations:
     \begin{center}
         \begin{tikzpicture}
             \node at (0,-2.5) {$c_{(A \otimes B) \otimes C}$};
@@ -253,9 +285,11 @@ Again using the (M1) property of $\pi$ we obtain a commuting diagram in $\Cotime
 
         \end{tikzpicture}
     \end{center}
-
-    The commutativity of the triangle diagrams "on the side" mean choosing a path from one configuration to another while filling the tetrahedron in $\Ex$ means having a homotopy between the the different paths. As it turns out we do not make any new choices of paths but the paths are induced by the half twist we chose for $\otimes$.
-    The paths are chosen such that the configurations are homotopic to the basepoint configuration. 
+    \todo{describe one commuting tetrahedron in detail. Rest analogpously leading tot he following diagram...}
+    The commutativity of the triangle diagrams on the side mean choosing a path from one configuration to 
+    another while filling the tetrahedron in $\Ex$ means having a homotopy between the the different paths. 
+    As it turns out we do not make any new choices of paths. The paths are induced by the half twist we chose to define $\otimes$.
+    The paths are chosen such that the configurations are homotopic to the basepoint configuration \todo{define basepoint config earlier}. 
 
     \begin{center}
         \begin{tikzpicture}
@@ -510,7 +544,6 @@ Again using the (M1) property of $\pi$ we obtain a commuting diagram in $\Cotime
     \newpage
 
     The resulting paths are again homotopic equivalent and therefore the second hexagon identity holds.
-
     \begin{center}
         \begin{tikzpicture}
             %arrows
@@ -547,4 +580,167 @@ Again using the (M1) property of $\pi$ we obtain a commuting diagram in $\Cotime
     This concludes the proof that $\Ex$ induces a braided monoidal structure on $\C$.
 
 \end{proof}
- 
+
+
+\subsection{Universal Covering of $\E_2$}
+
+In this section we want to establish an operadic structure on the universal covering of $\E_2$.
+First, we need to define what it means to be a universal covering of a topological operad.
+
+\begin{defin}
+    Let $\P$  be a topological operad. 
+    A covering operad $\widetilde{\P}$ is a topological operad 
+    such that there is a morphism of operads $c \colon \widetilde{\P} \to \P$ 
+    where $c_n \colon \widetilde{\P}(n) \to \P(n)$ is a covering of $\P(n)$ for all $n \geq 1$.
+\end{defin}
+
+\begin{defin}
+    Let $\P$ be a topological operad. A universal covering operad $\widetilde{\P}$ is a covering 
+    operad that is universal in every degree $n \geq 1$.
+\end{defin}
+
+While the operadic structure requires labels in the sense that they are necessary to define the composition maps in
+$\E_2$, they do not matter from a topologcial perspective. Hence, in this section we want to establish a universal 
+covering of $\E_2$ without labels.
+So, instead of $\E_2$ we will consider the quotient:
+\[
+    \E_2 \to \E_2 \slash S
+\]
+We identify configurations up to relabeling. 
+So in $\Ex \slash S$ we identify $f, g \colon \langle n \rangle \to \langle m \rangle$ 
+if there exists a commuting diagram in $\Ex$
+\begin{center}
+    \begin{tikzcd}
+        \langle n \rangle \arrow[r, "f"] \arrow[d, "\sigma"] & \langle m \rangle \arrow[d, "\tau"] \\
+        \langle n \rangle \arrow[r, "g"]                     & \langle m \rangle                  
+    \end{tikzcd}
+\end{center}
+where $\sigma \in S_n$ and $\tau \in S_m$.
+
+Before, we can find a universal covering of $\E_2 \slash S$, we need to choose basepoints in each configuration space.
+So, for all $n \geq 1$ we choose the basepoint $b_n \in \E_2(n)$ to be the following configuration:
+\begin{center}
+    \begin{tikzpicture}
+        %basepoint
+        \draw[thick] (1,0) circle (2);
+        \draw[thick] (2.25, 0) circle (0.5);
+        \draw[thick] (-0.25, 0) circle (0.5);
+        \node at (-0.25, 0) {\small $1$};
+        \node at (1, -0.3) {\dots};
+        \node at (2.25, 0) {\small $n$};
+        \draw[dotted](-1, 0)--(3, 0);
+    \end{tikzpicture}
+\end{center}
+
+Note that since $\E_2(n)$ is connected and simply connected then so is $\E_2 (n) \slash S_n$. 
+Hence, it has a universal covering $\widetilde{\E_2}(n) \slash S_n$ which we define in the usual sense:
+\[
+    \widetilde{\E_2}(n) \slash S_n \coloneq \{ \gamma \colon [0,1] \to \E_2(n) \slash S_n \mid \gamma(0) = b_n \} 
+    \slash \text{homotopy with fixed endpoints}
+\]
+with 
+\begin{align*}
+    p \colon \widetilde{\E_2}(n) \slash S_n &\to \E_2(n) \slash S_n \\
+    \gamma &\mapsto \gamma(1)
+\end{align*}
+It is known that this in fact defines a universal covering of $\E_2(n) \slash S_n$.
+Observe that that for every $\gamma \in \widetilde{\E_2(n)} \slash S_n$ there is a commuting diagram in $\Ex$ for some $\sigma \in S_n$:
+\begin{center}
+    \begin{tikzcd}
+        \langle n \rangle \arrow[d, "\sigma"'] \arrow[r, "c_n"] & \langle 1 \rangle \arrow[d, "\gamma", dashed] \\
+        \langle n \rangle \arrow[r, "b_n"]                              & \langle 1 \rangle                            
+    \end{tikzcd}
+\end{center} 
+
+
+However, we want to define an operadic structure on $\widetilde{\E_2} \slash S$ such that the 
+covering is a morphism of operads.
+\begin{prop}
+    There is an operadic structure on $\widetilde{\E_2} \slash S$ such that the covering $p$ is a morphism 
+    of operads.
+\end{prop}
+
+\begin{proof}
+    Let 
+    \[
+        \gamma \colon \E_2(k) \times \E_2(j_1) \times \dots \times 
+        \E_2(j_k) \to \E_2(j)
+    \]
+    be a composition map of $\E_2$.
+    Then, we define a composition map in $\widetilde{\E_2}$
+    \begin{align*}
+        \gamma \colon \widetilde{\E_2}(k) \times \widetilde{\E_2}(j_1) \times \dots \times 
+        \widetilde{\E_2}(j_k) &\to \widetilde{\E_2}(j), \\
+        % (\gamma_k, \gamma_{j_1}, \dots, \gamma_{j_k}) &\mapsto \gamma_k \circ (\gamma_{j_1}, \dots, 
+        % \gamma_{j_k}) \circ \tau
+    \end{align*}
+    which we construct as follows:
+    Let $(\bar{\alpha}, \alpha_1, \dots, \alpha_k) \in \widetilde{\E_2}(k) \times \widetilde{\E_2}(j_1) \times \dots \times 
+        \widetilde{\E_2}(j_k)$. Then 
+        \[
+            \bar{\alpha} \circ (\alpha_1, \dots, \alpha_k)    
+        \]
+    denotes the path from $\gamma((b_k, b_{j_1}, \dots, b_{j_k}))$ to $\gamma(c_k, c_{j_1}, \dots, c_{j_k})$ 
+    where we first apply 
+
+    $$\alpha_l \colon b_{j_l} \to c_{j_l}$$
+
+    on configuration in the $l$-th disk of $b_k$ for all $1 \leq l \leq k$
+    and then apply 
+
+    $$\bar{\alpha} \colon b_k \to c_k$$
+
+    on the configuration $b_k$.
+
+    \todo{drawing of what is happening here.}
+    Further, let $\tau \in \E_1(j) \subset \E_2(j)$ be a path from $b_j$ to $\gamma((b_k, b_{j_1}, \dots, b_{j_k}))$ 
+    that resizes and translates the disks along the horizontral axis. This path $\tau$ is unique up to homotopy.
+
+    This generates the following commuting diagram in $\Ex$:
+    \begin{center}
+        \begin{tikzcd}
+            \langle j \rangle  \arrow[rr, "{\gamma(c_k, c_{j_1}, \dots, c_{j_k})}"] \arrow[d, "S_j \ni"'] & & \langle 1 \rangle                                                                         \\
+            \langle j \rangle  \arrow[d, "S_j \ni"'] \arrow[rr, "{\gamma(b_k, b_{j_1}, \dots, b_{j_k})}"] & & \langle 1 \rangle  \arrow[u, "{\bar{\alpha} \circ (\alpha_1, \dots, \alpha_k)}"', dashed] \\
+            \langle j \rangle  \arrow[rr, "b_j"]                                                          & & \langle 1 \rangle  \arrow[u, "\tau"', dashed]                                            
+        \end{tikzcd}
+    \end{center}
+    Therefore, we can set
+    \[
+        \gamma' ((\bar{\alpha}, \alpha_1, \dots, \alpha_k)) \coloneqq \bar{\alpha} \circ (\alpha_1, \dots, \alpha_k) \circ \tau
+    \]
+    Note, that for this definition is is necessary for the labels to be identified otherwise the path making the 
+    lower square commute could possibly not be a translation along the horizontal axis.
+    We observe, that this composition map is well-defined, since the path $\tau$ is unique up to homotopy and it is associative 
+    due to the fact that the composition map in $\E_2$ is associative and composing paths is associaitve up to homotopy.
+    Furthermore, we define a operadic unitality 
+    \[
+        \eta \colon \ast \to \widetilde{\E_2}(1)
+    \]
+    to be the trivial path of the trivial basepoint $b_1 \in \E_2(1)$. Clearly, this unit fulfills the unitality conditions.
+
+    Finally, we need to show that the covering map $p \colon \widetilde{\E_2} \slash S \to \E_2 \slash S$ is a morphism of operads.
+    For this, we need to show that the following diagram commutes for all $n \geq 1$:
+    \begin{center}
+        \begin{tikzcd}
+            \widetilde{\E_2}(k) \slash S_k \times \widetilde{\E_2}(j_1) \slash S_{j_1} \times \dots \times \widetilde{\E_2}(j_k)\slash S_{j_k} \arrow[d, "\widetilde{\gamma}"] \arrow[rr, "p"] &  & \E_2(k)\slash S_k \times \E_2(j_1)\slash S_{j_1} \times \dots \times \E_2(j_k)\slash S_{j_k} \arrow[d, "\gamma"] \\
+            \widetilde{\E_2}(j) \slash S_j \arrow[rr, "p"]                                                                                                                                     &  & \E_2(j) \slash S_j                                                                                              
+        \end{tikzcd}
+    \end{center}
+    This is indeed the case, by definition of $\widetilde{\gamma}$ we have:
+    \[
+        p \circ \widetilde{\gamma} ((\bar{\alpha}, \alpha_1, \dots, \alpha_k)) = \gamma(c_k, c_{j_1}, \dots, c_{j_k})
+    \]
+    for $\gamma_l \colon b_{j_l} \to c_{j_l}$ and $\bar{\gamma} \colon b_k \to c_k$. Clearly, the unital condition is also met by definition:
+    \begin{center}
+        \begin{tikzcd}
+                                        & \ast \arrow[ld, "\widetilde{\eta}"'] \arrow[rd, "\eta"] &                     \\
+            \widetilde{\E_2}(1) \arrow[rr, "p"] &                                                         & \E_2(1)
+        \end{tikzcd}
+    \end{center}
+    This concludes the proof that $\widetilde{\E_2} \slash S$  admits an operadic structure and the covering map is a morphism of operads.
+\end{proof}
+
+    This construction of an operadic structure on the universal covering of a topological operad can me given in a more general setting.
+    Which we did not require at this point. ... \todo{reference to the general construction or Adrians lemma}.
+
+    \todo{braided action on the universal covering of $\E_2$}

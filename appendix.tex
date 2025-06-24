@@ -1,0 +1,53 @@
+\section{Appendix}
+
+
+We wanted to define braided operads as fibrations over a suitable category. 
+A first intuition led us to the assumption that colored braided operads might 
+fiber over the crossed simplicial braid group as defined in \cite{Dyckerhoff}.
+However, we discovered that we were too quick to make this assumption. 
+We will elaborate in the following why this did not work out as we hoped originally.
+
+    
+\begin{defin}\label{crossed_braid} The {\em crossed simplicial braid group} is a category $\Delta B$ equipped with an embedding
+	$\iota:\Delta \to \Delta B$ such that:
+	\begin{enumerate}
+		\item the functor $\iota$ is bijective on objects,
+		\item any morphism $u: \iota[m] \to \iota[n]$ in $\Delta B$ can be uniquely expressed as 
+			a composition $\iota(\phi) \circ b$ where $\phi: [m] \to [n]$ is a morphism in
+			$\Delta$ and $b \in B_m$ is acting on $\iota[m]$ in $\Delta B$.
+	\end{enumerate}
+    Note that we sometimes refer to $\iota[m]$ by writing $[m]$ instead.
+\end{defin}
+
+\begin{rem}
+    To understand composition in the category $\Delta B$ let us consider two morphisms
+    \[
+    f \colon [m] \to [n] \quad \text{and} \quad g \colon [n] \to [l]
+    \]
+    with the factorization $f = \phi_f \circ b_f$ and $g = \phi_g \circ b_g$. 
+    We define for every $j \in [n]$ an $f$-pencil $p_j$ as a collection $[j, i_1, \dots i_s]$ with $\phi_f^{-1}(j) = \{i_1 < \dots < i_s\}$. We call $s$ the width of the pencil. Note that we say it is an empty pencil $p_j$ if $\phi_f^{-1}(j) = \emptyset$.
+    
+    Then we obtain a braid on $m$ strands in the following way:
+    First, we consider $p_1, \dots, p_n$ as $n$ strand such that we can braid by $b_g$. Then, we forget the empty pencil strands; in other words we restrict the action of $b_g$ to the subset $J \subset [n]$ such that $p_j$ is not empty for all $j \in J$. However, for notation reason and without loss of generality, we assume that there are no empty pencils.    
+    We obtain a braiding on $m$ strands if we consider the action of $b_g$ on the pencils as a block braiding on $m$ strand. Each pencil corresponds to a block having the length of the pencils width. The blocks are ordered by $[n]$.
+
+    Geometrically this can be thought of as braiding the pencils. Then, as the order within the pencil remains unchanged, we can cut a pencil $[j, j_1, \dots, j_s]$ into its $s$ underlying strands. The resulting braid corresponds to $b_g(s_1, \dots, s_n) \circ b_f$ where $s_j$ is the width of the pencil $p_j$ for $j \in [n]$.
+    Thus, we define
+    \[
+        g \circ f \coloneqq \phi_g \circ (b_g(s_1, \dots, s_n) \circ b_f).
+    \]
+\end{rem}
+
+We can define a new colored operad with the crossed simplicial braid group as its indexing sets. However, this causes some issues. A braided monoidal category is supposed to be an example of the new colored operad, meaning we require a morphism in $\Delta B$, inducing the braiding in the braided monoidal category. Thus, the following diagram would have to commute in $\Delta B$:
+
+\begin{center}
+    \begin{tikzcd}
+        {[1]} \arrow[r, "\tau^1_0"] \arrow[d, "\sigma_0"'] & {[0]} \\
+        {[1]} \arrow[ru, "\tau^1_0"']                      &      
+    \end{tikzcd}
+\end{center}
+
+This is not the case. However, we were hopeful that by fixing this we might obtain the final candidate for our fibration. As it turns out, we obtain a braid group action where we would not expect one and moreover where we not want a braid group action.
+Thus, we have to conclude that the crossed simplicial braid group is not the right candidate for our fibration.
+
+\todo{add potential fix and explain the contradiction of braid action on cartesian product}
