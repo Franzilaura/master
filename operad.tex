@@ -652,14 +652,24 @@
     \[
     \Hom_{\C}(y,z) \times_{\Hom_{\D}(P(y), P(z))} \Hom_{\D}(P(x), P(z)) \cong \Hom_{\C}(x,z)
     \]
-    where $\Hom_{\C}(y,z) \times_{\Hom_{\D}(P(y), P(z))} \Hom_{\D}(P(x), P(z))$ is the pullback of applying the functor $P$ to $\Hom_{\C}(y,z)$ and precomposing with $P(f) \colon P(y) \to P(x)$.
-    So, for the bijection we send a pair $(g, \omega)$ to the unique morphism $\omega'$ and vice versa we send a morphism $h \colon x \to z$ to the pair $(h \circ f, P(h))$.
+    where $\Hom_{\C}(y,z) \times_{\Hom_{\D}(P(y), P(z))} \Hom_{\D}(P(x), P(z))$ is the pullback of applying 
+    the functor $P$ to $\Hom_{\C}(y,z)$ and precomposing with $P(f) \colon P(y) \to P(x)$.
+    So, for the bijection we send a pair $(g, \omega)$ to the unique morphism $\omega'$ and vice versa we send 
+    a morphism $h \colon x \to z$ to the pair $(h \circ f, P(h))$.
 
     \begin{defin}
-        Let $P \colon \C \to \D$ be a functor. $P$ is called a {\em (Grothendieck) fibration} if for every object y in $\C$ and morphisms $f' \colon x' \to P(y)$ there exists a cartesian morphism $f \colon x \to y$ such that $f' = P(f)$.
+        Let $P \colon \C \to \D$ be a functor. $P$ is called a {\em Grothendieck fibration} if for every object 
+        $y$ in $\C$ and morphisms $f' \colon x' \to P(y)$ there exists a cartesian morphism $f \colon x \to y$ 
+        such that $f' = P(f)$.
         We call $f$ a cartesian lift of $f'$ and $f'$ a cleavage.
-        Dually we define the notion of a {\em (Grothendieck) cofibration}, i.e. $P$ is a cofibration if for every object $x$ in $\C$ and morphism $f' \colon P(x) \to y'$ there exists a cocartesian morphism $f \colon x \to y$ such that $P(f)=f'$.
+        Dually we define the notion of a {\em Grothendieck op-fibration}, i.e. $P$ is a Grothendieck 
+        op-fibration if for every object $x$ in $\C$ and morphism $f' \colon P(x) \to y'$ there exists a 
+        cocartesian morphism $f \colon x \to y$ such that $P(f)=f'$.
     \end{defin}
+
+    If not stated otherwise, when we talk about fibrations and op-fibrations in this thesis, we will always mean Grothendieck fibrations and Grothendieck 
+    op-fibrations, respectively.
+
 
 
     \begin{defin}\label{Cxdef}
@@ -738,7 +748,7 @@
     
     \begin{prop}\label{m1m2}
         \begin{enumerate}[(M1)]
-            \item The forgetful functor $P \colon \Cotimes \to \Fin$ is a cofibration.
+            \item The forgetful functor $P \colon \Cotimes \to \Fin$ is a Grothendieck op-fibration.
             \item We have that $\C \cong \Cotimes_{\langle 1 \rangle}$ and more precisely we obtain that $\Cotimes_{\langle n \rangle} \cong \C^n$ where $\C^n$ denotes the $n$-fold product of  copies of $\C$.
         \end{enumerate}
     \end{prop}
@@ -779,7 +789,7 @@
             It follows by definition that $F$ is fully faithful and essentially surjective, i.e. an equivalence of 
             categories.
 
-            First, we will show that for any morphism $\langle n \rangle \to \langle m \rangle$ the cofibration condition (M1) 
+            First, we will show that for any morphism $\langle n \rangle \to \langle m \rangle$ the op-fibration condition (M1) 
             induces a functor of fiber categories $A \colon \Cotimes_{\langle n \rangle} \to \Cotimes_{\langle m \rangle}$:
             Let $\alpha \colon \langle n \rangle \to \langle m \rangle$ be a morphism in $\Fin$ and $[C_1, \dots, C_n]$
             an object in $\Cotimes_{\langle n \rangle}$. By (M1), we can find a cocartesian morphism 
@@ -846,7 +856,7 @@ The right candidate for $\C$ is clearly $\D_{\langle 1 \rangle}$.
  \begin{prop}\label{SymMonBijection}
     There is a bijection
     \[
-    \{\text{symmetric monoidal categories}\} \cong \{\text{cofibrations } \D \to \Fin \text{ satisfying (M2)}\}
+    \{\text{symmetric monoidal categories}\} \cong \{\text{op-fibrations } \D \to \Fin \text{ satisfying (M2)}\}
     \]
  \end{prop}
 
@@ -959,7 +969,7 @@ The right candidate for $\C$ is clearly $\D_{\langle 1 \rangle}$.
     \[
         P \colon \Cotimes \to \deltast
     \]
-    This functor is a cofibration. The proof in \ref{m1m2} applies. Note that for the proof the fact 
+    This functor is a op-fibration. The proof in \ref{m1m2} applies. Note that for the proof the fact 
     that morphisms in $\deltast$ preserve order is essential, otherwise we could not define
     \[
              \omega_j \colon \bigotimes_{\alpha_{\omega}(k)=j} C_k' \cong \bigotimes_{\alpha_{\omega}(k)=j} \bigotimes_{\alpha_f(i)=k} C_i \cong \bigotimes_{\alpha_g(k)=j} C_k \xrightarrow{g_j} C_j''
@@ -969,7 +979,7 @@ The right candidate for $\C$ is clearly $\D_{\langle 1 \rangle}$.
     a morphism in $\deltast$.
     It then also follows that there is a bijection
     \[
-    \{\text{monoidal categories}\} \cong \{\text{cofibration } \D \to \deltast \text{ satisfying (M2)}\}
+    \{\text{monoidal categories}\} \cong \{\text{op-fibration } \D \to \deltast \text{ satisfying (M2)}\}
     \]
     The proof for this is analoguously to \ref{SymMonBijection} as all morphisms in $\Fin$ that induce a 
     monoidal structure on $\C$ are order preserving and can be considered in $\deltast$.
@@ -1171,7 +1181,7 @@ Let $\O$ be a colored operad. Then similarly as in \ref{Cxdef} we have a forgetf
 \pi \colon \Ox \to \Fin
 \]
 from which we can reconstruct the underlying colored operad $\O$ (up to canonical equivalence):
-First, note that in general $\pi$ does not have to be a cofibration. For an arbitrary morphism 
+First, note that in general $\pi$ does not have to be a op-fibration. For an arbitrary morphism 
 $\alpha \colon \langle n \rangle \to \langle m \rangle$ and a collection $\{X_i\}_{i \in \langle n \rangle}$ 
 there is no canonical choice for a collection $\{X'_j\}_{j \in \langle m \rangle}$ with morphism 
 $f \colon \{X_i\}_{i \in \langle n \rangle} \to \{X'_j\}_{j \in \langle m \rangle}$ such that 

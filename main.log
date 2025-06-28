@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.4.8)  24 JUN 2025 15:34
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.4.8)  29 JUN 2025 00:17
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1152,7 +1152,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 39--6
 
 [2
 
-{/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}] (./operad.tex
+{/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}] (./introduction.tex) (./operad.tex
 
 [3{/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc}]
 LaTeX Font Info:    Trying to load font information for U+eus on input line 84.
@@ -1196,12 +1196,12 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 [16]
 
 [17]
-Overfull \hbox (14.9283pt too wide) in paragraph at lines 986--988
+Overfull \hbox (14.9283pt too wide) in paragraph at lines 996--998
 []\T1/lmr/m/n/10 For ev-ery fi-nite col-lec-tion of ob-jects $\OMS/lmsy/m/n/10 f\OML/lmm/m/it/10 X[]\OMS/lmsy/m/n/10 g[]$ \T1/lmr/m/n/10 and ob-ject $\OML/lmm/m/it/10 Y$ \T1/lmr/m/n/10 in $\U/eus/m/n/10 O$\T1/lmr/m/n/10 , there is a set $[][]\OT1/lmr/m/n/10 (\OMS/lmsy/m/n/10 f\OML/lmm/m/it/10 X[]\OMS/lmsy/m/n/10 g[]\OML/lmm/m/it/10 ; Y\OT1/lmr/m/n/10 )$
  []
 
 
-Overfull \hbox (23.62477pt too wide) in paragraph at lines 1012--1020
+Overfull \hbox (23.62477pt too wide) in paragraph at lines 1022--1030
  [] 
  []
 
@@ -1211,22 +1211,18 @@ Overfull \hbox (23.62477pt too wide) in paragraph at lines 1012--1020
 
 [19]
 
-[20])
+[20]
 
-[21] (./braided_operads.tex
+[21])
 
-[22]
+[22] (./braided_operads.tex
 
-[23])
+[23]
 
-[24] (./e2_operad.tex
+[24])
+
+[25] (./e2_operad.tex
 Package hyperref Info: bookmark level for unknown todo defaults to 0 on input line 8.
-
-
-[25]
-
-LaTeX Warning: Marginpar on page 26 moved.
-
 
 
 [26]
@@ -1238,119 +1234,154 @@ LaTeX Warning: Marginpar on page 28 moved.
 
 
 [28]
-Overfull \hbox (14.82617pt too wide) in paragraph at lines 433--434
- [] 
- []
+
+LaTeX Warning: Marginpar on page 29 moved.
 
 
 
 [29]
-Overfull \hbox (14.82617pt too wide) in paragraph at lines 541--542
- [] 
- []
-
-
 
 [30]
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 585.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 585.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\mathop' on input line 585.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\mathcode' on input line 585.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\mathcode' on input line 585.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\mathcode' on input line 585.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\mathchardef' on input line 585.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\std@minus' on input line 585.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\mathcode' on input line 585.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\mathcode' on input line 585.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\mathcode' on input line 585.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\mathcode' on input line 585.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\leavevmode@ifvmode' on input line 585.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                \kern 2.22198pt
-(hyperref)                removed on input line 585.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\mathgroup' on input line 585.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\symoperators' on input line 585.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\@ifnextchar' on input line 585.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 585.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 585.
+Overfull \hbox (14.82617pt too wide) in paragraph at lines 453--454
+ [] 
+ []
 
 
 
 [31]
-
-[32]
-Overfull \hbox (18.48367pt too wide) in paragraph at lines 727--728
+Overfull \hbox (14.82617pt too wide) in paragraph at lines 561--562
  [] 
  []
 
 
-LaTeX Warning: Marginpar on page 33 moved.
+
+[32]
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <8> on input line 605.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 605.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\mathop' on input line 605.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\mathcode' on input line 605.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\mathcode' on input line 605.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\mathcode' on input line 605.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\mathchardef' on input line 605.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\std@minus' on input line 605.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\mathcode' on input line 605.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\mathcode' on input line 605.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\mathcode' on input line 605.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\mathcode' on input line 605.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\leavevmode@ifvmode' on input line 605.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                \kern 2.22198pt
+(hyperref)                removed on input line 605.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\mathgroup' on input line 605.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\symoperators' on input line 605.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\@ifnextchar' on input line 605.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 605.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 605.
+
+
+
+[33]
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+
+[34]
+Overfull \hbox (18.48367pt too wide) in paragraph at lines 792--793
+ [] 
+ []
+
+
+
+[35]
+Overfull \hbox (2.16656pt too wide) in paragraph at lines 882--882
+[][][]\T1/lmr/m/n/10 compatibitly 
+ []
+
+
+Overfull \hbox (2.16656pt too wide) in paragraph at lines 882--882
+[][][]\T1/lmr/m/n/10 compatibitly 
+ []
 
 )
 
-[33] (./appendix.tex)
+[36] (./outlook.tex) (./appendix.tex
 
-[34]
-LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 27.
+[37]
+
+LaTeX Warning: Marginpar on page 38 moved.
+
+
+LaTeX Warning: Marginpar on page 38 moved.
+
+)
+
+[38]
+LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 31.
  (/usr/local/texlive/2025/texmf-dist/tex/latex/lm/t1lmtt.fd
 File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
+Overfull \hbox (6.42659pt too wide) in paragraph at lines 32--32
+[]\T1/lmr/m/n/10 Donald Yau. \T1/lmr/m/it/10 In-fin-ity Op-er-ads and Monoidal Cat-e-gories with Group Equiv-ari-ance\T1/lmr/m/n/10 . WORLD
+ []
 
-[35
+
+
+[39
 
 ] (./main.aux)
  ***********
@@ -1358,24 +1389,24 @@ LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
  ***********
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 808C532B92E25C29146265FAEE304368;1294.
+(rerunfilecheck)             Checksum: B41EBDDC9379E78DDDA9B1DE0E3D2176;1480.
 Package logreq Info: Writing requests to 'main.run.xml'.
 \openout1 = `main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 40006 strings out of 473190
- 771796 string characters out of 5715801
- 1563519 words of memory out of 5000000
- 62461 multiletter control sequences out of 15000+600000
+ 40230 strings out of 473190
+ 777239 string characters out of 5715801
+ 1568722 words of memory out of 5000000
+ 62669 multiletter control sequences out of 15000+600000
  673240 words of font info for 117 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  104i,17n,104p,1453b,1812s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/euler/eusm10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/euler/eusm5.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/euler/eusm7.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmbx7.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmex10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmmi10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmmi5.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmmi7.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmmi9.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr17.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr5.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr7.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr9.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmri10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmsy5.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmsy7.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmtt10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb>
-Output written on main.pdf (35 pages, 552736 bytes).
+Output written on main.pdf (39 pages, 564197 bytes).
 PDF statistics:
- 534 PDF objects out of 1000 (max. 8388607)
- 435 compressed objects within 5 object streams
- 160 named destinations out of 1000 (max. 500000)
- 77 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 572 PDF objects out of 1000 (max. 8388607)
+ 468 compressed objects within 5 object streams
+ 170 named destinations out of 1000 (max. 500000)
+ 93 words of extra memory for PDF output out of 10000 (max. 10000000)
 

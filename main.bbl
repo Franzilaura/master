@@ -19,6 +19,32 @@
 
 \refsection{0}
   \datalist[entry]{nty/global//global/global/global}
+    \entry{adrian}{unpublished}{}{}
+      \name{author}{1}{}{%
+        {{hash=9ef75542c3c516f7ff58b682a7d94627}{%
+           family={Boerner},
+           familyi={B\bibinitperiod},
+           given={Adrian},
+           giveni={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{9ef75542c3c516f7ff58b682a7d94627}
+      \strng{fullhash}{9ef75542c3c516f7ff58b682a7d94627}
+      \strng{fullhashraw}{9ef75542c3c516f7ff58b682a7d94627}
+      \strng{bibnamehash}{9ef75542c3c516f7ff58b682a7d94627}
+      \strng{authorbibnamehash}{9ef75542c3c516f7ff58b682a7d94627}
+      \strng{authornamehash}{9ef75542c3c516f7ff58b682a7d94627}
+      \strng{authorfullhash}{9ef75542c3c516f7ff58b682a7d94627}
+      \strng{authorfullhashraw}{9ef75542c3c516f7ff58b682a7d94627}
+      \field{labelalpha}{AB}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{06}
+      \field{shorthand}{AB}
+      \field{title}{Comparing different models of the little disk operad}
+      \field{year}{2025}
+    \endentry
     \entry{Dyckerhoff}{misc}{}{}
       \name{author}{2}{}{%
         {{hash=39d5ac5a53fb0389a0a2ff3a6387a308}{%
@@ -43,13 +69,14 @@
       \strng{authornamehash}{bc8e17ca927209d63951056f8fb24cf3}
       \strng{authorfullhash}{bc8e17ca927209d63951056f8fb24cf3}
       \strng{authorfullhashraw}{bc8e17ca927209d63951056f8fb24cf3}
-      \field{labelalpha}{DK15}
+      \field{labelalpha}{DK}
       \field{sortinit}{D}
       \field{sortinithash}{6f385f66841fb5e82009dc833c761848}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{issn}{1098-3627}
       \field{journaltitle}{Stacks and Categories in Geometry, Topology, and Algebra}
+      \field{shorthand}{DK}
       \field{title}{Crossed simplicial groups and structured surfaces}
       \field{year}{2015}
       \field{pages}{37\bibrangedash 110}
@@ -80,14 +107,14 @@
       \strng{authornamehash}{7a1cf48552a6d95dce2ded8206cbe159}
       \strng{authorfullhash}{7a1cf48552a6d95dce2ded8206cbe159}
       \strng{authorfullhashraw}{7a1cf48552a6d95dce2ded8206cbe159}
-      \field{labelalpha}{FZ}
+      \field{labelalpha}{ZF}
       \field{sortinit}{F}
       \field{sortinithash}{2638baaa20439f1b5a8f80c6c08a13b4}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{eprintclass}{math.AT}
       \field{eprinttype}{arXiv}
-      \field{shorthand}{FZ}
+      \field{shorthand}{ZF}
       \field{title}{Constructions of $E_n$ Operads}
       \field{year}{1999}
       \verb{eprint}
@@ -127,13 +154,14 @@
       \strng{authornamehash}{3ea136122ec0a9a86591ea8fbf154af7}
       \strng{authorfullhash}{3ea136122ec0a9a86591ea8fbf154af7}
       \strng{authorfullhashraw}{3ea136122ec0a9a86591ea8fbf154af7}
-      \field{labelalpha}{KM95}
+      \field{labelalpha}{IM}
       \field{sortinit}{K}
       \field{sortinithash}{c02bf6bff1c488450c352b40f5d853ab}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{number}{233}
       \field{series}{Astérisque}
+      \field{shorthand}{IM}
       \field{title}{Operads, algebras, modules and motives}
       \field{year}{1995}
       \verb{urlraw}
@@ -159,14 +187,14 @@
       \strng{authornamehash}{760ea879284b1a6eeaad87a82be8d1d7}
       \strng{authorfullhash}{760ea879284b1a6eeaad87a82be8d1d7}
       \strng{authorfullhashraw}{760ea879284b1a6eeaad87a82be8d1d7}
-      \field{labelalpha}{LJ}
+      \field{labelalpha}{JL}
       \field{sortinit}{L}
       \field{sortinithash}{7c47d417cecb1f4bd38d1825c427a61a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{month}{09}
       \field{note}{Unpublished. Available online at \url{https://www.math.ias.edu/~lurie/}}
-      \field{shorthand}{LJ}
+      \field{shorthand}{JL}
       \field{title}{Higher algebra}
       \field{year}{2017}
     \endentry
@@ -186,14 +214,14 @@
       \strng{authornamehash}{f05d2c19aa06489176806883cbcda665}
       \strng{authorfullhash}{f05d2c19aa06489176806883cbcda665}
       \strng{authorfullhashraw}{f05d2c19aa06489176806883cbcda665}
-      \field{labelalpha}{SC}
+      \field{labelalpha}{CS}
       \field{sortinit}{S}
       \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{month}{03}
       \field{note}{Unpublished. Available online at \url{https://www.math.uni-hamburg.de/home/schweigert/skripten/hskript.pdf}}
-      \field{shorthand}{SC}
+      \field{shorthand}{CS}
       \field{title}{Hopf algebras, quantum groups and topological field theory}
       \field{year}{2023}
     \endentry
@@ -216,12 +244,12 @@
       \strng{authornamehash}{c272ee37f752428d2d26faea0c4d2f18}
       \strng{authorfullhash}{c272ee37f752428d2d26faea0c4d2f18}
       \strng{authorfullhashraw}{c272ee37f752428d2d26faea0c4d2f18}
-      \field{labelalpha}{YD}
+      \field{labelalpha}{DY}
       \field{sortinit}{Y}
       \field{sortinithash}{fd67ad5a9ef0f7456bdd9aab10fe1495}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{shorthand}{YD}
+      \field{shorthand}{DY}
       \field{title}{Infinity Operads and Monoidal Categories with Group Equivariance}
       \field{year}{2021}
       \verb{doi}
