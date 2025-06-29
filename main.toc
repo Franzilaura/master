@@ -7,7 +7,7 @@
 \contentsline {subsection}{\numberline {3.1}Action Operad}{24}{subsection.0.3.1}%
 \contentsline {subsection}{\numberline {3.2}Braided monoidal structure}{26}{subsection.0.3.2}%
 \contentsline {subsection}{\numberline {3.3}Universal Covering of $\E _2$}{33}{subsection.0.3.3}%
-\contentsline {subsubsection}{Braid Action on $\setbox \z@ \hbox {\mathsurround \z@ $\textstyle \E _2 \slash S$}\mathaccent "0365{\E _2 \slash S}$}{36}{subsubsection*.10}%
+\contentsline {subsubsection}{Braid Action on $\setbox \z@ \hbox {\mathsurround \z@ $\textstyle \E _2 \slash S$}\mathaccent "0365{\E _2 \slash S}$}{36}{subsubsection*.8}%
 \contentsline {section}{\numberline {4}Outlook}{37}{section.0.4}%
 \contentsline {section}{\numberline {5}Appendix}{37}{section.0.5}%
 \contentsfinish 

@@ -73,7 +73,118 @@ So we define a category $\Delta B'$ from $\Delta B$ by requiring for all $n \in 
     \tau_i^n \circ \sigma_i = \tau_i^n.
 \]
 \todo{add picture of identification}
-As it turns out, a short calculation shows that the hexagon identities hold for $\Delta B'$.
+There is also a graphical interpretation of $\Delta B$, where $\sigma_i \in B_n$ 
+is the usual braid on $n$ strands.
+\begin{center}
+    \begin{tikzpicture}
+            \pic[
+            braid/number of strands=6,
+            braid/strand 2/.style={white},
+            braid/strand 5/.style={white},
+            name=coordinates,
+            ] at (0,0) {braid={s_3}};
+            \node[at=(coordinates-rev-2-e)] {$\dots$};
+            \node[at=(coordinates-rev-3-e), below=3pt] {$i$};
+            \node[at=(coordinates-rev-4-e), below=3pt] {$i+1$};
+            \node[at=(coordinates-rev-5-e)] {$\dots$};
+            \node[anchor=center] at (-0.5,-0.75) {$\sigma_i = \quad $};
+    \end{tikzpicture}
+\end{center}
+Order preserving maps in $\Delta$ also have graphical interpretation given by the degeneracy maps
+\begin{center}
+    \begin{tikzpicture}
+                    \draw (-1.5,0)--(-1.5,2);
+                    \draw (1.5,0)--(1.5,2);
+
+                    \draw (-0.5,1)--(-0.5,2);
+                    \draw (0.5,1)--(0.5,2);
+                    \draw (-0.5,1) [bend right=80] to (0.5,1);
+                    \draw (0,0.7)--(0,0);
+
+
+
+                    \node at (-1.5,2.3) {$1$};
+                    \node at (-0.5,2.3) {$i$};
+                    \node at (0.5,2.3) {$i+1$};
+                    \node at (1.5,2.3) {$n$};
+                    \node at (-1.5,-0.3) {$1$};
+                    \node at (-0.75, 0) {$\dots$};
+                    \node at (0,-0.3) {$i$};
+                    \node at (0.75, 0) {$\dots$};
+                    \node at (1.5,-0.3) {$n-1$};
+
+                    \node[anchor=center] at (-2.5,1) {$\tau_i^n = \quad $};
+    \end{tikzpicture}
+\end{center}
+
+and face maps
+
+\begin{center}
+        \begin{tikzpicture}
+            \pic[
+            braid/number of strands=8,
+            braid/strand 2/.style={white},
+            braid/strand 5/.style={white},
+            braid/strand 7/.style={white},
+            name=coordinates,
+            ] at (0,0) {braid={s_4}};
+            %above nodes
+            \node[at=(coordinates-rev-1-e), above=1.6] {$1$};
+            \node[at=(coordinates-rev-3-e), above=1.6] {$i-1$};
+            \node[at=(coordinates-rev-4-e), above=1.6] {$i$};
+            \node[at=(coordinates-rev-6-e), above=1.6] {$i+1$};
+            \node[at=(coordinates-rev-8-e), above=1.6] {$n$};
+            % below nodes
+            \node[at=(coordinates-rev-1-e), below=3pt] {$1$};
+            \node[at=(coordinates-rev-2-e)] {$\dots$};
+            \node[at=(coordinates-rev-3-e), below=3pt] {$i-1$};
+            \node[at=(coordinates-rev-4-e), below=3pt] {$i$};
+            \node[at=(coordinates-rev-5-e), below=3pt] {$i+1$};
+            \node[at=(coordinates-rev-6-e), below=3pt] {$i+2$};
+            \node[at=(coordinates-rev-7-e)] {$\dots$};
+            \node[at=(coordinates-rev-8-e), below=3pt] {$n+1$};
+            \node[anchor=center] at (-0.5,-0.75) {$\delta_i^n = \quad $};
+    \end{tikzpicture}
+\end{center}
+
+So, we identify the following graphically:
+
+\begin{center}
+    \begin{tikzpicture}
+            \pic[
+            braid/number of strands=6,
+            braid/strand 2/.style={white},
+            braid/strand 5/.style={white},
+            name=coordinates,
+            ] at (0,2.5) {braid={s_3}};
+            \draw (coordinates-rev-1-e) -- +(0,-1);
+            \draw (coordinates-rev-3-e) [bend right=80] to (coordinates-rev-4-e);
+            \draw ($ (coordinates-rev-3-e)!0.5!(coordinates-rev-4-e) +(0, -0.3)$) -- +(0,-0.7);
+            \draw (coordinates-rev-6-e) -- +(0,-1);
+
+            \pic[
+            braid/number of strands=6,
+            braid/strand 2/.style={white},
+            braid/strand 5/.style={white},
+            name=plainbraid,
+            ] at (6.5,2.5) {braid={}};
+            \draw (plainbraid-rev-1-e) -- +(0,-2);
+            \draw (plainbraid-rev-3-e) -- +(0,-1);
+            \draw ($ (plainbraid-rev-3-e)+(0, -1)$) [bend right=80] to ($ (plainbraid-rev-4-e) +(0, -1)$);
+            \draw ($ (plainbraid-rev-3-e)!0.5!(plainbraid-rev-4-e) +(0, -1.3)$) -- +(0,-0.7);
+            \draw (plainbraid-rev-4-e) -- +(0,-1);
+            \draw (plainbraid-rev-6-e) -- +(0,-2);
+
+            \node at (5.75, 1) {$=$};
+
+
+    \end{tikzpicture}
+\end{center}
+        
+
+
+
+As it turns out, a short graphical calculation shows that the hexagon identities hold for $\Delta B'$.
 \todo{add hexagon identities}
 Unfortunately, we face the next challenge as we discovered that we obtain a braid group action 
 where we would not expect one and moreover where we not want a braid group action:

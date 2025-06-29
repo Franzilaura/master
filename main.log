@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.4.8)  29 JUN 2025 00:17
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.4.8)  29 JUN 2025 15:21
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -894,7 +894,9 @@ File: pgflibraryarrows.meta.code.tex 2023-01-15 v3.1.10 (3.1.10)
 \pgfarrowlength=\dimen303
 \pgfarrowwidth=\dimen304
 \pgfarrowlinewidth=\dimen305
-))) (/usr/local/texlive/2025/texmf-dist/tex/latex/subfigure/subfigure.sty
+))) (/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarycalc.code.tex
+File: tikzlibrarycalc.code.tex 2023-01-15 v3.1.10 (3.1.10)
+) (/usr/local/texlive/2025/texmf-dist/tex/latex/subfigure/subfigure.sty
 Package: subfigure 2002/03/15 v2.1.5 subfigure package
 \subfigtopskip=\skip101
 \subfigcapskip=\skip102
@@ -1196,12 +1198,13 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 [16]
 
 [17]
-Overfull \hbox (14.9283pt too wide) in paragraph at lines 996--998
+Overfull \hbox (14.9283pt too wide) in paragraph at lines 1003--1005
 []\T1/lmr/m/n/10 For ev-ery fi-nite col-lec-tion of ob-jects $\OMS/lmsy/m/n/10 f\OML/lmm/m/it/10 X[]\OMS/lmsy/m/n/10 g[]$ \T1/lmr/m/n/10 and ob-ject $\OML/lmm/m/it/10 Y$ \T1/lmr/m/n/10 in $\U/eus/m/n/10 O$\T1/lmr/m/n/10 , there is a set $[][]\OT1/lmr/m/n/10 (\OMS/lmsy/m/n/10 f\OML/lmm/m/it/10 X[]\OMS/lmsy/m/n/10 g[]\OML/lmm/m/it/10 ; Y\OT1/lmr/m/n/10 )$
  []
 
+Package hyperref Info: bookmark level for unknown todo defaults to 0 on input line 1028.
 
-Overfull \hbox (23.62477pt too wide) in paragraph at lines 1022--1030
+Overfull \hbox (23.62477pt too wide) in paragraph at lines 1030--1038
  [] 
  []
 
@@ -1222,8 +1225,6 @@ Overfull \hbox (23.62477pt too wide) in paragraph at lines 1022--1030
 [24])
 
 [25] (./e2_operad.tex
-Package hyperref Info: bookmark level for unknown todo defaults to 0 on input line 8.
-
 
 [26]
 
@@ -1238,18 +1239,21 @@ LaTeX Warning: Marginpar on page 28 moved.
 LaTeX Warning: Marginpar on page 29 moved.
 
 
+LaTeX Warning: Marginpar on page 29 moved.
+
+
 
 [29]
 
 [30]
-Overfull \hbox (14.82617pt too wide) in paragraph at lines 453--454
+Overfull \hbox (14.82617pt too wide) in paragraph at lines 455--456
  [] 
  []
 
 
 
 [31]
-Overfull \hbox (14.82617pt too wide) in paragraph at lines 561--562
+Overfull \hbox (14.82617pt too wide) in paragraph at lines 563--564
  [] 
  []
 
@@ -1257,80 +1261,80 @@ Overfull \hbox (14.82617pt too wide) in paragraph at lines 561--562
 
 [32]
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 605.
+(Font)              <8> on input line 607.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 605.
+(hyperref)                removing `math shift' on input line 607.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\mathop' on input line 605.
+(hyperref)                removing `\mathop' on input line 607.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\mathcode' on input line 605.
+(hyperref)                removing `\mathcode' on input line 607.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\mathcode' on input line 605.
+(hyperref)                removing `\mathcode' on input line 607.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\mathcode' on input line 605.
+(hyperref)                removing `\mathcode' on input line 607.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\mathchardef' on input line 605.
+(hyperref)                removing `\mathchardef' on input line 607.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\std@minus' on input line 605.
+(hyperref)                removing `\std@minus' on input line 607.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\mathcode' on input line 605.
+(hyperref)                removing `\mathcode' on input line 607.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\mathcode' on input line 605.
+(hyperref)                removing `\mathcode' on input line 607.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\mathcode' on input line 605.
+(hyperref)                removing `\mathcode' on input line 607.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\mathcode' on input line 605.
+(hyperref)                removing `\mathcode' on input line 607.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\leavevmode@ifvmode' on input line 605.
+(hyperref)                removing `\leavevmode@ifvmode' on input line 607.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                \kern 2.22198pt
-(hyperref)                removed on input line 605.
+(hyperref)                removed on input line 607.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\mathgroup' on input line 605.
+(hyperref)                removing `\mathgroup' on input line 607.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\symoperators' on input line 605.
+(hyperref)                removing `\symoperators' on input line 607.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\@ifnextchar' on input line 605.
+(hyperref)                removing `\@ifnextchar' on input line 607.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 605.
+(hyperref)                removing `subscript' on input line 607.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 605.
+(hyperref)                removing `math shift' on input line 607.
 
 
 
@@ -1341,19 +1345,19 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
 [34]
-Overfull \hbox (18.48367pt too wide) in paragraph at lines 792--793
+Overfull \hbox (18.48367pt too wide) in paragraph at lines 797--798
  [] 
  []
 
 
 
 [35]
-Overfull \hbox (2.16656pt too wide) in paragraph at lines 882--882
+Overfull \hbox (2.16656pt too wide) in paragraph at lines 887--887
 [][][]\T1/lmr/m/n/10 compatibitly 
  []
 
 
-Overfull \hbox (2.16656pt too wide) in paragraph at lines 882--882
+Overfull \hbox (2.16656pt too wide) in paragraph at lines 887--887
 [][][]\T1/lmr/m/n/10 compatibitly 
  []
 
@@ -1361,25 +1365,13 @@ Overfull \hbox (2.16656pt too wide) in paragraph at lines 882--882
 
 [36] (./outlook.tex) (./appendix.tex
 
-[37]
-
-LaTeX Warning: Marginpar on page 38 moved.
-
-
-LaTeX Warning: Marginpar on page 38 moved.
-
-)
+[37])
 
 [38]
 LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 31.
  (/usr/local/texlive/2025/texmf-dist/tex/latex/lm/t1lmtt.fd
 File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-Overfull \hbox (6.42659pt too wide) in paragraph at lines 32--32
-[]\T1/lmr/m/n/10 Donald Yau. \T1/lmr/m/it/10 In-fin-ity Op-er-ads and Monoidal Cat-e-gories with Group Equiv-ari-ance\T1/lmr/m/n/10 . WORLD
- []
-
-
 
 [39
 
@@ -1395,18 +1387,18 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 40230 strings out of 473190
- 777239 string characters out of 5715801
- 1568722 words of memory out of 5000000
- 62669 multiletter control sequences out of 15000+600000
- 673240 words of font info for 117 fonts, out of 8000000 for 9000
+ 40541 strings out of 473190
+ 785143 string characters out of 5715801
+ 1573292 words of memory out of 5000000
+ 62976 multiletter control sequences out of 15000+600000
+ 677511 words of font info for 118 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  104i,17n,104p,1453b,1812s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/euler/eusm10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/euler/eusm5.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/euler/eusm7.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmbx7.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmex10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmmi10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmmi5.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmmi7.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmmi9.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr17.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr5.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr7.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr9.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmri10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmsy5.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmsy7.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmtt10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb>
-Output written on main.pdf (39 pages, 564197 bytes).
+</usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/euler/eusm10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/euler/eusm5.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/euler/eusm7.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmbx7.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmbxi10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmex10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmmi10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmmi5.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmmi7.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmmi9.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr17.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr5.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr7.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr9.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmri10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmsy5.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmsy7.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmtt10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb>
+Output written on main.pdf (39 pages, 585987 bytes).
 PDF statistics:
- 572 PDF objects out of 1000 (max. 8388607)
- 468 compressed objects within 5 object streams
+ 583 PDF objects out of 1000 (max. 8388607)
+ 478 compressed objects within 5 object streams
  170 named destinations out of 1000 (max. 500000)
  93 words of extra memory for PDF output out of 10000 (max. 10000000)
 

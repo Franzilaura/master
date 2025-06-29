@@ -5,7 +5,7 @@ To do so, we will need to choose paths in $\Ex$ on various occasions. We will re
 the paths in detail but rather describe the paths enough to understand from which homotopy class we
 choose a path and why some are homotopy equivalent. Also, we do not care much about the size of the
 disks as we can expand and shrink them continuously as needed.
-So, for this section we assume a basic topological understanding which for instance can be found in \todo{topo reference?}
+So, for this section we assume a basic topological understanding which for instance can be found in \cite{munkres}
 
 \begin{rem}
     Let us recall the definition of $\Ex$. For each $n \in \N$ we have an object $\langle n \rangle$. 
@@ -49,8 +49,8 @@ We will follow now the same approach as in the symmetic monoidal case in section
     \]
     satisfying
         \begin{enumerate}[(M1)]
-            \item The functor $\pi$ is a op-fibration.
-            \item For $\C \coloneqq \Cotimes_{\langle 1 \rangle}$, we have $\Cotimes_{\langle n \rangle} \cong \C^n$ for all $n \geq 1$. 
+            \item \textbf{Op-fibration condition:} The functor $\pi$ is a op-fibration.
+            \item \textbf{Segal condition:} For $\C \coloneqq \Cotimes_{\langle 1 \rangle}$, we have $\Cotimes_{\langle n \rangle} \cong \C^n$ for all $n \geq 1$. 
         \end{enumerate}
 
 \end{defin}
@@ -97,7 +97,7 @@ basepoint configuration in $\E_2(2)$:
         \end{tikzpicture}
 \end{center}
 
-Since $\pi$ satisfies (M1) and (M2), we have that for any $(A,B) \in \C^2 \cong \Cotimes_{\langle 2 \rangle}$ 
+Since $\pi$ satisfies the op-fibration condition (M1) and the Segal condition (M2), we have that for any $(A,B) \in \C^2 \cong \Cotimes_{\langle 2 \rangle}$ 
 there is a cocartesian lift $(A,B) \to A \otimes B$. The cocartesian property ensures that the choice is 
 unique up to isomorphism.
 So, we obtain a well-defined functor
@@ -214,7 +214,7 @@ For the associator we consider the following diagram in $\Ex$:
         \end{tikzpicture}
     \end{center}
 
-Again using the (M1) property of $\pi$ we obtain a commuting diagram in $\Cotimes$
+Again using the op-fibration condition (M1) property of $\pi$ we obtain a commuting diagram in $\Cotimes$
 \[
 \begin{tikzcd}
 {(A \otimes B, C)} \arrow[d, "\otimes"] & {(A,B,C)} \arrow[r, "{(\id, \otimes)}"] \arrow[l, "{(\otimes, \id)}"'] & {(A, B \otimes C)} \arrow[d, "\otimes"] \\
@@ -222,10 +222,10 @@ Again using the (M1) property of $\pi$ we obtain a commuting diagram in $\Cotime
 \end{tikzcd}
 \]
 
-The tensor unit is given by the unique morphism $\langle 0 \rangle \to \langle 1 \rangle$ in $\Ex$. 
+Similarily to proposition \ref{SymMonBijection}, the tensor unit is given by the unique morphism 
+$\eta \colon \langle 0 \rangle \to \langle 1 \rangle$ in $\Ex$ 
+which induces a functor $\Cotimes_{\langle 0 \rangle} \to \C$ giving us a tensor unit $\mathbf{1}$.
 
-\todo{tensor unit diagrams analogously to \ref{SymMonBijection}}
- 
 \begin{prop}
     The category $\C$ equipped with $(\otimes, b, a, \mathbf{1})$ defines a braided monoidal category.
 \end{prop}
@@ -235,7 +235,8 @@ The tensor unit is given by the unique morphism $\langle 0 \rangle \to \langle 1
     \todo{picture of $E_1$ in $E_2$?}
     So, the pentagon identity holds as $\E_1$ is the associative operad.
     \todo{include a proof here if spare time}
-    Hence, we focus on the hexagon identities
+    The unitality condition holds analoguously to the proof of proposition \ref{SymMonBijection} using the Segal condition.
+    Hence, we focus on verifying the hexagon identities
     \begin{enumerate}
         \item 
         \[
@@ -309,6 +310,7 @@ The tensor unit is given by the unique morphism $\langle 0 \rangle \to \langle 1
     The commutativity of the triangle diagrams on the side mean choosing a path from one configuration to 
     another while filling the tetrahedron in $\Ex$ means having a homotopy between the the different paths. 
     As it turns out we do not make any new choices of paths. The paths are induced by the half twist we chose to define $\otimes$.
+    \todo{give details. that $\langle 3 \rangle \to \langle 1 \rangle$ factros through $\langle 2  \rangle$ etc}
     The paths are chosen such that the configurations are homotopic to the basepoint configuration \todo{define basepoint config earlier}. 
 
     \begin{center}
@@ -347,7 +349,7 @@ The tensor unit is given by the unique morphism $\langle 0 \rangle \to \langle 1
 
     \newpage
     
-    The paths described above follow from the following diagram which is the translation of the first hexagon identity to the corresponding configuration.
+    The paths above are desribed by the following diagram which is the translation of the first hexagon identity to the corresponding configuration.
         \begin{center}
         \begin{tikzpicture}
             %arrows
@@ -563,7 +565,7 @@ The tensor unit is given by the unique morphism $\langle 0 \rangle \to \langle 1
 
     \newpage
 
-    The resulting paths are again homotopic equivalent and therefore the second hexagon identity holds.
+    The resulting paths are again homotopy equivalent and therefore the second hexagon identity holds.
     \begin{center}
         \begin{tikzpicture}
             %arrows
@@ -696,7 +698,12 @@ covering is a morphism of operads.
     \end{align*}
     which we construct as follows:
     Let $(\bar{\alpha}, \alpha_1, \dots, \alpha_k) \in \widetilde{\E_2}(k) \times \widetilde{\E_2}(j_1) \times \dots \times 
-        \widetilde{\E_2}(j_k)$. Then 
+        \widetilde{\E_2}(j_k)$
+    with
+        $$\alpha_l \colon b_{j_l} \to c_{j_l}$$
+    and 
+        $$\bar{\alpha} \colon b_k \to c_k.$$
+    Then 
         \[
             \bar{\alpha} \circ (\alpha_1, \dots, \alpha_k)    
         \]
@@ -759,8 +766,6 @@ covering is a morphism of operads.
 
     Further, let $\tau \in \E_1(j) \subset \E_2(j)$ be a path from $b_j$ to $\gamma((b_k, b_{j_1}, \dots, b_{j_k}))$
     that resizes and translates the disks along the horizontal axis. This path $\tau$ is unique up to homotopy.
-    \todo{what are the c1 etc define them}
-
     This generates the following commuting diagram in $\Ex$:
     \begin{center}
         \begin{tikzcd}
@@ -806,8 +811,8 @@ covering is a morphism of operads.
 \end{proof}
 
     This construction of an operadic structure on the universal covering of a topological operad can be given in a more general setting.
-    Which we did not require at this point. But in \cite{adrian} you can find a more general statement on how to construct an 
-    operadic structure on the universal covering of a topological operad. \todo{Statement + Adrians lemma Nummer}.
+    Which we did not require at this point. But in lemma 4.1.12 in \cite{adrian} you can find a more general statement on how to construct an 
+    operadic structure on the universal covering of a topological operad as long as there is an suboperad of $\E_1$ into the topological operad.
 
 \subsubsection{Braid Action on $\widetilde{\E_2 \slash S}$}
 

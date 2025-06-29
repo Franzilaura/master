@@ -133,7 +133,7 @@
             
         
             \item At the beginning of the section we already saw that the concatenation of loops defines an operad: 
-            Let $\C = \Top$. Then we can define the \textit{operad of little interval} $\E$ as
+            Let $\C = \Top$. Then we can define the \textit{operad of little intervall} $\E$ as
             \[
                 \E(n) = \Emb(I_1, \dots, I_n, I),
             \]
@@ -343,7 +343,7 @@
     When we later discuss operads, we will seldom focus on planar operads but will work with symmetric operads instead.
 
     \begin{defin}\label{operad}
-        A {\em (symmetric) operad} $\O$ in $\C$ is a planar operad as defined in \ref{planaroperad} with an action of $S_n$ on $\O(n)$ together with the following equivariance condition: 
+        A {\em (symmetric) operad} $\O$ in $\C$ is a planar operad as defined in definition \ref{planaroperad} with an action of $S_n$ on $\O(n)$ together with the following equivariance condition: 
            Let $\sigma(j_1, \cdots, j_k) \in S_j$ denote the element that permutes $k$ blocks of length $j_l$ for $1 \leq l \leq k$. Then, the following diagram commutes:
                 \begin{center}
                 \begin{tikzcd}
@@ -365,7 +365,7 @@
     As already mentioned we introduce operads as a tool to generally encode algebraic structure.
         
     \begin{defin}
-        Let $\O$ be an operad in $C$. An $\O${\em -algebra} is an object A in $C$ with maps
+        Let $\O$ be an operad in $\C$. An $\O${\em -algebra} is an object A in $\C$ with maps
         \[
             \theta \colon \O(j) \otimes A^j \rightarrow A
         \]
@@ -432,7 +432,7 @@
     \end{defin}
 
     \begin{rem}
-        We can of course also define algebras over planar operads by dropping the equivariance condition as there is no symmetric group action. So, algebras over the operad $\Ass$ which we defined in \ref{egs_planar_operad} are indeed monoids since the corresponding squares commute due to canonical isomorphisms:
+        We can of course also define algebras over planar operads by dropping the equivariance condition as there is no symmetric group action. So, algebras over the operad $\Ass$ which we defined in examples \ref{egs_planar_operad} are indeed monoids since the corresponding squares commute due to canonical isomorphisms:
             \begin{center}
                 \begin{tikzcd}
                     \Ass(2) \otimes \Ass(2) \otimes \Ass(1) \otimes A^3 \arrow[rr, "\cong"] \arrow[dd, "\cong"'] &  & \Ass(3) \otimes A^3 \arrow[d, "\theta"]  \\
@@ -508,7 +508,7 @@
                 \item Start with a configuration in $\dd_n(k)$, which gives $k$ disks inside the unit disk.
                 \item Each of the $k$ disks is treated as a new "unit disk" in which a configuration from $\dd_n(l_1), \dd_n(l_2), \dots, \dd_n(l_k)$ can be inserted.
                 \item The configurations from $\dd_n(l_1), \dd_n(l_2), \dots, \dd_n(l_k)$ are scaled down to fit inside the respective disks from the configuration in $\dd_n(k)$, and they are inserted.
-                \item After placing all configurations inside the $k$ disks, the boundary are erased, yielding a new configuration in $\dd_n(n_1 + \dots + n_k)$.
+                \item After placing all configurations inside the $k$ disks, the boundaries of the $k$ disks are erased, yielding a new configuration in $\dd_n(n_1 + \dots + n_k)$.
             \end{itemize}
             
             \begin{center}
@@ -629,7 +629,7 @@
     monoidal category can be defined in a purely functorial way. After that we will then follow this approach 
     and define the notion of a colored operad in a similar way.
     
-    Let us start by introducing some terminology.
+    Let us start by introducing some terminology from \cite{kerodon}.
     
     \begin{defin}
         Let $P \colon \C \to \D $ be a functor of arbitrary categories and $f \colon x \to y$ a morphism in $\C$. We call $f$ {\em cartesian} if for any morphism $g \colon  z \to y$ in $\C$ and $\omega \colon P(z) \to P(x)$ in $\D$ with $P(f) \circ \omega = P(g)$, there exists a unique morphism $\omega' \colon z \to x$ in $\C$ such that $g = f \circ \omega'$ and $P(\omega')= \omega$. In diagrams we have:
@@ -668,9 +668,12 @@
     \end{defin}
 
     If not stated otherwise, when we talk about fibrations and op-fibrations in this thesis, we will always mean Grothendieck fibrations and Grothendieck 
-    op-fibrations, respectively.
-
-
+    op-fibrations, respectively. Also note, that in \cite{kerodon}, these termes are refered to as cartesian and cocartesian fibration. 
+    However, we chose to use the terminology used in \cite{ha}.
+    
+    In the next part we will construct a functor having certain properties from a symmetric monoidal 
+    category. We will then see that the functor encodes all the necessary data of the symmetric
+    monoidal category.
 
     \begin{defin}\label{Cxdef}
         Let $\C$ be a symmetric monoidal category. We define a new category $\Cotimes$ in the following way:
@@ -700,7 +703,7 @@
     \begin{defin}
         We define $\Fin$, the {\em category of finite pointed sets}, as follows:
         \begin{itemize}
-            \item For each $n \in \N$ we write $\langle n \rangle^{\circ} := \{1, \dots, n\}$. We define the objects of $\Fin$ as $ \langle n \rangle := \langle n \rangle^{\circ}_*$.
+            \item For each $n \in \N$, we write $\langle n \rangle^{\circ} := \{1, \dots, n\}$. We define the objects of $\Fin$ as $ \langle n \rangle := \langle n \rangle^{\circ}_*$.
             \item A morphism $\alpha \colon \langle n \rangle \to \langle m \rangle$ is a map of finite sets where $\alpha(*)=*$
         \end{itemize}
     \end{defin}
@@ -747,10 +750,12 @@
     We are now ready to state two very important properties of the functor $P \colon \Cotimes \to \Fin$, which as it turns out is all we need to know.
     
     \begin{prop}\label{m1m2}
-        \begin{enumerate}[(M1)]
-            \item The forgetful functor $P \colon \Cotimes \to \Fin$ is a Grothendieck op-fibration.
-            \item We have that $\C \cong \Cotimes_{\langle 1 \rangle}$ and more precisely we obtain that $\Cotimes_{\langle n \rangle} \cong \C^n$ where $\C^n$ denotes the $n$-fold product of  copies of $\C$.
-        \end{enumerate}
+        Let $P \colon \Cotimes \to \Fin$ be the forgetful functor as describes above. Then, the following conditions hold:
+            \begin{enumerate}[(M1)]
+                \item \textbf{Op-fibration condition:} $P$  is a Grothendieck op-fibration. 
+                \item \textbf{Segal condition:} We have that $\C \cong \Cotimes_{\langle 1 \rangle}$ and more precisely we obtain that $\Cotimes_{\langle n \rangle} \cong \C^n$ 
+                where $\C^n$ denotes the $n$-fold product of  copies of $\C$. 
+            \end{enumerate}
     \end{prop}
 
     \begin{proof}
@@ -792,7 +797,7 @@
             First, we will show that for any morphism $\langle n \rangle \to \langle m \rangle$ the op-fibration condition (M1) 
             induces a functor of fiber categories $A \colon \Cotimes_{\langle n \rangle} \to \Cotimes_{\langle m \rangle}$:
             Let $\alpha \colon \langle n \rangle \to \langle m \rangle$ be a morphism in $\Fin$ and $[C_1, \dots, C_n]$
-            an object in $\Cotimes_{\langle n \rangle}$. By (M1), we can find a cocartesian morphism 
+            an object in $\Cotimes_{\langle n \rangle}$. By the op-fibration condition (M1), we can find a cocartesian morphism 
             $$f_{\alpha} \colon [C_1, \dots, C_n] \to [C_1', \dots, C_m'].$$
             Therefore, we can define 
             \[
@@ -847,21 +852,22 @@
     $\Cotimes_{\langle n \rangle} \to \Cotimes_{\langle m \rangle}$ originated from 
     $\alpha \colon \langle n \rangle \to \langle m \rangle$ also by $\alpha$.
 
+
 We are now well prepared to see that the symmetric monoidal structure on $\C$ is encoded in $\Cotimes$ and 
 its forgetful functor $P \colon \Cotimes \to \Fin$ satisfying the above conditions. In other words, for 
-any category $\D$ together with a functor $P \colon \D \to \Fin$ satisfying (M1) and (M2), we can construct
+any category $\D$ together with a functor $P \colon \D \to \Fin$ satisfying the op-fibration condition (M1) and the Segal condition (M2), we can construct
 a symmetric monoidal  category $\C$ such that $\D \cong \Cotimes$ and $P$ is the usual forgetful functor. 
 The right candidate for $\C$ is clearly $\D_{\langle 1 \rangle}$.
 
  \begin{prop}\label{SymMonBijection}
-    There is a bijection
+    The construction of $\pi \colon \Cotimes \to \Fin$ from a symmetric monoidal category $\C$ given above is a bijection:
     \[
     \{\text{symmetric monoidal categories}\} \cong \{\text{op-fibrations } \D \to \Fin \text{ satisfying (M2)}\}
     \]
  \end{prop}
 
  \begin{proof}
-    Let $\D$ be a category and $P \colon \D \to \Fin$ a functor satisfying (M1) and (M2). We will equip 
+    Let $\D$ be a category and $P \colon \D \to \Fin$ a functor satisfying the op-fibration condition (M1) and the Segal condition (M2). We will equip 
     $\C \coloneqq \D_{\langle 1 \rangle}$ with a symmetric monoidal structure and see that there is an 
     equivalence of categories $\Cotimes \cong \D$.
     \begin{enumerate}
@@ -940,8 +946,8 @@ The right candidate for $\C$ is clearly $\D_{\langle 1 \rangle}$.
         \tau^2_1 \circ \tau^3_2 \circ \tau^4_3 \quad \rightsquigarrow \quad A \otimes (B \otimes (C \otimes D))\\
     \end{align*}
     % So, from $\tau^2_1 \circ \tau^3_2 = \tau^2_1 \circ \tau^3_1$ we obtain $(A \otimes B) \otimes (C \otimes D) \$
-    
     \end{enumerate}
+    This construction is in bijection to the previous given construction.
 \end{proof}
 
 \begin{rem}
@@ -969,24 +975,25 @@ The right candidate for $\C$ is clearly $\D_{\langle 1 \rangle}$.
     \[
         P \colon \Cotimes \to \deltast
     \]
-    This functor is a op-fibration. The proof in \ref{m1m2} applies. Note that for the proof the fact 
+    This functor is a op-fibration. The proof in proposition 
+    \ref{m1m2} applies. Note that for the proof the fact 
     that morphisms in $\deltast$ preserve order is essential, otherwise we could not define
     \[
              \omega_j \colon \bigotimes_{\alpha_{\omega}(k)=j} C_k' \cong \bigotimes_{\alpha_{\omega}(k)=j} \bigotimes_{\alpha_f(i)=k} C_i \cong \bigotimes_{\alpha_g(k)=j} C_k \xrightarrow{g_j} C_j''
             \]
     in a monoidal category $\C$.
-    Further, the (M2) property applies as it is a result of the (M1) property and the fact that $\rho^i$ is 
+    Further, the Segal condition (M2) holds as it is a result of the op-fibration condition (M1) and the fact that $\rho^i$ is 
     a morphism in $\deltast$.
-    It then also follows that there is a bijection
+    It then also follows that this similar construction is again a bijection
     \[
-    \{\text{monoidal categories}\} \cong \{\text{op-fibration } \D \to \deltast \text{ satisfying (M2)}\}
+    \{\text{monoidal categories}\} \cong \{\text{op-fibration } \D \to \deltast \text{ satisfying (M2)}\}.
     \]
-    The proof for this is analoguously to \ref{SymMonBijection} as all morphisms in $\Fin$ that induce a 
+    The proof for this is analoguously to proposition \ref{SymMonBijection} as all morphisms in $\Fin$ that induce a 
     monoidal structure on $\C$ are order preserving and can be considered in $\deltast$.
 \end{rem}
 
 We will now introduce the notion of a colored operad and will move on to see that, similarly to describing 
-a symmetric monoidal structure via a functor satisfying (M1) an (M2), there is also a functor satisfying 
+a symmetric monoidal structure via a functor satisfying the op-fibration condition (M1) and Segal condition (M2), there is also a functor satisfying 
 similar properties that encode the datum of a colored operad.
 
 \begin{defin}\label{coloroperad}
@@ -1008,7 +1015,7 @@ similar properties that encode the datum of a colored operad.
                 {\Mul_{\P}(X_I, Y)}                                     & {\Mul_{\P}(X_I, Y) \times \Mul_{\P}((Y), Y)} \arrow[l, hook]
             \end{tikzcd}
         \end{center}
-        
+       
         \begin{center}
             \begin{tikzcd}
                 {\Mul_{\P}(X_I, Y)} \arrow[r, "\cong"] \arrow[d, "\id"] & {(\prod_{i \in I} \{\id_{X_i}\}) \times \Mul_{\P}(X_I, Y)} \arrow[d, hook]           \\
@@ -1018,6 +1025,7 @@ similar properties that encode the datum of a colored operad.
         \item For every sequence of finite maps $I \to J \to K$, collections of objects 
         $X_I = \{X_i\}_{i \in I}$, $Y_J = \{Y_j\}_{j \in J}$, $W_K = \{W_k\}_{k \in K}$ and object $Z \in \O$ 
         the following diagram commutes:
+         \todo{make diagram prettier}
         \begin{center}
         \begin{adjustbox}{max width=\textwidth}
             \begin{tikzcd}
@@ -1033,7 +1041,7 @@ similar properties that encode the datum of a colored operad.
 
 \begin{rem}
     When we drop the symmetric structure we obtain a definition of a colored operad what we call colored 
-    planar operad. In other word we consider the indexing sets $I$ in \ref{coloroperad} to be finite 
+    planar operad. In other word we consider the indexing sets $I$ in definition \ref{coloroperad} to be finite 
     ordered sets and maps between indexing sets have to be order preserving.
 \end{rem}
 
@@ -1051,7 +1059,7 @@ similar properties that encode the datum of a colored operad.
 
 \begin{egs}
     \begin{enumerate}
-        \item A colored operad with one color is a symmetric operad in $\Set$ as defined in \ref{operad}. 
+        \item A colored operad with one color is a symmetric operad in $\Set$ as defined in definition \ref{operad}. 
         Let $\O$ be a colored operad with one color $X$. We will construct a symmetric operad $\P$ from 
         $\O$. Since $\O$ is a colored operad with only one color, we define the family of objects $\P(n)$ 
         for $n \in \mathbb{N}$ as:
@@ -1085,7 +1093,7 @@ similar properties that encode the datum of a colored operad.
         that of an operad.
     
         \item A colored planar operad with one color is a planar operad in $\Set$ as defined 
-        in \ref{planaroperad}. Let $\P$ be a colored planar operad $\P$. We set for $n \in \N$:
+        in definition \ref{planaroperad}. Let $\P$ be a colored planar operad $\P$. We set for $n \in \N$:
         \[
          \P(n) \coloneqq \Mul_{\P}((X)_{1\leq i \leq n}, X)
         \]
@@ -1128,7 +1136,7 @@ similar properties that encode the datum of a colored operad.
         The tensor unit $I$ is the representing object of the functor sending an object $Z$ in $\C$ to 
         $\Mul_{\C}(\emptyset, Z)$.
         This example is even clearer when we have the functorial definition of a colored operad later on. 
-        As it will be a generalization of \ref{m1m2} and $\ref{SymMonBijection}$ illustrates how to reconstruct 
+        As it will be a generalization of proposition \ref{m1m2} and proposition \ref{SymMonBijection} illustrates how to reconstruct 
         the symmetric monoidal category.
         
         % where we obtain canonical isomorphism from the image of $\id$ in $\Hom(X \otimes I, X) \cong \Hom(X, X)$.
@@ -1176,7 +1184,7 @@ similar properties that encode the datum of a colored operad.
     $\Delta_{\ast}$.   
 \end{rem}
 
-Let $\O$ be a colored operad. Then similarly as in \ref{Cxdef} we have a forgetful functor 
+Let $\O$ be a colored operad. Then similarly as for the definition \ref{Cxdef} we have a forgetful functor 
 \[
 \pi \colon \Ox \to \Fin
 \]
@@ -1185,7 +1193,7 @@ First, note that in general $\pi$ does not have to be a op-fibration. For an arb
 $\alpha \colon \langle n \rangle \to \langle m \rangle$ and a collection $\{X_i\}_{i \in \langle n \rangle}$ 
 there is no canonical choice for a collection $\{X'_j\}_{j \in \langle m \rangle}$ with morphism 
 $f \colon \{X_i\}_{i \in \langle n \rangle} \to \{X'_j\}_{j \in \langle m \rangle}$ such that 
-$\pi(f)=\alpha$ as in the proof of \ref{m1m2}. 
+$\pi(f)=\alpha$ as in the proof of proposition \ref{m1m2}. 
 However, there is a canonical choice if $\alpha$ is a bijection on $\alpha^{-1}(\langle m \rangle^{\circ})$. 
 Then for all $j \in \langle m \rangle$ there is exactly one $i_j \in \langle n \rangle$ with $\alpha(i_j) = j$. 
 Hence, we define $X'_j \coloneqq X_{i_j}$ and for all $j \in J$ we have $f_j = \id_{X_{i_j}}$. This defines 
@@ -1205,8 +1213,8 @@ such that $h \circ f = g$ and $\pi(h)=\omega$.
 The underlying category of $\O$ is the fiber category $\O_{\langle 1 \rangle}$ as the objects are 
 1-collections of colors and a morphism from $X$ to $Y$ is defined by $\id_{\langle 1 \rangle}$ with 
 $\phi \in \Mul_{\O}(\{X\}, Y)$.
-Furthermore, the equivalence $\O_{\langle n \rangle} \cong \O^n$ holds as the weaker (M1) property 
-still suffices to admit the proof given in \ref{m1m2}. 
+Furthermore, the equivalence $\O_{\langle n \rangle} \cong \O^n$ holds as the weaker op-fibration condition (M1) property 
+still suffices to admit the proof given in proposition \ref{m1m2}. 
 
 Further, let $\{X_i\}_{i \in \langle n \rangle}$ be a collection of colors,  $\Vec{X}$ denoting the 
 corresponding object in $\Ox_{\langle n \rangle}$ and $Y \in \O$. 
@@ -1221,7 +1229,7 @@ the composition law in $\Ox$.
     \[
         \pi \colon \P^{\otimes} \to \deltast.
     \]
-    which satisfies the weaker (M1) and (M2) property.
+    which satisfies the weaker op fibration condition (M1) and Segal condition (M2) property.
 \end{rem}
 
 
