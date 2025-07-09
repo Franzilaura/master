@@ -2383,9 +2383,8 @@
     <bcf:citekey order="9" intorder="1">EO</bcf:citekey>
     <bcf:citekey order="10" intorder="1">EO</bcf:citekey>
     <bcf:citekey order="11" intorder="1">yau</bcf:citekey>
-    <bcf:citekey order="12" intorder="1">munkres</bcf:citekey>
-    <bcf:citekey order="13" intorder="1">adrian</bcf:citekey>
-    <bcf:citekey order="14" intorder="1">Dyckerhoff</bcf:citekey>
+    <bcf:citekey order="12" intorder="1">adrian</bcf:citekey>
+    <bcf:citekey order="13" intorder="1">Dyckerhoff</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="nty">

@@ -1,11 +1,12 @@
 \subsection{Braided monoidal structure}
 
-In the following we will construct a braided monoidal structure obtained from a op-fibration over $\Ex$.
+In the following we will construct a braided monoidal structure obtained from an op-fibration over $\Ex$.
 To do so, we will need to choose paths in $\Ex$ on various occasions. We will refrain from specifying
 the paths in detail but rather describe the paths enough to understand from which homotopy class we
-choose a path and why some are homotopy equivalent. Also, we do not care much about the size of the
+choose a path so we then see why certain compositions of paths are homotopy equivalent. 
+Also, we do not care much about the size of the
 disks as we can expand and shrink them continuously as needed.
-So, for this section we assume a basic topological understanding which for instance can be found in \cite{munkres}
+% So, for this section we assume a basic topological understanding which for instance can be found in \cite{munkres}
 
 \begin{rem}
     Let us recall the definition of $\Ex$. For each $n \in \N$ we have an object $\langle n \rangle$. 
@@ -20,7 +21,7 @@ So, for this section we assume a basic topological understanding which for insta
         2 &\mapsto 2 \\
         3 &\mapsto 1 \\
     \end{align*}
-    together with the configurations
+    together with the configurations:
     \begin{center}
     \begin{tikzpicture}
                         % First element (left)
@@ -47,7 +48,7 @@ So, for this section we assume a basic topological understanding which for insta
         $\alpha' \colon \langle m \rangle \to \langle l \rangle$ 
         with configurations $\{c'_k\}_{1 \leq k \leq l}$. 
     \end{center}
-    Then, the $p$ configuration $c'_k$ is labeled 
+    Then, the configuration $c'_k$ is labeled 
     by $\alpha'^{-1}=\{j_1^{(k)}, \dots, j_p^{(k)}\}$. So, we obtain a configuration 
     \[
         \gamma(c'_k, c_{j_1}, \dots, c_{j_p})
@@ -56,9 +57,9 @@ So, for this section we assume a basic topological understanding which for insta
     giving us the well-defined composition $\alpha' \circ \alpha$
 \end{rem}
 
-We will follow now the same approach as in the symmetic monoidal case in section 
+We will now follow the same approach as in the symmetic monoidal case in section 
 \ref{sec:operads}, i.e. we will define a category $\Cotimes$ and a functor 
-$\pi \colon \Cotimes \to \Ex$ such that $\pi$ is a op-fibration and the fibers 
+$\pi \colon \Cotimes \to \Ex$ such that $\pi$ is an op-fibration and the fibers 
 of $\pi$ are given by the categories $\C^n \coloneqq \Cotimes_{\langle n \rangle}$ for $n \geq 1$.
 
 \begin{defin}
@@ -76,7 +77,7 @@ always refers to an active morphism from now on for all $n \in \N$.
     \]
     satisfying
         \begin{enumerate}[(M1)]
-            \item \textbf{Op-fibration condition:} The functor $\pi$ is a op-fibration.
+            \item \textbf{Op-fibration condition:} The functor $\pi$ is an op-fibration.
             \item \textbf{Segal condition:} For $\C \coloneqq \Cotimes_{\langle 1 \rangle}$, we have $\Cotimes_{\langle n \rangle} \cong \C^n$ for all $n \geq 1$. 
         \end{enumerate}
 
@@ -98,7 +99,7 @@ Let $\beta$ denote the following morphism in $\Ex$
      \begin{align*}
          \beta \colon \langle 2 \rangle &\to \langle 2 \rangle \\
          1 &\mapsto 2 \\
-         2 &\mapsto 1. \\
+         2 &\mapsto 1 \\
      \end{align*}
 with the trivial collection $(\id^2, \id^1)$.
 Further, let 
@@ -126,22 +127,22 @@ basepoint configuration $b_2 \in \E_2(2)$:
 
 Since $\pi$ satisfies the op-fibration condition (M1) and the Segal condition (M2), we have that for any $(A,B) \in \C^2 \cong \Cotimes_{\langle 2 \rangle}$ 
 there is a cocartesian lift $(A,B) \to A \otimes B$. The cocartesian property ensures that the choice is 
-unique up to isomorphism.
+unique up to unique isomorphism.
 So, we obtain a well-defined functor
 \[
     \otimes \colon \C^2 \to \C.
 \]
 
-Further, we consider the following diagramm in $\Ex$
+Further, we consider the following diagramm in $\Ex$:
 \[    
     \begin{tikzcd}
         \langle 2 \rangle \arrow[r, "\beta"] \arrow[d, "\mu"] & \langle 2 \rangle \arrow[d, "\mu"] \\
-        \langle 1 \rangle  \arrow[r, dashed]                  & \langle 1 \rangle.                 
+        \langle 1 \rangle  \arrow[r, dashed]                  & \langle 1 \rangle                
     \end{tikzcd}
 \]
-Filling the diagram, i.e. giving commutativity means choosing a path 
-from the basepoint configuration corresponding to $\mu$ 
-to the twisted basepoint configuration corresponding to $\mu \circ \beta$. 
+Filling the diagram, i.e. providing commutativity data means choosing a path 
+from the basepoint configuration, corresponding to $\mu$, 
+to the twisted basepoint configuration, corresponding to $\mu \circ \beta$. 
 We choose this to be the half twist which we denote by $\htw$.
 
 \begin{center}
@@ -191,8 +192,8 @@ A \otimes B \arrow[r, "b", dashed, shift left]  & B \otimes A \arrow[l, "b^{-1}"
 \end{tikzcd}
 \]
 The morphism $b$ is the induced morphism from the cocartesian morphism $\otimes$ while $b^{-1}$ 
-is induces by $\otimes \circ \beta'$. 
-They are inverse to one another since lifts are unique.
+is induced by $\otimes \circ \beta'$. 
+They are inverse to one another since lifts with chosen source are unique.
 The induced morphism $b$ is a unique isomorphism due to the fact that $\otimes$ and $\beta$ are cocartesian morphisms.
 Note, that for a homotopic different choice of path instead of the half twist, we would obtain a
 different braiding. So, this choice is essential for our construction.
@@ -241,7 +242,7 @@ For the associator we consider the following diagram in $\Ex$:
         \end{tikzpicture}
     \end{center}
 
-Again using the op-fibration condition (M1) property of $\pi$ we obtain a commuting diagram in $\Cotimes$
+Again using the op-fibration condition (M1) property of $\pi$ we obtain a commuting diagram in $\Cotimes$:
 \[
 \begin{tikzcd}
 {(A \otimes B, C)} \arrow[d, "\otimes"] & {(A,B,C)} \arrow[r, "{(\id, \otimes)}"] \arrow[l, "{(\otimes, \id)}"'] & {(A, B \otimes C)} \arrow[d, "\otimes"] \\
@@ -249,7 +250,7 @@ Again using the op-fibration condition (M1) property of $\pi$ we obtain a commut
 \end{tikzcd}
 \]
 
-Similarily to proposition \ref{SymMonBijection}, the tensor unit is given by the unique morphism 
+Similarily to Proposition \ref{SymMonBijection}, the tensor unit is given by the unique morphism 
 $\eta \colon \langle 0 \rangle \to \langle 1 \rangle$ in $\Ex$ 
 which induces a functor $\Cotimes_{\langle 0 \rangle} \to \C$ giving us a tensor unit $\mathbf{1}$.
 
@@ -260,7 +261,7 @@ which induces a functor $\Cotimes_{\langle 0 \rangle} \to \C$ giving us a tensor
 \begin{proof}
     First, we observe that the associator refers to $\E_1$ being embedded into $\E_2$ along the horizontal line,
     as we translate and resize the disks along the horizontal line.
-    So, we can translate and resize configurations with middle points on the horizontal axis as we please to,
+    So, we can arbitrarly translate and resize configurations with middle points on the horizontal axis,
     since it is only a associative translation in $\E_1$. 
 
     \begin{figure}[h!]
@@ -288,7 +289,7 @@ which induces a functor $\Cotimes_{\langle 0 \rangle} \to \C$ giving us a tensor
 
     So, the pentagon identity holds as $\E_1$ is the associative operad.
     \todo{include a proof here if spare time, at least elaborate on $\E_1$}
-    The unitality condition holds analoguously to the proof of proposition \ref{SymMonBijection} using the Segal condition.
+    The unitality condition holds analoguously to the proof of Proposition \ref{SymMonBijection} using the Segal condition.
     Hence, we focus on verifying the hexagon identities
     \begin{enumerate}
         \item 
@@ -361,11 +362,11 @@ which induces a functor $\Cotimes_{\langle 0 \rangle} \to \C$ giving us a tensor
     \end{center}
     % \todo{describe one commuting tetrahedron in detail. Rest analogpously leading tot he following diagram...}
     The commutativity of the triangle diagrams on the side means choosing a path from one configuration to 
-    another while filling the tetrahedron in $\Ex$ means having a homotopy between the the different paths. 
+    another while filling the tetrahedron in $\Ex$ means having a homotopy between the different paths. 
     As it turns out we do not make any new choices of paths. The paths are induced by the half twist $\htw$ 
     we chose to define $\otimes$:
 
-    Let us understand where the diagram or more precisely the configurations origin from.
+    Let us understand where the diagram or more precisely the configurations come from.
     The morphisms corresponding to $c_{(A \otimes B) \otimes C}$ and $c_{C \otimes (A \otimes B)}$ 
     respectively factor through $\langle 2 \rangle$ in the following way:
     \begin{center}
@@ -410,8 +411,8 @@ which induces a functor $\Cotimes_{\langle 0 \rangle} \to \C$ giving us a tensor
         \end{tikzpicture}
     \end{center}
 
-    Similar arguments for all the corresponding diagrams induces by the hexagon identity $(1)$
-    give us paths that already defined by the associtivity path and the half twist up to homotopy.
+    Similar arguments for all the corresponding diagrams induced by the hexagon identity $(1)$
+    give us paths that are already defined by the associativity path and the half twist up to homotopy.
         \begin{center}
         \begin{tikzpicture}
             %arrows
@@ -743,7 +744,7 @@ if there exists a commuting diagram in $\Ex$
 where $\sigma \in S_n$ and $\tau \in S_m$.
 
 Before, we can find a universal covering of $\E_2 \slash S$, we need to choose basepoints in each configuration space.
-So, for all $n \geq 1$ we choose the basepoint $\bar{b_n} \in \E_2(n) \slash S_n$ to be the following configuration:
+So, for all $n \geq 1$ we choose the basepoint $\bar{b}_n \in \E_2(n) \slash S_n$ to be the following configuration:
 \begin{center}
     \begin{tikzpicture}
         %basepoint
@@ -763,12 +764,12 @@ Hence, it has a universal covering $\widetilde{\E_2(n) \slash S_n}$ which we def
     \widetilde{\E_2(n) \slash S_n} \coloneq \{ \gamma \colon [0,1] \to \E_2(n) \slash S_n \mid \gamma(0) = b_n \} 
     \slash \text{homotopy with fixed endpoints}
 \]
-with 
+with projection map:
 \begin{align*}
     p \colon \widetilde{\E_2(n) \slash S_n} &\to \E_2(n) \slash S_n \\
     \gamma &\mapsto \gamma(1)
 \end{align*}
-It is known that this in fact defines a universal covering of $\E_2(n) \slash S_n$.
+It is known that this in fact defines a universal covering of $\E_2(n) \slash S_n$. \todo{reference}
 
 Analoguously, there is a universal covering of $\E_2$ with labels, when we choose the basepoint
 $b_n \in \E_2(n)$:
@@ -784,16 +785,16 @@ $b_n \in \E_2(n)$:
         \draw[dotted](-1, 0)--(3, 0);
     \end{tikzpicture}
 \end{center}
-As already mentioned the labels have no purpose from a topological perspective, so it should not 
+The labels have no purpose from a topological perspective, so it should not 
 come as a surprise that there is a homeomorphism
 \begin{align*}
     \widetilde{\E_2} &\cong \widetilde{\E_2 \slash S} \\
-    (\gamma \colon b_n \to c) &\mapsto (\bar{\gamma} \colon \bar{b_n} \to \bar{c}) \\
-    (\gamma \colon b_n \to c') &\mapsfrom (\bar{\gamma} \colon \bar{b_n} \to \bar{c}) \\
+    (\gamma \colon b_n \to c) &\mapsto (\bar{\gamma} \colon \bar{b}_n \to \bar{c}) \\
+    (\gamma \colon b_n \to c') &\mapsfrom (\bar{\gamma} \colon \bar{b}_n \to \bar{c}) \\
 \end{align*}
-where we forget labels in one directions and in the reverse direction we label the basepoint $\bar{b_n}$
+where we forget labels in one directions and in the reverse direction we label the basepoint $\bar{b}_n$
 from left to right. The labeling of $c'$ is then induced by the path $\gamma$. clearly this is 
-continuous in both directions and inverse to oneanother. This shows that topologically the path $\gamma$
+continuous in both directions and inverse to one another. This shows that topologically the path $\gamma$
 does not need the labels which is summarized in the following representation.
 We observe that for every $\gamma \in \widetilde{\E_2(n)} \slash S_n$ there is a commuting diagram in 
 $\Ex$ for some $\sigma \in S_n$:
@@ -831,7 +832,7 @@ braid action on the universal covering.
     Let $(\bar{\alpha}, \alpha_1, \dots, \alpha_k) \in \widetilde{\E_2}(k) \times \widetilde{\E_2}(j_1) \times \dots \times 
         \widetilde{\E_2}(j_k)$
     with
-        $$\alpha_l \colon b_{j_l} \to c_{j_l}$$
+        $$\alpha_l \colon b_{j_l} \to c_l$$
     for $1 \leq l \leq k$ and 
         $$\bar{\alpha} \colon b_k \to c_k.$$
     Then 
@@ -841,7 +842,7 @@ braid action on the universal covering.
     denotes the path from $\gamma((b_k, b_{j_1}, \dots, b_{j_k}))$ to $\gamma(c_k, c_{j_1}, \dots, c_{j_k})$ 
     where we first apply 
 
-    $$\alpha_l \colon b_{j_l} \to c_{j_l}$$
+    $$\alpha_l \colon b_{j_l} \to c_l$$
 
     on the configuration in the $l$-th disk of $b_k$ for all $1 \leq l \leq k$
     and then apply 
@@ -912,7 +913,7 @@ braid action on the universal covering.
     \]
     
     We observe, that this composition map is well-defined, since the path $\tau$ is unique up to homotopy. To see that 
-    $\widetilde{\gamma}$ is associative it needs a thorough understanding on how it is defined. 
+    $\widetilde{\gamma}$ is associative we need to have a look at the definition.
     Note, that in the definition $\tau \in \E_1(j)$ is a path that resizes and translates the disks, so
     it has no effect on the paths from a homotopy perspective. Further, we know that composition of paths is associative upto homotopy.
     So, for 
@@ -959,12 +960,16 @@ braid action on the universal covering.
     operadic structure on the universal covering of a topological operad as long as there is an suboperad of $\E_1$ into the topological operad.
 \end{rem}
    
-\subsubsection{Braid Action on $\widetilde{\E_2 \slash S}$}
-
-As usual, there is a group action of of the fundamental group of $\E_2(n) \slash S(n)$ on its universal covering.
-The fundamental group of $\E_2(n)$ is the $n$-th pure braid group $PB_n$. But since we forgot the labels when moving to
-$\E_2(n) \slash S(n)$, we obtain now the full $n$-th braid group $B_n$. Since, there is a homeomorphism 
-$\widetilde{\E_2 \slash S} \cong \widetilde{\E_2}$, we can lift the braid group action to $\widetilde{\E_2}$.
+\begin{const}[Braid Action on $\widetilde{\E_2 \slash S}$]
+We want to define a braid action on the universal covering $\widetilde{\E_2}$.
+As we have seen previously, the universal covering of $\E_2 \slash S$ is homeomorphic to the
+universal covering of $\E_2$.
+As usual, there is a group action of of the fundamental group of
+$\E_2(n) \slash S(n)$ on its universal covering. The fundamental group of $\E_2(n)$ is the
+$n$-th pure braid group $PB_n$. But since we forgot the labels when moving to $\E_2(n) \slash S(n)$, 
+we obtain now the full $n$-th braid group $B_n$. Since, there is a homeomorphism 
+$\widetilde{\E_2 \slash S} \cong \widetilde{\E_2}$, we can lift the braid group action 
+to $\widetilde{\E_2}$.
 
 We recall the generators of $B_n$ for all $1 \leq i < n$, $n \in \N$:
 \begin{center}
@@ -1059,3 +1064,4 @@ and for $\tau_i \in B_{j_i}$ with $1 \leq i \leq k$, we have the following commu
 
 Hence, the braid group action on $\widetilde{\E_2}$ respects to the operadic structure.
 
+\end{const}
