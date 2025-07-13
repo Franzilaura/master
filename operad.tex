@@ -1011,15 +1011,15 @@ similar properties that encode the datum of a colored operad.
         and right unit in the composition, i.e. the following diagrams commute:
         \begin{center}
             \begin{tikzcd}
-                {\Mul_{\P}(X_I, Y)} \arrow[r, "\cong"] \arrow[d, "\id"] & {\Mul_{\P}(X_I, Y) \times \{\id_Y\}} \arrow[d, hook]           \\
-                {\Mul_{\P}(X_I, Y)}                                     & {\Mul_{\P}(X_I, Y) \times \Mul_{\P}((Y), Y)} \arrow[l, hook]
+                {\Mul_{\O}(X_I, Y)} \arrow[r, "\cong"] \arrow[d, "\id"] & {\Mul_{\O}(X_I, Y) \times \{\id_Y\}} \arrow[d, hook]           \\
+                {\Mul_{\O}(X_I, Y)}                                     & {\Mul_{\O}(X_I, Y) \times \Mul_{\O}((Y), Y)} \arrow[l, hook]
             \end{tikzcd}
         \end{center}
        
         \begin{center}
             \begin{tikzcd}
-                {\Mul_{\P}(X_I, Y)} \arrow[r, "\cong"] \arrow[d, "\id"] & {(\prod_{i \in I} \{\id_{X_i}\}) \times \Mul_{\P}(X_I, Y)} \arrow[d, hook]           \\
-                {\Mul_{\P}(X_I, Y)}                                     & {(\prod_{i \in I} \Mul_{\P}((X_i), X_i)) \times \Mul_{\P}(X_I, Y)} \arrow[l, hook]
+                {\Mul_{\O}(X_I, Y)} \arrow[r, "\cong"] \arrow[d, "\id"] & {(\prod_{i \in I} \{\id_{X_i}\}) \times \Mul_{\O}(X_I, Y)} \arrow[d, hook]           \\
+                {\Mul_{\O}(X_I, Y)}                                     & {(\prod_{i \in I} \Mul_{\O}((X_i), X_i)) \times \Mul_{\O}(X_I, Y)} \arrow[l, hook]
             \end{tikzcd}                                             
         \end{center}
         \item For every sequence of finite maps $I \to J \to K$, collections of objects 
@@ -1029,7 +1029,7 @@ similar properties that encode the datum of a colored operad.
         \begin{center}
         \begin{adjustbox}{max width=\textwidth}
             \begin{tikzcd}
-                {\prod_{j \in J} \Mul_{\O}(X_I, Y_j) \times \prod_{k \in K} \Mul_{\O}(Y_J, W_k) \times \Mul_{\O}(W_K, Z)} \arrow[rd, "\id \times \gamma"] \arrow[dd, "(\gamma \circ s) \times \id"] & \\
+                {\prod_{j \in J} \Mul_{\O}(X_{I_j}, Y_j) \times \prod_{k \in K} \Mul_{\O}(Y_J, W_k) \times \Mul_{\O}(W_K, Z)} \arrow[rd, "\id \times \gamma"] \arrow[dd, "(\gamma \circ s) \times \id"] & \\
                             & {\prod_{j \in J} \Mul_{\O}(X_{I_j}, Y_j) \times \Mul_{\O}(Y_J, Z)} \arrow[dd] \\
                 {\prod_{k \in K} \Mul_{\O}(X_{I_k}, W_k) \times \Mul_{\O}(W_K, Z)} \arrow[rd] & \\
                             & {\Mul_{\O}(X_I, Z)}         

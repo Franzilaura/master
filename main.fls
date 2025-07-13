@@ -538,6 +538,9 @@ INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm1
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/stmaryrd/stmary8.tfm
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/amsfonts/euler/eusm10.tfm
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/amsfonts/euler/eusm10.tfm
+INPUT ./braid_colored.tex
+INPUT ./braid_colored.tex
+INPUT braid_colored.tex
 INPUT ./outlook.tex
 INPUT ./outlook.tex
 INPUT ./outlook.tex
