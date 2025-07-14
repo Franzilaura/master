@@ -3,7 +3,7 @@
 In this section, we will define colored braided operads and will aim to find a op-fibration
 that encodes all the necesaary data to give an alternative definition.
 First, let us recall the definition of $\Ex$ and build a related category $\Br$ 
-that will serve as the base category for our op-fibration later on.
+that will serve as the target category for our op-fibration later on.
 
 \begin{rem}
     For each $n \in \N$ we have an object $\langle n \rangle$. 
@@ -52,7 +52,12 @@ that will serve as the base category for our op-fibration later on.
     labeled by $(\alpha' \circ \alpha)^{-1}(k)$ for all $1 \leq k \leq l$ 
     giving us the well-defined composition $\alpha' \circ \alpha$
 \end{rem}
-\todo{define active morphism?}
+\todo{define active morphism definition here?}
+
+\begin{defin}
+    A morphism $\alpha \colon \langle n \rangle \to \langle m \rangle$ in $\Ex$
+    is called active if it is active in $\Fin$, i.e. $\alpha^{-1}(\ast) = \{\ast\}$.
+\end{defin}
 
 % Then for any  $I$-labeled configuration $\widetilde{I}$ in $\E_2$,
 % in a sense we can also 
@@ -63,7 +68,7 @@ that will serve as the base category for our op-fibration later on.
 % for $\widetilde{I}$.
 \todo{define BR category. How to define objects?}
 
-Next, we partially enrich $\Ex$ with the groupoid structure.
+Next, we partially enrich $\Ex$ with a groupoid structure.
 
 \begin{defin}
     Let $\Br$ be the following partially $\Grp$-enriched category:
@@ -83,14 +88,13 @@ Next, we partially enrich $\Ex$ with the groupoid structure.
         $$\acthom( \langle n \rangle, \langle 1 \rangle)$$
         form the groupoid of homotopy classes of paths in the configuration space $\E_2(n)$.
         The remaining $\hom$-categories are discrete groupoids.
-        \todo{correction: the morphisms are a groupoid, not a set. But its discrete if not active to 1}
     \end{enumerate}
 \end{defin}
 
 It is clear that this defines a category.
 We can extend the definition of $\Br$ to include any finite set $I$.
 Note, that that category would be equivalent to $\Br$ in the analogous
-way as a $\Fin$ is equivalent to the category of finite sets with a distinguished point.
+way as $\Fin$ is equivalent to the category of finite sets with a distinguished point.
 We are now set up to understand the following definition:   
 
 \begin{defin}
@@ -132,12 +136,12 @@ We are now set up to understand the following definition:
         \[
             \gamma \colon \prod_{j \in J} \Mul_{\B}^{\widetilde{I_j}}(\{X_i\}_{i \in I_j}, Y_j) \times \Mul_{\B}^{\widetilde{J}}(\{Y_j\}_{j\in J}, Z) \to \Mul_{\B}^{\widetilde{I}}(\{X_i\}_{i \in I}, Z)  
         \]
-        \item There is a collection of morphisms $\{ \id_X \in \Mul_{\O}(\{X\}, X)\}_{X \in \O}$ being a left 
+        \item There is a collection of morphisms $\{ \id_X \in \Mul_{\B}^{\id^1}(\{X\}, X)\}_{X \in \B}$ being a left 
         and right unit in the composition, i.e. the following diagrams commute:
         \begin{center}
             \begin{tikzcd}
                 {\Mul_{\B}^{\widetilde{I}}(\{X_i\}_{i \in I}, Y)} \arrow[r, "\cong"] \arrow[d, "\id"] & {\Mul_{\B}^{\widetilde{I}}(\{X_i\}_{i \in I}, Y) \times \{\id_Y\}} \arrow[d, hook]           \\
-                {\Mul_{\B}^{\widetilde{I}}(\{X_i\}_{i \in I}, Y)}                                     & {\Mul_{\B}^{\widetilde{I}}(\{X_i\}_{i \in I}, Y) \times \Mul_{\B}^{\widetilde{Y}}((Y), Y)} \arrow[l, "\gamma"]
+                {\Mul_{\B}^{\widetilde{I}}(\{X_i\}_{i \in I}, Y)}                                     & {\Mul_{\B}^{\widetilde{I}}(\{X_i\}_{i \in I}, Y) \times \Mul_{\B}^{\id^1}((Y), Y)} \arrow[l, "\gamma"]
             \end{tikzcd}
         \end{center}
        
@@ -236,7 +240,6 @@ We are now set up to understand the following definition:
                     \B(k) \times \prod_{s=1}^k (\B(j_s) \times \prod_{q=1}^{j_s} \B(i_{g_{s-1}+q})) \arrow[rr, "\id \times (\times_s \gamma)"'] &  & \B(k) \times (\prod_{s=1}^k \B(h_s)) \arrow[u, "\gamma"']
                 \end{tikzcd}
                 \end{center}
-                 \todo{diagram of $\B$ associativity condition}
                 where $s$ shuffles the entries of the tensor product, 
     commutes as the composition map $\gamma$ in $\B_{col}$ is associative for the following maps
     for $1 \leq s \leq k$, $1 \leq q \leq j_s$ and $h'_q = \sum_{t=1}^{g_{s-1}+1} i_t$.
@@ -251,6 +254,7 @@ We are now set up to understand the following definition:
     \end{align*}
     with $\widetilde{\alpha'_s} = b_{j_s}$.
     So we have defined a planar operad $\B$. It remains to define a well-defined action of the braid group $B_n$ on $\B(n)$ and verify that it respects $\theta$.
+    \todo{add braid group action: how to fix labeling and $\id_X$problem?}
 \end{eg}
 
 \begin{defin}
@@ -281,3 +285,6 @@ We are now set up to understand the following definition:
     \end{enumerate}
 \end{defin}
 
+\input{braided_monoidal_structure.tex}
+
+\input{braided_fib.tex}

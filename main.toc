@@ -5,9 +5,10 @@
 \contentsline {subsection}{\numberline {2.2}Colored Operads}{12}{subsection.0.2.2}%
 \contentsline {section}{\numberline {3}Braided Operads}{23}{section.0.3}%
 \contentsline {subsection}{\numberline {3.1}Action Operad}{24}{subsection.0.3.1}%
-\contentsline {subsection}{\numberline {3.2}Braided monoidal structure}{26}{subsection.0.3.2}%
-\contentsline {subsection}{\numberline {3.3}Universal Covering of $\E _2$}{33}{subsection.0.3.3}%
-\contentsline {section}{\numberline {4}Colored Braided Operads}{39}{section.0.4}%
+\contentsline {subsection}{\numberline {3.2}Universal Covering of $\E _2$}{26}{subsection.0.3.2}%
+\contentsline {section}{\numberline {4}Colored Braided Operads}{31}{section.0.4}%
+\contentsline {subsection}{\numberline {4.1}Braided Monoidal Structure}{35}{subsection.0.4.1}%
+\contentsline {subsection}{\numberline {4.2}Colored Braided Operads as Op-fibrations}{42}{subsection.0.4.2}%
 \contentsline {section}{\numberline {5}Outlook}{42}{section.0.5}%
-\contentsline {section}{\numberline {6}Appendix}{43}{section.0.6}%
+\contentsline {section}{\numberline {6}Appendix}{42}{section.0.6}%
 \contentsfinish 
