@@ -1,6 +1,10 @@
 \subsection{Universal Covering of $\E_2$}
 
-In this section we want to establish an operadic structure on the universal covering of $\E_2$.
+In this section we want to establish an operadic structure on the universal covering of $\E_2$ 
+which will be another example of a braided operad as the fundamental group of $\E_2$ acts on its
+universal covering. We will not show that the braid groups are the fundamental group of $\E_2$
+in this section, but rather use the fact to establish a braid action on $\E_2$. For the proof 
+of the braid group being the fundamental group we refer to \cite{fox}.
 First, we need to define what it means to be a universal covering of a topological operad.
 
 \begin{defin}
@@ -16,19 +20,29 @@ First, we need to define what it means to be a universal covering of a topologic
 \end{defin}
 
 While the operadic structure requires labels in the sense that they are necessary to define the 
-composition maps in $\E_2$, they do not matter from a topological perspective. Hence, in this 
-section we want to establish a universal covering of $\E_2$ without labels. We will then see in
-the next step that this universal covering is homeomorphic to the universal covering of $\E_2$.
+composition maps in $\E_2$, they do not matter from a topological perspective. Nevertheless,
+there is the need to choose a basepoint. And formally, the basepoint with permuted labels is a different
+point in $\E_2$ such that we would only obtain the pure braid group as the fundamental group.
+Hence, in this section we want to establish a universal covering of $\E_2$ without labels
+which has the full braid action.
+We will see in the next step that this universal covering is homeomorphic to the universal 
+covering of $\E_2$ which will allow us to transfer the braid action on the universal covering of $\E_2$ 
+without labels to the universal covering of $\E_2$ with labels.
 
-So, instead of $\E_2$ we will consider the quotient:
+So, instead of $\E_2$ we consider the quotient of $\E_2$ by the action of the 
+symmetric group $S$ on the labels:
 \[
     \E_2 \to \E_2 \slash S
 \]
-We identify configurations that only differ in their labels, i.e. we consider the quotient of 
-$\E_2$ by the action of the symmetric group $S$ on the labels.
+So, we identify configurations that only differ in their labels. 
+In this part, we will work a lot 
+with $\Ex$ which is the definition from definition \ref{def:Ox} applied to $\E_2$. 
+This gives us a nice way to talk about configurations and paths between them. 
+In the next section, $\Ex$ will be an essential ingredient to establish
+colored braided operads.
+
 So, in $\Ex$ we identify $f, g \colon \langle n \rangle \to \langle m \rangle$ 
 if there exists a commuting diagram in $\Ex$
-\todo{context of why and how we can consider things in $\Ex$}
 \begin{center}
     \begin{tikzcd}
         \langle n \rangle \arrow[r, "f"] \arrow[d, "\sigma"] & \langle m \rangle \arrow[d, "\tau"] \\
@@ -63,8 +77,8 @@ with projection map:
     p \colon \widetilde{\E_2(n) \slash S_n} &\to \E_2(n) \slash S_n \\
     \gamma &\mapsto \gamma(1)
 \end{align*}
-It is known that this in fact defines a universal covering of $\E_2(n) \slash S_n$. \todo{reference}
-\todo{add universal coverign with labels}
+This in fact defines a universal covering of $\E_2(n) \slash S_n$ as it is the commonly used construction
+of a universal cover, e.g. can be found in \cite{Hatcher}.
 Analoguously, there is a universal covering of $\E_2$ with labels, when we choose the basepoint
 $b_n \in \E_2(n)$:
 \begin{center}
@@ -79,14 +93,14 @@ $b_n \in \E_2(n)$:
         \draw[dotted](-1, 0)--(3, 0);
     \end{tikzpicture}
 \end{center}
-and define its universal covering analogpously:
+and define its universal covering analogously:
 \[
     \widetilde{\E_2(n)} \coloneq \{ \gamma \colon [0,1] \to \E_2(n) \mid \gamma(0) = b_n \} 
     \slash \text{homotopy with fixed endpoints}
 \]
 with projection map:
 \begin{align*}
-    p \colon \widetilde{\E_2(n) \slash S_n} &\to \E_2(n) \slash S_n \\
+    p \colon \widetilde{\E_2(n)} &\to \E_2(n) \\
     \gamma &\mapsto \gamma(1)
 \end{align*}
 The labels have no purpose from a topological perspective, so it should not 

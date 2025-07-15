@@ -129,6 +129,89 @@
       \verb https://arxiv.org/abs/math/9808089
       \endverb
     \endentry
+    \entry{fox}{article}{}{}
+      \name{author}{2}{}{%
+        {{hash=2c7edfd8da8184a29e3a647e8ec2cefc}{%
+           family={FOX},
+           familyi={F\bibinitperiod},
+           given={R.},
+           giveni={R\bibinitperiod}}}%
+        {{hash=442d51131ae1d767d2c7023bb87ea0fd}{%
+           family={NEUWIRTH},
+           familyi={N\bibinitperiod},
+           given={L.},
+           giveni={L\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Mathematica Scandinavica}%
+      }
+      \strng{namehash}{c0320fb0f86fe7d86ad0ea439bebf620}
+      \strng{fullhash}{c0320fb0f86fe7d86ad0ea439bebf620}
+      \strng{fullhashraw}{c0320fb0f86fe7d86ad0ea439bebf620}
+      \strng{bibnamehash}{c0320fb0f86fe7d86ad0ea439bebf620}
+      \strng{authorbibnamehash}{c0320fb0f86fe7d86ad0ea439bebf620}
+      \strng{authornamehash}{c0320fb0f86fe7d86ad0ea439bebf620}
+      \strng{authorfullhash}{c0320fb0f86fe7d86ad0ea439bebf620}
+      \strng{authorfullhashraw}{c0320fb0f86fe7d86ad0ea439bebf620}
+      \field{labelalpha}{FN62}
+      \field{sortinit}{F}
+      \field{sortinithash}{2638baaa20439f1b5a8f80c6c08a13b4}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{00255521, 19031807}
+      \field{journaltitle}{Mathematica Scandinavica}
+      \field{title}{THE BRAID GROUPS}
+      \field{urlday}{14}
+      \field{urlmonth}{7}
+      \field{urlyear}{2025}
+      \field{volume}{10}
+      \field{year}{1962}
+      \field{urldateera}{ce}
+      \field{pages}{119\bibrangedash 126}
+      \range{pages}{8}
+      \verb{urlraw}
+      \verb http://www.jstor.org/stable/24489274
+      \endverb
+      \verb{url}
+      \verb http://www.jstor.org/stable/24489274
+      \endverb
+    \endentry
+    \entry{Hatcher}{book}{}{}
+      \name{author}{1}{}{%
+        {{hash=0a94eadf86d8b878d4c37bc5640e53e3}{%
+           family={Hatcher},
+           familyi={H\bibinitperiod},
+           given={Allen},
+           giveni={A\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Cambridge}%
+      }
+      \list{publisher}{1}{%
+        {Cambridge University Press}%
+      }
+      \strng{namehash}{0a94eadf86d8b878d4c37bc5640e53e3}
+      \strng{fullhash}{0a94eadf86d8b878d4c37bc5640e53e3}
+      \strng{fullhashraw}{0a94eadf86d8b878d4c37bc5640e53e3}
+      \strng{bibnamehash}{0a94eadf86d8b878d4c37bc5640e53e3}
+      \strng{authorbibnamehash}{0a94eadf86d8b878d4c37bc5640e53e3}
+      \strng{authornamehash}{0a94eadf86d8b878d4c37bc5640e53e3}
+      \strng{authorfullhash}{0a94eadf86d8b878d4c37bc5640e53e3}
+      \strng{authorfullhashraw}{0a94eadf86d8b878d4c37bc5640e53e3}
+      \field{labelalpha}{Hat02}
+      \field{sortinit}{H}
+      \field{sortinithash}{23a3aa7c24e56cfa16945d55545109b5}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{isbn}{0-521-79160-X; 0-521-79540-0}
+      \field{title}{Algebraic topology}
+      \field{year}{2002}
+      \field{pages}{xii+544}
+      \range{pages}{-1}
+      \verb{file}
+      \verb :C\:\\Users\\mat\\Documents\\Pdfs\\AT.pdf:PDF
+      \endverb
+    \endentry
     \entry{may}{book}{}{}
       \name{author}{2}{}{%
         {{hash=a07503557a6c96573699eccadf8c9aca}{%

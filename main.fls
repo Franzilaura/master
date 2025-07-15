@@ -520,8 +520,6 @@ INPUT ./braided_operads.tex
 INPUT braided_operads.tex
 INPUT ./e2_covering.tex
 INPUT ./e2_covering.tex
-INPUT ./e2_covering.tex
-INPUT ./e2_covering.tex
 INPUT e2_covering.tex
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/lm/rm-lmr8.tfm
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/lm/lmmi8.tfm

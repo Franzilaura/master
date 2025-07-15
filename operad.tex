@@ -595,27 +595,11 @@
                 &= \gamma \left( (f, \tau_1(g_1), \dots, \tau_k(g_k)\right) \\
                 &= \gamma \circ (\tau_1 \times \dots \times \tau_k) ((f, (g_i)_{1 \leq i \leq k})). \\
             \end{align*}
-        
-            
-            % Hence, the following diagrams commutes:
-            % \[
-            %     \begin{tikzcd}
-            %         \dd_n(k) \times \dd_n(l_1) \times \cdots \times \dd_n(l_k) \arrow[r, "\sigma \times \sigma^{-1}"] \arrow[d, "\gamma"] & \dd_n(k) \times \dd_n(l_{\sigma(1)}) \times \cdots \times \dd_n(l_{\sigma(k)}) \arrow[d, "\gamma"] \\
-            %         \dd_n(l) \arrow[r, "\sigma"] & \dd_n(l)
-            %     \end{tikzcd}
-            % \]
-            % \begin{center}
-            %     \begin{tikzcd}
-            %         \dd_n(k) \times \dd_n(l_1) \times \cdots \times \dd_n(l_k) \arrow[d, "\gamma"'] \arrow[rr, "\id \times \tau_1 \times \cdots \times \tau_k"] &  & \dd_n(k) \times \dd_n(l_{\sigma(1)}) \times \cdots \times \dd_n(l_{\sigma(k)}) \arrow[d, "\gamma"] \\
-            %         \dd_n(l) \arrow[rr, "\tau_1 \oplus \cdots \oplus \tau_k"']                                                                                &  & \dd_n(l)                                                                                  
-            %     \end{tikzcd}
-            % \end{center}
-
-
-     
-            
-            % \item The Associahedra Operad
-            % \item lie operad
+            The little $n$-disk operad $\dd_n$ is a model of the $\E_n$ operad and specifically $\E_2$
+            will be of great importance to us throughout the entire thesis. There are other models for the $\E_n$ operads.
+            In fact there are recognition principles for $\E_n$ operads, which will be the motivation
+            for section \ref{sec:braidedoperads}. However, we will not discuss these other models here.
+            So, when we talk about $\E_n$ we are referring to the little $n$-disk operad $\dd_n$.
         \end{enumerate}
     \end{egs}
 
@@ -1150,7 +1134,7 @@ similar properties that encode the datum of a colored operad.
 
 
 
-\begin{defin}
+\begin{defin}\label{def:Ox}
     Let $\O$ be a colored operad. We define a category $\Ox$ in the following way:
     \begin{enumerate}[(i)]
         \item The objects of $\Ox$ are finite sequences of colors of $\O$.

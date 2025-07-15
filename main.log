@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.4.8)  14 JUL 2025 18:07
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.4.8)  15 JUL 2025 12:41
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1205,13 +1205,13 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 [16]
 
 [17]
-Overfull \hbox (14.9283pt too wide) in paragraph at lines 1003--1005
+Overfull \hbox (14.9283pt too wide) in paragraph at lines 987--989
 []\T1/lmr/m/n/10 For ev-ery fi-nite col-lec-tion of ob-jects $\OMS/lmsy/m/n/10 f\OML/lmm/m/it/10 X[]\OMS/lmsy/m/n/10 g[]$ \T1/lmr/m/n/10 and ob-ject $\OML/lmm/m/it/10 Y$ \T1/lmr/m/n/10 in $\U/eus/m/n/10 O$\T1/lmr/m/n/10 , there is a set $[][]\OT1/lmr/m/n/10 (\OMS/lmsy/m/n/10 f\OML/lmm/m/it/10 X[]\OMS/lmsy/m/n/10 g[]\OML/lmm/m/it/10 ; Y\OT1/lmr/m/n/10 )$
  []
 
-Package hyperref Info: bookmark level for unknown todo defaults to 0 on input line 1028.
+Package hyperref Info: bookmark level for unknown todo defaults to 0 on input line 1012.
 
-Overfull \hbox (23.62935pt too wide) in paragraph at lines 1030--1038
+Overfull \hbox (23.62935pt too wide) in paragraph at lines 1014--1022
  [] 
  []
 
@@ -1229,9 +1229,7 @@ Overfull \hbox (23.62935pt too wide) in paragraph at lines 1030--1038
 
 [23]
 
-[24])
-
-[25] (./e2_covering.tex
+[24] (./e2_covering.tex
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <8> on input line 1.
 
@@ -1309,9 +1307,8 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 1.
 
 
-LaTeX Warning: Marginpar on page 26 moved.
 
-
+[25]
 
 [26]
 
@@ -1319,85 +1316,69 @@ LaTeX Warning: Marginpar on page 26 moved.
 
 [28]
 
-[29])
+[29]))
 
 [30] (./braid_colored.tex
-
-LaTeX Warning: Marginpar on page 31 moved.
-
-
 
 [31]
 
 [32]
-Overfull \hbox (23.61522pt too wide) in paragraph at lines 190--198
+Overfull \hbox (23.61522pt too wide) in paragraph at lines 189--197
  [] 
  []
 
 
-Overfull \hbox (16.41223pt too wide) detected at line 217
+Overfull \hbox (16.41223pt too wide) detected at line 216
 \OML/lmm/m/it/10 ^^R [] []  [] [][]\OT1/lmr/m/n/10 (\OMS/lmsy/m/n/10 f\OML/lmm/m/it/10 X[]\OMS/lmsy/m/n/10 g[]\OML/lmm/m/it/10 ; X\OT1/lmr/m/n/10 ) \OMS/lmsy/m/n/10 ^^B [][]\OT1/lmr/m/n/10 (\OMS/lmsy/m/n/10 f\OML/lmm/m/it/10 X\OMS/lmsy/m/n/10 g[]\OML/lmm/m/it/10 ; X\OT1/lmr/m/n/10 ) [] [][](\OMS/lmsy/m/n/10 f\OML/lmm/m/it/10 X\OMS/lmsy/m/n/10 g[]\OML/lmm/m/it/10 ; X\OT1/lmr/m/n/10 ) [] [][](\OMS/lmsy/m/n/10 f\OML/lmm/m/it/10 X\OMS/lmsy/m/n/10 g[]\OML/lmm/m/it/10 ; X\OT1/lmr/m/n/10 )
  []
 
 
 
 [33]
-Overfull \hbox (3.96233pt too wide) in paragraph at lines 257--257
-[][]$\T1/lmr/m/n/10 problem?[]  
- []
 
-
-Overfull \hbox (3.96233pt too wide) in paragraph at lines 257--257
-[][]$\T1/lmr/m/n/10 problem?[]  
- []
-
-
-Overfull \hbox (4.35828pt too wide) detected at line 283
+[34]
+Overfull \hbox (4.35828pt too wide) detected at line 324
 \OML/lmm/m/it/10 ^^M [] []  [] [][]\OT1/lmr/m/n/10 (\OMS/lmsy/m/n/10 f\OML/lmm/m/it/10 X[]\OMS/lmsy/m/n/10 g[]\OML/lmm/m/it/10 ; Y[]\OT1/lmr/m/n/10 ) \OMS/lmsy/m/n/10 ^^B [][]\OT1/lmr/m/n/10 (\OMS/lmsy/m/n/10 f\OML/lmm/m/it/10 Y[]\OMS/lmsy/m/n/10 g[]\OML/lmm/m/it/10 ; Z[]\OT1/lmr/m/n/10 ) \OMS/lmsy/m/n/10 ! [][]\OT1/lmr/m/n/10 (\OMS/lmsy/m/n/10 f\OML/lmm/m/it/10 X[]\OMS/lmsy/m/n/10 g[]\OML/lmm/m/it/10 ; Z[]\OT1/lmr/m/n/10 )\OML/lmm/m/it/10 :
  []
 
 (./braided_monoidal_structure.tex
 
-[34]
-
 [35]
 
 [36]
 
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-
-
 [37]
 
 [38]
+
+[39]
 Overfull \hbox (14.82617pt too wide) in paragraph at lines 550--551
  [] 
  []
 
 
 
-[39]
-
 [40]
 
-[41]) (./braided_fib.tex
+[41]
 
-LaTeX Warning: Marginpar on page 42 moved.
+[42]) (./braided_fib.tex
+
+LaTeX Warning: Marginpar on page 43 moved.
 
 )) (./outlook.tex) (./appendix.tex
 
-[42]
+[43]
 
-[43])
+[44])
 
-[44]
-LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 32.
+[45]
+LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 30.
  (/usr/local/texlive/2025/texmf-dist/tex/latex/lm/t1lmtt.fd
 File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 
-[45
+[46
 
 ] (./main.aux)
  ***********
@@ -1411,18 +1392,18 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 41304 strings out of 473190
- 799993 string characters out of 5715801
- 1571819 words of memory out of 5000000
- 63686 multiletter control sequences out of 15000+600000
+ 41279 strings out of 473190
+ 799474 string characters out of 5715801
+ 1563402 words of memory out of 5000000
+ 63662 multiletter control sequences out of 15000+600000
  673254 words of font info for 124 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  104i,18n,104p,1453b,1812s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/euler/eusm10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/euler/eusm5.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/euler/eusm7.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmbx7.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmbxi10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmex10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmmi10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmmi5.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmmi7.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmmi9.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr17.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr5.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr7.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr9.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmri10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmsy5.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmsy7.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmtt10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/stmaryrd/stmary10.pfb>
-Output written on main.pdf (45 pages, 623805 bytes).
+Output written on main.pdf (46 pages, 627576 bytes).
 PDF statistics:
- 656 PDF objects out of 1000 (max. 8388607)
- 542 compressed objects within 6 object streams
- 203 named destinations out of 1000 (max. 500000)
+ 662 PDF objects out of 1000 (max. 8388607)
+ 547 compressed objects within 6 object streams
+ 202 named destinations out of 1000 (max. 500000)
  109 words of extra memory for PDF output out of 10000 (max. 10000000)
 

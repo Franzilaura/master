@@ -52,7 +52,6 @@ that will serve as the target category for our op-fibration later on.
     labeled by $(\alpha' \circ \alpha)^{-1}(k)$ for all $1 \leq k \leq l$ 
     giving us the well-defined composition $\alpha' \circ \alpha$
 \end{rem}
-\todo{define active morphism definition here?}
 
 \begin{defin}
     A morphism $\alpha \colon \langle n \rangle \to \langle m \rangle$ in $\Ex$
@@ -87,7 +86,7 @@ Next, we partially enrich $\Ex$ with a groupoid structure.
         \item The active morphisms into $\langle 1 \rangle$
         $$\acthom( \langle n \rangle, \langle 1 \rangle)$$
         form the groupoid of homotopy classes of paths in the configuration space $\E_2(n)$.
-        The remaining $\hom$-categories are discrete groupoids.
+        The remaining $\Hom$-categories are discrete groupoids.
     \end{enumerate}
 \end{defin}
 
@@ -108,7 +107,7 @@ We are now set up to understand the following definition:
             \Mul_{\B}^{\widetilde{I}}(\{X_i\}_{i \in I}, Y)
         \]
         called the set of morphisms from $\{X_i\}_{i \in I}$ to $Y$.
-        \item Let $\alpha \colon I \to J$ be finite mape together with a collection of 
+        \item Let $\alpha \colon I \to J$ be finite map together with a collection of 
         configurations labeled by the preimages of $\alpha$, i.e. 
         $$\widetilde{\alpha} = (\widetilde{I_j})_{j \in J}$$
         where $I_j$ denotes the fiber over $j$ for all $j \in J$
@@ -253,8 +252,50 @@ We are now set up to understand the following definition:
         g_{s-1}+1, \dots, g_s &\mapsto s \\
     \end{align*}
     with $\widetilde{\alpha'_s} = b_{j_s}$.
-    So we have defined a planar operad $\B$. It remains to define a well-defined action of the braid group $B_n$ on $\B(n)$ and verify that it respects $\theta$.
-    \todo{add braid group action: how to fix labeling and $\id_X$problem?}
+    So we have defined a planar operad $\B$. It remains to see how the braid action on $\B$ is induced by the
+    definition of $\B_{col}$.
+
+    Similarily to the symmetric case, in a colored braided operad (even with one color), the set of morphisms 
+    depends not only on $n$, the cardinality of the indexing set, but also on the specific choice of finite 
+    indexing set as well as the corresponding configuration. Thus, for a different labeling $I_1$ and
+    $I_2$ with $|I_1|=n=|I_2|$ and different configurations $\widetilde{I_1}$ and $\widetilde{I_2}$ we 
+    have potentially different sets of morphisms
+    \[
+        \Mul_{\B_{col}}^{\widetilde{I_1}}(\{X\}_{i \in I_1}, X) \text{ and } \Mul_{\B_{col}}^{\widetilde{I_2}}(\{X\}_{i \in I_2}, X)
+    \]
+    
+    This raises the question of how the structures of an one colored braided operad and 
+    a braided operad reconcile. The reason these definitions are still equivalent 
+    lies in the induced braid group action on the set of morphisms.
+
+
+
+    The braiding of the inputs ensures that any specific labeling of the inputs as represented 
+    by $I_1$ with $\widetilde{I_1}$ and $I_2$) with $\widetilde{I_2}$ can be transformed into each other via the action 
+    of some $\sigma \in B_n$ which is represented by the following commutative diagram
+    \begin{center}
+        \begin{tikzpicture}
+            % Define node positions
+            \node (B) at (0, 2) {$I$};
+            \node (C) at (3, 2) {$J$};
+            \node (A) at (1.5, 0) {$\langle 1 \rangle$};
+            
+            % Draw arrows
+            \draw[->] (B) -- (C) node[midway, above] {$\bar{\sigma}$};
+            \draw[->] (B) -- (A) node[midway, left] {$\widetilde{I}$};
+            \draw[->] (C) -- (A) node[midway, right] {$\widetilde{J}$};
+            
+            % Natural transformation arrow
+            \node[rotate=-40] at (1.4, 1.2) {$\Downarrow \sigma$};
+            % \node at (1.7, 1.2) {$\eta$};
+        \end{tikzpicture}
+    \end{center}
+    where $\bar{\sigma}$ is relabeling and $\sigma$ is the path between the configurations 
+    $\widetilde{I}$ and $\widetilde{J}$.
+    Hence, although the morphisms in the colored braided operad are indexed by specific sets and configurations, they 
+    behave the same way up to this braid action. Therefore, the group action effectively collapses the dependence 
+    on the specific finite sets and their configurations. 
+    \todo{braid group action makes sense?}
 \end{eg}
 
 \begin{defin}
