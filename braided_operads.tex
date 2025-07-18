@@ -4,9 +4,9 @@
     Braided operads were first mentioned by Fiedorowicz in his paper \cite{EO} on the construction of $\E_n$ operads. Let $A$ 
     be an operad in the  category of compactly generated Hausdorff spaces. The first theorem states:
 
-    \begin{thm}[Recognition principles for $E_n$ operads]
-        $A$ is an $\E_2$ operad iff $A(k)$ is connected and the collection of universal covering spaces 
-        $\{\Tilde{A}(k)\}_{k \in \N}$ forms a $B_{\infty}$ operad, i.e.:
+    \begin{thm}[Recognition principles for $E_n$-operads]
+        $A$ is an $\E_2$-operad iff $A(k)$ is connected and the collection of universal covering spaces 
+        $\{\Tilde{A}(k)\}_{k \in \N}$ forms a $B_{\infty}$-operad, i.e.:
         \begin{enumerate}[(1)]
             \item For all $k \in \N$, the space $\Tilde{A}(k)$ is contractible.
             \item The braid group  $B_k$ acts freely on $\Tilde{A}(k)$ for each $k \in \N$.
@@ -15,7 +15,7 @@
 
     In the sketch of the proof, it is stated that "the definition of operads can be reformulated 
     using actions by braid groups in place of actions by symmetric groups"~\cite{EO}. As braided operads are a useful tool, e.g. 
-    recognizing $\E_n$ operads, we want to gain a deeper understanding of braided operads. Further, we have already seen that 
+    recognizing $\E_n$-operads, we want to gain a deeper understanding of braided operads. Further, we have already seen that 
     colored operads correspond to op-fibrations over finite pointed sets $\Fin$ as well as colored planar operads correspond 
     to op-fibrations over $\deltast$. We are hoping to find a suitable category such that colored braided operads correspond 
     to op-fibrations over this category. 
@@ -95,7 +95,6 @@ For this section, we remain in the symmetric monoidal category of sets equipped 
 symmetric monoidal structure. We will introduce an action operad that acts on planar operads and
 this relates to braided operads following \cite{yau}. An idea will be that the theory on braided
 operads can be extended in a sense to group action operads.
-\todo{move towards the outlook?}
 
 \begin{defin}
     An {\em action operad} is a tuple
@@ -112,7 +111,7 @@ operads can be extended in a sense to group action operads.
             \[
             \omega \colon G \to \S
             \]
-            is a morphism of planar operads in $\Set$ where $\S$ denotes the symmetry operad from examples \ref{egop}.
+            is a morphism of planar operads in $\Set$ where $\S$ denotes the symmetry operad from examples \ref{eg:operads}.
             \item For $n \geq 1$, let $\sigma, \rho \in G(n)$ and for $k_j \in \N$, $1 \leq j \leq n$ let $\tau_j, \tau_j' \in G(k_j)$
             . Then the following equation holds in $G(k)$ for $ \sum_{1 \leq j \leq n} k_j = k$:
             \[
@@ -127,7 +126,7 @@ We call the condition (iii)(b) the action operad equation.
 \begin{egs}
     \begin{enumerate}
         \item The \textit{planar group operad} $P$ is the action operad where $P(n) = \{\ast\}$ is the trivial group for all $n \in \N$. 
-        \item The symmetry operad $\S$ from examples \ref{egop} equipped with the identity augmentation forms an action operad.
+        \item The symmetry operad $\S$ from examples \ref{eg:operads} equipped with the identity augmentation forms an action operad.
         \item Another example which we have already seen is the braid operad which we equip with the projection to the symmetric group as the augmentation.
     \end{enumerate}
 \end{egs}

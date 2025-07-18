@@ -1,12 +1,14 @@
 \subsection{Braided Monoidal Structure}
 
-In the following we will construct a braided monoidal structure obtained from an op-fibration over $\Br$.
-To do so, we will need to choose paths of configurations in $\Br$ on various occasions. We will refrain from specifying
-the paths in detail but rather describe the paths enough to understand from which homotopy class we
-choose a path so we then see why certain compositions of paths are homotopy equivalent. 
-Also, we do not care much about the size of the
+As we have already seen for symmetric monoidal categories, they are an example of
+colored symmetric operads and can be defined using an op-fibration over $\Fin$ that satisfies
+the Segal condition. In this section, we will define a braided monoidal structure on a category $\C$
+that is induced by a op-fibration over the category $\Br$ also satisfying the Segal condition.
+To do so, we will need to choose paths of configurations in $\Br$ on various occasions.
+We will refrain from specifying the paths in detail but rather describe the paths enough to 
+understand from which homotopy class we choose a path so we then see why certain compositions 
+of paths are homotopy equivalent. Also, we do not care much about the size of the
 disks as we can expand and shrink them continuously as needed.
-% So, for this section we assume a basic topological understanding which for instance can be found in \cite{munkres}
 
 % \begin{rem}
 %     Let us recall the definition of $\Ex$. For each $n \in \N$ we have an object $\langle n \rangle$. 
@@ -57,30 +59,32 @@ disks as we can expand and shrink them continuously as needed.
 %     giving us the well-defined composition $\alpha' \circ \alpha$
 % \end{rem}
 
-We will now follow the same approach as in the symmetic monoidal case in section 
-\ref{sec:operads}, i.e. we will define a category $\Cotimes$ and a functor 
+We follow the same approach as in the symmetic monoidal case in section 
+\ref{sec:operads}, i.e. we start with some category $\Cotimes$ and a functor
 $\pi \colon \Cotimes \to \Br$ such that $\pi$ is an op-fibration and the fibers 
-of $\pi$ are given by the categories $\C^n \coloneqq \Cotimes_{\langle n \rangle}$ for $n \geq 1$.
+of $\pi$ are given by the categories $\C^n \coloneqq \Cotimes_{\langle n \rangle}$ 
+for $n \geq 1$.
 
 If not stated otherwise, a morphism $\langle n \rangle \to \langle 1 \rangle$ 
 always refers to an active morphism in $\Br$ from now on for all $n \in \N$.
 
 \begin{defin}
-    An $\Br$-operad is a category $\Cotimes$ with a functor
+    An $\Br$-monoidal category \todo{change naming} is a category $\Cotimes$ with a functor
     \[
         \Cotimes \to \Br
     \]
     satisfying
         \begin{enumerate}[(M1)]
             \item \textbf{Op-fibration condition:} The functor $\pi$ is an op-fibration.
-            \item \textbf{Segal condition:} For $\C \coloneqq \Cotimes_{\langle 1 \rangle}$, we have $\Cotimes_{\langle n \rangle} \cong \C^n$ for all $n \geq 1$. 
+            \item \textbf{Segal condition:} For $\C \coloneqq \Cotimes_{\langle 1 \rangle}$, 
+            we have $\Cotimes_{\langle n \rangle} \cong \C^n$ for all $n \geq 1$. 
         \end{enumerate}
 
 \end{defin}
 
 
 
-So for the next part, let $\pi \colon \Cotimes \to \Br$ be a $\Br$-operad and we denote
+So for the next part, let $\pi \colon \Cotimes \to \Br$ be a $\Br$-monoidal categoryand we denote
 $\C \coloneqq \Cotimes_{\langle 1 \rangle}$.
 In the following section we aim to define a braided monoidal structure on $\C$.
 First, we introduce the following abuse of notation:
@@ -207,9 +211,9 @@ A \otimes B \arrow[r, "b", dashed, shift left]  & B \otimes A \arrow[l, "b^{-1}"
 \]
 The morphism $b$ is the induced morphism from the cocartesian morphism $\otimes$ while $b^{-1}$ 
 is induced by $\otimes \circ \beta'$. 
-They are inverse to one another since lifts with chosen source are unique.
+They are inverse to one another since lifts with chosen source are unique and the identity is already a lift.
 The induced morphism $b$ is a unique isomorphism due to the fact that $\otimes$ and $\beta$ are cocartesian morphisms.
-Note, that for a homotopic different choice of path instead of the half twist, we would obtain a
+Note, that for a homotopically different choice of path instead of the half twist, we would obtain a
 different braiding. So, this choice is essential for our construction.
 We recall the following morphisms from $\Fin$ for $n \in \N$ and $1 \leq i \leq n$:
 \begin{align*}
@@ -291,38 +295,38 @@ which induces a functor $\Cotimes_{\langle 0 \rangle} \to \C$ giving us a tensor
 \end{prop}
 
 \begin{proof}
-    First, we observe that the associator refers to $\E_1$ being embedded into $\E_2$ along the horizontal line,
-    as we translate and resize the disks along the horizontal line.
-    So, we can arbitrarly translate and resize configurations with middle points on the horizontal axis,
-    since it is only a associative translation in $\E_1$. 
+    % First, we observe that the associator refers to $\E_1$ being embedded into $\E_2$ along the horizontal line,
+    % as we translate and resize the disks along the horizontal line.
+    % So, we can arbitrarly translate and resize configurations with middle points on the horizontal axis,
+    % since it is only a associative translation in $\E_1$. 
 
-    \begin{figure}[h!]
-        \begin{center}
-            \begin{tikzpicture}
-                \draw[dotted] (-13,0) -- (-9,0);
-                \draw[thick, red] (-12.75,0) -- (-11.25,0);
-                \draw[thick, orange] (-10.6,0) -- (-10.05,0);
-                \draw[thick, purple] (-9.95,0) -- (-9.4,0);
+    % \begin{figure}[h!]
+    %     \begin{center}
+    %         \begin{tikzpicture}
+    %             \draw[dotted] (-13,0) -- (-9,0);
+    %             \draw[thick, red] (-12.75,0) -- (-11.25,0);
+    %             \draw[thick, orange] (-10.6,0) -- (-10.05,0);
+    %             \draw[thick, purple] (-9.95,0) -- (-9.4,0);
 
-                % configuration in #E2
-                \draw[dotted] (-7,0) -- (-3,0);
-                \draw[thick] (-5,0) circle (2);
-                \draw[thick, red] (-6, 0) circle (0.75);
-                \draw[thick, orange] (-4.325, 0) circle (0.275);
-                \draw[thick, purple] (-3.675, 0) circle (0.275);
-                % \node at (-6.25, 0) {\small $1$};
-                % \node at (-5, 0) {\small $2$};
-                % \node at (-3.75, 0) {\small $3$};  
-                \node at (-8, 0) {$\hookrightarrow$}; 
-            \end{tikzpicture}
-        \end{center}
-        \caption{example of a configuration of $\E_1$ being embedded in $\E_2$ along the horizontal line}
-    \end{figure}
+    %             % configuration in #E2
+    %             \draw[dotted] (-7,0) -- (-3,0);
+    %             \draw[thick] (-5,0) circle (2);
+    %             \draw[thick, red] (-6, 0) circle (0.75);
+    %             \draw[thick, orange] (-4.325, 0) circle (0.275);
+    %             \draw[thick, purple] (-3.675, 0) circle (0.275);
+    %             % \node at (-6.25, 0) {\small $1$};
+    %             % \node at (-5, 0) {\small $2$};
+    %             % \node at (-3.75, 0) {\small $3$};  
+    %             \node at (-8, 0) {$\hookrightarrow$}; 
+    %         \end{tikzpicture}
+    %     \end{center}
+    %     \caption{example of a configuration of $\E_1$ being embedded in $\E_2$ along the horizontal line}
+    % \end{figure}
 
     So, the pentagon identity holds as $\E_1$ is the associative operad.
-    \todo{include a proof here if spare time, at least elaborate on $\E_1$}
+    \todo{rewrite associativity, refer to $\E_1$ translation in 3.2}
     The unitality condition holds analoguously to the proof of Proposition \ref{SymMonBijection} using the Segal condition.
-    Hence, we focus on verifying the hexagon identities
+    Hence, we focus on verifying the hexagon identities:
     \begin{enumerate}
         \item 
         \[

@@ -1,11 +1,26 @@
 \subsection{Universal Covering of $\E_2$}
 
-In this section we want to establish an operadic structure on the universal covering of $\E_2$ 
-which will be another example of a braided operad as the fundamental group of $\E_2$ acts on its
-universal covering. We will not show that the braid groups are the fundamental group of $\E_2$
-in this section, but rather use the fact to establish a braid action on $\E_2$. For the proof 
-of the braid group being the fundamental group we refer to \cite{fox}.
-First, we need to define what it means to be a universal covering of a topological operad.
+In this section, we want to establish an operadic structure on the universal covering of $\E_2$.
+We recall the operad $\E_2$ from Example \ref{eg:operads} which we introduced as the little 2-disks operad.
+So in each configuration space $\E_2(n)$ we have $n$ disks embedded into a large disk by translation and resizing
+and which are pairwise disjoint.
+The universal covering of $\E_2$ will be another example of a braided operad because 
+of the following fact for $\E_2$ without labels:
+
+\begin{lem}
+    The following statements hold for every configuration $\E_2(n)$ for all $n \in \N$:
+    \begin{enumerate}
+        \item The fundamental group of $\E_2(n)$ is the pure braid group $PB_n$.
+        \item The fundamental group of $\E_2(n)$ without labels is the braid group $B_n$.
+    \end{enumerate}
+\end{lem}
+
+As the fundamental group acts on the universal covering of a space we then obtain 
+a braid action on the universal covering of $\E_2$.
+We will not prove the lemma here. A proof by Fox and Neuwirth can be found in \cite{fox}.
+However, we will give a sketch of why this is the case at the end of the section.
+
+Before we get started, we need to define what it means to be a universal covering of a topological operad.
 
 \begin{defin}
     Let $\P$  be a topological operad. 
@@ -36,9 +51,62 @@ symmetric group $S$ on the labels:
 \]
 So, we identify configurations that only differ in their labels. 
 In this part, we will work a lot 
-with $\Ex$ which is the definition from definition \ref{def:Ox} applied to $\E_2$. 
-This gives us a nice way to talk about configurations and paths between them. 
-In the next section, $\Ex$ will be an essential ingredient to establish
+with $\Ex$ which is the definition from Definition \ref{def:Ox} applied to $\E_2$. 
+This gives us a nice way to talk about configurations and paths between them.
+So, let us recall the definition of $\Ex$:
+\todo{recall definition of $\Ex$ here in detail or in the 4th section? What is better for the reader?}
+\begin{rem}
+    The objects of $\Ex$ are the finite pointed sets $\langle n \rangle$ for all $n \in \N$. 
+    A mophism $\langle n \rangle \to \langle m \rangle$ in $\Ex$ consists of a morphism 
+    $\alpha \colon \langle n \rangle \to \langle m \rangle$ in $\Fin$ and a collection of configurations
+    $$\{c_j \in \E_2(|\alpha^{-1}(j)|)\}_{1 \leq j \leq m}$$
+    where each configuration is labeled by $\alpha^{-1}(j))$.
+
+    We denote the trivial configuration with label $x$ by $\id^x \in \E_2(1)$.
+    Further, recall the composition in $\Ex$. Let 
+    \begin{center}
+        $\alpha \colon \langle n \rangle \to \langle m \rangle$ 
+        with configurations $\{c_j\}_{1 \leq j \leq m}$ 
+    \end{center}
+    and 
+    \begin{center}
+        $\alpha' \colon \langle m \rangle \to \langle l \rangle$ 
+        with configurations $\{c'_k\}_{1 \leq k \leq l}$. 
+    \end{center}
+    Then, the configuration $c'_k$ is labeled 
+    by $\alpha'^{-1}=\{j_1^{(k)}, \dots, j_p^{(k)}\}$. So, we obtain a configuration 
+    \[
+        \gamma(c'_k, c_{j_1}, \dots, c_{j_p})
+    \]
+    labeled by $(\alpha' \circ \alpha)^{-1}(k)$ for all $1 \leq k \leq l$ 
+    giving us the well-defined composition $\alpha' \circ \alpha$.
+\end{rem}
+
+\begin{eg}
+    An example of a morphism in $\Ex$ is the following:
+    \begin{align*}
+        \alpha \colon \langle 3 \rangle &\to \langle 2 \rangle \\ 1 &\mapsto 1 \\
+        2 &\mapsto 2 \\
+        3 &\mapsto 1 \\
+    \end{align*}
+    together with the configurations:
+    \begin{center}
+    \begin{tikzpicture}
+                        % First element (left)
+                        \draw[thick] (-3,0) circle (2);
+                        \draw[thick] (-3.8, 1) circle (0.5);
+                        \draw[thick] (-3, -0.5) circle (1);
+                        \node at (-3.8, 1) {\small $1$};
+                        \node at (-3, -0.5) {\small $3$};
+                        \node at (0,-2) {,};
+                        % Second element (right)
+                        \draw[thick] (3,0) circle (2);
+                        \draw[thick] (2,0.7) circle (0.5);
+                        \node at (2,0.7) {\small $2$};
+        \end{tikzpicture}
+    \end{center}
+\end{eg}
+The category $\Ex$ will be an essential ingredient to establish
 colored braided operads.
 
 So, in $\Ex$ we identify $f, g \colon \langle n \rangle \to \langle m \rangle$ 
@@ -78,7 +146,7 @@ with projection map:
     \gamma &\mapsto \gamma(1)
 \end{align*}
 This in fact defines a universal covering of $\E_2(n) \slash S_n$ as it is the commonly used construction
-of a universal cover, e.g. can be found in \cite{Hatcher}.
+of a universal cover, that for instance can be found in \cite{Hatcher}.
 Analoguously, there is a universal covering of $\E_2$ with labels, when we choose the basepoint
 $b_n \in \E_2(n)$:
 \begin{center}
@@ -113,23 +181,101 @@ come as a surprise that there is a homeomorphism
 where we forget labels in one directions and in the reverse direction we label the basepoint $\bar{b}_n$
 from left to right. The labeling of $c'$ is then induced by the path $\gamma$. clearly this is 
 continuous in both directions and inverse to one another. This shows that topologically the path $\gamma$
-does not need the labels which is summarized in the following representation.
-We observe that for every $\gamma \in \widetilde{\E_2(n)} \slash S_n$ there is a commuting diagram in 
-$\Ex$ for some $\sigma \in S_n$:
-\begin{center}
-    \begin{tikzcd}
-        \langle n \rangle \arrow[d, "\sigma"'] \arrow[r, "c_n"] & \langle 1 \rangle \arrow[d, "\gamma", dashed] \\
-        \langle n \rangle \arrow[r, "b_n"]                              & \langle 1 \rangle                            
-    \end{tikzcd}
-\end{center} 
+does not need the labels which is summarized in the following notation.
+\todo{we have not enriched $\Ex$ so the diagram does not make sense}
 
-Essentially, $\sigma \in S_n$ fixes the labels such that we can consider $\gamma$ as a path in $\widetilde{\E_2}$.
+For $(\gamma \colon \bar{b_n} \rightsquigarrow c) \in \widetilde{\E_2(n)} \slash S_n$
+we write the following diagram for some $\sigma \in S_n$:
+
+\todo{diagram problem}
+
+\[    
+    \begin{tikzcd}
+        \langle n \rangle \arrow[r, "c"] \arrow[d, "\sigma"] & \langle 1 \rangle  \\
+        \langle n \rangle  \arrow[r, "b_n"]                  & \langle 1 \rangle  \arrow[u, dashed, "\gamma"]              
+    \end{tikzcd}
+\]
+Note, that the dashed arrow is not a morphism in $\Ex$ but a path of configurations in $\E_2(n)$. 
+\begin{center}
+    \begin{tikzpicture}
+        % Define node positions
+        \node (B) at (0, 2) {$\langle n \rangle$};
+        \node (C) at (3, 2) {$\langle n \rangle$};
+        \node (A) at (1.5, 0) {$\langle 1 \rangle$};
+        
+        % Draw arrows
+        \draw[->] (B) -- (C) node[midway, above] {$\sigma$};
+        \draw[->] (B) -- (A) node[midway, left] {$c$};
+        \draw[->] (C) -- (A) node[midway, right] {$b_n$};
+        
+        % Natural transformation arrow
+        \node[rotate=-40] at (1.5, 1.2) {$\Downarrow \gamma$};
+        % \node at (1.7, 1.2) {$\eta$};
+    \end{tikzpicture}
+\end{center}
+Essentially, $\sigma \in S_n$ fixes the labels such that we can 
+consider $\gamma$ as a path in $\widetilde{\E_2}$.
 We will use this representation to define an operadic structure on 
-$\widetilde{\E_2} \slash S$ such that the covering is a morphism of operads and then also use it to define a 
+$\widetilde{\E_2} \slash S$ such that the covering is a morphism of operads 
+and then also use it to define a 
 braid action on the universal covering.
+
+First, we notice a specific translations between specific configurations 
+that are unique up to homotopy equivalence.
+
+\begin{rem}[$\E_1$ translation]\label{rem:e1-translation}
+    First, we observe that there is an embedding of $\E_1$ into $\E_2$ 
+    along the horizontal axis.
+    \begin{figure}[h!]
+        \begin{center}
+            \begin{tikzpicture}
+                \draw[dotted] (-13,0) -- (-9,0);
+                \draw[thick, red] (-12.75,0) -- (-11.25,0);
+                \draw[thick, orange] (-10.6,0) -- (-10.05,0);
+                \draw[thick, purple] (-9.95,0) -- (-9.4,0);
+
+                % configuration in #E2
+                \draw[dotted] (-7,0) -- (-3,0);
+                \draw[thick] (-5,0) circle (2);
+                \draw[thick, red] (-6, 0) circle (0.75);
+                \draw[thick, orange] (-4.325, 0) circle (0.275);
+                \draw[thick, purple] (-3.675, 0) circle (0.275);
+                % \node at (-6.25, 0) {\small $1$};
+                % \node at (-5, 0) {\small $2$};
+                % \node at (-3.75, 0) {\small $3$};  
+                \node at (-8, 0) {$\hookrightarrow$}; 
+            \end{tikzpicture}
+        \end{center}
+        \caption{example of a configuration of $\E_1$ being 
+        embedded in $\E_2$ along the horizontal line}
+    \end{figure}
+    Further for any $n \in \N$, two configurations $c_1, c_2 \in \E_2(n)$ that lie
+    in the image of the embedding, i.e. their middle points lie on the horizontal axis,
+    have a path $\eta \colon c_1 \rightsquigarrow c_2$ corresponding to a 
+    path between the preimages in $\E_1(n$). This path is unique up to homotopy equivalence.
+    This follows from the fact that the configuration space of the real line
+    \[
+        \Conf_n(\R) = \left\{ (x_1, x_2, \dots, x_n) \in \mathbb{R}^n \mid x_1 < x_2 < \dots < x_n \right\}
+    \]
+    is contractible.
+    We can define the following map:
+    \[
+    (x_1, \dots, x_n) \mapsto \left( \frac{x_2 - x_1}{x_n - x_1}, \frac{x_3 - x_1}{x_n - x_1}, \dots, \frac{x_{n-1} - x_1}{x_n - x_1} \right),
+    \]
+    which maps $\Conf_n(\R)$ homeomorphically onto the open standard simplex:
+    \[
+    \inter(\Delta^{n-2}) = \left\{ (t_1, \dots, t_{n-2}) \in (0,1)^{n-2} \mid 0 < t_1 < \dots < t_{n-2} < 1 \right\}.
+    \]
+    Hence, since the open simplex $\inter(\Delta^{n-2})$ is contractible then so is $\Conf_n(\R)$.
+    \todo{source + continue}
+    We refer to such a unique path between two configurations in the 
+    image of the embedding by $\E_1$-translation. 
+    Note that this discussion holds for any embedding of $\E_1$ into $\E_2$.
+\end{rem}
+
 \begin{prop}
-    There is an operadic structure on $\widetilde{\E_2}$ such that the covering $p$ is a morphism 
-    of operads.
+    There is an operadic structure on $\widetilde{\E_2}$ such that the 
+    covering $p$ is a morphism of operads.
 \end{prop}
 
 \begin{proof}
@@ -150,22 +296,22 @@ braid action on the universal covering.
     Let $(\bar{\alpha}, \alpha_1, \dots, \alpha_k) \in \widetilde{\E_2}(k) \times \widetilde{\E_2}(j_1) \times \dots \times 
         \widetilde{\E_2}(j_k)$
     with
-        $$\alpha_l \colon b_{j_l} \to c_l$$
+        $$\alpha_l \colon b_{j_l} \rightsquigarrow c_l$$
     for $1 \leq l \leq k$ and 
-        $$\bar{\alpha} \colon b_k \to c_k.$$
+        $$\bar{\alpha} \colon b_k \rightsquigarrow c.$$
     Then 
         \[
             \bar{\alpha} \circ (\alpha_1, \dots, \alpha_k)    
         \]
-    denotes the path from $\gamma((b_k, b_{j_1}, \dots, b_{j_k}))$ to $\gamma(c_k, c_{j_1}, \dots, c_{j_k})$ 
-    where we first apply 
+    denotes the path from $\gamma((b_k, b_{j_1}, \dots, b_{j_k}))$ to $\gamma(c, c_1, \dots, c_k)$
+    where we first apply
 
-    $$\alpha_l \colon b_{j_l} \to c_l$$
+    $$\alpha_l \colon b_{j_l} \rightsquigarrow c_l$$
 
     on the configuration in the $l$-th disk of $b_k$ for all $1 \leq l \leq k$
     and then apply 
 
-    $$\bar{\alpha} \colon b_k \to c_k$$
+    $$\bar{\alpha} \colon b_k \rightsquigarrow c$$
 
     on the configuration $b_k$.
     \begin{figure}[h!]
@@ -194,7 +340,7 @@ braid action on the universal covering.
             \draw[thick, blue] (6.3, -0.2) circle (0.2);
 
             %inner paths
-            \draw[gray] (-6.3, -0.2) to [bend right=30] (-6, -0.4);   
+            \draw[gray] (-6.3, -0.2) to [bend right=30] (-6, -0.4); 
             \draw[gray] (-5.7, 0.2) to [bend right=30] (-6, 0.4); 
             \draw[gray] (-4.3, 0.2) -- (-4.3, 0.4); 
             \draw[gray] (-3.7, -0.2) -- (-3.7, -0.4);  
@@ -212,15 +358,34 @@ braid action on the universal covering.
         for $\bar{\alpha} \in \widetilde{E_2}(3)$ and $\alpha_1, \alpha_2, \alpha_3 \in \widetilde{E_2}(2)$}
     \end{figure}
 
+    Further, let $\tau$ be the unique $\E_1$ translation from 
+    $b_j$ to $\gamma((b_k, b_{j_1}, \dots, b_{j_k}))$ as discussed in Remark \ref{rem:e1-translation}
+    that resizes and translates the disks 
+    along the horizontal axis.
+    We obtain the following diagram:
+    \todo{@julius: so sieht das richtig 2-morphism diagram aus. Daher unsprünglich mein abuse of notation}
+                    \begin{center}
+            \begin{tikzpicture}
+                % Define node positions
+                \node (B) at (0, 2) {$\langle n \rangle$};
+                \node (C) at (3, 2) {$\langle n \rangle$};
+                \node (A) at (3, -1) {$\langle 1 \rangle$};
+                \node (D) at (6, 2) {$\langle n \rangle$};
 
-
-    Further, let $\tau \in \widetilde{\E_1(j)}    \subset \widetilde{\E_2(j)}$ be a path from 
-    $b_j$ to $\gamma((b_k, b_{j_1}, \dots, b_{j_k}))$ that resizes and translates the disks 
-    along the horizontal axis. This path $\tau$ is unique up to homotopy.
-    This generates the following commuting diagram in $\Ex$:
+                % Draw arrows
+                \draw[->] (B) -- (C) node[midway, above] {$\in S_j$};
+                \draw[->] (C) -- (D) node[midway, above] {$\in S_j$};
+                \draw[->] (B) -- (A) node[midway, left] {$\gamma(c, c_1, \dots, c_k)$};
+                \draw[->] (C) -- (A) node[midway, right] {$\gamma(b_k, b_{j_1}, \dots, b_{j_k})$};
+                \draw[->] (D) -- (A) node[midway, right] {$b_j$};
+                % Natural transformation arrow
+                \node at (2.0, 1.1) {$\overset{\Leftarrow}{\bar{\alpha} \circ (\alpha_1, \dots, \alpha_k)}$};
+                \node at (4.2, 1.1) {$\overset{\Leftarrow}{\tau}$};
+            \end{tikzpicture}
+        \end{center}
     \begin{center}
         \begin{tikzcd}
-            \langle j \rangle  \arrow[rr, "{\gamma(c_k, c_{j_1}, \dots, c_{j_k})}"] \arrow[d, "S_j \ni"'] & & \langle 1 \rangle                                                                         \\
+            \langle j \rangle  \arrow[rr, "{\gamma(c, c_1, \dots, c_k)}"] \arrow[d, "S_j \ni"'] & & \langle 1 \rangle                                                                         \\
             \langle j \rangle  \arrow[d, "S_j \ni"'] \arrow[rr, "{\gamma(b_k, b_{j_1}, \dots, b_{j_k})}"] & & \langle 1 \rangle  \arrow[u, "{\bar{\alpha} \circ (\alpha_1, \dots, \alpha_k)}"', dashed] \\
             \langle j \rangle  \arrow[rr, "b_j"]                                                          & & \langle 1 \rangle  \arrow[u, "\tau"', dashed]                                            
         \end{tikzcd}
@@ -230,15 +395,16 @@ braid action on the universal covering.
         \widetilde{\gamma} ((\bar{\alpha}, \alpha_1, \dots, \alpha_k)) \coloneqq \bar{\alpha} \circ (\alpha_1, \dots, \alpha_k) \circ \tau
     \]
     
-    We observe, that this composition map is well-defined, since the path $\tau$ is unique up to homotopy. To see that 
-    $\widetilde{\gamma}$ is associative we need to have a look at the definition.
-    Note, that in the definition $\tau \in \E_1(j)$ is a path that resizes and translates the disks, so
-    it has no effect on the paths from a homotopy perspective. Further, we know that composition of paths is associative upto homotopy.
+    We observe, that this composition map is well-defined, since the path $\tau$ is unique up to homotopy. 
+    To see that $\widetilde{\gamma}$ is associative we need to have a look at the definition. Note, 
+    that in the definition $\tau \in \E_1(j)$ is a path that resizes and translates the disks along 
+    the horizontal line. Hence, it has no proper effect from a homotopy perspective as it creates 
+    no braid crossing. Further, we know that composition of paths is associative upto homotopy.
     So, for 
 
     $$(\alpha, (\alpha_s)_{1 \leq s \leq k}, (\alpha_r)_{1 \leq r \leq j}) \in \E_2(k) \times \prod_{s=1}^{k} \E_2(j_s) \times \prod_{r=1}^{j} \E_2(i_r)$$
 
-    we have a homotopic equivalence
+    we have a homotopic equivalence:
     \begin{align*}
         (\alpha \circ (\alpha_s)_{1 \leq s \leq k} \circ \tau^{(k)}) \circ (\alpha'_r)_{1 \leq r \leq j} \circ \tau^{(j)} 
         &\simeq 
@@ -251,7 +417,7 @@ braid action on the universal covering.
     to be the trivial path of the trivial basepoint $b_1 \in \E_2(1)$. Clearly, this unit fulfills the unitality conditions.
 
     Finally, we need to show that the covering map $p \colon \widetilde{\E_2}\to \E_2$ is a morphism of operads.
-    For this, we need to show that the following diagram commutes for all $n \geq 1$:
+    For this, we need to convince ourselves that the following diagram commutes for all $n \geq 1$:
     \begin{center}
         \begin{tikzcd}
             \widetilde{\E_2(k)} \times \widetilde{\E_2(j_1)} \times \dots \times \widetilde{\E_2(j_k)} \arrow[d, "\widetilde{\gamma}"] \arrow[rr, "p"] &  & \E_2(k)\times \E_2(j_1) \times \dots \times \E_2(j_k) \arrow[d, "\gamma"] \\
@@ -260,9 +426,9 @@ braid action on the universal covering.
     \end{center}
     This is indeed the case, by definition of $\widetilde{\gamma}$ we have:
     \[
-        p \circ \widetilde{\gamma} ((\bar{\alpha}, \alpha_1, \dots, \alpha_k)) = \gamma(c_k, c_{j_1}, \dots, c_{j_k})
+        p \circ \widetilde{\gamma} ((\bar{\alpha}, \alpha_1, \dots, \alpha_k)) = \gamma(c, c_1, \dots, c_k)
     \]
-    for $\gamma_l \colon b_{j_l} \to c_{j_l}$ for $1 \leq l \leq k$ and $\bar{\gamma} \colon b_k \to c_k$. Clearly, the unital condition is also met by definition:
+    for $\alpha_l \colon b_{j_l} \to c_l$ for $1 \leq l \leq k$ and $\bar{\alpha} \colon b_k \to c$. Clearly, the unital condition is also met by definition:
     \begin{center}
         \begin{tikzcd}
                                         & \ast \arrow[ld, "\widetilde{\eta}"'] \arrow[rd, "\eta"] &                     \\
@@ -282,12 +448,15 @@ braid action on the universal covering.
 We want to define a braid action on the universal covering $\widetilde{\E_2}$.
 As we have seen previously, the universal covering of $\E_2 \slash S$ is homeomorphic to the
 universal covering of $\E_2$.
-As usual, there is a group action of of the fundamental group of
+As usual, there is a group action of the fundamental group of
 $\E_2(n) \slash S(n)$ on its universal covering. The fundamental group of $\E_2(n)$ is the
-$n$-th pure braid group $PB_n$. But since we forgot the labels when moving to $\E_2(n) \slash S(n)$, 
-we obtain now the full $n$-th braid group $B_n$. Since, there is a homeomorphism 
+$n$-th pure braid group $PB_n$. But since we forgot the labels when moving to 
+$\E_2(n) \slash S(n)$, we obtain now the full $n$-th braid group $B_n$. 
+Since, there is a homeomorphism 
 $\widetilde{\E_2 \slash S} \cong \widetilde{\E_2}$, we can lift the braid group action 
-to $\widetilde{\E_2}$.
+to $\widetilde{\E_2}$. For a detailed 
+proof, we refer to \cite{fox}. However, we give a short overview of 
+the construction here.
 
 We recall the generators of $B_n$ for all $1 \leq i < n$, $n \in \N$:
 \begin{center}
@@ -361,9 +530,26 @@ disks in a large disk $D$ from the basepoint configuration to another configurat
 once and we do not touch the configuration of $D$ again afterwards but only move $D$
 as a part of another configuration. Hence, in that sense the order in which we apply 
 paths to a configuration does not matter from a homotopic perspective.
-This fact is analoguous to the fact that we can pull inside braids through 
-outside braids, i.e. the second relation of braids in remark \ref{braidgrouprem}.
-\todo{picture of paths of disks that correspond to the braid remark}
+This fact is equivalent to the fact that we can pull inside braids through 
+outside braids, i.e. the second relation of braids in Remark \ref{braidgrouprem}:
+\begin{center}
+    \begin{tikzpicture}
+        \pic[
+        braid/number of strands=7,
+        braid/strand 4/.style={white},
+        name=coordinates,
+        ] at (0,0) {braid={s_1-s_6 s_2-s_5 s_1-s_6}};
+        
+        % \node[at=(coordinates-rev-1-e), below=3pt] {$i$};
+        % \node[at=(coordinates-rev-2-e), below=3pt] {$i+1$};
+        % \node[at=(coordinates-rev-3-e), below=3pt] {$i+2$};
+        % \node[at=(coordinates-rev-5-e), below=3pt] {$i$};
+        % \node[at=(coordinates-rev-6-e), below=3pt] {$i+1$};
+        % \node[at=(coordinates-rev-7-e), below=3pt] {$i+2$};
+    
+        \node[anchor=center] at (3,-1.8) {$=$};
+    \end{tikzpicture}
+\end{center}
 This means that for all $\sigma \in B_k$ we have the following commutative diagram:
 
 \begin{center}
