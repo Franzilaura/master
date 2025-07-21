@@ -534,9 +534,12 @@ INPUT ./braid_colored.tex
 INPUT ./braid_colored.tex
 INPUT ./braid_colored.tex
 INPUT braid_colored.tex
-INPUT ./braided_monoidal_structure.tex
-INPUT ./braided_monoidal_structure.tex
-INPUT braided_monoidal_structure.tex
+INPUT ./braided_monoidal.tex
+INPUT ./braided_monoidal.tex
+INPUT braided_monoidal.tex
+INPUT ./braided_monoidal_structure_old.tex
+INPUT ./braided_monoidal_structure_old.tex
+INPUT braided_monoidal_structure_old.tex
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/lm/rm-lmbx10.tfm
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/lm/rm-lmbx7.tfm
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/lm/rm-lmbx5.tfm
@@ -574,6 +577,7 @@ INPUT /usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmbxi10.pfb
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmex10.pfb
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmmi10.pfb
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmmi5.pfb
+INPUT /usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmmi6.pfb
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmmi7.pfb
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmmi9.pfb
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr10.pfb

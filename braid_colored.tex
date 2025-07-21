@@ -1,91 +1,78 @@
-\section{Colored Braided Operads}
+\section{Colored Braidings}
 
-In this section, we will define colored braided operads and will aim to find a op-fibration
-that encodes all the necesaary data to give an alternative definition.
-First, let us recall the definition of $\Ex$ and build a related category $\Br$ 
-that will serve as the target category for our op-fibration later on.
+In this section, we will define colored braided operads and will aim to find a
+functor that encodes all the necesaary data to give an alternative definition so
+the notion can eventually be lifted to the $\infty$-categorical context.
+\textcolor{blue}{First, let us recall the definition of $\Ex$ and build a related category $\Br$ that will serve as the target category for our op-fibration later on.}
 \todo{recall definition of $\Ex$ here or already in 3.10? What is better for the reader?}
-% \begin{rem}
-%     For each $n \in \N$ we have an object $\langle n \rangle$. 
-%     A morphism $\langle n \rangle \to \langle m \rangle$ in $\Ex$ consists of a morphism 
-%     $\alpha \colon \langle n \rangle \to \langle m \rangle$ in $\Fin$ and a collection of configurations
-%     $$\{c_j \in \E_2(|\alpha^{-1}(j)|)\}_{1 \leq j \leq m}$$
-%     where each configuration is labeled by $\alpha^{-1}(j))$.
-%     So for example, 
-%     \begin{align*}
-%         \alpha \colon \langle 3 \rangle &\to \langle 2 \rangle \\ 1 &\mapsto 1 \\
+% \begin{rem} For each $n \in \N$ we have an object $\langle n \rangle$. A
+%     morphism $\langle n \rangle \to \langle m \rangle$ in $\Ex$ consists of a
+%     morphism $\alpha \colon \langle n \rangle \to \langle m \rangle$ in $\Fin$
+%     and a collection of configurations $$\{c_j \in \E_2(|\alpha^{-1}(j)|)\}_{1
+%     \leq j \leq m}$$ where each configuration is labeled by $\alpha^{-1}(j))$.
+%     So for example, \begin{align*} \alpha \colon \langle 3 \rangle &\to
+%     \langle 2 \rangle \\ 1 &\mapsto 1 \\
 %         2 &\mapsto 2 \\
 %         3 &\mapsto 1 \\
-%     \end{align*}
-%     together with the configurations:
-%     \begin{center}
-%     \begin{tikzpicture}
-%                         % First element (left)
-%                         \draw[thick] (-3,0) circle (2);
-%                         \draw[thick] (-3.8, 1) circle (0.5);
-%                         \draw[thick] (-3, -0.5) circle (1);
-%                         \node at (-3.8, 1) {\small $1$};
-%                         \node at (-3, -0.5) {\small $3$};
-%                         \node at (0,-2) {,};
-%                         % Second element (right)
-%                         \draw[thick] (3,0) circle (2);
-%                         \draw[thick] (2,0.7) circle (0.5);
-%                         \node at (2,0.7) {\small $2$};
-%         \end{tikzpicture}
-%     \end{center}
-%     We denote the trivial configuration with label $x$ by $\id^x \in \E_2(1)$.
-%     Further, recall the composition in $\Ex$. Let 
-%     \begin{center}
-%         $\alpha \colon \langle n \rangle \to \langle m \rangle$ 
-%         with configurations $\{c_j\}_{1 \leq j \leq m}$ 
-%     \end{center}
-%     and 
-%     \begin{center}
-%         $\alpha' \colon \langle m \rangle \to \langle l \rangle$ 
-%         with configurations $\{c'_k\}_{1 \leq k \leq l}$. 
-%     \end{center}
-%     Then, the configuration $c'_k$ is labeled 
-%     by $\alpha'^{-1}=\{j_1^{(k)}, \dots, j_p^{(k)}\}$. So, we obtain a configuration 
+%     \end{align*} together with the configurations: \begin{center}
+%     \begin{tikzpicture} % First element (left) \draw[thick] (-3,0) circle (2);
+%     \draw[thick] (-3.8, 1) circle (0.5); \draw[thick] (-3, -0.5) circle (1);
+%     \node at (-3.8, 1) {\small $1$}; \node at (-3, -0.5) {\small $3$}; \node
+%     at (0,-2) {,}; % Second element (right) \draw[thick] (3,0) circle (2);
+%     \draw[thick] (2,0.7) circle (0.5); \node at (2,0.7) {\small $2$};
+%     \end{tikzpicture} \end{center} We denote the trivial configuration with
+%     label $x$ by $\id^x \in \E_2(1)$. Further, recall the composition in
+%     $\Ex$. Let \begin{center} $\alpha \colon \langle n \rangle \to \langle m
+%     \rangle$ with configurations $\{c_j\}_{1 \leq j \leq m}$ \end{center} and
+%     \begin{center} $\alpha' \colon \langle m \rangle \to \langle l \rangle$
+%     with configurations $\{c'_k\}_{1 \leq k \leq l}$. \end{center} Then, the
+%     configuration $c'_k$ is labeled by $\alpha'^{-1}=\{j_1^{(k)}, \dots,
+%     j_p^{(k)}\}$. So, we obtain a configuration 
 %     \[
 %         \gamma(c'_k, c_{j_1}, \dots, c_{j_p})
 %     \]
 %     labeled by $(\alpha' \circ \alpha)^{-1}(k)$ for all $1 \leq k \leq l$ 
 %     giving us the well-defined composition $\alpha' \circ \alpha$.
 % \end{rem}
+\subsection{Colored Braided Operads}
 \todo{do we need to define active morphisms in $\Ex$?}
 \begin{defin}
     A morphism $\alpha \colon \langle n \rangle \to \langle m \rangle$ in $\Ex$
-    is called active if it is active in $\Fin$, i.e. $\alpha^{-1}(\ast) = \{\ast\}$.
+    is called active if it is active in $\Fin$, i.e. $\alpha^{-1}(\ast) =
+    \{\ast\}$.
 \end{defin}
 
-\todo{define $I$-labeled configuration.}
-\todo{remark: why $\E_1$ translations are canonical?}
+\begin{defin}
+    Let $I$ be a finite set. We call a configuration $c \in \E_2(n)$ $I$-labeled
+    according to $\alpha$ if there is a bijective map $\alpha \colon I \cong
+    \langle n \rangle^{\circ}$. In most cases $\alpha$ is not important to us,
+    so we just say $c$ is $I$-labeled.
+\end{defin}
 
-
-We are now set up to understand the following definition:   
+We are now ready to define a colored braided operad:   
 
 \begin{defin}
     A {\em colored braided operad} $\B$ consists of the following data:
     \begin{enumerate}[(i)]
         \item A collection $\{X,Y,Z, \dots\}$ of colors.
-        \item For every finite set $I$  and $\widetilde{I}$ an $I$-labeled configuration in $\E_2$ and
-        for every collection of colors $\{X_i\}_{i \in I}$ and a color $Y$ in $\B$, there is 
-        a set
+        \item For every finite set $I$  and $\widetilde{I}$ an $I$-labeled
+        configuration in $\E_2$ and for every collection of colors $\{X_i\}_{i
+        \in I}$ and a color $Y$ in $\B$, there is a set
         \[
             \Mul_{\B}^{\widetilde{I}}(\{X_i\}_{i \in I}, Y)
         \]
         called the set of morphisms from $\{X_i\}_{i \in I}$ to $Y$.
-        \item Let $\alpha \colon I \to J$ be finite map together with a collection of 
-        configurations labeled by the preimages of $\alpha$, i.e. 
-        $$\widetilde{\alpha} = (\widetilde{I_j})_{j \in J}$$
-        where $I_j$ denotes the fiber over $j$ for all $j \in J$
-        and a path of configurations $\eta$:
+        \item Let $\alpha \colon I \to J$ be finite map together with a
+        collection of configurations labeled by the preimages of $\alpha$, i.e. 
+        $$\widetilde{\alpha} = (\widetilde{I_j})_{j \in J}$$ where $I_j$ denotes
+        the fiber over $j$ for all $j \in J$ and a path of configurations
+        $\eta$:
+        \todo{check direction of path? correct?}
         \begin{center}
             \begin{tikzpicture}
                 % Define node positions
-                \node (B) at (0, 2) {$I$};
-                \node (C) at (3, 2) {$J$};
-                \node (A) at (1.5, 0) {$\langle 1 \rangle$};
+                \node (B) at (0, 2) {$I$}; \node (C) at (3, 2) {$J$}; \node (A)
+                at (1.5, 0) {$\langle 1 \rangle$};
                 
                 % Draw arrows
                 \draw[->] (B) -- (C) node[midway, above] {$\widetilde{\alpha}$};
@@ -97,37 +84,47 @@ We are now set up to understand the following definition:
                 % \node at (1.7, 1.2) {$\eta$};
             \end{tikzpicture}
         \end{center}
-        Further, let there be
-        collections of colors $\{X_i\}_{i \in I}$ and $\{Y_j\}_{j \in J}$ and color $Z$. Then, 
-        there is a composition map:
+        Further, let there be collections of colors $\{X_i\}_{i \in I}$ and
+        $\{Y_j\}_{j \in J}$ and color $Z$. Then, there is a composition map:
         \[
-            \prod_{j \in J} \Mul_{\B}^{\widetilde{I_j}}(\{X_i\}_{i \in I_j}, Y_j) \times \Mul_{\B}^{\widetilde{J}}(\{Y_j\}_{j\in J}, Z) \to \Mul_{\B}^{\widetilde{I}}(\{X_i\}_{i \in I}, Z)  
+            \prod_{j \in J} \Mul_{\B}^{\widetilde{I_j}}\left(\{X_i\}_{i \in I_j}, Y_j\right) \times \Mul_{\B}^{\widetilde{J}}\left(\{Y_j\}_{j\in J}, Z\right) \to \Mul_{\B}^{\widetilde{I}}\left(\{X_i\}_{i \in I}, Z\right)  
         \]
-        \item There is a collection of morphisms $\{ \id_X \in \Mul_{\B}^{\id^1}(\{X\}, X)\}_{X \in \B}$ being a left 
-        and right unit with respect to the composition, i.e. the following diagrams commute:
+        \item For any $I$-labeled configuration c with $|I|=1$ we have a
+        collection of morphisms $\{ \id_X \in \Mul_{\B}^{c}(\{X\}, X)\}_{X \in
+        \B}$ being a left and right unit with respect to the composition, i.e.
+        the following diagrams commute:
+        \todo{if time: make remark about definition for just $b_1$ to be equivalent}
         \begin{center}
             \begin{tikzcd}
-                {\Mul_{\B}^{\widetilde{I}}(\{X_i\}_{i \in I}, Y)} \arrow[r, "\cong"] \arrow[d, "\id"] & {\Mul_{\B}^{\widetilde{I}}(\{X_i\}_{i \in I}, Y) \times \{\id_Y\}} \arrow[d, hook]           \\
-                {\Mul_{\B}^{\widetilde{I}}(\{X_i\}_{i \in I}, Y)}                                     & {\Mul_{\B}^{\widetilde{I}}(\{X_i\}_{i \in I}, Y) \times \Mul_{\B}^{\id^1}((Y), Y)} \arrow[l, "\gamma"]
+                {\Mul_{\B}^{\widetilde{I}}(\{X_i\}_{i \in I}, Y)} \arrow[r,
+                "\cong"] \arrow[d, "\id"] &
+                {\Mul_{\B}^{\widetilde{I}}(\{X_i\}_{i \in I}, Y) \times
+                \{\id_Y\}} \arrow[d, hook]           \\
+                {\Mul_{\B}^{\widetilde{I}}(\{X_i\}_{i \in I}, Y)}
+                & {\Mul_{\B}^{\widetilde{I}}(\{X_i\}_{i \in I}, Y) \times
+                \Mul_{\B}^{c}((Y), Y)} \arrow[l, "\gamma"]
             \end{tikzcd}
         \end{center}
        
         \begin{center}
             \begin{tikzcd}
-                {\Mul_{\B}^{\widetilde{I}}(X_I, Y)} \arrow[r, "\cong"] \arrow[d, "\id"] & {(\prod_{i \in I} \{\id_{X_i}\}) \times \Mul_{\B}^{\widetilde{I}}(X_I, Y)} \arrow[d, hook]           \\
-                {\Mul_{\B}^{\widetilde{I}}(X_I, Y)}                                     & {(\prod_{i \in I} \Mul_{\B}^{\id^{i}}((X_i), X_i)) \times \Mul_{\B}^{\widetilde{I}}(X_I, Y)} \arrow[l, "\gamma"]
+                {\Mul_{\B}^{\widetilde{I}}(X_I, Y)} \arrow[r, "\cong"] \arrow[d,
+                "\id"] & {\left(\prod_{i \in I} \{\id_{X_i}\}\right) \times
+                \Mul_{\B}^{\widetilde{I}}(X_I, Y)} \arrow[d, hook]           \\
+                {\Mul_{\B}^{\widetilde{I}}(X_I, Y)}
+                & {\left(\prod_{i \in I} \Mul_{\B}^{c}((X_i), X_i)\right) \times
+                \Mul_{\B}^{\widetilde{I}}(X_I, Y)} \arrow[l, "\gamma"]
             \end{tikzcd}                                             
         \end{center}
-        \item For every sequence of finite maps $I \overset{\alpha}{\to} J \overset{\beta}{\to} K$, 
-        with paths $\eta$ and $\epsilon$ as in the following diagram:
+        \item For every sequence of finite maps $I \overset{\alpha}{\to} J
+        \overset{\beta}{\to} K$, with paths $\eta$ and $\epsilon$ as in the
+        following diagram:
 
         \begin{center}
             \begin{tikzpicture}
                 % Define node positions
-                \node (B) at (0, 2) {$I$};
-                \node (C) at (3, 2) {$J$};
-                \node (A) at (3, -1) {$\langle 1 \rangle$};
-                \node (D) at (6, 2) {$K$};
+                \node (B) at (0, 2) {$I$}; \node (C) at (3, 2) {$J$}; \node (A)
+                at (3, -1) {$\langle 1 \rangle$}; \node (D) at (6, 2) {$K$};
 
                 % Draw arrows
                 \draw[->] (B) -- (C) node[midway, above] {$\widetilde{\alpha}$};
@@ -136,29 +133,37 @@ We are now set up to understand the following definition:
                 \draw[->] (C) -- (A) node[midway, right] {$\widetilde{J}$};
                 \draw[->] (D) -- (A) node[midway, right] {$\widetilde{K}$};
                 % Natural transformation arrow
-                \node at (2.0, 1.1) {$\overset{\Leftarrow}{\eta}$};
-                \node at (4.2, 1.1) {$\overset{\Leftarrow}{\epsilon}$};
+                \node at (2.0, 1.1) {$\overset{\Leftarrow}{\eta}$}; \node at
+                (4.2, 1.1) {$\overset{\Leftarrow}{\epsilon}$};
             \end{tikzpicture}
         \end{center}
-        % \begin{center}
-        %     \begin{tikzcd}
-        %         {\prod_{j \in J} \Mul_{\O}(X_I, Y_j) \times \prod_{k \in K} \Mul_{\O}(Y_J, W_k) \times \Mul_{\O}(W_K, Z)} \arrow[rd, "\id \times \gamma"] \arrow[dd, "(\gamma \circ s) \times \id"] & \\
-        %                     & {\prod_{j \in J} \Mul_{\O}(X_{I_j}, Y_j) \times \Mul_{\O}(Y_J, Z)} \arrow[dd] \\
-        %         {\prod_{k \in K} \Mul_{\O}(X_{I_k}, W_k) \times \Mul_{\O}(W_K, Z)} \arrow[rd] & \\
+        % \begin{center} \begin{tikzcd} {\prod_{j \in J} \Mul_{\O}(X_I, Y_j)
+        %     \times \prod_{k \in K} \Mul_{\O}(Y_J, W_k) \times \Mul_{\O}(W_K,
+        %     Z)} \arrow[rd, "\id \times \gamma"] \arrow[dd, "(\gamma \circ s)
+        %     \times \id"] & \\
+        %                     & {\prod_{j \in J} \Mul_{\O}(X_{I_j}, Y_j) \times
+        %                     \Mul_{\O}(Y_J, Z)} \arrow[dd] \\
+        %         {\prod_{k \in K} \Mul_{\O}(X_{I_k}, W_k) \times \Mul_{\O}(W_K,
+        %         Z)} \arrow[rd] & \\
         %                     & {\Mul_{\O}(X_I, Z)}         
-        %     \end{tikzcd}
-        % \end{center}
+        %     \end{tikzcd} \end{center}
 
-        and collections of colors
-        $X_I = \{X_i\}_{i \in I}$, $Y_J = \{Y_j\}_{j \in J}$, $W_K = \{W_k\}_{k \in K}$ and a color $Z \in \B$ 
-        the following diagram commutes:
+        and collections of colors $X_I = \{X_i\}_{i \in I}$, $Y_J = \{Y_j\}_{j
+        \in J}$, $W_K = \{W_k\}_{k \in K}$ and a color $Z \in \B$ the following
+        diagram commutes:
          \todo{make diagram prettier}
         \begin{center}
         \begin{adjustbox}{max width=\textwidth}
             \begin{tikzcd}
-                {\prod_{j \in J} \Mul_{\B}^{\widetilde{I_j}}(X_{I_j}, Y_j) \times \prod_{k \in K} \Mul_{\B}^{\widetilde{J}}(Y_J, W_k) \times \Mul_{\B}^{\widetilde{K}}(W_K, Z)} \arrow[rd, "\id \times \gamma"] \arrow[dd, "(\gamma \circ s) \times \id"] & \\
-                            & {\prod_{j \in J} \Mul_{\B}^{\widetilde{I_j}}(X_{I_j}, Y_j) \times \Mul_{\B}^{\widetilde{J}}(Y_J, Z)} \arrow[dd] \\
-                {\prod_{k \in K} \Mul_{\B}^{\widetilde{I_k}}(X_{I_k}, W_k) \times \Mul_{\B}^{\widetilde{K}}(W_K, Z)} \arrow[rd] & \\
+                {\prod_{j \in J} \Mul_{\B}^{\widetilde{I_j}}(X_{I_j}, Y_j)
+                \times \prod_{k \in K} \Mul_{\B}^{\widetilde{J_k}}(Y_{J_k}, W_k)
+                \times \Mul_{\B}^{\widetilde{K}}(W_K, Z)} \arrow[rd, "\id \times
+                \gamma"] \arrow[dd, "(\gamma \circ s) \times \id"] & \\
+                            & {\prod_{j \in J}
+                            \Mul_{\B}^{\widetilde{I_j}}(X_{I_j}, Y_j) \times
+                            \Mul_{\B}^{\widetilde{J}}(Y_J, Z)} \arrow[dd] \\
+                {\prod_{k \in K} \Mul_{\B}^{\widetilde{I_k}}(X_{I_k}, W_k)
+                \times \Mul_{\B}^{\widetilde{K}}(W_K, Z)} \arrow[rd] & \\
                             & {\Mul_{\B}(X_I, Z)}         
             \end{tikzcd}
             \end{adjustbox}
@@ -167,32 +172,34 @@ We are now set up to understand the following definition:
 \end{defin}
 
 \begin{eg}
-    Let $\B_{col}$ be a colored braided operad with one color $X$. Similar to the symmetric case,
-    $\B_{col}$ induces a braided operad $\B$ as in definition \ref{def-br-operad}.
-    For $n \in \N$, we set
+    Let $\B_{col}$ be a colored braided operad with one color $X$. Similar to
+    the symmetric case, $\B_{col}$ induces a braided operad $\B$ as in
+    Definition \ref{def-br-operad}. For $n \in \N$, we set
     \[
         \B(n) = \Mul_{\B_{col}}^{b_n}(\{X\}_{1 \leq i \leq n}, X)
     \]
-    where $b_n$ is our chosen basepoint configuration in $\E_2(n)$ \ref{reference where we define basepoints}.
-    Further, we define the composition map
+    where $b_n$ is our basepoint configuration in $\E_2(n)$ as chosen in
+    Construction \ref{con:unicover}. Further, we define the composition map
     \[
         \theta \colon \B(k) \times \B(j_1) \times \cdots \times \B(j_k) \to \B(j)
     \]
-    where $j = j_1 + \cdots + j_k$, from the composition map $\gamma$ in $\B_{col}$:
+    where $j = j_1 + \cdots + j_k$, from the composition map $\gamma$ in
+    $\B_{col}$:
     \[
-        \gamma\colon  \prod_{1 \leq i \leq k} \Mul_{\B_{col}}^{b_{j_i}}(\{X_i\}^{j_i}, X) \times \Mul_{\B_{col}}^{b_k}(\{X\}^k, X) \overset{\gamma}{\to} \Mul_{\B_{col}}^{b_j}(\{X\}^j, X)
+        \gamma \colon  \prod_{1 \leq i \leq k} \Mul_{\B_{col}}^{b_{j_i}}\left(\{X\}^{j_i}, X\right) \times \Mul_{\B_{col}}^{b_k}\left(\{X\}^k, X\right) \to \Mul_{\B_{col}}^{b_j}\left(\{X\}^j, X\right)
     \]
-    corresponding to the following path of configurations:
+    corresponding to the unique $\E_1$-translation from $b_j$ to $b_k(b_{j_1},
+    \dots, b_{j_k})$ as defined in Remark \ref{rem:e1-translation}:
     \begin{center}
             \begin{tikzpicture}
                 % Define node positions
-                \node (B) at (0, 2) {$\langle j \rangle$};
-                \node (C) at (3, 2) {$\langle k \rangle$};
-                \node (A) at (1.5, 0) {$\langle 1 \rangle$};
+                \node (B) at (0, 2) {$\langle j \rangle$}; \node (C) at (3, 2)
+                {$\langle k \rangle$}; \node (A) at (1.5, 0) {$\langle 1
+                \rangle$};
                 
                 % Draw arrows
-                \draw[->] (B) -- (C) node[midway, above] {$(b_{j_1}, \dots, b_{j_k})$};
-                \draw[->] (B) -- (A) node[midway, left] {$b_j$};
+                \draw[->] (B) -- (C) node[midway, above] {$(b_{j_1}, \dots,
+                b_{j_k})$}; \draw[->] (B) -- (A) node[midway, left] {$b_j$};
                 \draw[->] (C) -- (A) node[midway, right] {$b_k$};
                 
                 % Natural transformation arrow
@@ -201,14 +208,15 @@ We are now set up to understand the following definition:
             \end{tikzpicture}
         \end{center}
 
-    \todo{??? how to handle $\E_1$ translation like we need it here? fundamental group of $\E_1$ is trivial, so we can just use the identity morphism}
     There is a unit
     \[
         \eta \colon \ast \to \B(1)
     \]
-    which is defined by the identity morphism $\id_X \in \Mul_{\B_{col}}^{b_1}(\{X\}, X)$.
-    The unitality condition is satisfied as the identity morphism $\id_X$ is the left and right unit in $\Mul_{\B_{col}}^{b_1}(\{X\}, X)$.
-    The associativity condition is also satisfied as it holds for $\B_{col}$: For any choice of integers
+    which is defined by the identity morphism $\id_X \in
+    \Mul_{\B_{col}}^{b_1}(\{X\}, X)$. The unitality condition is satisfied as
+    the identity morphism $\id_X$ is the left and right unit in
+    $\Mul_{\B_{col}}^{b_1}(\{X\}, X)$. The associativity condition is also
+    satisfied as it holds for $\B_{col}$: For any choice of integers
             \[
                 n,  \ j_1, \dots, j_k, \ i_1, \dots, i_j
             \]
@@ -216,18 +224,28 @@ We are now set up to understand the following definition:
             \[
                 \sum_{1 \leq s \leq k} j_s = j, ~ \sum_{1 \leq r \leq j} i_r = i, \ g_s = \sum_{0 \leq l \leq s} j_l \ \text{and} \ h_s = \sum_{1 \leq q \leq j_s} i_{g_{s-1}+q}
             \]
-            % \sum_{1 \leq s \leq k} j_s = j$, $\sum_{1 \leq r \leq j} i_r = i$, $g_s = \sum_{0 \leq l \leq s} j_l$ and $h_s = \sum_{1 \leq q \leq j_s} i_{g_{s-1}+q}$ 
+            % \sum_{1 \leq s \leq k} j_s = j$, $\sum_{1 \leq r \leq j} i_r = i$,
+            % $g_s = \sum_{0 \leq l \leq s} j_l$ and $h_s = \sum_{1 \leq q \leq
+            % j_s} i_{g_{s-1}+q}$ 
             
             the following diagram
                 \begin{center}
                 \begin{tikzcd}
-                    \B(k) \times (\prod_{s=1}^k \B(j_s)) \times (\prod_{r=1}^j \B(i_r)) \arrow[rr, "\gamma \times \id"] \arrow[dd, "s"']               &  & \B(j) \times (\prod_{r=1}^j \B(i_r)) \arrow[d, "\gamma"]   \\                                                                           &  & \B(i)   \\
-                    \B(k) \times \prod_{s=1}^k (\B(j_s) \times \prod_{q=1}^{j_s} \B(i_{g_{s-1}+q})) \arrow[rr, "\id \times (\times_s \gamma)"'] &  & \B(k) \times (\prod_{s=1}^k \B(h_s)) \arrow[u, "\gamma"']
+                    \B(k) \times \left(\prod_{s=1}^k \B(j_s)\right) \times \left(\prod_{r=1}^j
+                    \B(i_r)\right) \arrow[rr, "\gamma \times \id"] \arrow[dd, "s"']
+                    &  & \B(j) \times \left(\prod_{r=1}^j \B(i_r)\right) \arrow[d,
+                    "\gamma"]   \\
+                    &  & \B(i)   \\
+                    \B(k) \times \left(\prod_{s=1}^k \left(\B(j_s) \times \left(\prod_{q=1}^{j_s}
+                    \B(i_{g_{s-1}+q})\right)\right)\right) \arrow[rr, "\id \times (\times_s
+                    \gamma)"'] &  & \B(k) \times \left(\prod_{s=1}^k \B(h_s)\right)
+                    \arrow[u, "\gamma"']
                 \end{tikzcd}
                 \end{center}
-                where $s$ shuffles the entries of the tensor product, 
-    commutes as the composition map $\gamma$ in $\B_{col}$ is associative for the following maps
-    for $1 \leq s \leq k$, $1 \leq q \leq j_s$ and $h'_q = \sum_{t=1}^{g_{s-1}+1} i_t$:
+                where $s$ shuffles the entries of the tensor product, commutes
+    as the composition map $\gamma$ in $\B_{col}$ is associative for the
+    following maps for $1 \leq s \leq k$, $1 \leq q \leq j_s$ and $h'_q =
+    \sum_{t=1}^{g_{s-1}+1} i_t$:
     \begin{align*}
         \alpha \colon \langle i \rangle &\to \langle j \rangle \\
         h'_{q-1}+1, \dots, h'_q &\mapsto g_{s-1}+q \\
@@ -237,59 +255,196 @@ We are now set up to understand the following definition:
         \alpha' \colon \langle j \rangle &\to \langle k \rangle \\
         g_{s-1}+1, \dots, g_s &\mapsto s \\
     \end{align*}
-    with $\widetilde{\alpha'_s} = b_{j_s}$.
-    So we have defined a planar operad $\B$. It remains to see how the braid action on $\B$ is induced by the
-    definition of $\B_{col}$.
-
-    Similarily to the symmetric case, in a colored braided operad (even with one color), the set of morphisms 
-    depends not only on $n$, the cardinality of the indexing set, but also on the specific choice of finite 
-    indexing set as well as the corresponding configuration. Thus, for a different labeling $I_1$ and
-    $I_2$ with $|I_1|=n=|I_2|$ and different configurations $\widetilde{I_1}$ and $\widetilde{I_2}$ we 
-    have potentially different sets of morphisms:
-    \[
-        \Mul_{\B_{col}}^{\widetilde{I_1}}(\{X\}_{i \in I_1}, X) \text{ and } \Mul_{\B_{col}}^{\widetilde{I_2}}(\{X\}_{i \in I_2}, X)
-    \]
-    
-    This raises the question of how the structures of a one colored braided operad and 
-    a braided operad reconcile. The reason these definitions are still equivalent 
-    lies in the induced braid group action on the set of morphisms. \todo{satz umschreiben?}
-
-
-
-    The braiding of the inputs ensures that any specific labeling of the inputs as represented 
-    by $I_1$ with $\widetilde{I_1}$ and $I_2$ with $\widetilde{I_2}$ can be transformed into each other via the action 
-    of some $\sigma \in B_n$ which is represented by the following commutative diagram
+    with $\widetilde{\alpha'_s} = b_{j_s}$. So we have defined a planar operad
+    $\B$. It remains to see how the braid action on $\B$ is induced by the
+    definition of $\B_{col}$. We recall from Lemma \ref{lem:fundamentalgroup}
+    that the fundamental group of $\E_2(n)$ is the braid group up to relabeling.
+    Let $\sigma \in B_n$ and $\bar{\sigma} \in S_n$ denoting its underlying
+    permutation. Then we have the following commuting diagram:
     \begin{center}
         \begin{tikzpicture}
             % Define node positions
-            \node (B) at (0, 2) {$I$};
-            \node (C) at (3, 2) {$J$};
-            \node (A) at (1.5, 0) {$\langle 1 \rangle$};
+            \node (B) at (0, 2) {$\langle n \rangle$}; \node (C) at (3, 2)
+            {$\langle n \rangle$}; \node (A) at (1.5, 0) {$\langle 1 \rangle$};
             
             % Draw arrows
-            \draw[->] (B) -- (C) node[midway, above] {$\bar{\sigma}$};
-            \draw[->] (B) -- (A) node[midway, left] {$\widetilde{I}$};
-            \draw[->] (C) -- (A) node[midway, right] {$\widetilde{J}$};
+            \draw[->] (B) -- (C) node[midway, above] {$\bar{\sigma}^{-1}$};
+            \draw[->] (B) -- (A) node[midway, left] {$b_n$}; \draw[->] (C) --
+            (A) node[midway, right] {$b_n$};
             
             % Natural transformation arrow
-            \node[rotate=-40] at (1.4, 1.2) {$\Downarrow \sigma$};
+            \node[rotate=-40] at (1.5, 1.2) {$\Downarrow \sigma$};
             % \node at (1.7, 1.2) {$\eta$};
         \end{tikzpicture}
     \end{center}
-    where $\bar{\sigma}$ is a relabeling and $\sigma$ is the path between the configurations 
-    $\widetilde{I}$ and $\widetilde{J}$.
-    Hence, although the morphisms in the colored braided operad are indexed by specific sets and configurations, they 
-    behave the same way up to this braid action. Therefore, the group action effectively collapses the dependence 
-    on the specific finite sets and their configurations. 
-    \todo{braid group action makes sense?}
+    Further, we restrict the corresponding composition map
+    \[
+        \gamma \colon  \prod_{1 \leq i \leq n} \Mul_{\B_{col}}^{\id^{\bar{\sigma}^{-1}(j)}}\left(\{X\}, X\right) \times \Mul_{\B_{col}}^{b_n}\left(\{X\}^n, X\right) \to \Mul_{\B_{col}}^{b_n}\left(\{X\}^n, X\right)
+    \]
+    to the collection of the identities $\{\id_X\}_{1 \leq j \leq n}$ to obtain
+    \[
+        \B(n) \to \B(n).
+    \]
+    This defines a braid action on $\B(n)$. The action is associative since it
+    is defined via $\gamma$. Let $\sigma, \rho \in S_n$ inducing the paths:
+    \begin{center}
+        \begin{tikzpicture}
+            % Define node positions
+            \node (B) at (0, 2) {$\langle n \rangle$}; \node (C) at (3, 2)
+            {$\langle n \rangle$}; \node (A) at (3, -1) {$\langle 1 \rangle$};
+            \node (D) at (6, 2) {$\langle n \rangle$};
+
+            % Draw arrows
+            \draw[->] (B) -- (C) node[midway, above] {$\bar{\sigma}^{-1}$};
+            \draw[->] (C) -- (D) node[midway, above] {$\bar{\rho}^{-1}$};
+            \draw[->] (B) -- (A) node[midway, left] {$b_n$}; \draw[->] (C) --
+            (A) node[midway, right] {$b_n$}; \draw[->] (D) -- (A) node[midway,
+            right] {$b_n$};
+            % Natural transformation arrow
+            \node at (2.0, 1.1) {$\overset{\Leftarrow}{\sigma}$}; \node at (4.2,
+            1.1) {$\overset{\Leftarrow}{\rho}$};
+        \end{tikzpicture}
+    \end{center}
+
+    
+    For the restriction to the identities from the assoociativity diagram of
+    $\B_{col}$ we obtain the following diagram showing
+    $\rho.(\sigma.\B(n))=(\rho \circ \sigma).\B(n)$:
+    \begin{center}
+        \begin{tikzcd}
+            \B(n) \arrow[r, "\rho."] \arrow[d, "\id"] & \B(n) \arrow[d,
+            "\sigma."] \\
+            \B(n) \arrow[r, "(\sigma \circ \rho)."]   & \B(n)                     
+        \end{tikzcd}
+    \end{center}
+    The trivial braid acts trivially due to the unitality condition in
+    $\B_{col}$. Hence, we are left to show the equivariance of the braid action
+    regarding $\gamma$. That however follows directly from associativity
+    diagrams in $\B_{col}$ for the right choice of paths of configurations. So,
+    the first equivariance diagram for $\sigma \in B_n$ and $\bar{\sigma}$
+    denoting its underlying permutation:
+    \begin{center}
+        \begin{tikzcd}
+            \B(k) \times \B(j_1) \times \cdots \times \B(j_k) \arrow[d,
+            "\theta"'] \arrow[rr, "\sigma \times \bar{\sigma}^{-1}"] &  & \B(k)
+            \times \B(j_{\bar{\sigma}(1)}) \times \cdots \times
+            \B(j_{\bar{\sigma}(k)}) \arrow[d, "\theta"] \\
+            \B(j) \arrow[rr, "\sigma(j_1 \cdots j_k)"']
+            &  & B(j),                                                                   
+        \end{tikzcd}
+    \end{center}      
+    follows for the following composition of paths:
+    \begin{center}
+        \begin{tikzpicture}
+            % Define node positions
+            \node (B) at (0, 2) {$\langle j \rangle$}; \node (C) at (3, 2)
+            {$\langle k \rangle$}; \node (A) at (3, -1) {$\langle 1 \rangle$};
+            \node (D) at (6, 2) {$\langle k \rangle$};
+
+            % Draw arrows
+            \draw[->] (B) -- (C) node[midway, above] {$(b_{j_1}, \dots,
+            b_{j_k})$}; \draw[->] (C) -- (D) node[midway, above]
+            {$\bar{\sigma}^{-1}$}; \draw[->] (B) -- (A) node[midway, left]
+            {$b_j$}; \draw[->] (C) -- (A) node[midway, right] {$b_k$}; \draw[->]
+            (D) -- (A) node[midway, right] {$b_k$};
+            % Natural transformation arrow
+            \node at (2.0, 1.1) {$\cong$}; \node at (4.2, 1.1)
+            {$\overset{\Leftarrow}{\sigma}$};
+        \end{tikzpicture}
+    \end{center}
+    Note, that the left triangle is defining $\theta$ and is a
+    $\E_1$-translation. Furthermore, let $\rho_l \in B_{j_l}$ for $1 \leq l \leq
+    k$ and $\tau_1 \oplus \cdots \oplus \tau_k$ denotes the sum of braidings on
+    $k$ blocks with each block having $j_l$ strands. Then the second
+    equivariance diagram:
+    \begin{center}
+        \begin{tikzcd}
+            \B(k) \times \O(j_1) \times \cdots \times \B(j_k) \arrow[d,
+            "\theta"'] \arrow[rr, "\id \times \rho_1 \times \cdots \times
+            \rho_k"] &  & \B(k) \times \B(j_1) \times \cdots \times \B(j_k)
+            \arrow[d, "\theta"] \\
+            \B(j) \arrow[rr, "\rho_1 \oplus \cdots \oplus \rho_k"']
+            &  & \B(j)                                                                                     
+        \end{tikzcd}
+    \end{center}
+    follows from the following composition of paths
+        \begin{center}
+        \begin{tikzpicture}
+            % Define node positions
+            \node (B) at (0, 0) {$\langle j \rangle$}; \node (C) at (2, 0)
+            {$\langle k \rangle$}; \node (D) at (1, -2) {$\langle k \rangle$};
+            \node (A) at (1, -4) {$\langle 1 \rangle$};
+
+            % Draw arrows
+            \draw[->] (B) -- (C) node[midway, above] {\small $\rho.b$};
+            \draw[->] (C) -- (D) node[midway, below, xshift=3pt, yshift=2pt]
+            {\small $\id$}; \draw[->] (B) -- (D) node[midway, below,
+            xshift=-3pt, yshift=2pt] {\small $b$}; \draw[->, bend left] (C) to
+            node[midway, above, xshift=6.5pt] {\small $b_k$} (A); \draw[->, bend
+            right] (B) to node[midway, above, xshift=-6pt] {\small $b_j$} (A);
+            \draw[->] (D) -- (A) node[midway, right] {\small $b_k$};
+            % Natural transformation arrow
+            \node at (1.75, -2) {$\cong$}; \node at (0.25, -2.) {$\cong$}; \node
+            at (1, -1) {$\overset{\Leftarrow}{\rho}$};
+        \end{tikzpicture}
+    \end{center}
+    where $b=(b_{j_1}, \dots, b_{j_k})$ and $\rho=(\rho_1 \oplus \dots \oplus
+    \rho_k)$.
+
+
+
+    % Similarily to the symmetric case, in a colored braided operad (even with
+    % one color), the set of morphisms depends not only on $n$, the cardinality
+    % of the indexing set, but also on the specific choice of finite indexing
+    % set as well as the corresponding configuration. Thus, for a different
+    % labeling $I_1$ and $I_2$ with $|I_1|=n=|I_2|$ and different configurations
+    % $\widetilde{I_1}$ and $\widetilde{I_2}$ we have potentially different sets
+    % of morphisms:
+    % \[
+    %     \Mul_{\B_{col}}^{\widetilde{I_1}}(\{X\}_{i \in I_1}, X) \text{ and } \Mul_{\B_{col}}^{\widetilde{I_2}}(\{X\}_{i \in I_2}, X)
+    % \]
+    
+    % This raises the question of how the structures of a one colored braided
+    % operad and a braided operad reconcile. The reason these definitions are
+    % still equivalent lies in the induced braid group action on the set of
+    % morphisms. \todo{satz umschreiben?}
+
+
+
+    % The braiding of the inputs ensures that any specific labeling of the
+    % inputs as represented by $I_1$ with $\widetilde{I_1}$ and $I_2$ with
+    % $\widetilde{I_2}$ can be transformed into each other via the action of
+    % some $\sigma \in B_n$ which is represented by the following commutative
+    % diagram \begin{center} \begin{tikzpicture} % Define node positions \node
+    % (B) at (0, 2) {$I$}; \node (C) at (3, 2) {$J$}; \node (A) at (1.5, 0)
+    % {$\langle 1 \rangle$};
+            
+    %         % Draw arrows \draw[->] (B) -- (C) node[midway, above]
+    %         {$\bar{\sigma}$}; \draw[->] (B) -- (A) node[midway, left]
+    %         {$\widetilde{I}$}; \draw[->] (C) -- (A) node[midway, right]
+    %         {$\widetilde{J}$};
+            
+    %         % Natural transformation arrow
+    %         \node[rotate=-40] at (1.4, 1.2) {$\Downarrow \sigma$};
+    %         % \node at (1.7, 1.2) {$\eta$};
+    %     \end{tikzpicture}
+    % \end{center} where $\bar{\sigma}$ is a relabeling and $\sigma$ is the path
+    % between the configurations $\widetilde{I}$ and $\widetilde{J}$. Hence,
+    % although the morphisms in the colored braided operad are indexed by
+    % specific sets and configurations, they behave the same way up to this
+    % braid action. Therefore, the group action effectively collapses the
+    % dependence on the specific finite sets and their configurations. 
+    \todo{braid group equivariance?}
 \end{eg}
 
 \begin{rem}
-    Vice versa, we can define a colored braided operad with one color
-    $\B_{col}$ from a braided operad $\B$ in the classical sense $\B$.
+    Vice versa, we can define a colored braided operad with one color $\B_{col}$
+    from a braided operad $\B$ in the classical sense $\B$.
     \todo{if time elaborate on this}
 \end{rem}
 
-\input{braided_monoidal_structure.tex}
+\input{braided_monoidal.tex}
+\input{braided_monoidal_structure_old.tex}
+
 
 \input{braided_fib.tex}
