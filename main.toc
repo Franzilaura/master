@@ -6,11 +6,9 @@
 \contentsline {section}{\numberline {3}Braided Operads}{23}{section.0.3}%
 \contentsline {subsection}{\numberline {3.1}Action Operad}{24}{subsection.0.3.1}%
 \contentsline {subsection}{\numberline {3.2}Universal Covering of $\E _2$}{25}{subsection.0.3.2}%
-\contentsline {section}{\numberline {4}Colored Braidings}{33}{section.0.4}%
+\contentsline {section}{\numberline {4}Colored Braided Operads}{33}{section.0.4}%
 \contentsline {subsection}{\numberline {4.1}Colored Braided Operads}{33}{subsection.0.4.1}%
-\contentsline {subsection}{\numberline {4.2}Braided Monoidal Structure}{37}{subsection.0.4.2}%
-\contentsline {subsection}{\numberline {4.3}Braided Monoidal Structure Old}{39}{subsection.0.4.3}%
-\contentsline {subsection}{\numberline {4.4}Colored Braided Operads as Op-fibrations}{46}{subsection.0.4.4}%
-\contentsline {section}{\numberline {5}Outlook}{47}{section.0.5}%
-\contentsline {section}{\numberline {6}Appendix}{47}{section.0.6}%
+\contentsline {subsection}{\numberline {4.2}Functorial Definition of Colored Braided Operads}{38}{subsection.0.4.2}%
+\contentsline {section}{\numberline {5}Outlook}{39}{section.0.5}%
+\contentsline {section}{\numberline {6}Appendix}{39}{section.0.6}%
 \contentsfinish 

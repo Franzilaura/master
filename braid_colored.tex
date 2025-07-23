@@ -1,53 +1,69 @@
-\section{Colored Braidings}
+\section{Colored Braided Operads}
 
 In this section, we will define colored braided operads and will aim to find a
 functor that encodes all the necesaary data to give an alternative definition so
-the notion can eventually be lifted to the $\infty$-categorical context.
-\textcolor{blue}{First, let us recall the definition of $\Ex$ and build a related category $\Br$ that will serve as the target category for our op-fibration later on.}
-\todo{recall definition of $\Ex$ here or already in 3.10? What is better for the reader?}
-% \begin{rem} For each $n \in \N$ we have an object $\langle n \rangle$. A
-%     morphism $\langle n \rangle \to \langle m \rangle$ in $\Ex$ consists of a
-%     morphism $\alpha \colon \langle n \rangle \to \langle m \rangle$ in $\Fin$
-%     and a collection of configurations $$\{c_j \in \E_2(|\alpha^{-1}(j)|)\}_{1
-%     \leq j \leq m}$$ where each configuration is labeled by $\alpha^{-1}(j))$.
-%     So for example, \begin{align*} \alpha \colon \langle 3 \rangle &\to
-%     \langle 2 \rangle \\ 1 &\mapsto 1 \\
-%         2 &\mapsto 2 \\
-%         3 &\mapsto 1 \\
-%     \end{align*} together with the configurations: \begin{center}
-%     \begin{tikzpicture} % First element (left) \draw[thick] (-3,0) circle (2);
-%     \draw[thick] (-3.8, 1) circle (0.5); \draw[thick] (-3, -0.5) circle (1);
-%     \node at (-3.8, 1) {\small $1$}; \node at (-3, -0.5) {\small $3$}; \node
-%     at (0,-2) {,}; % Second element (right) \draw[thick] (3,0) circle (2);
-%     \draw[thick] (2,0.7) circle (0.5); \node at (2,0.7) {\small $2$};
-%     \end{tikzpicture} \end{center} We denote the trivial configuration with
-%     label $x$ by $\id^x \in \E_2(1)$. Further, recall the composition in
-%     $\Ex$. Let \begin{center} $\alpha \colon \langle n \rangle \to \langle m
-%     \rangle$ with configurations $\{c_j\}_{1 \leq j \leq m}$ \end{center} and
-%     \begin{center} $\alpha' \colon \langle m \rangle \to \langle l \rangle$
-%     with configurations $\{c'_k\}_{1 \leq k \leq l}$. \end{center} Then, the
-%     configuration $c'_k$ is labeled by $\alpha'^{-1}=\{j_1^{(k)}, \dots,
-%     j_p^{(k)}\}$. So, we obtain a configuration 
-%     \[
-%         \gamma(c'_k, c_{j_1}, \dots, c_{j_p})
-%     \]
-%     labeled by $(\alpha' \circ \alpha)^{-1}(k)$ for all $1 \leq k \leq l$ 
-%     giving us the well-defined composition $\alpha' \circ \alpha$.
-% \end{rem}
+the notion can eventually be lifted to a $\infty$-categorical context.
+
 \subsection{Colored Braided Operads}
-\todo{do we need to define active morphisms in $\Ex$?}
+
 \begin{defin}
-    A morphism $\alpha \colon \langle n \rangle \to \langle m \rangle$ in $\Ex$
-    is called active if it is active in $\Fin$, i.e. $\alpha^{-1}(\ast) =
-    \{\ast\}$.
+    Let $I$ be a finite set. For a bijection of finite sets $\alpha \colon I \cong
+    \langle n \rangle^{\circ}$ we call a configuration $c \in \E_2(n)$ $I$-labeled.
 \end{defin}
 
 \begin{defin}
-    Let $I$ be a finite set. We call a configuration $c \in \E_2(n)$ $I$-labeled
-    according to $\alpha$ if there is a bijective map $\alpha \colon I \cong
-    \langle n \rangle^{\circ}$. In most cases $\alpha$ is not important to us,
-    so we just say $c$ is $I$-labeled.
+    Let $I$ be a finite set with $|I|=n$, $c$ and $c'$ $I$-labeled configurations corresponding to the same
+    bijection $I \cong \langle n \rangle^{\circ}$. A path from $c$
+    to $c'$ is a path between the configurations in $\E_2(n)$, i.e. a continuous map
+    \[
+        f \colon [0,1] \to \E_2(n)
+    \] with $f(0)=c$ and $f(1)=c'$.
 \end{defin}
+
+
+\begin{defin}
+    Let $\Br$ be the following $\Grp$-enriched category:
+    \begin{enumerate}[(i)]
+        \item The objects of $\Br$ are finite sets.
+        \item A morphism $\alpha \colon I \to J$ in $\Br$ 
+        consists of a map of finite sets  $\alpha' \colon I \to J$ 
+        and a collection of configurations
+
+        $$\left\{\widetilde{\alpha}_j \in \E_2\left(|\alpha'^{-1}(j)|\right)\right\}_{j \in J}$$
+
+        where each configuration $\widetilde{\alpha}_j$ is  $\alpha'^{-1}(j)$-labeled.
+        \begin{enumerate}
+            \item For morphisms
+        \[
+            \alpha \colon I \to J \; \text{and} \; \beta \colon J \to K
+        \]
+        
+        the composition $\beta \circ \alpha$ consists of the map of finite sets
+        \[
+            \beta' \circ \alpha' \colon I \to K
+        \]
+        and for all $k \in K$ with
+        \[
+            \beta'^{-1}(k)=\{j_1, \dots, j_p\}
+        \]
+        the $(\beta' \circ \alpha')^{-1}(k)$-labeled configuration
+        \[
+            \widetilde{(\beta \circ \alpha)}_k \coloneqq \gamma(\widetilde{\beta}_k, \widetilde{\alpha}_{j_1}, \dots, \widetilde{\alpha}_{j_p}),
+        \]
+        where $\gamma$ is the composition map in $\E_2$.
+        
+        % analogously to the composition map in $\Ex$ as defined above.
+        \item The identity morphism $\id_I$ is given by the identity on finite set $I$ and the collection of 
+        trivial configurations $\{\id^i \in \E_2(1)\}_{i \in I}$.
+        \end{enumerate}
+        \item For morphisms $\alpha, \beta \colon I \to J$ in $\Br$ with $\alpha' = \beta'$ as maps of finite sets.
+        A $2$-morphism in $\Br$ consists of a family of homotopy classes of paths
+        \[
+            \left\{\eta_j \colon \widetilde{\alpha}_i \Rightarrow \widetilde{\beta}_j \right\}_{j \in J}.
+        \]
+    \end{enumerate}
+\end{defin}
+This defines a $2$-category.
 
 We are now ready to define a colored braided operad:   
 
@@ -55,24 +71,23 @@ We are now ready to define a colored braided operad:
     A {\em colored braided operad} $\B$ consists of the following data:
     \begin{enumerate}[(i)]
         \item A collection $\{X,Y,Z, \dots\}$ of colors.
-        \item For every finite set $I$  and $\widetilde{I}$ an $I$-labeled
-        configuration in $\E_2$ and for every collection of colors $\{X_i\}_{i
-        \in I}$ and a color $Y$ in $\B$, there is a set
+        \item For every finite set $I$, $I$-labeled
+        configuration $\widetilde{I}$, every collection of colors $\{X_i\}_{i
+        \in I}$, and a color $Y$ in $\B$, a set
         \[
             \Mul_{\B}^{\widetilde{I}}(\{X_i\}_{i \in I}, Y)
         \]
         called the set of morphisms from $\{X_i\}_{i \in I}$ to $Y$.
-        \item Let $\alpha \colon I \to J$ be finite map together with a
-        collection of configurations labeled by the preimages of $\alpha$, i.e. 
+        \item For $\alpha \colon I \to J$ being a morphism in $\Br$ with
+        its collection of configurations labeled by the preimages of $\alpha$: 
         $$\widetilde{\alpha} = (\widetilde{I_j})_{j \in J}$$ where $I_j$ denotes
-        the fiber over $j$ for all $j \in J$ and a path of configurations
+        the fiber over $j$ for all $j \in J$, a $2$-morphism
         $\eta$:
-        \todo{check direction of path? correct?}
         \begin{center}
             \begin{tikzpicture}
                 % Define node positions
                 \node (B) at (0, 2) {$I$}; \node (C) at (3, 2) {$J$}; \node (A)
-                at (1.5, 0) {$\langle 1 \rangle$};
+                at (1.5, 0) {$\{ 1 \}$};
                 
                 % Draw arrows
                 \draw[->] (B) -- (C) node[midway, above] {$\widetilde{\alpha}$};
@@ -84,16 +99,20 @@ We are now ready to define a colored braided operad:
                 % \node at (1.7, 1.2) {$\eta$};
             \end{tikzpicture}
         \end{center}
-        Further, let there be collections of colors $\{X_i\}_{i \in I}$ and
-        $\{Y_j\}_{j \in J}$ and color $Z$. Then, there is a composition map:
+        a collections of colors $\{X_i\}_{i \in I}$,
+        $\{Y_j\}_{j \in J}$ and color $Z$, a composition map:
         \[
-            \prod_{j \in J} \Mul_{\B}^{\widetilde{I_j}}\left(\{X_i\}_{i \in I_j}, Y_j\right) \times \Mul_{\B}^{\widetilde{J}}\left(\{Y_j\}_{j\in J}, Z\right) \to \Mul_{\B}^{\widetilde{I}}\left(\{X_i\}_{i \in I}, Z\right)  
+            \gamma \colon \prod_{j \in J} \Mul_{\B}^{\widetilde{I_j}}\left(\{X_i\}_{i \in I_j}, Y_j\right) \times \Mul_{\B}^{\widetilde{J}}\left(\{Y_j\}_{j\in J}, Z\right) \to \Mul_{\B}^{\widetilde{I}}\left(\{X_i\}_{i \in I}, Z\right)  
         \]
-        \item For any $I$-labeled configuration c with $|I|=1$ we have a
-        collection of morphisms $\{ \id_X \in \Mul_{\B}^{c}(\{X\}, X)\}_{X \in
-        \B}$ being a left and right unit with respect to the composition, i.e.
+        \item For any $I$-labeled configuration c with $|I|=1$, a
+        collection of morphisms
+        $$\{ \id_X \in \Mul_{\B}^{c}(\{X\}, X)\}_{X \in \B}$$
+        called the identity morphisms.
+        \end{enumerate}
+        such that the following properties hold:
+        \begin{enumerate}
+            \item The identity morphisms are a left and right unit with respect to the composition map $\gamma$, i.e.
         the following diagrams commute:
-        \todo{if time: make remark about definition for just $b_1$ to be equivalent}
         \begin{center}
             \begin{tikzcd}
                 {\Mul_{\B}^{\widetilde{I}}(\{X_i\}_{i \in I}, Y)} \arrow[r,
@@ -116,8 +135,13 @@ We are now ready to define a colored braided operad:
                 \Mul_{\B}^{\widetilde{I}}(X_I, Y)} \arrow[l, "\gamma"]
             \end{tikzcd}                                             
         \end{center}
-        \item For every sequence of finite maps $I \overset{\alpha}{\to} J
-        \overset{\beta}{\to} K$, with paths $\eta$ and $\epsilon$ as in the
+
+        
+        
+    
+        \item For every sequence of morphisms $I \overset{\alpha}{\to} J
+        \overset{\beta}{\to} K$ in $\Br$, $I$-labeled configuration $\widetilde{I}$,
+        $J$-labeled configuration $\widetilde{J}$ and 2-morphisms  $\eta$ and $\epsilon$ in $\Br$ as in the
         following diagram:
 
         \begin{center}
@@ -148,7 +172,7 @@ We are now ready to define a colored braided operad:
         %                     & {\Mul_{\O}(X_I, Z)}         
         %     \end{tikzcd} \end{center}
 
-        and collections of colors $X_I = \{X_i\}_{i \in I}$, $Y_J = \{Y_j\}_{j
+        collections of colors $X_I = \{X_i\}_{i \in I}$, $Y_J = \{Y_j\}_{j
         \in J}$, $W_K = \{W_k\}_{k \in K}$ and a color $Z \in \B$ the following
         diagram commutes:
          \todo{make diagram prettier}
@@ -168,15 +192,16 @@ We are now ready to define a colored braided operad:
             \end{tikzcd}
             \end{adjustbox}
         \end{center}
-    \end{enumerate}
+        \end{enumerate}
+
 \end{defin}
 
 \begin{eg}
-    Let $\B_{col}$ be a colored braided operad with one color $X$. Similar to
-    the symmetric case, $\B_{col}$ induces a braided operad $\B$ as in
+    Let $\Bc$ be a colored braided operad with one color $X$. Similar to
+    the symmetric case, $\Bc$ induces a braided operad $\B$ as in
     Definition \ref{def-br-operad}. For $n \in \N$, we set
     \[
-        \B(n) = \Mul_{\B_{col}}^{b_n}(\{X\}_{1 \leq i \leq n}, X)
+        \B(n) = \Mul_{\Bc}^{b_n}(\{X\}_{1 \leq i \leq n}, X)
     \]
     where $b_n$ is our basepoint configuration in $\E_2(n)$ as chosen in
     Construction \ref{con:unicover}. Further, we define the composition map
@@ -184,9 +209,9 @@ We are now ready to define a colored braided operad:
         \theta \colon \B(k) \times \B(j_1) \times \cdots \times \B(j_k) \to \B(j)
     \]
     where $j = j_1 + \cdots + j_k$, from the composition map $\gamma$ in
-    $\B_{col}$:
+    $\Bc$:
     \[
-        \gamma \colon  \prod_{1 \leq i \leq k} \Mul_{\B_{col}}^{b_{j_i}}\left(\{X\}^{j_i}, X\right) \times \Mul_{\B_{col}}^{b_k}\left(\{X\}^k, X\right) \to \Mul_{\B_{col}}^{b_j}\left(\{X\}^j, X\right)
+        \gamma \colon  \prod_{1 \leq i \leq k} \Mul_{\Bc}^{b_{j_i}}\left(\{X\}^{j_i}, X\right) \times \Mul_{\Bc}^{b_k}\left(\{X\}^k, X\right) \to \Mul_{\Bc}^{b_j}\left(\{X\}^j, X\right)
     \]
     corresponding to the unique $\E_1$-translation from $b_j$ to $b_k(b_{j_1},
     \dots, b_{j_k})$ as defined in Remark \ref{rem:e1-translation}:
@@ -213,10 +238,9 @@ We are now ready to define a colored braided operad:
         \eta \colon \ast \to \B(1)
     \]
     which is defined by the identity morphism $\id_X \in
-    \Mul_{\B_{col}}^{b_1}(\{X\}, X)$. The unitality condition is satisfied as
-    the identity morphism $\id_X$ is the left and right unit in
-    $\Mul_{\B_{col}}^{b_1}(\{X\}, X)$. The associativity condition is also
-    satisfied as it holds for $\B_{col}$: For any choice of integers
+    \Mul_{\Bc}^{b_1}(\{X\}, X)$. The unitality condition is satisfied as
+    the identity morphism $\id_X$ is the left and right unit for any composition map $\gamma$, so in particular $\theta$. The associativity condition is also
+    satisfied as it holds for $\Bc$: For any choice of integers
             \[
                 n,  \ j_1, \dots, j_k, \ i_1, \dots, i_j
             \]
@@ -243,29 +267,29 @@ We are now ready to define a colored braided operad:
                 \end{tikzcd}
                 \end{center}
                 where $s$ shuffles the entries of the tensor product, commutes
-    as the composition map $\gamma$ in $\B_{col}$ is associative for the
+    as the composition map $\gamma$ in $\Bc$ is associative for the
     following maps for $1 \leq s \leq k$, $1 \leq q \leq j_s$ and $h'_q =
     \sum_{t=1}^{g_{s-1}+1} i_t$:
     \begin{align*}
-        \alpha \colon \langle i \rangle &\to \langle j \rangle \\
+        \alpha \colon \langle i \rangle^{\circ} &\to \langle j \rangle^{\circ} \\
         h'_{q-1}+1, \dots, h'_q &\mapsto g_{s-1}+q \\
     \end{align*}
     with $\widetilde{\alpha_{g_{s-1}+q}} = b_{i_{g_{s-1}+q}}$ and
     \begin{align*}
-        \alpha' \colon \langle j \rangle &\to \langle k \rangle \\
+        \alpha' \colon \langle j \rangle^{\circ} &\to \langle k \rangle^{\circ} \\
         g_{s-1}+1, \dots, g_s &\mapsto s \\
     \end{align*}
     with $\widetilde{\alpha'_s} = b_{j_s}$. So we have defined a planar operad
     $\B$. It remains to see how the braid action on $\B$ is induced by the
-    definition of $\B_{col}$. We recall from Lemma \ref{lem:fundamentalgroup}
+    definition of $\Bc$. We recall from Lemma \ref{lem:fundamentalgroup}
     that the fundamental group of $\E_2(n)$ is the braid group up to relabeling.
     Let $\sigma \in B_n$ and $\bar{\sigma} \in S_n$ denoting its underlying
-    permutation. Then we have the following commuting diagram:
+    permutation. Then we have the following commuting diagram in $\Br$:
     \begin{center}
         \begin{tikzpicture}
             % Define node positions
-            \node (B) at (0, 2) {$\langle n \rangle$}; \node (C) at (3, 2)
-            {$\langle n \rangle$}; \node (A) at (1.5, 0) {$\langle 1 \rangle$};
+            \node (B) at (0, 2) {$\langle n \rangle^{\circ}$}; \node (C) at (3, 2)
+            {$\langle n \rangle^{\circ}$}; \node (A) at (1.5, 0) {$\langle 1 \rangle^{\circ}$};
             
             % Draw arrows
             \draw[->] (B) -- (C) node[midway, above] {$\bar{\sigma}^{-1}$};
@@ -279,14 +303,14 @@ We are now ready to define a colored braided operad:
     \end{center}
     Further, we restrict the corresponding composition map
     \[
-        \gamma \colon  \prod_{1 \leq i \leq n} \Mul_{\B_{col}}^{\id^{\bar{\sigma}^{-1}(j)}}\left(\{X\}, X\right) \times \Mul_{\B_{col}}^{b_n}\left(\{X\}^n, X\right) \to \Mul_{\B_{col}}^{b_n}\left(\{X\}^n, X\right)
+        \gamma \colon  \prod_{1 \leq i \leq n} \Mul_{\Bc}^{\id^{\bar{\sigma}^{-1}(j)}}\left(\{X\}, X\right) \times \Mul_{\Bc}^{b_n}\left(\{X\}^n, X\right) \to \Mul_{\Bc}^{b_n}\left(\{X\}^n, X\right)
     \]
     to the collection of the identities $\{\id_X\}_{1 \leq j \leq n}$ to obtain
     \[
         \B(n) \to \B(n).
     \]
     This defines a braid action on $\B(n)$. The action is associative since it
-    is defined via $\gamma$. Let $\sigma, \rho \in S_n$ inducing the paths:
+    is defined via $\gamma$. Let $\sigma, \rho \in B_n$ inducing the $2$-morphisms in $\Br$:
     \begin{center}
         \begin{tikzpicture}
             % Define node positions
@@ -308,7 +332,7 @@ We are now ready to define a colored braided operad:
 
     
     For the restriction to the identities from the assoociativity diagram of
-    $\B_{col}$ we obtain the following diagram showing
+    $\Bc$ we obtain the following diagram showing
     $\rho.(\sigma.\B(n))=(\rho \circ \sigma).\B(n)$:
     \begin{center}
         \begin{tikzcd}
@@ -318,9 +342,9 @@ We are now ready to define a colored braided operad:
         \end{tikzcd}
     \end{center}
     The trivial braid acts trivially due to the unitality condition in
-    $\B_{col}$. Hence, we are left to show the equivariance of the braid action
-    regarding $\gamma$. That however follows directly from associativity
-    diagrams in $\B_{col}$ for the right choice of paths of configurations. So,
+    $\Bc$. Hence, we are left to show the equivariance of the braid action
+    regarding $\theta$. That however follows directly from associativity
+    diagrams in $\Bc$ for the right choice of homotopy class of paths of configurations. So,
     the first equivariance diagram for $\sigma \in B_n$ and $\bar{\sigma}$
     denoting its underlying permutation:
     \begin{center}
@@ -333,7 +357,7 @@ We are now ready to define a colored braided operad:
             &  & B(j),                                                                   
         \end{tikzcd}
     \end{center}      
-    follows for the following composition of paths:
+    follows for the following composition of $2$-morphisms in $\Br$:
     \begin{center}
         \begin{tikzpicture}
             % Define node positions
@@ -354,7 +378,7 @@ We are now ready to define a colored braided operad:
     \end{center}
     Note, that the left triangle is defining $\theta$ and is a
     $\E_1$-translation. Furthermore, let $\rho_l \in B_{j_l}$ for $1 \leq l \leq
-    k$ and $\tau_1 \oplus \cdots \oplus \tau_k$ denotes the sum of braidings on
+    k$ and $\rho_1 \oplus \cdots \oplus \rho_k$ denotes the sum of braidings on
     $k$ blocks with each block having $j_l$ strands. Then the second
     equivariance diagram:
     \begin{center}
@@ -401,7 +425,7 @@ We are now ready to define a colored braided operad:
     % $\widetilde{I_1}$ and $\widetilde{I_2}$ we have potentially different sets
     % of morphisms:
     % \[
-    %     \Mul_{\B_{col}}^{\widetilde{I_1}}(\{X\}_{i \in I_1}, X) \text{ and } \Mul_{\B_{col}}^{\widetilde{I_2}}(\{X\}_{i \in I_2}, X)
+    %     \Mul_{\Bc}^{\widetilde{I_1}}(\{X\}_{i \in I_1}, X) \text{ and } \Mul_{\Bc}^{\widetilde{I_2}}(\{X\}_{i \in I_2}, X)
     % \]
     
     % This raises the question of how the structures of a one colored braided
@@ -434,17 +458,11 @@ We are now ready to define a colored braided operad:
     % specific sets and configurations, they behave the same way up to this
     % braid action. Therefore, the group action effectively collapses the
     % dependence on the specific finite sets and their configurations. 
-    \todo{braid group equivariance?}
 \end{eg}
 
 \begin{rem}
-    Vice versa, we can define a colored braided operad with one color $\B_{col}$
-    from a braided operad $\B$ in the classical sense $\B$.
+    Vice versa, we can define a colored braided operad with one color $\Bc$
+    from a braided operad $\B$ in the classical sense.
     \todo{if time elaborate on this}
 \end{rem}
 
-\input{braided_monoidal.tex}
-\input{braided_monoidal_structure_old.tex}
-
-
-\input{braided_fib.tex}

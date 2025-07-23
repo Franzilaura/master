@@ -1,65 +1,78 @@
-\subsection{Colored Braided Operads as Op-fibrations}
-
+\subsection{Functorial Definition of Colored Braided Operads}
 
 Next, we enrich $\Ex$ with a groupoid structure.
 \begin{defin}
-    Let $\Br$ be the following $\Grp$-enriched category:
+    Let $\Brx$ be the following $\Grp$-enriched category:
     \begin{enumerate}[(i)]
-        \item The objects of $\Br$ are finite sets $\langle n \rangle$ for $n \in \N$.
-        \item A morphism $\alpha \colon \langle n \rangle \to \langle m \rangle$ in $\Br$ 
-        consists of a morphism $\alpha \colon \langle n \rangle \to \langle m \rangle$ 
-        in $\Fin$ and a collection of configurations
+        \item The objects of $\Brx$ are finite sets $\langle n \rangle$ for $n
+        \in \N$.
+        \item A morphism $\alpha \colon \langle n \rangle \to \langle m \rangle$
+        in $\Brx$ consists of a morphism $\alpha \colon \langle n \rangle \to
+        \langle m \rangle$ in $\Fin$ and a collection of configurations
 
-        $$\{\widetilde{\alpha}_j \in \E_2(|\alpha^{-1}(j)|)\}_{1 \leq j \leq m}$$
+        $$\{\widetilde{\alpha}_j \in \E_2(|\alpha^{-1}(j)|)\}_{1 \leq j \leq
+        m}$$
 
-        where each configuration $\widetilde{\alpha}_j$ is labeled by $\alpha^{-1}(j)$.
-        The composition is defined analogously to the composition map in $\Ex$ as defined above.
-        Further, the identity morphism $\id_{\langle n \rangle}$ is given by the collection of 
-        trivial configurations $\{\id^j \in \E_2(1)\}_{1 \leq j \leq n}$.
-        \item \todo{fix groupoid definition and adapt proofs}
-        The morphisms in $\Br$ form the groupoid
+        where each configuration $\widetilde{\alpha}_j$ is labeled by
+        $\alpha^{-1}(j)$. The composition is defined analogously to the
+        composition map in $\Ex$ as defined above. Further, the identity
+        morphism $\id_{\langle n \rangle}$ is given by the collection of trivial
+        configurations $\{\id^j \in \E_2(1)\}_{1 \leq j \leq n}$. The morphisms
+        in $\Brx$ form the groupoid
         \[
-        \Hom_{\Br}(\langle n \rangle, \langle m \rangle) = \coprod_{\substack{\alpha \colon \langle n \rangle \to \langle m \rangle \\ \in \Fin}} \Hom_{\Br}^{\alpha}(\langle n \rangle, \langle m \rangle)
+        \Hom_{\Brx}(\langle n \rangle, \langle m \rangle) = \coprod_{\substack{\alpha \colon \langle n \rangle \to \langle m \rangle \\ \in \Fin}} \Hom_{\Brx}^{\alpha}(\langle n \rangle, \langle m \rangle)
         \]
         where 
-        $$\Hom_{\Br}^{\alpha}(\langle n \rangle, \langle m \rangle)$$
-        denotes the product of the groupoids of homotopy classes of paths in the 
-        configuration space $\E_2(|\alpha^{-1}(j)|)$ labeled by $\alpha^{-1}(j)$ 
+        $$\Hom_{\Brx}^{\alpha}(\langle n \rangle, \langle m \rangle)$$ denotes
+        the product of the groupoids of homotopy classes of paths in the
+        configuration space $\E_2(|\alpha^{-1}(j)|)$ labeled by $\alpha^{-1}(j)$
         for all $1 \leq j \leq m$:
     \end{enumerate}
 \end{defin}
 It is clear that this defines a category.
+
+\begin{defin}
+    A morphism $\alpha \colon \langle n \rangle \to \langle m \rangle$ in $\Ex$
+    is called active if it is active in $\Fin$, i.e. $\alpha^{-1}(\ast) =
+    \{\ast\}$.
+\end{defin}
+
 \begin{rem}
-    We can extend the definition of $\Br$ to include any finite set $I$ with a distinguished point.
-    However, note that that category would be equivalent to $\Br$ in the analogous
-    way as $\Fin$ is equivalent to the category of finite sets with a distinguished point.
+    We can extend the definition of $\Brx$ to include any finite set $I$ with a
+    distinguished point. However, note that that category would be equivalent to
+    $\Brx$ in the analogous way as $\Fin$ is equivalent to the category of
+    finite sets with a distinguished point.
 \end{rem}
 
 \begin{defin}
-    Let $\B$ be a colored operad. We define a category $\Bx$ in the following way:
+    Let $\B$ be a colored operad. We define a category $\Bx$ in the following
+    way:
     \begin{enumerate}[(i)]
         \item The objects of $\Bx$ are finite sequences of colors of $\B$.
-        \item Let $\{X_i\}_{1 \leq i \leq m}$ and $\{Y_j\}_{1 \leq j \leq n}$ be objects in $\Bx$. A morphism 
+        \item For $\{X_i\}_{1 \leq i \leq m}$, $\{Y_j\}_{1 \leq j \leq n}$ being
+        objects in $\Bx$, a morphism 
         \[
             \phi \colon \{X_i\}_{1 \leq i \leq m} \to \{Y_j\}_{1 \leq j \leq n}
         \]
-        is given by a map $\alpha \colon \langle m \rangle \to \langle n \rangle$ in $\Br$ together with a 
-        family of morphisms
+        is given by a map $\alpha \colon \langle m \rangle \to \langle n
+        \rangle$ in $\Brx$ together with a family of morphisms
         \[
             \{ \phi_j \in \Mul_{\B}^{\widetilde{\alpha_j}}(\{X_i\}_{i \in \alpha^{-1}(j)}, Y_j)\}_{1 \leq j \leq n}
         \]
         in $\B$.
-        \item Composition of morphisms is determined by the composition in $\Br$ and $\B$, i.e. for morphisms 
-        $\phi \colon X \to Y$ and $\phi' \colon Y \to Z$ in $\Bx$  with $\alpha' \colon \langle n \rangle \to \langle m \rangle$ 
-        and $\alpha'' \colon \langle m \rangle \to \langle k \rangle$, we have $\alpha = \alpha''\circ \alpha'$ and
+        \item Composition of morphisms is determined by the composition in
+        $\Brx$ and $\B$, i.e. for morphisms $\phi \colon X \to Y$ and $\phi'
+        \colon Y \to Z$ in $\Bx$  with $\alpha' \colon \langle n \rangle \to
+        \langle m \rangle$ and $\alpha'' \colon \langle m \rangle \to \langle k
+        \rangle$, we define $\alpha = \alpha''\circ \alpha'$ and
         \[
             \{(\phi' \circ \phi)_l \in  \Mul_{\B}^{\widetilde{\alpha_l}}(\{X_i\}_{i \in \alpha^{-1}(l)}, Z_l)\}_{1 \leq l \leq k}
         \]
-        where $(\phi' \circ \phi)_l$ is applying the composition map 
+        where $(\phi' \circ \phi)_l$ is applying to $((\phi_i)_{i \in
+        \alpha^{-1}(l)}, \phi'_l)$ the following composition map 
         \[
             \gamma \colon \prod_{j \in \alpha''^{-1}(l)} \Mul_{\B}^{\widetilde{\alpha'_j}}(\{X_i\}_{i \in \alpha'^{-1}(j)},Y_j) \times \Mul_{\B}^{\widetilde{\alpha''_l}}(\{Y_i\}_{i \in \alpha''^{-1}(l)},Z_l) \to \Mul_{\B}^{\widetilde{\alpha}_l}(\{X_i\}_{i \in \alpha^{-1}(l)},Z_l).
         \] 
-        %to $((\phi_i)_{i \in \alpha^{-1}(l)}, \phi'_l)$.
     \end{enumerate}
 \end{defin}
 
@@ -68,7 +81,7 @@ It is clear that this defines a category.
 
 Let $\B$ be a colored braided operad, then there is a forgetful functor
 \[
-    \pi \colon \Bx \to \Br
+    \pi \colon \Bx \to \Brx
 \]
 
 In this section we will focus on characterizing $\pi$.
