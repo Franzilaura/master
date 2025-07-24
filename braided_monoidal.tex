@@ -3,14 +3,14 @@
 As we have already seen for symmetric monoidal categories, they are an example
 of colored symmetric operads and can be defined using an op-fibration over
 $\Fin$ that satisfies the Segal condition. In this section, we will define
-representable colorad braided operad and as it turns out they will be colored
+representable colored braided operad and as it turns out they will be colored
 braided operads that correspond to braided monoidal categories. Later, we then
 see that there is again a forgetful functor that is an op-fibration and
-fullfills the Segal condition.
+fulfills the Segal condition.
 
 \begin{defin}
     Let $\B$ be a colored braided operad. We call $\B$ representable if it
-    fullfills the following: Let $I$ be a finite set and $\widetilde{I}$ an
+    fulfills the following: Let $I$ be a finite set and $\widetilde{I}$ an
     $I$-labeled configuration. For any collection of colors $\{X_i\}_{i \in I}$
     there is a color 
     $$\bigotimes_{i \in \widetilde{I}} X_i$$ such that for every \todo{is it for
@@ -21,7 +21,7 @@ fullfills the Segal condition.
     configurations $\widetilde{I}'$ and $g \in
     \Mul_{\B}^{\widetilde{I}'}(\{X_i\}_{i \in I}, Y)$ there exists a unique
 
-    $$\bar{g} \in \Mul_{\B}^{\id^1}\left(\left\{\bigotimes_{i \in \widetilde{I}}
+    $$\bar{g} \in \Mul_{\B}^{\id^{(1)}}\left(\left\{\bigotimes_{i \in \widetilde{I}}
     X_i\right\}, Y\right)$$
 
     such that for a composition map $\gamma$ corresponding to any path $\eta$:
@@ -34,7 +34,7 @@ fullfills the Segal condition.
             % Draw arrows
             \draw[->] (B) -- (C) node[midway, above] {$\widetilde{I}'$};
             \draw[->] (B) -- (A) node[midway, left] {$\widetilde{I}$}; \draw[->]
-            (C) -- (A) node[midway, right] {$\id^1$};
+            (C) -- (A) node[midway, right] {$\id^{(1)}$};
             
             % Natural transformation arrow
             \node[rotate=-40] at (1.5, 1.2) {$\Downarrow \eta$};
@@ -78,25 +78,25 @@ structure on the underlying category of a colored braided operad $\B$.
     
     While for morphisms
     \[
-        h \in \Mul_{\B}^{\id^1}\left(\{X_1\}, X_1'\right) \; \text{and} \;  g \in \Mul_{\B}^{\id^1}\left(\{X_2\}, X_2'\right)
+        h \in \Mul_{\B}^{\id^{(1)}}\left(\{X_1\}, X_1'\right) \; \text{and} \;  g \in \Mul_{\B}^{\id^{(1)}}\left(\{X_2\}, X_2'\right)
     \]
 
     \todo{choosing $f$ is a probalem..}
     \todo{choice of $f$ is like choosing a cocartesian lift, so should be fixable}
     
-    and choices of $f \in \Mul_{\B}^{\id^1}\left(\left\{X_i\right\}_{1 \leq i \leq 2},
+    and choices of $f \in \Mul_{\B}^{\id^{(1)}}\left(\left\{X_i\right\}_{1 \leq i \leq 2},
     \bigotimes_{i \in b_2} X_i\right)$
     and 
-    $f' \in \Mul_{\B}^{\id^1}\left(\left\{X_i'\right\}_{1 \leq i \leq 2},
+    $f' \in \Mul_{\B}^{\id^{(1)}}\left(\left\{X_i'\right\}_{1 \leq i \leq 2},
     \bigotimes_{i \in b_2} X_i'\right)$
     we obtain $\gamma(h,g,f')$ and by the universal property of $f$
     we get a unique morphism:
     \[
-        h \otimes g \in \Mul_{\B}^{\id^1}\left(\left\{\bigotimes_{i \in b_2} X_i\right\}, \bigotimes_{i \in b_2} X_i'\right)
+        h \otimes g \in \Mul_{\B}^{\id^{(1)}}\left(\left\{\bigotimes_{i \in b_2} X_i\right\}, \bigotimes_{i \in b_2} X_i'\right)
     \]
     such that $\gamma(f, h \otimes g) = \gamma(h,g,f')$.
     This defines a functor. For $h = \id_{X_1}$ and $g=\id_{X_2}$
-    and $f \in \Mul_{\B}^{\id^1}\left(\left\{X_i\right\}_{1 \leq i \leq 2},
+    and $f \in \Mul_{\B}^{\id^{(1)}}\left(\left\{X_i\right\}_{1 \leq i \leq 2},
     \bigotimes_{i \in b_2} X_i\right)$, then there is $\id_{X_1} \otimes \id_{X_1}$ such that
     $\gamma(f, \id_{X_1} \otimes \id_{X_1}) = f$. Further, we observe
     \[
@@ -106,18 +106,18 @@ structure on the underlying category of a colored braided operad $\B$.
     \[
         \id_{X_1} \otimes \id_{X_1} = \id_{\bigotimes_{i \in b_2} X_i}.
     \]
-    As for the compositon, let $h \in \Mul_{\B}^{\id^1}\left(\{X_1\}, X_1'\right)$, 
-    $h' \in \Mul_{\B}^{\id^1}\left(\{X_1'\}, X_1''\right)$, 
-    $g \in \Mul_{\B}^{\id^1}\left(\{X_2\}, X_2'\right)$,
-    $g' \in \Mul_{\B}^{\id^1}\left(\{X_2'\}, X_2''\right)$
+    As for the composition, let $h \in \Mul_{\B}^{\id^{(1)}}\left(\{X_1\}, X_1'\right)$, 
+    $h' \in \Mul_{\B}^{\id^{(1)}}\left(\{X_1'\}, X_1''\right)$, 
+    $g \in \Mul_{\B}^{\id^{(1)}}\left(\{X_2\}, X_2'\right)$,
+    $g' \in \Mul_{\B}^{\id^{(1)}}\left(\{X_2'\}, X_2''\right)$
 
     and
     \begin{align*}
-        f \in \Mul_{\B}^{\id^1}\left(\left\{X_i\right\}_{1 \leq i \leq 2},
+        f \in \Mul_{\B}^{\id^{(1)}}\left(\left\{X_i\right\}_{1 \leq i \leq 2},
     \bigotimes_{i \in b_2} X_i\right) \\
-    f' \in \Mul_{\B}^{\id^1}\left(\left\{X_i'\right\}_{1 \leq i \leq 2},
+    f' \in \Mul_{\B}^{\id^{(1)}}\left(\left\{X_i'\right\}_{1 \leq i \leq 2},
     \bigotimes_{i \in b_2} X_i'\right) \\
-    f'' \in \Mul_{\B}^{\id^1}\left(\left\{X_i''\right\}_{1 \leq i \leq 2},
+    f'' \in \Mul_{\B}^{\id^{(1)}}\left(\left\{X_i''\right\}_{1 \leq i \leq 2},
     \bigotimes_{i \in b_2} X_i'\right)
     \end{align*}
     for which the following hold:
@@ -148,7 +148,7 @@ structure on the underlying category of a colored braided operad $\B$.
          1 &\mapsto 2 \\
          2 &\mapsto 1 \\
      \end{align*}
-with the trivial collection $(\id^2, \id^1)$. 
+with the trivial collection $(\id^{(2)}, \id^{(1)})$. 
 
 
 

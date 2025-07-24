@@ -1,79 +1,111 @@
 %!TEX root = main.tex
 
-\section{Braided Operads}\label{sec:braidedoperads}
-    Braided operads were first mentioned by Fiedorowicz in his paper \cite{EO} on the construction of $\E_n$ operads. Let $A$ 
-    be an operad in the  category of compactly generated Hausdorff spaces. The first theorem states:
+\section{Braided Operads}\label{sec:braidedoperads} Braided operads were first
+    mentioned by Fiedorowicz in his paper \cite{EO} on the construction of
+    $\E_n$ operads. Let $A$ be an operad in the  category of compactly generated
+    Hausdorff spaces. The first theorem states:
 
     \begin{thm}[Recognition principles for $E_n$-operads]
-        $A$ is an $\E_2$-operad iff $A(k)$ is connected and the collection of universal covering spaces 
-        $\{\Tilde{A}(k)\}_{k \in \N}$ forms a $B_{\infty}$-operad, i.e.:
+        $A$ is an $\E_2$-operad iff $A(k)$ is connected and the collection of
+        universal covering spaces $\{\Tilde{A}(k)\}_{k \in \N}$ forms a
+        $B_{\infty}$-operad, i.e.:
         \begin{enumerate}[(1)]
             \item For all $k \in \N$, the space $\Tilde{A}(k)$ is contractible.
-            \item The braid group  $B_k$ acts freely on $\Tilde{A}(k)$ for each $k \in \N$.
+            \item The braid group  $B_k$ acts freely on $\Tilde{A}(k)$ for each
+            $k \in \N$.
         \end{enumerate}
     \end{thm}
 
-    In the sketch of the proof, it is stated that "the definition of operads can be reformulated 
-    using actions by braid groups in place of actions by symmetric groups"~\cite{EO}. As braided operads are a useful tool, e.g. 
-    recognizing $\E_n$-operads, we want to gain a deeper understanding of braided operads. Further, we have already seen that 
-    colored operads correspond to op-fibrations over finite pointed sets $\Fin$ as well as colored planar operads correspond 
-    to op-fibrations over $\deltast$. We are hoping to find a suitable category such that colored braided operads correspond 
-    to op-fibrations over this category. 
+    In the sketch of the proof, it is stated that "the definition of operads can
+    be reformulated using actions by braid groups in place of actions by
+    symmetric groups"~\cite{EO}. As braided operads are a useful tool, e.g.
+    recognizing $\E_n$-operads, we want to gain a deeper understanding of
+    braided operads. Further, we have already seen that colored operads
+    correspond to functor over finite pointed sets $\Fin$ as well as
+    colored planar operads correspond to functor over $\deltast$ with 
+    certain properties. We are
+    hoping to find a suitable category such that colored braided operads
+    correspond to functors over this category satisfying similar 
+    properties as in the other cases. 
     
-    % To do so, we first need to develop the language for it. Meaning we will need to develop a concept of braided colored operads which we will work towards in this section. Doing so we define action operads which lead us to group operads and group colored operads. Braided colored operads are then a special case of these where the group are in fact the braid groups.
+    % To do so, we first need to develop the language for it. Meaning we will
+    % need to develop a concept of braided colored operads which we will work
+    % towards in this section. Doing so we define action operads which lead us
+    % to group operads and group colored operads. Braided colored operads are
+    % then a special case of these where the group are in fact the braid groups.
 
-    It might be interesting to try to define braided operads in braided monoidal categories rather than symmetric monoidal 
-    categories potentially yielding interesting examples. However, it is not straight forward how to do this as shuffling 
-    objects would not be a canonical isomorphism. So for now, we will stay in a symmetric monoidal category $\C$.
+    It might be interesting to try to define braided operads in braided monoidal
+    categories rather than symmetric monoidal categories potentially yielding
+    interesting examples. However, it is not straight forward how to do this as
+    shuffling objects would not be a canonical isomorphism. So for now, we will
+    stay in a symmetric monoidal category $\C$.
 
-\begin{defin}\label{def-br-operad}
-    A {\em braided operad} $\O$ in $\C$ is a planar operad as defined in definition \ref{planaroperad} with an action of 
-    $B_n$ on $\O(n)$ for all $n \in \N$ together with the following equivariance condition: 
-           For $\sigma \in B_k$, let $\sigma(j_1, \cdots, j_k) \in B_j$ denote the element that $\sigma$-braids $k$ blocks 
-           with each block having $j_l$ strands for $1 \leq l \leq k$. Then the following diagram commutes:
+\begin{defin}\label{def-br-operad} A {\em braided operad} $\O$ in $\C$ is a
+    planar operad as defined in definition \ref{planaroperad} with an action of
+    $B_n$ on $\O(n)$ for all $n \in \N$ together with the following equivariance
+    condition: For $\sigma \in B_k$, let $\sigma(j_1, \cdots, j_k) \in B_j$
+    denote the element that $\sigma$-braids $k$ blocks with each block having
+    $j_l$ strands for $1 \leq l \leq k$. Then the following diagram commutes:
                 \begin{center}
                 \begin{tikzcd}
-                    \O(k) \otimes \O(j_1) \otimes \cdots \otimes \O(j_k) \arrow[d, "\gamma"'] \arrow[rr, "\sigma \otimes \bar{\sigma}^{-1}"] &  & \O(k) \otimes \O(j_{\bar{\sigma}(1)}) \otimes \cdots \otimes \O(j_{\bar{\sigma}(k)}) \arrow[d, "\gamma"] \\
-                    \O(j) \arrow[rr, "\sigma(j_1 \cdots j_k)"']                                                                                        &  & O(j),                                                                   
+                    \O(k) \otimes \O(j_1) \otimes \cdots \otimes \O(j_k)
+                    \arrow[d, "\gamma"'] \arrow[rr, "\sigma \otimes
+                    \bar{\sigma}^{-1}"] &  & \O(k) \otimes
+                    \O(j_{\bar{\sigma}(1)}) \otimes \cdots \otimes
+                    \O(j_{\bar{\sigma}(k)}) \arrow[d, "\gamma"] \\
+                    \O(j) \arrow[rr, "\sigma(j_1 \cdots j_k)"']
+                    &  & O(j),                                                                   
                 \end{tikzcd}
                 \end{center}      
             where $\bar{\sigma}$ denotes the underlying permutation of $\sigma$.
-            Furthermore, let $\tau_l \in B_{j_l}$ for $1 \leq l \leq k$ and $\tau_1 \oplus \cdots \oplus \tau_k$ denotes 
-            the sum of braidings on $k$ blocks with each block having $j_l$ strands. Then the following diagram commutes
+            Furthermore, let $\tau_l \in B_{j_l}$ for $1 \leq l \leq k$ and
+            $\tau_1 \oplus \cdots \oplus \tau_k$ denotes the sum of braidings on
+            $k$ blocks with each block having $j_l$ strands. Then the following
+            diagram commutes
                 
                 \begin{center}
                 \begin{tikzcd}
-                    \O(k) \otimes \O(j_1) \otimes \cdots \otimes \O(j_k) \arrow[d, "\gamma"'] \arrow[rr, "\id \otimes \tau_1 \otimes \cdots \otimes \tau_k"] &  & \O(k) \otimes \O(j_1) \otimes \cdots \otimes \O(j_k) \arrow[d, "\gamma"] \\
-                    \O(j) \arrow[rr, "\tau_1 \oplus \cdots \oplus \tau_k"']                                                                                &  & \O(j)                                                                                     
+                    \O(k) \otimes \O(j_1) \otimes \cdots \otimes \O(j_k)
+                    \arrow[d, "\gamma"'] \arrow[rr, "\id \otimes \tau_1 \otimes
+                    \cdots \otimes \tau_k"] &  & \O(k) \otimes \O(j_1) \otimes
+                    \cdots \otimes \O(j_k) \arrow[d, "\gamma"] \\
+                    \O(j) \arrow[rr, "\tau_1 \oplus \cdots \oplus \tau_k"']
+                    &  & \O(j)                                                                                     
                 \end{tikzcd}
                 \end{center}
 \end{defin}
 
 \begin{rem}
-    Similarily to symmetric operads, we can define algebras and modules over braided operads by changing the 
-    equivariance condition:
+    Similarily to symmetric operads, we can define algebras and modules over
+    braided operads by changing the equivariance condition:
 
-    Let $\O$ be a braided operad and $A$ an algebra over the underlying planar operad of $\O$. For all 
-    $j \in \N$, $\sigma \in B_j$ and $\bar{\sigma} \in S_j$ being the underlying permutation of $\sigma$:
+    Let $\O$ be a braided operad and $A$ an algebra over the underlying planar
+    operad of $\O$. For all $j \in \N$, $\sigma \in B_j$ and $\bar{\sigma} \in
+    S_j$ being the underlying permutation of $\sigma$:
     \begin{center}
         \begin{tikzcd}
-            O(j) \otimes A^j \arrow[rr, "\sigma \otimes \bar{\sigma}^{-1}"] \arrow[rd, "\theta"'] &   & O(j) \otimes A^j \arrow[ld, "\theta"] \\
+            O(j) \otimes A^j \arrow[rr, "\sigma \otimes \bar{\sigma}^{-1}"]
+            \arrow[rd, "\theta"'] &   & O(j) \otimes A^j \arrow[ld, "\theta"] \\
             & A &     
         \end{tikzcd}
     \end{center}
     Then, we call $A$ an algebra over the braided operad $\O$.
 
-    Further, let $A$ be an algebra over the braided operad $\O$ and $M$ an object in $\C$ with
+    Further, let $A$ be an algebra over the braided operad $\O$ and $M$ an
+    object in $\C$ with
     \[
         \omega \colon O(j) \otimes A^{j-1} \otimes M \rightarrow M 
     \]
-    satisfying associativity and unitality conditions from definition \ref{module}.
-    Then we call $M$ an $A$-module if the following equvariance condition holds for all $j \in \N$, 
-    $\sigma \in B_{j-1} \subset B_j$ and $\bar{\sigma} \in S_{j-1}$ being the underlying permutation of $\sigma$:
+    satisfying associativity and unitality conditions from definition
+    \ref{module}. Then we call $M$ an $A$-module if the following equvariance
+    condition holds for all $j \in \N$, $\sigma \in B_{j-1} \subset B_j$ and
+    $\bar{\sigma} \in S_{j-1}$ being the underlying permutation of $\sigma$:
 
     \begin{center}
                 \begin{tikzcd}
-                    O(j) \otimes A^{j-1} \otimes M \arrow[rd, "\omega"'] \arrow[rr, "\sigma \otimes \bar{\sigma}^{-1} \otimes \id"] &   & O(j) \otimes A^{j-1} \otimes M \arrow[ld, "\omega"] \\
+                    O(j) \otimes A^{j-1} \otimes M \arrow[rd, "\omega"']
+                    \arrow[rr, "\sigma \otimes \bar{\sigma}^{-1} \otimes \id"] &
+                    & O(j) \otimes A^{j-1} \otimes M \arrow[ld, "\omega"] \\
                      & M &                                                    
                 \end{tikzcd}
                 \end{center}
@@ -81,20 +113,24 @@
 
 \begin{eg}
     \begin{enumerate}
-        \item Again, let us consider the operad in $\Set$ defined by the singleton set in each degree $n \in \N$. 
-        The braid group acts trivially. When we consider algebras over this operad we will again obtain commutative algebras.
-        \item We have already encountered an example of a planar operad in example \ref{braidop} which can 
-        be lifted to a braided operad---the braid operad $\B$. The braid group $B_n$ acts by composition. 
-        This group action is equivariant.
+        \item Again, let us consider the operad in $\Set$ defined by the
+        singleton set in each degree $n \in \N$. The braid group acts trivially.
+        When we consider algebras over this operad we will again obtain
+        commutative algebras.
+        \item We have already encountered an example of a planar operad in
+        example \ref{braidop} which can be lifted to a braided operad---the
+        braid operad $\B$. The braid group $B_n$ acts by composition. This group
+        action is equivariant.
     \end{enumerate}
     
 \end{eg}
 
 \subsection{Action Operad}
-For this section, we remain in the symmetric monoidal category of sets equipped with the cartesian 
-symmetric monoidal structure. We will introduce an action operad that acts on planar operads and
-this relates to braided operads following \cite{yau}. An idea will be that the theory on braided
-operads can be extended in a sense to group action operads.
+For this section, we remain in the symmetric monoidal category of sets equipped
+with the cartesian symmetric monoidal structure. We will introduce an action
+operad that acts on planar operads and this relates to braided operads following
+\cite{yau}. An idea will be that the theory on braided operads can be extended
+in a sense to group action operads.
 
 \begin{defin}
     An {\em action operad} is a tuple
@@ -104,16 +140,23 @@ operads can be extended in a sense to group action operads.
     satisfying the following conditions:
     \begin{enumerate}[(i)]
         \item For all $n \in \N$, $G(n)$ is a group with unit $\id_n$.
-        \item There is a group homomorphism $\omega \colon G(n) \to S_n$ for all $n$ which we call augmentation. For each $g \in G(n)$ we call $\omega(g)$ the underlying permutation of $g$.
-        \item The tuple $(\{G(n)\}_{n \in \N}, \gamma^G, 1^G)$ is a one-colored planar operad in $\Set$ which we denote by $G$. It fulfills the following conditions:
+        \item There is a group homomorphism $\omega \colon G(n) \to S_n$ for all
+        $n$ which we call augmentation. For each $g \in G(n)$ we call
+        $\omega(g)$ the underlying permutation of $g$.
+        \item The tuple $(\{G(n)\}_{n \in \N}, \gamma^G, 1^G)$ is a one-colored
+        planar operad in $\Set$ which we denote by $G$. It fulfills the
+        following conditions:
         \begin{enumerate}[(a)]
             \item The augmentation
             \[
             \omega \colon G \to \S
             \]
-            is a morphism of planar operads in $\Set$ where $\S$ denotes the symmetry operad from examples \ref{eg:operads}.
-            \item For $n \geq 1$, let $\sigma, \rho \in G(n)$ and for $k_j \in \N$, $1 \leq j \leq n$ let $\tau_j, \tau_j' \in G(k_j)$
-            . Then the following equation holds in $G(k)$ for $ \sum_{1 \leq j \leq n} k_j = k$:
+            is a morphism of planar operads in $\Set$ where $\S$ denotes the
+            symmetry operad from examples \ref{eg:operads}.
+            \item For $n \geq 1$, let $\sigma, \rho \in G(n)$ and for $k_j \in
+            \N$, $1 \leq j \leq n$ let $\tau_j, \tau_j' \in G(k_j)$ . Then the
+            following equation holds in $G(k)$ for $ \sum_{1 \leq j \leq n} k_j
+            = k$:
             \[
                 \gamma^G(\sigma \rho, \tau_1 \tau_1', \dots, \tau_n \tau_n') = \gamma^G(\sigma, \tau_{\bar{\rho}^{-1}(1)}, \dots, \tau_{\bar{\rho}^{-1}(n)}) \cdot \gamma^G(\rho, \tau_1', \dots, \tau_n')
             \]
@@ -125,14 +168,19 @@ We call the condition (iii)(b) the action operad equation.
 
 \begin{egs}
     \begin{enumerate}
-        \item The \textit{planar group operad} $P$ is the action operad where $P(n) = \{\ast\}$ is the trivial group for all $n \in \N$. 
-        \item The symmetry operad $\S$ from examples \ref{eg:operads} equipped with the identity augmentation forms an action operad.
-        \item Another example which we have already seen is the braid operad which we equip with the projection to the symmetric group as the augmentation.
+        \item The \textit{planar group operad} $P$ is the action operad where
+        $P(n) = \{\ast\}$ is the trivial group for all $n \in \N$. 
+        \item The symmetry operad $\S$ from examples \ref{eg:operads} equipped
+        with the identity augmentation forms an action operad.
+        \item Another example which we have already seen is the braid operad
+        which we equip with the projection to the symmetric group as the
+        augmentation.
     \end{enumerate}
 \end{egs}
 
 \begin{prop}
-    The braid operad $\B$ from example \ref{braidop} equipped with the projection 
+    The braid operad $\B$ from example \ref{braidop} equipped with the
+    projection 
     \[
         \pi \colon \B \to \S
     \]
@@ -143,9 +191,11 @@ We call the condition (iii)(b) the action operad equation.
 \end{prop}
 
 \begin{proof}
-    We have already seen that $\B$ forms a one-colored planar operad in $\Set$. Hence, it remains to show that $\pi$ is a morphism of planar operads.
-    We note that $\pi(\id_1)$ is the trivial permutation and $\pi$ preserves the operadic composition as it perserves the group multiplication.
-    The action operad equation follows from remark \ref{braidfacts}.
+    We have already seen that $\B$ forms a one-colored planar operad in $\Set$.
+    Hence, it remains to show that $\pi$ is a morphism of planar operads. We
+    note that $\pi(\id_1)$ is the trivial permutation and $\pi$ preserves the
+    operadic composition as it perserves the group multiplication. The action
+    operad equation follows from remark \ref{braidfacts}.
 \end{proof}
 
 \input{e2_covering.tex}

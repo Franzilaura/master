@@ -3,11 +3,11 @@
 
 We wanted to define braided operads as functors with certain properties over a suitable category. 
 A first intuition led us to the assumption that colored braided operads might 
-fiber over the crossed simplicial braid group as defined in \cite{Dyckerhoff}.
+have a functor into the crossed simplicial braid group as defined in \cite{Dyckerhoff} such that
+it fibered over inert morphisms and satisfied a weak version of a Segal condition.
 However, we discovered that we were too quick to make this assumption. 
 We will elaborate in the following why this did not work out as we hoped originally.
 
-    
 \begin{defin}\label{crossed_braid} The {\em crossed simplicial braid group} is a category $\Delta B$ equipped with an embedding
 	$\iota:\Delta \to \Delta B$ such that:
 	\begin{enumerate}
@@ -44,19 +44,25 @@ We will elaborate in the following why this did not work out as we hoped origina
     \]
 \end{rem}
 
-We can define a new colored operad with the crossed simplicial braid group as its indexing sets. Again, we would like
-to consider the forgetful functor
+We would hope to gain a new functorial definition of a colored operad with the crossed simplicial braid group as its indexing sets. 
+\begin{defin}
+    A $\Delta B$-category is a category $\Ox$ with a functor
+    $$\pi \colon \Ox \to \Delta B$$
+    \begin{enumerate}
+        \item \textbf{Op-fibration condition:} The functor $\pi$ is an op-fibration.
+        \item \textbf{Segal condition:} For $\O \coloneqq \Ox_{\langle 1 \rangle}$, 
+        we have $\Ox_{\langle n \rangle} \cong \O^n$ for all $n \geq 1$. 
+    \end{enumerate}
+\end{defin}
 
-$$\pi \colon \Ox \to \Delta B$$
-
-which is an op-fibration and satisfies the Segal condition.
 However, this causes some issues. 
 We would assume a braided monoidal category to be an example of the new colored operad.
 The construction of the braided monoidal structure should be analoguously to the symmetric case.
 
 Meaning, the morphism in $\sigma_0 \in \Delta B$ should induce a braiding defining a braided monoidal structure 
 on the underlying category of $\Ox$ using the op-fibration and Segal property.
-Thus, similarily to the symmetric case the following diagram would have to commute in $\Delta B$:
+Thus, similarily to the symmetric case we would want to live $\sigma_0$ using the op-fibration condition.
+Hence, the following diagram would have to commute in $\Delta B$:
 
 \begin{center}
     \begin{tikzcd}
@@ -67,7 +73,7 @@ Thus, similarily to the symmetric case the following diagram would have to commu
 
 
 This is not the case in $\Delta B$. However, we were hopeful that by fixing this we might obtain the 
-final candidate for our op-fibration.
+final candidate for a op-fibration.
 So we define a category $\Delta B'$ from $\Delta B$ by requiring for all $n \in \N$ and $1 \leq i \leq n$
 \[
     \tau_i^n \circ \sigma_i = \tau_i^n.

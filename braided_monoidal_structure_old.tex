@@ -1,77 +1,29 @@
-\subsection{Braided Monoidal Structure Old}
+\subsection{Braided Monoidal Structure}
 
 As we have already seen for symmetric monoidal categories, they are an example of
 colored symmetric operads and can be defined using an op-fibration over $\Fin$ that satisfies
 the Segal condition. In this section, we will define a braided monoidal structure on a category $\C$
-that is induced by a op-fibration over the category $\Br$ also satisfying the Segal condition.
-To do so, we will need to choose paths of configurations in $\Br$ on various occasions.
-We will refrain from specifying the paths in detail but rather describe the paths enough to 
+that is induced by a op-fibration over the category $\Brx$ also satisfying the Segal condition.
+To do so, we will need to choose 2-morphisms in $\Brx$ on various occasions.
+We will refrain from specifying the paths between configurations in detail but rather describe the paths enough to 
 understand from which homotopy class we choose a path so we then see why certain compositions 
-of paths are homotopy equivalent. Also, we do not care much about the size of the
-disks as we can expand and shrink them continuously as needed.
-
-% \begin{rem}
-%     Let us recall the definition of $\Ex$. For each $n \in \N$ we have an object $\langle n \rangle$. 
-%     A mophism $\langle n \rangle \to \langle m \rangle$ in $\Ex$ consists of a morphism 
-%     $\alpha \colon \langle n \rangle \to \langle m \rangle$ in $\Fin$ and a collection of configurations
-%     $$\{c_j \in \E_2(|\alpha^{-1}(j)|)\}_{1 \leq j \leq m}$$
-%     where each configuration is labeled by $\alpha^{-1}(j))$.
-%     So for example, 
-%     \begin{align*}
-%         \alpha \colon \langle 3 \rangle &\to \langle 2 \rangle \\
-%         1 &\mapsto 1 \\
-%         2 &\mapsto 2 \\
-%         3 &\mapsto 1 \\
-%     \end{align*}
-%     together with the configurations:
-%     \begin{center}
-%     \begin{tikzpicture}
-%                         % First element (left)
-%                         \draw[thick] (-3,0) circle (2);
-%                         \draw[thick] (-3.8, 1) circle (0.5);
-%                         \draw[thick] (-3, -0.5) circle (1);
-%                         \node at (-3.8, 1) {\small $1$};
-%                         \node at (-3, -0.5) {\small $3$};
-%                         \node at (0,-2) {,};
-%                         % Second element (right)
-%                         \draw[thick] (3,0) circle (2);
-%                         \draw[thick] (2,0.7) circle (0.5);
-%                         \node at (2,0.7) {\small $2$};
-%         \end{tikzpicture}
-%     \end{center}
-%     We denote the trivial configuration with label $x$ by $\id^x \in \E_2(1)$.
-%     Further, recall the composition in $\Ex$. Let 
-%     \begin{center}
-%         $\alpha \colon \langle n \rangle \to \langle m \rangle$ 
-%         with configurations $\{c_j\}_{1 \leq j \leq m}$ 
-%     \end{center}
-%     and 
-%     \begin{center}
-%         $\alpha' \colon \langle m \rangle \to \langle l \rangle$ 
-%         with configurations $\{c'_k\}_{1 \leq k \leq l}$. 
-%     \end{center}
-%     Then, the configuration $c'_k$ is labeled 
-%     by $\alpha'^{-1}=\{j_1^{(k)}, \dots, j_p^{(k)}\}$. So, we obtain a configuration 
-%     \[
-%         \gamma(c'_k, c_{j_1}, \dots, c_{j_p})
-%     \]
-%     labeled by $(\alpha' \circ \alpha)^{-1}(k)$ for all $1 \leq k \leq l$ 
-%     giving us the well-defined composition $\alpha' \circ \alpha$
-% \end{rem}
+of paths are homotopy equivalent. 
+% Also, we do not care much about the size of the
+% disks as we can expand and shrink them continuously as needed.z
 
 We follow the same approach as in the symmetic monoidal case in section 
 \ref{sec:operads}, i.e. we start with some category $\Cotimes$ and a functor
-$\pi \colon \Cotimes \to \Br$ such that $\pi$ is an op-fibration and the fibers 
+$\pi \colon \Cotimes \to \Brx$ such that $\pi$ is an op-fibration and the fibers 
 of $\pi$ are given by the categories $\C^n \coloneqq \Cotimes_{\langle n \rangle}$ 
 for $n \geq 1$.
 
-If not stated otherwise, a morphism $\langle n \rangle \to \langle 1 \rangle$ 
-always refers to an active morphism in $\Br$ from now on for all $n \in \N$.
+If not stated otherwise, for $n \in \N$, a morphism $\langle n \rangle \to \langle 1 \rangle$ 
+always refers to an active morphism in $\Brx$ from now.
 
 \begin{defin}
-    An $\Br$-monoidal category \todo{change naming} is a category $\Cotimes$ with a functor
+    An $\Brx$-monoidal category \todo{change naming} is a category $\Cotimes$ with a functor
     \[
-        \Cotimes \to \Br
+        \Cotimes \to \Brx
     \]
     satisfying
         \begin{enumerate}[(M1)]
@@ -83,12 +35,14 @@ always refers to an active morphism in $\Br$ from now on for all $n \in \N$.
 \end{defin}
 
 
+\begin{const}\label{con:brx_monoidal}
 
-So for the next part, let $\pi \colon \Cotimes \to \Br$ be a $\Br$-monoidal categoryand we denote
+
+So for the next part, let $\pi \colon \Cotimes \to \Brx$ be a $\Brx$-monoidal category and we denote
 $\C \coloneqq \Cotimes_{\langle 1 \rangle}$.
 In the following section we aim to define a braided monoidal structure on $\C$.
 First, we introduce the following abuse of notation:
-For a $2$-morphism $\eta$, i.e. a path between two configurations $c_1, c_2 \in \E_2(n)$ in $\Br$,
+For a $2$-morphism $\eta$, i.e. a path between two configurations $c_1, c_2 \in \E_2(n)$ in $\Brx$,
 we would write the following diagram:
 \begin{center}
     \begin{tikzpicture}
@@ -116,7 +70,7 @@ We will write the following diagram instead:
     \end{tikzcd}
 \]
 
-Let $\beta$ denote the following morphism in $\Br$
+Let $\beta$ denote the following morphism in $\Brx$
      \begin{align*}
          \beta \colon \langle 2 \rangle &\to \langle 2 \rangle \\
          1 &\mapsto 2 \\
@@ -151,7 +105,7 @@ So, we obtain a well-defined functor
     \otimes \colon \C^2 \to \C.
 \]
 
-Further, we consider the following diagramm in $\Br$:
+Further, we consider the following diagramm in $\Brx$:
 \[    
     \begin{tikzcd}
         \langle 2 \rangle \arrow[r, "\beta"] \arrow[d, "\mu"] & \langle 2 \rangle \arrow[d, "\mu"] \\
@@ -224,7 +178,7 @@ We recall the following morphisms from $\Fin$ for $n \in \N$ and $1 \leq i \leq 
         \ast & j=\ast
     \end{cases}
 \end{align*}
-We consider these morphisms in $\Br$ with the following collection of configurations:
+We consider these morphisms in $\Brx$ with the following collection of configurations:
 \begin{align*}
     \widetilde{\tau^n_i}_j \coloneq
      \begin{cases}
@@ -233,7 +187,7 @@ We consider these morphisms in $\Br$ with the following collection of configurat
     \end{cases}
 \end{align*}
 
-For the associator we consider the following diagram in $\Br$:
+For the associator we consider the following diagram in $\Brx$:
     \[
     \begin{tikzcd}
         \langle 3 \rangle \arrow[r, "\tau_2^3"] \arrow[d, "\tau^3_1"] & \langle 2 \rangle \arrow[d, "\mu"] \\
@@ -287,11 +241,12 @@ Again using the op-fibration condition (M1) property of $\pi$ we obtain a commut
 \]
 
 Similarily to Proposition \ref{SymMonBijection}, the tensor unit is given by the unique morphism 
-$\eta \colon \langle 0 \rangle \to \langle 1 \rangle$ in $\Br$ 
+$\eta \colon \langle 0 \rangle \to \langle 1 \rangle$ in $\Brx$ 
 which induces a functor $\Cotimes_{\langle 0 \rangle} \to \C$ giving us a tensor unit $\mathbf{1}$.
+\end{const}
 
 \begin{prop}
-    The category $\C$ equipped with $(\otimes, b, a, \mathbf{1})$ defines a braided monoidal category.
+    The category $\C$ equipped with $(\otimes, b, a, \mathbf{1})$ as in Construction \ref{con:brx_monoidal} defines a braided monoidal category.
 \end{prop}
 
 \begin{proof}
@@ -345,7 +300,7 @@ which induces a functor $\Cotimes_{\langle 0 \rangle} \to \C$ giving us a tensor
             \end{tikzcd}
         \]
     \end{enumerate}
-    Each edge in the hexagon diagrams refers to a commuting diagram in $\Br$ of the form
+    Each edge in the hexagon diagrams refers to a commuting diagram in $\Brx$ of the form
 
     \[
         \begin{tikzcd}
@@ -398,7 +353,7 @@ which induces a functor $\Cotimes_{\langle 0 \rangle} \to \C$ giving us a tensor
     \end{center}
     % \todo{describe one commuting tetrahedron in detail. Rest analogpously leading tot he following diagram...}
     The commutativity of the triangle diagrams on the side means choosing a path from one configuration to 
-    another while filling the tetrahedron in $\Br$ means having a homotopy between the different paths. 
+    another while filling the tetrahedron in $\Brx$ means having a homotopy between the different paths. 
     As it turns out we do not make any new choices of paths. The paths are induced by the half twist $\htw$ 
     we chose to define $\otimes$:
 
@@ -449,7 +404,8 @@ which induces a functor $\Cotimes_{\langle 0 \rangle} \to \C$ giving us a tensor
 
     Similar arguments for all the corresponding diagrams induced by the hexagon identity $(1)$
     give us paths that are already defined by the associativity path and the half twist up to homotopy.
-        \begin{center}
+    \begin{center}
+        \begin{adjustbox}{max height= 17cm}
         \begin{tikzpicture}
             %arrows
             \node at (-2.5, -2) {\rotatebox{-135}{$\rightsquigarrow$}};
@@ -552,6 +508,7 @@ which induces a functor $\Cotimes_{\langle 0 \rangle} \to \C$ giving us a tensor
             \draw[dotted, purple] (7.5, -6.625) to [bend right=70] (6.5, -6.5);
             \draw[dotted, blue] (6.5, -7.375) to [bend right=70] (7.5, -7.5);
         \end{tikzpicture}
+        \end{adjustbox}
     \end{center}
 
         The resulting paths are the following representatives of their homotopy class and they are clearly
@@ -591,7 +548,7 @@ which induces a functor $\Cotimes_{\langle 0 \rangle} \to \C$ giving us a tensor
         \end{tikzpicture}
     \end{center}
 
-    Analoguously for the hexagon identity $(2)$, we consider the following composition of paths in $\Br$:
+    Analoguously for the hexagon identity $(2)$, we consider the following composition of paths in $\Brx$:
 
     \begin{center}
         \begin{adjustbox}{max height= 17cm}
@@ -736,7 +693,7 @@ which induces a functor $\Cotimes_{\langle 0 \rangle} \to \C$ giving us a tensor
             \draw[dotted, thick, orange] (-0.25, 0.5) to [bend left=70] (2.25, 0.5);
         \end{tikzpicture}
     \end{center}
-    This concludes the proof that $\Br$ induces a braided monoidal structure on $\C$.
+    This concludes the proof that $\Brx$ induces a braided monoidal structure on $\C$.
 
 \end{proof}
 
