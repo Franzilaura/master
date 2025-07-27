@@ -2,18 +2,21 @@
 
 In this section, we will define colored braided operads and will aim to find a
 functor that encodes all the necessary data to give an alternative definition so
-the notion can eventually be lifted to a $\infty$-categorical context.
+the notion can eventually be lifted to an $\infty$-categorical context.
 
 \subsection{Colored Braided Operads}
 
+In this section we finally give our definition of a colored braided operad and see
+a first example. Before we get started, we need to introduce some terminology.
+
 \begin{defin}
     Let $I$ be a finite set. For a bijection of finite sets $\alpha \colon I
-    \cong \langle n \rangle^{\circ}$ we call a configuration $c \in \E_2(n)$
-    $I$-labeled.
+    \cong \langle n \rangle^{\circ}$, we call a configuration $c \in \E_2(n)$ an 
+    $I$-labeled configuration.
 \end{defin}
 
 \begin{defin}
-    Let $I$ be a finite set with $|I|=n$, $c$ and $c'$ $I$-labeled
+    Let $I$ be a finite set, $c$ and $c'$ $I$-labeled
     configurations corresponding to the same bijection $I \cong \langle n
     \rangle^{\circ}$. A path from $c$ to $c'$ is a path between the
     configurations in $\E_2(n)$, i.e. a continuous map
@@ -68,10 +71,10 @@ the notion can eventually be lifted to a $\infty$-categorical context.
         \]
     \end{enumerate}
 \end{defin}
-This defines a $2$-category.
+This defines a strict $2$-category.
 
 \begin{rem}\label{rem:e2_1_paths} We note the following about configurations $c,
-    c' \E_2(1)$. There is exactly one homotopy class of paths from $c$ to $c'$
+    c' \in \E_2(1)$. There is exactly one homotopy class of paths from $c$ to $c'$
     as the unit disk is contractible. This means that for diagrams in $\Br$ the
     following assumption can be made: Let $I$, $J$ be finite sets,
     $\widetilde{I}$ $I$-labeled $\widetilde{J}$ $J$-labeled configurations and
@@ -94,7 +97,7 @@ This defines a $2$-category.
     \end{center}
     where $\alpha$ is a bijection of finite sets. Without loss of generality we
     can assume $\widetilde{\alpha}_j = \id^{(j)}$ as otherwise there is a
-    canonical extention
+    canonical extension
     \begin{center}
         \begin{tikzpicture}
             % Define node positions
@@ -252,7 +255,7 @@ We are now ready to define a colored braided operad:
 \end{defin}
 
 \begin{eg}
-    Let $\Bc$ be a colored braided operad with one color $X$. Similar to the
+    Let $\Bc$ be a colored braided operad with one color $X$. Similarly to the
     symmetric case, $\Bc$ induces a braided operad $\B$ as in Definition
     \ref{def-br-operad}. For $n \in \N$, we set
     \[
@@ -294,7 +297,9 @@ We are now ready to define a colored braided operad:
     X)$. The unitality condition is satisfied as the identity morphism $\id_X$
     is the left and right unit for any composition map $\gamma$, so in
     particular $\theta$. The associativity condition is also satisfied as it
-    holds for $\Bc$: For any choice of integers
+    holds for $\Bc$: 
+    
+    For any choice of integers
             \[
                 n,  \ j_1, \dots, j_k, \ i_1, \dots, i_j
             \]
@@ -545,7 +550,7 @@ Next, we extend $\Br$ with a distinguished point to the following category.
         \end{enumerate}
         \item The morphisms in $\Brx$ form the groupoid
         \[
-        \Hom_{\Brx}(\langle n \rangle, \langle m \rangle) = \coprod_{\substack{\alpha \colon \langle n \rangle \to \langle m \rangle \\ \in \Fin}} \Hom_{\Brx}^{\alpha}(\langle n \rangle, \langle m \rangle)
+        \Hom_{\Brx}(\langle n \rangle, \langle m \rangle) = \coprod_{\substack{\alpha \colon \langle n \rangle \to \langle m \rangle \in \Fin}} \Hom_{\Brx}^{\alpha}(\langle n \rangle, \langle m \rangle)
         \]
         where 
         $$\Hom_{\Brx}^{\alpha}(\langle n \rangle, \langle m \rangle)$$ denotes
@@ -554,7 +559,7 @@ Next, we extend $\Br$ with a distinguished point to the following category.
         for all $1 \leq j \leq m$.
     \end{enumerate}
 \end{defin}
-This defines a category.
+This defines a strict $2$-category.
 
 \begin{defin}
     A morphism $\alpha \colon \langle n \rangle \to \langle m \rangle$ in $\Brx$

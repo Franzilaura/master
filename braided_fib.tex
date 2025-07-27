@@ -209,8 +209,11 @@ functor fulfilling these conditions. \todo{if we have the time}
         \end{center}
 
 
-        The composition of two morphisms $g \colon [X_1, \dots, X_n] \to [X_1',
-        \dots, X_n']$, $g \colon [X_1', \dots, X_n'] \to [X_1'', \dots, X_n'']$
+        The composition of two morphisms 
+        \[
+        g \colon [X_1, \dots, X_n] \to [X_1',
+        \dots, X_n'], \; g \colon [X_1', \dots, X_n'] \to [X_1'', \dots, X_n'']
+        \]
         is being respected as the composition of the unique lifts $\bar{f}$ and
         $\bar{f}'$ lift the diagram and therefore have the be the unique lift
         for $g' \circ g$ and $f$:
@@ -224,8 +227,11 @@ functor fulfilling these conditions. \todo{if we have the time}
                 {[Y_1'', \dots, Y_m'']}                         
             \end{tikzcd}
         \end{center}
-        \item For $n \in \N$, $1 \leq i \leq n$, the inert morphism induces by
-        (1) a functor on fiber categories
+        \item For $n \in \N$, $1 \leq i \leq n$, the inert morphism
+        \[
+            \rho^i \langle n \rangle \to \langle 1 \rangle,
+        \]
+        as defined in \ref{eg:rho_i}, induces a functor on fiber categories:
         \[
             P^i \colon \Bx_{\langle n \rangle} \to \Bx_{\langle 1 \rangle} 
         \]
@@ -249,10 +255,10 @@ for the following statement:
     be a functor fulfilling the following conditions:
     \begin{enumerate}
     \item For every inert morphism $\alpha \colon \langle n \rangle \to \langle
-    m \rangle$  in $\Brx$ and object $X \in \Bx$ there exists a
-    $\pi$-cocartesian morphism $f \colon X \to X'$ lifting $\alpha$ . In
-    particular $\alpha$ induces a functor 
-    $$\pi_{\alpha} \colon \Bx_{\langle n \rangle} \to \Bx_{\langle m \rangle}$$.
+    m \rangle$ in $\Brx$ and object $X \in \Bx$ there exists a
+    $\pi$-cocartesian morphism $f \colon X \to X'$ lifting $\alpha$. In
+    particular, $\alpha$ induces a functor:
+    $$\pi_{\alpha} \colon \Bx_{\langle n \rangle} \to \Bx_{\langle m \rangle}.$$
 
     % \item Let $X = [X_1, \dots, X_n] \in \Bx_{\langle n \rangle}$ and $X' =
     % [X_1', \dots, X_m'] \in \Bx_{\langle m \rangle}$ be objects, $\alpha :
@@ -290,27 +296,35 @@ for the following statement:
     \[
         \pi \colon \D \to \Brx
     \]
-    be a functor fulfilling the conditions from the statement.
-    We will define a colored braided operad $\B$ from $\D$ and $\pi$.
-    The fiber category $\D_{\langle 1 \rangle}$ is the underlying category of $\B$.
-    The objects in $\D_{\langle 1 \rangle}$ are the colors of $\B$.
-    Let $I$ be a finite set, $\widetilde{I} \in \E_2(n)$ an $I$-labeled configuration, 
-    $\{X_i\}_{i \in I}$ a collection of colors and $Y$ a color.
-    For $\widetilde{I}$ we have a bijection $\iota \colon \langle n \rangle^{\circ} \to I$.
-    Using this bijection there is an object 
-    $$\left(X_{\iota(i)}\right)_{1 \leq i \leq n} \in \left(\Bx_{\langle 1 \rangle}\right)^n$$ 
-    corresponding to some
-    object $X$ in $\D_{\langle n \rangle}$ by the equivalence in condition (2)
-    Then, 
+    be a functor fulfilling the conditions from the statement. We will define a
+    colored braided operad $\B$ from $\D$ and $\pi$. The fiber category
+    $\D_{\langle 1 \rangle}$ is the underlying category of $\B$. The objects in
+    $\D_{\langle 1 \rangle}$ are the colors of $\B$. Let $I$ be a finite set,
+    $\widetilde{I} \in \E_2(n)$ an $I$-labeled configuration, $\{X_i\}_{i \in
+    I}$ a collection of colors and $Y$ a color. For $\widetilde{I}$ we have a
+    bijection $\iota \colon \langle n \rangle^{\circ} \to I$. Using this
+    bijection there is an object 
+    $$\left(X_{\iota(i)}\right)_{1 \leq i \leq n} \in \left(\Bx_{\langle 1
+    \rangle}\right)^n$$ corresponding to some object $X$ in $\D_{\langle n
+    \rangle}$ by the equivalence in condition (2). Then, 
     \[
         \Mul_{\B}^{\widetilde{I}}\left(\{X_i\}_{i \in I}, Y\right)
     \]
-    is the set of morphisms $f \colon X \to Y$ in $\D$ such that $\pi(f)$ corresponds to the active morphism
+    is the set of morphisms $f \colon X \to Y$ in $\D$ such that $\pi(f)$
+    corresponds to the active morphism
     \[
         \langle n \rangle \to \langle 1 \rangle
     \]
     with configuration $\widetilde{I}$ in $\Brx$.
 
-
-
+    The composition map is induced by the composition map in $\D$.
+    \todo{elaborate on this if time} 
+    The identity morphisms in $\B$ are given by
+    the identity morphisms in the fiber category $\D_{\langle 1 \rangle}$, i.e.,
+    for each color $X \in \D_{\langle 1 \rangle}$, the identity morphism $\id_X$
+    in $\D$ defines the identity morphism in $\Mul_{\B}^{\id}(\{X\}, X)$.
+    The associativity requirement is met as the composition if defined via the
+    composition map in $\D$ which is associative.
+    The unitality condition is also induced by the unitality in $\D$.
+    \todo{equivalence}
 \end{proof}

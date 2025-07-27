@@ -24,8 +24,8 @@
     \begin{center}
         \begin{tikzpicture}
             % Define node positions
-            \node (B) at (0, 2) {$I$}; \node (C) at (3, 2) {$\langle 1
-            \rangle$}; \node (A) at (1.5, 0) {$\langle 1 \rangle$};
+            \node (B) at (0, 2) {$I$}; \node (C) at (3, 2) {$\{ 1 \}$}; \node
+            (A) at (1.5, 0) {$\{ 1 \}$};
             
             % Draw arrows
             \draw[->] (B) -- (C) node[midway, above] {$\widetilde{I}'$};
@@ -117,22 +117,22 @@ of a colored braided operad $\B$.
     \bigotimes_{i \in b_2} X_i'\right)
     \end{align*}
     for which the following hold:
-    \begin{align}
-        \gamma(f, \gamma(h,h') \otimes \gamma(g,g')) &= \gamma(\gamma(h,h'), \gamma(g,g'), f'') \\
-        \gamma(f', h' \otimes g') &= \gamma(h',g',f'') \\
-        \gamma(f, h \otimes g) &= \gamma(h,g,f')
+    \begin{align}%
+        \gamma(f, \gamma(h,h') \otimes \gamma(g,g')) &= \gamma(\gamma(h,h'), \gamma(g,g'), f'') \label{eq:representable1}\\
+        \gamma(f', h' \otimes g') &= \gamma(h',g',f'') \label{eq:representable2}\\
+        \gamma(f, h \otimes g) &= \gamma(h,g,f') \label{eq:representable3}
     \end{align}
     Let us consider the following calculation using associativity in $\B$ and
     the above equations:
     \begin{align*}
         \gamma\left(f, \gamma(h \otimes g, h' \otimes g')\right) &= \gamma(\gamma(f, h \otimes g), h' \otimes g') \\
-        & \overset{4.3}{=} \gamma(\gamma(h,g,f'), h' \otimes g') \\ 
+        & \overset{\eqref{eq:representable3}}{=} \gamma(\gamma(h,g,f'), h' \otimes g') \\ 
         & = \gamma(\gamma(h,g, \gamma(f', h' \otimes g'))) \\
-        & \overset{4.2}{=}   \gamma(\gamma(h,g,\gamma(h',g',f''))) \\
+        & \overset{\eqref{eq:representable2}}{=}   \gamma(\gamma(h,g,\gamma(h',g',f''))) \\
         & = \gamma(\gamma(h,h'), \gamma(g,g'), f'') 
     \end{align*}
 
-    From this calculation we see that equation (4.1) also holds for $\gamma(h
+    From this calculation we see that equation \eqref{eq:representable1} also holds for $\gamma(h
     \otimes g, h' \otimes g')$. Due to uniqueness by the universal property of
     $f$, it follows:
     \[
@@ -197,7 +197,7 @@ of a colored braided operad $\B$.
     \[
         b^{-1} \in \Mul^{\id^{(1)}}_{\B}\left(\bigotimes_{i \in \beta(b_2)} X_i, \bigotimes_{i \in b_2} X_i \right).
     \]
-    These morphisms are indeed inverse to one another: It holds that
+    These morphisms are indeed inverse to one another: It holds that:
     \[
         f^{\beta} = \gamma(f, b), ;\ f=\gamma(f^{\beta}, b^{-1})
     \]
@@ -208,21 +208,32 @@ of a colored braided operad $\B$.
     \]
     This, defines a natural isomorphism. The monoidal unit is defined by the
     representing color of the empty collection $\{\}$ with the empty
-    configuration which we denote by $\mathbf{1}$.
-    The associator is defined as follows:
+    configuration which we denote by $\mathbf{1}$. The associator is defined as
+    follows:
     \todo{associator missing}
+    \todo{argument why applying $\otimes$ twice results in $\tau_1^3$ object}
 \end{const}
 
-\begin{prop}
+\begin{cla}
     Let $\B$ be a representable colored braided operad and $\C$ denoting its
     underlying category. Then the Construction \ref{con:braidmon} defines a
     braided monoidal structure on $\C$.
-\end{prop}
+\end{cla}
+
+We will not give a proof of the claim. However, the arguments used to verify
+unitality, pentagon and hexagon identities are similar to the proof given for
+Proposition \ref{prop:braidmon}.
 
 For a representable colored braided operad $\B$, we claim that the braided
 monoidal structure from Construction \ref{con:braidmon} coincides with the
 braided monoidal structure we gain from the forgetful functor $\Bx \to \Brx$
-given in Construction \ref{con:brx_monoidal}.
+given in Construction \ref{con:brx_monoidal}. In fact, we claim that the
+representation property of a colored braided operad induces a co-fibration on the
+forgetful functor. This however would need addition work. If the forgetful functor
+is an op-fibration, it is somewhat straightforward to show that the colored braided operad is representable
+as a cocartesian morphism over $\langle n \rangle \to \langle 1 \rangle$
+is a representing morphism.
+
 
 
 

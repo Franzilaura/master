@@ -41,6 +41,7 @@
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{month}{06}
+      \field{note}{Unpublished.}
       \field{shorthand}{Boe25}
       \field{title}{Comparing different models of the little disk operad}
       \field{year}{2025}
@@ -75,8 +76,10 @@
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{booktitle}{Stacks and Categories in Geometry, Topology, and Algebra}
+      \field{series}{Contemporary Mathematics}
       \field{shorthand}{DK15}
       \field{title}{Crossed simplicial groups and structured surfaces}
+      \field{volume}{643}
       \field{year}{2015}
       \field{pages}{37\bibrangedash 110}
       \range{pages}{74}
