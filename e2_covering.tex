@@ -5,7 +5,7 @@ universal coverings of $\E_2$ of each degree. We recall the operad $\E_2$ from
 Example \ref{eg:operads} which we introduced as the little 2-disks operad. So in
 each configuration space $\E_2(n)$ we have $n$ disks embedded into a large disk
 by translation and resizing such that the images of the embedding do not intersect. We use topological
-terms when talking about $\E_2$. What really is happening is apply them
+terms when talking about $\E_2$. What really is happening is we apply them
 level-wise. We will see that the universal coverings of $\E_2(n)$ for all $n \in \N$
 can be equipped with an operadic structure as well as a braid action. Hence, we
 obtain another example of a braided operad. 
@@ -44,14 +44,14 @@ Before we get started, we need to define what it means to be a universal
 covering of a topological operad.
 
 \begin{defin}
-    Let $\P$  be a topological operad. A covering operad $\widetilde{\P}$ is a
+    Let $\P$  be a topological operad. A \emph{covering operad} $\widetilde{\P}$ is a
     topological operad such that there is a morphism of operads $c \colon
     \widetilde{\P} \to \P$ where $c_n \colon \widetilde{\P}(n) \to \P(n)$ is a
     covering of $\P(n)$ for all $n \geq 1$.
 \end{defin}
 
 \begin{defin}
-    Let $\P$ be a topological operad. A universal covering operad
+    Let $\P$ be a topological operad. A \emph{universal covering operad}
     $\widetilde{\P}$ is a covering operad that is universal in every degree $n
     \geq 1$.
 \end{defin}
@@ -507,7 +507,7 @@ diagram in $\Ex$ for some $\tau \in S_n$:
     \end{tikzcd}
 \end{center}
 
-and let $\sigma \in B_n$. Then we set:
+Let $\sigma \in B_n$, then we set:
 \[
     \sigma . \alpha \coloneq \alpha \circ \sigma^{-1}.
 \]
@@ -541,12 +541,12 @@ i.e. the second relation of braids in Remark \ref{braidgrouprem}:
         \pic[ braid/number of strands=7, braid/strand 4/.style={white},
         name=coordinates, ] at (0,0) {braid={s_1-s_6 s_2-s_5 s_1-s_6}};
         
-        % \node[at=(coordinates-rev-1-e), below=3pt] {$i$};
-        % \node[at=(coordinates-rev-2-e), below=3pt] {$i+1$};
-        % \node[at=(coordinates-rev-3-e), below=3pt] {$i+2$};
-        % \node[at=(coordinates-rev-5-e), below=3pt] {$i$};
-        % \node[at=(coordinates-rev-6-e), below=3pt] {$i+1$};
-        % \node[at=(coordinates-rev-7-e), below=3pt] {$i+2$};
+        \node[at=(coordinates-rev-1-e), below=3pt] {$i$};
+        \node[at=(coordinates-rev-2-e), below=3pt] {$i+1$};
+        \node[at=(coordinates-rev-3-e), below=3pt] {$i+2$};
+        \node[at=(coordinates-rev-5-e), below=3pt] {$i$};
+        \node[at=(coordinates-rev-6-e), below=3pt] {$i+1$};
+        \node[at=(coordinates-rev-7-e), below=3pt] {$i+2$};
     
         \node[anchor=center] at (3,-1.8) {$=$};
     \end{tikzpicture}

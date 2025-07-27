@@ -41,14 +41,14 @@
             \\
             \gamma(4s-3) & \text{for } s \in \big(\frac{3}{4}, 1\big].
         \end{cases}
-    \] The choice of splitting the unit intervall in half is merely a
+    \] The choice of splitting the unit interval in half is merely a
     convention. Hence, composition of loops can be thought of as splitting
     intervals in an arbitrary manner; or in other words embedding unit intervals
-    into a unit interval such that the image of the inner intervals are
-    disjoint.
+    into a unit interval $I$ such that the image of the inner intervals are
+    disjoint
 
     \[
-        \big[[I_1] \dots [I_i] \dots [I_n]\big]
+        \big[[I_1] \dots [I_i] \dots [I_n]\big].
     \]
     
     So, for an ordered family of loops $\{\alpha_i \colon I_i \to X\}_{1 \leq i
@@ -310,7 +310,7 @@
             \[
                 \bigoplus_S \colon S_{k_1} \times \dots \times S_{k_n} \to S_{k_1 + \dots + k_n}
             \]
-            can be lifted to braid groups:
+            can be lifted to braid groups
             \[
                 \bigoplus_B \colon B_{k_1} \times \dots \times B_{k_n} \to B_{k_1 + \dots + k_n},
             \]
@@ -322,7 +322,7 @@
             permutation map
             \[
                 (-)_S(k_1, \dots k_n) \colon S_n \to S_{k_1 + \dots + k_n}
-            \] can be lifted to braid groups:
+            \] can be lifted to braid groups
             \[
                 (-)_B(k_1, \dots, k_n) \colon B_n \to B_{k_1 + \dots + k_n},
             \]
@@ -331,7 +331,7 @@
             block braid $b(k_1, \dots, k_n)$ is obtained by replacing the $i$-th
             strand by $k_i$ many parallel strands for $1 \leq i \leq n$.
             \item Let $\sigma, \rho \in B_n$ and $\tau_j \in B_{k_j}$ for $1
-            \leq j \leq n$. Then the following hold in $B_{k_1 + \dots + k_n}$:
+            \leq j \leq n$. Then the following holds in $B_{k_1 + \dots + k_n}$:
             \begin{align*}
                 (\sigma \rho)(k_1, \dots, k_n) &= \sigma(k_{\bar{\rho}^{-1}(1)}, \dots, k_{\bar{\rho}^{-1}(n)}) \cdot \rho(k_1, \dots, k_n), \\
                 \sigma(k_1, \dots, k_n) \cdot (\tau_1 \oplus \dots \oplus \tau_n) &= (\tau_{\bar{\sigma}^{-1}(1)} \oplus \dots \oplus \tau_{\bar{\sigma}^{-1}(n)} \cdot \sigma(k_1, \dots, k_n),
@@ -340,7 +340,7 @@
         \end{enumerate}
     \end{rem}
     
-    \begin{eg}\label{braidop} Let $\B$ be the {\em braid operad} defined by:
+    \begin{eg}\label{braidop} Let $\B$ be the {\em braid operad} defined by
         \[
             \B(n) \coloneqq B_n,
         \]
@@ -588,7 +588,7 @@
                 \times \dots \times \Ass(j_k) & \to \Ass(k)\\
                 (\sigma, \tau_1, \dots, \tau_k) & \mapsto \sigma(\tau_1 \oplus \dots \oplus \tau_k)
             \end{align*}
-            We might also refer to this operad as the \emph{symmetry operad}
+            We also refer to this operad as the \emph{symmetry operad}
             $\S$ later on.
             
             \item Nevertheless, the operad $\Comm_{\Set}(n) = \ast$ with the
@@ -1259,8 +1259,8 @@ right candidate for $\C$ is $\D_{\langle 1 \rangle}$.
     \[
         P \colon \Cotimes \to \deltast.
     \]
-    This functor is an op-fibration. The proof in Proposition \ref{m1m2}
-    applies. Note that for the proof, the fact that morphisms in $\deltast$
+    This functor is an op-fibration. The proof of Proposition \ref{m1m2}
+    applies analogously. Note that for the proof, the fact that morphisms in $\deltast$
     preserve the order is essential, otherwise we could not define
     \[
              \omega_j \colon \bigotimes_{\alpha_{\omega}(k)=j} C_k' \cong \bigotimes_{\alpha_{\omega}(k)=j} \bigotimes_{\alpha_f(i)=k} C_i \cong \bigotimes_{\alpha_g(k)=j} C_k \xrightarrow{g_j} C_j''
@@ -1303,7 +1303,7 @@ operad.
         morphisms.
         \end{enumerate}
 
-        such that the following properties hold:
+        The data needs to fulfill the following properties:
         \begin{enumerate}
             \item The identity morphisms are a left and right unit with respect
             to the composition map $\gamma$, i.e. the following diagrams
@@ -1524,7 +1524,7 @@ have a forgetful functor
 \pi \colon \Ox \to \Fin
 \]
 from which we can reconstruct the underlying colored operad $\O$ (up to
-canonical equivalence): First, note that in general $\pi$ does not have to be a
+canonical equivalence). First, note that in general $\pi$ does not have to be a
 op-fibration. For an arbitrary morphism $\alpha \colon \langle n \rangle \to
 \langle m \rangle$ and a collection $\{X_i\}_{i \in \langle n \rangle}$, there
 is no canonical choice for a collection $\{X'_j\}_{j \in \langle m \rangle}$

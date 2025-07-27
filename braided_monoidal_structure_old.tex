@@ -3,18 +3,18 @@
 As we have already seen, symmetric monoidal categories are an example
 of colored symmetric operads and can be defined using an op-fibration over
 $\Fin$ that satisfies the Segal condition. In this section, we will define a
-braided monoidal structure on a category $\C$ that is induced by a op-fibration
+braided monoidal structure on a category $\C$ that is induced by an op-fibration
 over the category $\Brx$ also satisfying the Segal condition. To do so, we will
 need to choose 2-morphisms in $\Brx$ on various occasions. We will refrain
 from specifying the paths between configurations in detail but rather describe
-the paths enough to understand from which homotopy class we choose a path so we
+the paths enough to understand from which homotopy class we choose a representative path so we
 then see why certain compositions of paths are homotopy equivalent. 
 % Also, we do not care much about the size of the disks as we can expand and
 % shrink them continuously as needed.z
 
 We follow the same approach as in the symmetic monoidal case in Section
 \ref{sec:operads}, i.e. we start with some category $\Cotimes$ and a functor
-$\pi \colon \Cotimes \to \Brx$ such that $\pi$ is an op-fibration and the fibers
+$\pi \colon \Cotimes \to \Brx$, such that $\pi$ is an op-fibration and the fibers
 of $\pi$ are given by the categories $\C^n \coloneqq \Cotimes_{\langle n
 \rangle}$ for $n \geq 1$.
 
@@ -43,11 +43,9 @@ configuration $c \in \E_2(n)$ from now.
 
 
 \begin{const}\label{con:brx_monoidal}
-
-
-So for the next part, let $\pi \colon \Cotimes \to \Brx$ be a $\Brx$-monoidal
-category and we denote $\C \coloneqq \Cotimes_{\langle 1 \rangle}$. In the
-following section we aim to define a braided monoidal structure on $\C$. First,
+For the next part, let $\pi \colon \Cotimes \to \Brx$ be a $\Brx$-monoidal
+category and we denote $\C \coloneqq \Cotimes_{\langle 1 \rangle}$. In this
+construction we aim to define a braided monoidal structure on $\C$. First,
 we introduce the following abuse of notation: For a $2$-morphism $\eta$, i.e. a
 path between two configurations $c_1, c_2 \in \E_2(n)$ in $\Brx$, we would write
 the following diagram:
@@ -67,7 +65,7 @@ the following diagram:
 \end{center}
 
 However, we will use a slightly different notation for the sake of readability.
-Instead, we write dashed arrows for the $2$-morphism as in the following
+Instead, we write dashed arrows for the $2$-morphism as in the
 diagram:
 
 \[    
@@ -104,7 +102,7 @@ be the morphism with the basepoint configuration $b_2 \in \E_2(2)$:
 \end{center}
 
 Since $\pi$ satisfies the op-fibration condition (M1) and the Segal condition
-(M2), we have that for any $(A,B) \in \C^2 \cong \Cotimes_{\langle 2 \rangle}$
+(M2), we have that for any $(A,B) \in \C^2 \cong \Cotimes_{\langle 2 \rangle}$,
 there is a cocartesian lift $(A,B) \to A \otimes B$ for $\mu \in \Brx$. The
 cocartesian property ensures that the choice is unique up to unique isomorphism.
 So, we obtain a well-defined functor
@@ -112,7 +110,7 @@ So, we obtain a well-defined functor
     \otimes \colon \C^2 \to \C.
 \]
 
-Further, we consider the following diagramm in $\Brx$:
+Further, we consider the following diagram in $\Brx$:
 \[    
     \begin{tikzcd}
         \langle 2 \rangle \arrow[r, "\beta"] \arrow[d, "\mu"] & \langle 2 \rangle \arrow[d, "\mu"] \\
@@ -122,7 +120,7 @@ Further, we consider the following diagramm in $\Brx$:
 Note, that analogous to $\beta$ inducing $\otimes$, we obtain for $\otimes \circ
 \beta$ a different functor:
 \[
-    \otimes' \colon \C^2 \to \C
+    \otimes' \colon \C^2 \to \C.
 \]
 Filling the diagram, i.e. providing commutativity data means choosing a homotopy
 class of paths from the basepoint configuration, corresponding to $\mu$, to the
@@ -165,10 +163,10 @@ half twist as well as for its inverse:
 \[    
     \begin{tikzcd}
         \langle 2 \rangle \arrow[r, "\beta"] \arrow[d, "\mu"] & \langle 2 \rangle \arrow[d, "\mu"] \\
-        \langle 1 \rangle  \arrow[r, dashed, shift left]                  & \langle 1 \rangle. \arrow[l, dashed, shift left]                
+        \langle 1 \rangle  \arrow[r, dashed, shift left]                  & \langle 1 \rangle \arrow[l, dashed, shift left]                
     \end{tikzcd}
 \]
-Thus, we obtain two commuting diagram in $\Cotimes$:
+Thus, we obtain two commuting diagrams in $\Cotimes$:
 \[
 \begin{tikzcd}
 {(A,B)} \arrow[r, "\beta"] \arrow[d, "\otimes"] & {(B,A)} \arrow[d, "\otimes"]                        \\
@@ -182,7 +180,7 @@ lift. The induced morphism $b$ is a unique isomorphism due to the fact that
 $\otimes$ and $\beta$ are cocartesian morphisms. Thus, we have defined a natural
 isomorphism
 \[
-    \left\{b_{A,B} \colon A \otimes B \to B \otimes A\right\}_{(A,B) \in \C^2}
+    \left\{b_{A,B} \colon A \otimes B \to B \otimes A\right\}_{(A,B) \in \C^2}.
 \]
 Note, that for a homotopically different choice of path instead of the half
 twist, we would obtain a different braiding map. So, this choice is essential
@@ -201,7 +199,7 @@ n$:
 We consider these morphisms in $\Brx$ with the following collection of
 configurations:
 \begin{align*}
-    \widetilde{\tau^n_i}_j \coloneq
+    \widetilde{\tau^n_i} \coloneq
      \begin{cases}
         b_2 &   i=j \\
         \id^j & \text{otherwise}
@@ -289,7 +287,7 @@ unit $\mathbf{1}$.
     %     \caption{example of a configuration of $\E_1$ being embedded in $\E_2$ along the horizontal line}
     % \end{figure}
 
-    So, the pentagon identity holds as compositions of $\E_1$-translations are
+    First, the pentagon identity holds as compositions of $\E_1$-translations are
     $\E_1$-translations and are unique up to homotopy. The unitality condition
     holds analogously to the proof of Proposition \ref{SymMonBijection} using
     the Segal condition. Hence, we focus on verifying the hexagon identities:
@@ -360,7 +358,7 @@ unit $\mathbf{1}$.
     another while filling the tetrahedron in $\Brx$ means verifying that the
     paths are from the same homotopy class, i.e. there exists a homotopy between
     the paths. As it turns out we do not make any new choices of paths. The
-    paths are induced by the half twist $\htw$ we chose to define $\otimes$:
+    paths are induced by the half twist $\htw$ we chose to define $\otimes$.
 
     Let us understand where the diagram or more precisely the configurations
     come from. The morphisms corresponding to $c_{(A \otimes B) \otimes C}$ and
@@ -538,7 +536,7 @@ unit $\mathbf{1}$.
         \end{adjustbox}
     \end{center}
 
-    Analogously for the hexagon identity $(2)$, we consider the following
+    Analogously for the hexagon identity $(2)$, we consider the
     composition of $2$-morphism in $\Brx$:
 
     \begin{center}

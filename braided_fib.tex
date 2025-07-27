@@ -34,9 +34,9 @@ functor fulfilling these conditions. \todo{if we have the time}
 
 
 \begin{prop}
-    Let $\B$ be colored braided operad. The forgetful functor
+    Let $\B$ be a colored braided operad. The forgetful functor
     \[
-        \pi \colon \Bx \to \Brx,
+        \pi \colon \Bx \to \Brx
     \]
     has the following properties:
     \begin{enumerate}
@@ -74,11 +74,11 @@ functor fulfilling these conditions. \todo{if we have the time}
 \end{prop}
 
 \begin{proof}
-    Let $B$  be colored braided operad and $\pi \colon \Bx \to \Brx$ the above
+    Let $B$ be a colored braided operad and $\pi \colon \Bx \to \Brx$ the above
     defined forgetful functor.
     \begin{enumerate}
         \item Let $\alpha \colon \langle n \rangle \to  \langle m \rangle$ be
-        inert morphism in $\Brx$, i.e. for a restriction to the active subset of
+        an inert morphism in $\Brx$, i.e. for a restriction to the active subset of
         $\langle n \rangle$, there is a bijection of finite sets:
         \[
             \alpha' \colon \alpha^{-1}(\langle m \rangle^{\circ}) \to \langle m \rangle^{\circ}
@@ -122,8 +122,8 @@ functor fulfilling these conditions. \todo{if we have the time}
         X_l'']$ in the following. We set the underlying morphism
         $\alpha_{\bar{f}} = \omega$. Without loss of generality, we can assume
         by Remark \ref{rem:e2_1_paths} that $\widetilde{\alpha}_j =
-        \id^{(i_j})$. Hence, we gain $\widetilde{\omega}_k$ as an
-        $\beta^{-1}(k)$-labeled configuration. The following diagram in $\Br$:
+        \id^{(i_j)}$. Hence, we gain $\widetilde{\omega}_k$ as an
+        $\beta^{-1}(k)$-labeled configuration. This diagram in $\Br$:
         \begin{center}
             \begin{tikzpicture}
                 % Define node positions
@@ -141,9 +141,9 @@ functor fulfilling these conditions. \todo{if we have the time}
                 % \node[rotate=-40] at (1.5, 1.2) {$\Downarrow \eta$};
             \end{tikzpicture}
         \end{center}
-        giving the corresponding composition map in $\B$:
+        gives a corresponding composition map in $\B$:
         $$
-            \gamma \colon \prod_{p \in {\beta^{-1}(k)}} \Mul_{\B}^{\id^{(p)}}\left(\{X_{p}\}, X_{p}\right)\times \Mul_{\B}^{\widetilde{\beta}_k}\left(\{X_p\}_{p\in \beta^{-1}(k)}, Y_k\right) \to \Mul_{\B}^{\widetilde{\omega}_k} \left(\{X_{i_q}\}_{q \in \omega^{-1}(k)}, Y_k\right) 
+            \gamma \colon \prod_{p \in {\beta^{-1}(k)}} \Mul_{\B}^{\id^{(p)}}\left(\{X_{p}\}, X_{p}\right)\times \Mul_{\B}^{\widetilde{\beta}_k}\left(\{X_p\}_{p\in \beta^{-1}(k)}, Y_k\right) \to \Mul_{\B}^{\widetilde{\omega}_k} \left(\{X_{i_q}\}_{q \in \omega^{-1}(k)}, Y_k\right).
         $$
         We choose
         \[
@@ -166,7 +166,7 @@ functor fulfilling these conditions. \todo{if we have the time}
         where $[Y_1, \dots, Y_m]$ corresponds to a cocartesian morphism $f
         \colon [X_1, \dots, X_n] \to [Y_1, \dots, Y_m]$ in $\Bx$. For a
         different choice of cocartesian morphism $h \colon [X_1, \dots, X_n] \to
-        [\bar{Y}_1, \dots, \bar{Y}_m]$ we obtain due to the cocartesian property
+        [\bar{Y}_1, \dots, \bar{Y}_m]$ we obtain, due to the cocartesian property,
         two unique lifts $\bar{f}, \bar{h}$ that must be inverse to one another:
         \begin{center}
             \begin{tikzcd}
@@ -189,7 +189,7 @@ functor fulfilling these conditions. \todo{if we have the time}
                                                                     "\id"']
             \end{tikzcd}
         \end{center}
-        Hence, the functor is well-defined on objects up to a unique
+        Hence, the functor is well-defined on objects up to unique
         isomorphism. For morphisms we define:
         \[
             (g \colon [X_1, \dots, X_n] \to [X_1', \dots, X_n'])  \mapsto (\bar{f} \colon [Y_1, \dots, Y_m] \to [Y_1', \dots, Y_m'])
@@ -215,7 +215,7 @@ functor fulfilling these conditions. \todo{if we have the time}
         \dots, X_n'], \; g \colon [X_1', \dots, X_n'] \to [X_1'', \dots, X_n'']
         \]
         is being respected as the composition of the unique lifts $\bar{f}$ and
-        $\bar{f}'$ lift the diagram and therefore have the be the unique lift
+        $\bar{f}'$ lift the diagram and therefore have to be the unique lift
         for $g' \circ g$ and $f$:
         \begin{center}
             \begin{tikzcd}
@@ -233,7 +233,7 @@ functor fulfilling these conditions. \todo{if we have the time}
         \]
         as defined in \ref{eg:rho_i}, induces a functor on fiber categories:
         \[
-            P^i \colon \Bx_{\langle n \rangle} \to \Bx_{\langle 1 \rangle} 
+            P^i \colon \Bx_{\langle n \rangle} \to \Bx_{\langle 1 \rangle}.
         \]
         Thus,
         \[
