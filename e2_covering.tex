@@ -1,11 +1,11 @@
 \subsection{Universal Covering of $\E_2$}
 
 In this section, we want to establish an operadic structure on the sequence of
-levelwise universal coverings of $\E_2$. We recall the operad $\E_2$ from
+universal coverings of $\E_2$ of each degree. We recall the operad $\E_2$ from
 Example \ref{eg:operads} which we introduced as the little 2-disks operad. So in
 each configuration space $\E_2(n)$ we have $n$ disks embedded into a large disk
-by translation and resizing which are pairwise disjoint. We use topological
-terms when talking about $\E_2$ what we really mean is applying the term
+by translation and resizing such that the images of the embedding do not intersect. We use topological
+terms when talking about $\E_2$. What really is happening is apply them
 level-wise. We will see that the universal coverings of $\E_2(n)$ for all $n \in \N$
 can be equipped with an operadic structure as well as a braid action. Hence, we
 obtain another example of a braided operad. 
@@ -13,11 +13,11 @@ obtain another example of a braided operad.
 
 The operadic structure of $\E_2$ requires each configuration to have labels as they are necessary to define the
 composition maps. However, the images of the disk embeddings of configurations that only
-differ in their labels are identical. It will be useful to identify configurations that only differ in their labels.
+differ in their labels are identical. 
 Therefore, consider the quotient
 under the symmetric group action for all $n \in \N$:
 \[
-    \E_2(n) \to \E_2(n) \slash S_n
+    \E_2(n) \to \E_2(n) \slash S_n.
 \]
 
 We denote the family of these quotient spaces by $\E_2 \slash S$. Note that this is not
@@ -56,36 +56,34 @@ covering of a topological operad.
     \geq 1$.
 \end{defin}
 
-
-\todo{fix this paragraph}
 To be able to talk about universal covers and fundamental groups
 we need to choose a basepoint. So formally, for any choice of a basepoint on
 each level $n$, permuting its labels will give us a different point in
 $\E_2(n)$. Hence, if we consider a loop at a basepoint we are required to end
 the loop with the same labeling of the configuration of the basepoint.
-That is the reason why when considering the fundamental group of $\E_2(n)$ over some basepoint we
+That is the reason why when considering the fundamental group of $\E_2(n)$ over some basepoint, we
 only obtain the pure braid group on $n$ strands by Lemma
 \ref{lem:fundamentalgroup}. 
 In this section we want to establish a universal
 covering of $\E_2$ which has the full braid action. 
-In the next step, we will first define a universal covering of $\E_2$ and $\E_2 \slash S$ for each level $n$.
-Then, we will see that these spaces are homeomorphic on each level. This allows us to transfer the braid action on
+In the next step, we first define a universal covering of $\E_2$ and $\E_2 \slash S$ for each level $n$.
+Then, we see that these spaces are homeomorphic on each level. This allows us to transfer the braid action on
 the universal covering of $E_2 \slash S$ to the universal covering of
 $\E_2$.
 
 In this part,
 we will work a lot with $\Ex$ which is constructed from $\E_2$ using Definition \ref{def:Ox}. This gives us a nice way to talk about configurations and paths between
 them. Hence, let us recall the definition of $\Ex$:
-\begin{rem}
+\begin{rem}\label{rem:ex}
     The objects of $\Ex$ are the finite pointed sets $\langle n \rangle$ for all
     $n \in \N$. A morphism $\langle n \rangle \to \langle m \rangle$ in $\Ex$
     consists of a morphism $\alpha \colon \langle n \rangle \to \langle m
     \rangle$ in $\Fin$ and a collection of configurations
-    $$\{c_j \in \E_2(|\alpha^{-1}(j)|)\}_{1 \leq j \leq m}$$ where each
+    $$\{c_j \in \E_2(|\alpha^{-1}(j)|)\}_{1 \leq j \leq m},$$ where each
     configuration is labeled by $\alpha^{-1}(j)$.
 
     We denote the trivial configuration with label $x$ by $\id^{(x)} \in \E_2(1)$.
-    For $\sigma \in S_n$ we refer to the corresponding automorphism of $\langle
+    For $\sigma \in S_n$, we refer to the corresponding automorphism of $\langle
     n \rangle$ with configurations $(\id^{(1)}, \dots, \id^{(n)})$ also by $\sigma$.
     Further, recall the composition in $\Ex$. Let 
     \begin{center}
@@ -130,8 +128,8 @@ them. Hence, let us recall the definition of $\Ex$:
 The category $\Ex$ will be an essential ingredient to establish colored braided
 operads.
 
-So, \todo{do I need this comment?}
-in $\Ex$ we identify $f, g \colon \langle n \rangle \to \langle m \rangle$
+Note that when identifying labels, this can interpreted in
+in $\Ex$ as identifying $f, g \colon \langle n \rangle \to \langle m \rangle$
 if there exists a commuting diagram in $\Ex$
 \begin{center}
     \begin{tikzcd}
@@ -160,7 +158,7 @@ S_n$ to be the following configuration:
 
 Note that since $\E_2(n)$ is connected and simply connected, the quotient $\E_2
 (n) \slash S_n$ is connected. Hence, it has a universal covering
-$\widetilde{\E_2(n) \slash S_n}$ which we define:
+$\widetilde{\E_2(n) \slash S_n}$ which we define by:
 \[
     \widetilde{\E_2(n) \slash S_n} \coloneq \{ \gamma \colon [0,1] \to \E_2(n) \slash S_n \mid \gamma(0) = \bar{b}_n \} 
     \slash \text{homotopy with fixed endpoints}
@@ -183,7 +181,7 @@ basepoint $b_n \in \E_2(n)$:
         \draw[dotted](-1, 0)--(3, 0);
     \end{tikzpicture}
 \end{center}
-and define its universal covering analogously:
+and define its universal covering similarly:
 \[
     \widetilde{\E_2(n)} \coloneq \{ \gamma \colon [0,1] \to \E_2(n) \mid \gamma(0) = b_n \} 
     \slash \text{homotopy with fixed endpoints}
@@ -201,9 +199,9 @@ There is a homeomorphism for each $n \in \N$:
 \end{align*}
 where we forget labels in one direction and in the reverse direction we label
 the basepoint $\bar{b}_n$ from left to right. The labeling of $c'$ is then
-induced by the path $\gamma$. Clearly this is continuous in both directions and
+induced by the path $\gamma$. This is continuous in both directions and
 inverse to one another. This shows that topologically the path $\gamma$ does not
-need the labels which is summarized in the following notation. For a path
+need the labels, which is summarized in the following notation. For a path
 $\gamma \colon \bar{b_n} \rightsquigarrow c$ between configurations $\bar{b_n},
 c \in \widetilde{\E_2(n)} \slash S_n$ we write the following diagram in $\Ex$ for some
 $\sigma \in S_n$:
@@ -215,7 +213,7 @@ $\sigma \in S_n$:
 \]
 Note, that the dashed arrow is not a morphism in $\Ex$ but a path of
 configurations in $\E_2(n)$. Hence, the following diagram would be more
-accurate, but our notation will be more convenient in this part.
+accurate, but our notation is more convenient in this section.
 \begin{center}
     \begin{tikzpicture}
         % Define node positions
@@ -238,9 +236,9 @@ $\gamma$ as a path in $\widetilde{\E_2}$.
 
 We will use this representation to define an operadic structure on
 $\widetilde{\E_2} \slash S$ such that the covering is a morphism of operads and
-then also use it to define a braid action on the universal covering.
+then further use it to define a braid action on the universal covering.
 
-First, we notice a specific translation between specific configurations that are
+First, we notice a specific translation between certain configurations that are
 unique up to homotopy equivalence.
 
 \begin{rem}[$\E_1$ translation]\label{rem:e1-translation} First, we observe that
@@ -283,7 +281,7 @@ unique up to homotopy equivalence.
     \[
     \inter(\Delta^{n-2}) = \left\{ (t_1, \dots, t_{n-2}) \in (0,1)^{n-2} \mid 0 < t_1 < \dots < t_{n-2} < 1 \right\}.
     \]
-    Since the open simplex $\inter(\Delta^{n-2})$ is contractible then so is
+    Since the open simplex $\inter(\Delta^{n-2})$ is contractible, then so is
     $\Conf_n(\R)$.
     We refer to such a unique path between two configurations in the image of
     the embedding by $\E_1$-translation. Note that this discussion holds for any
@@ -318,8 +316,8 @@ unique up to homotopy equivalence.
         \[
             \bar{\alpha} \circ (\alpha_1, \dots, \alpha_k)    
         \]
-    denotes the path from $\gamma((b_k, b_{j_1}, \dots, b_{j_k}))$ to $\gamma(c,
-    c_1, \dots, c_k)$ where we first apply
+    denotes the path from $\gamma(b_k, b_{j_1}, \dots, b_{j_k})$ to $\gamma(c,
+    c_1, \dots, c_k)$, where we first apply
 
     $$\alpha_l \colon b_{j_l} \rightsquigarrow c_l$$
 
@@ -369,7 +367,7 @@ unique up to homotopy equivalence.
     \end{figure}
 
     Further, let $\tau$ be the unique $\E_1$ translation from $b_j$ to
-    $\gamma((b_k, b_{j_1}, \dots, b_{j_k}))$ as discussed in Remark
+    $\gamma(b_k, b_{j_1}, \dots, b_{j_k})$ as discussed in Remark
     \ref{rem:e1-translation} that resizes and translates the disks along the
     horizontal axis. We obtain the following diagram:
     \begin{center}
@@ -385,14 +383,14 @@ unique up to homotopy equivalence.
     \end{center}
     Therefore, we can set
     \[
-        \widetilde{\gamma} ((\bar{\alpha}, \alpha_1, \dots, \alpha_k)) \coloneqq \bar{\alpha} \circ (\alpha_1, \dots, \alpha_k) \circ \tau
+        \widetilde{\gamma} (\bar{\alpha}, \alpha_1, \dots, \alpha_k) \coloneqq \bar{\alpha} \circ (\alpha_1, \dots, \alpha_k) \circ \tau.
     \]
     
     We observe that this composition map is well-defined, since the path $\tau$
-    is unique up to homotopy. To see that $\widetilde{\gamma}$ is associative we
+    is unique up to homotopy. To see that $\widetilde{\gamma}$ is associative, we
     need to have a look at the definition. Note, that in the definition $\tau
     \in \E_1(j)$ is a path that resizes and translates the disks along the
-    horizontal line. Hence, it no braid crossing. Further, we know that composition of paths
+    horizontal line. Hence, there is no braid crossing. Further, we know that composition of paths
     is associative up to homotopy. So, for 
 
     $$(\alpha, (\alpha_s)_{1 \leq s \leq k}, (\alpha_r)_{1 \leq r \leq j}) \in
@@ -400,11 +398,11 @@ unique up to homotopy equivalence.
 
     we have a homotopic equivalence:
     \begin{align*}
-        (\alpha \circ (\alpha_s)_{1 \leq s \leq k} \circ \tau^{(k)}) \circ (\alpha'_r)_{1 \leq r \leq j} \circ \tau^{(j)} 
+        \left(\alpha \circ (\alpha_s)_{1 \leq s \leq k} \circ \tau^{(k)}\right) \circ \left(\alpha'_r\right)_{1 \leq r \leq j} \circ \tau^{(j)} 
         &\simeq 
-        \alpha \circ (\alpha_s \circ (\alpha_{g_s+q})_{1 \leq q \leq j_s} \circ \tau^{(j_s)})_{1 \leq s \leq k} \circ \tau^{(k)} \\
+        \alpha \circ \left(\alpha_s \circ (\alpha_{g_s+q})_{1 \leq q \leq j_s} \circ \tau^{(j_s)}\right)_{1 \leq s \leq k} \circ \tau^{(k)}. \\
     \end{align*}
-    Furthermore, we define a operadic unit
+    Furthermore, we define an operadic unit
     \[
         \eta \colon \ast \to \widetilde{\E_2(1)}
     \]
@@ -425,10 +423,10 @@ unique up to homotopy equivalence.
     \end{center}
     This is indeed the case, by definition of $\widetilde{\gamma}$ we have:
     \[
-        p \circ \widetilde{\gamma} ((\bar{\alpha}, \alpha_1, \dots, \alpha_k)) = \gamma(c, c_1, \dots, c_k)
+        p \circ \widetilde{\gamma} (\bar{\alpha}, \alpha_1, \dots, \alpha_k) = \gamma(c, c_1, \dots, c_k)
     \]
     for $\alpha_l \colon b_{j_l} \to c_l$ for $1 \leq l \leq k$ and
-    $\bar{\alpha} \colon b_k \to c$. Clearly, the unitality condition is also
+    $\bar{\alpha} \colon b_k \to c$. The unitality condition is also
     met by definition:
     \begin{center}
         \begin{tikzcd}
@@ -437,13 +435,13 @@ unique up to homotopy equivalence.
             \widetilde{\E_2}(1) \arrow[rr, "p"] & & \E_2(1)
         \end{tikzcd}
     \end{center}
-    This concludes the proof that $\widetilde{\E_2}$  admits an operadic
-    structure and the covering map is a morphism of operads.
+    This concludes the proof that $\widetilde{\E_2}$ admits an operadic
+    structure and that the covering map is a morphism of operads.
 \end{proof}
 
 \begin{rem}
     This construction of an operadic structure on the universal covering of a
-    topological operad can be given in a more general setting, which we did not
+    topological operad can be given in a more general setting, which we do not
     require at this point. But in \cite[Lemma 4.1.12]{adrian} you can find a
     more general statement on how to construct an operadic structure on the
     collection of level-wise universal coverings of a sufficiently connected
@@ -456,9 +454,9 @@ We want to define a braid action on the universal covering $\widetilde{\E_2}$.
 As we have seen previously, the universal covering of $\E_2 \slash S$ is
 level-wise homeomorphic to the universal covering of $\E_2$. As usual, there is
 a group action of the fundamental group of $\E_2(n) \slash S(n)$ on its
-universal covering. By Lemma \ref{lem:fundamentalgroup } the fundamental group of $\E_2(n)$ is the $n$-th pure braid
+universal covering. By Lemma \ref{lem:fundamentalgroup} the fundamental group of $\E_2(n)$ is the $n$-th pure braid
 group $PB_n$. But since we forgot the labels when moving to $\E_2(n) \slash
-S(n)$, we obtain now the full $n$-th braid group $B_n$. Since, there is a
+S(n)$, we now obtain the full $n$-th braid group $B_n$. Since there is a
 homeomorphism $\widetilde{\E_2 \slash S} \cong \widetilde{\E_2}$, we can lift
 the braid group action to $\widetilde{\E_2}$. For a detailed proof, we refer to
 the paper of Fox and Neuwirth \cite{fox}. However, we give a short overview of
@@ -478,7 +476,7 @@ We recall the generators of $B_n$ for all $1 \leq i < n$, $n \in \N$:
 \end{center}
 
 We identify the generators with the homotopy class of the half twist of the
-$i$-th and $(i+1)$-th disk in $\widetilde{\E_2 \slash S}$ which we will also
+$i$-th and $(i+1)$-th disk in $\widetilde{\E_2 \slash S}$, which we also
 denote by $\sigma_i$ from now on:
 \begin{center}
     \begin{tikzpicture}
@@ -497,7 +495,7 @@ denote by $\sigma_i$ from now on:
 \end{center}
 
 Then, we obtain a braid action on $\widetilde{\E_2}$. Let $\alpha \colon b_n \to
-c$ be in $\widetilde{\E_2 \slash S}$ which is represented by the following
+c$ be in $\widetilde{\E_2 \slash S}$, which is represented by the following
 diagram in $\Ex$ for some $\tau \in S_n$:
 
 \begin{center}
@@ -509,9 +507,9 @@ diagram in $\Ex$ for some $\tau \in S_n$:
     \end{tikzcd}
 \end{center}
 
-and let $\sigma \in B_n$, then we set:
+and let $\sigma \in B_n$. Then we set:
 \[
-    \sigma . \alpha \coloneq \alpha \circ \sigma^{-1}
+    \sigma . \alpha \coloneq \alpha \circ \sigma^{-1}.
 \]
 
 Concatenating these paths results in the following commuting diagram, where
@@ -528,11 +526,11 @@ $\bar{\sigma} \in S_n$ refers to the underlying permutation of $\sigma$.
     \end{tikzcd}
 \end{center}
 
-What is left to show is that this braid action is equivariant with respect to
+It is left to show that this braid action is equivariant with respect to
 the operadic structure on $\widetilde{\E_2}$. Note that by
 definition of $\widetilde{\gamma}$ we move disks in a large disk $D$ from the
-basepoint configuration to another configuration once and we do not touch the
-configuration of $D$ again afterwards but only move $D$ as a part of another
+basepoint configuration to another configuration once and afterwards we do not touch the
+configuration of $D$ again but only move $D$ as a disk of another
 configuration.
 Hence, in that sense the order in which we apply paths to a
 configuration does not matter from a homotopy perspective. This fact is
@@ -553,7 +551,7 @@ i.e. the second relation of braids in Remark \ref{braidgrouprem}:
         \node[anchor=center] at (3,-1.8) {$=$};
     \end{tikzpicture}
 \end{center}
-This means that for all $\sigma \in B_k$ we have the following commutative
+This means that for all $\sigma \in B_k$, we have the following commutative
 diagram:
 
 \begin{center}

@@ -9,7 +9,7 @@
 \contentsline {section}{\numberline {4}Colored Braided Operads}{34}{section.0.4}%
 \contentsline {subsection}{\numberline {4.1}Colored Braided Operads}{34}{subsection.0.4.1}%
 \contentsline {subsection}{\numberline {4.2}Braided Monoidal Structure}{40}{subsection.0.4.2}%
-\contentsline {subsection}{\numberline {4.3}Properties of $\pi \colon \EuScript {B}^{\otimes }\to \EuScript {B} \text {r}_*$}{47}{subsection.0.4.3}%
-\contentsline {section}{\numberline {5}Outlook}{50}{section.0.5}%
-\contentsline {section}{\numberline {6}Appendix}{51}{section.0.6}%
+\contentsline {subsection}{\numberline {4.3}Properties of $\pi \colon \EuScript {B}^{\otimes }\to \EuScript {B} \text {r}_*$}{51}{subsection.0.4.3}%
+\contentsline {section}{\numberline {5}Outlook}{55}{section.0.5}%
+\contentsline {section}{\numberline {6}Appendix}{56}{section.0.6}%
 \contentsfinish 

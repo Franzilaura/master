@@ -21,31 +21,31 @@
   \datalist[entry]{nty/global//global/global/global}
     \entry{adrian}{unpublished}{}{}
       \name{author}{1}{}{%
-        {{hash=9ef75542c3c516f7ff58b682a7d94627}{%
+        {{hash=0c21c1ef6f435569ef2a53dbbbdf98f3}{%
            family={Boerner},
            familyi={B\bibinitperiod},
-           given={Adrian},
+           given={A.},
            giveni={A\bibinitperiod}}}%
       }
-      \strng{namehash}{9ef75542c3c516f7ff58b682a7d94627}
-      \strng{fullhash}{9ef75542c3c516f7ff58b682a7d94627}
-      \strng{fullhashraw}{9ef75542c3c516f7ff58b682a7d94627}
-      \strng{bibnamehash}{9ef75542c3c516f7ff58b682a7d94627}
-      \strng{authorbibnamehash}{9ef75542c3c516f7ff58b682a7d94627}
-      \strng{authornamehash}{9ef75542c3c516f7ff58b682a7d94627}
-      \strng{authorfullhash}{9ef75542c3c516f7ff58b682a7d94627}
-      \strng{authorfullhashraw}{9ef75542c3c516f7ff58b682a7d94627}
-      \field{labelalpha}{AB}
+      \strng{namehash}{0c21c1ef6f435569ef2a53dbbbdf98f3}
+      \strng{fullhash}{0c21c1ef6f435569ef2a53dbbbdf98f3}
+      \strng{fullhashraw}{0c21c1ef6f435569ef2a53dbbbdf98f3}
+      \strng{bibnamehash}{0c21c1ef6f435569ef2a53dbbbdf98f3}
+      \strng{authorbibnamehash}{0c21c1ef6f435569ef2a53dbbbdf98f3}
+      \strng{authornamehash}{0c21c1ef6f435569ef2a53dbbbdf98f3}
+      \strng{authorfullhash}{0c21c1ef6f435569ef2a53dbbbdf98f3}
+      \strng{authorfullhashraw}{0c21c1ef6f435569ef2a53dbbbdf98f3}
+      \field{labelalpha}{Boe25}
       \field{sortinit}{B}
       \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{month}{06}
-      \field{shorthand}{AB}
+      \field{shorthand}{Boe25}
       \field{title}{Comparing different models of the little disk operad}
       \field{year}{2025}
     \endentry
-    \entry{Dyckerhoff}{misc}{}{}
+    \entry{Dyckerhoff}{incollection}{}{}
       \name{author}{2}{}{%
         {{hash=39d5ac5a53fb0389a0a2ff3a6387a308}{%
            family={Dyckerhoff},
@@ -69,14 +69,13 @@
       \strng{authornamehash}{bc8e17ca927209d63951056f8fb24cf3}
       \strng{authorfullhash}{bc8e17ca927209d63951056f8fb24cf3}
       \strng{authorfullhashraw}{bc8e17ca927209d63951056f8fb24cf3}
-      \field{labelalpha}{DK}
+      \field{labelalpha}{DK15}
       \field{sortinit}{D}
       \field{sortinithash}{6f385f66841fb5e82009dc833c761848}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{issn}{1098-3627}
-      \field{journaltitle}{Stacks and Categories in Geometry, Topology, and Algebra}
-      \field{shorthand}{DK}
+      \field{booktitle}{Stacks and Categories in Geometry, Topology, and Algebra}
+      \field{shorthand}{DK15}
       \field{title}{Crossed simplicial groups and structured surfaces}
       \field{year}{2015}
       \field{pages}{37\bibrangedash 110}
@@ -107,17 +106,17 @@
       \strng{authornamehash}{7a1cf48552a6d95dce2ded8206cbe159}
       \strng{authorfullhash}{7a1cf48552a6d95dce2ded8206cbe159}
       \strng{authorfullhashraw}{7a1cf48552a6d95dce2ded8206cbe159}
-      \field{labelalpha}{ZF}
+      \field{labelalpha}{Fie99}
       \field{sortinit}{F}
       \field{sortinithash}{2638baaa20439f1b5a8f80c6c08a13b4}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{eprintclass}{math.AT}
       \field{eprinttype}{arXiv}
-      \field{shorthand}{ZF}
+      \field{shorthand}{Fie99}
       \field{title}{Constructions of $E_n$ Operads}
       \field{year}{1999}
-      \field{pages}{1\bibrangessep 2}
+      \field{pages}{1\bibrangedash 2}
       \range{pages}{2}
       \verb{eprint}
       \verb math/9808089
@@ -131,42 +130,35 @@
     \endentry
     \entry{fox}{article}{}{}
       \name{author}{2}{}{%
-        {{hash=2c7edfd8da8184a29e3a647e8ec2cefc}{%
-           family={FOX},
+        {{hash=20f7fffe7aab2c793647df6e44600ba5}{%
+           family={Fox},
            familyi={F\bibinitperiod},
            given={R.},
            giveni={R\bibinitperiod}}}%
-        {{hash=442d51131ae1d767d2c7023bb87ea0fd}{%
-           family={NEUWIRTH},
+        {{hash=230c1d9d9ab35fc7cf8bb660fe9402c8}{%
+           family={Neuwirth},
            familyi={N\bibinitperiod},
            given={L.},
            giveni={L\bibinitperiod}}}%
       }
-      \list{publisher}{1}{%
-        {Mathematica Scandinavica}%
-      }
-      \strng{namehash}{c0320fb0f86fe7d86ad0ea439bebf620}
-      \strng{fullhash}{c0320fb0f86fe7d86ad0ea439bebf620}
-      \strng{fullhashraw}{c0320fb0f86fe7d86ad0ea439bebf620}
-      \strng{bibnamehash}{c0320fb0f86fe7d86ad0ea439bebf620}
-      \strng{authorbibnamehash}{c0320fb0f86fe7d86ad0ea439bebf620}
-      \strng{authornamehash}{c0320fb0f86fe7d86ad0ea439bebf620}
-      \strng{authorfullhash}{c0320fb0f86fe7d86ad0ea439bebf620}
-      \strng{authorfullhashraw}{c0320fb0f86fe7d86ad0ea439bebf620}
+      \strng{namehash}{7dab8e0981c77de1a7b2b7b0c8841a7d}
+      \strng{fullhash}{7dab8e0981c77de1a7b2b7b0c8841a7d}
+      \strng{fullhashraw}{7dab8e0981c77de1a7b2b7b0c8841a7d}
+      \strng{bibnamehash}{7dab8e0981c77de1a7b2b7b0c8841a7d}
+      \strng{authorbibnamehash}{7dab8e0981c77de1a7b2b7b0c8841a7d}
+      \strng{authornamehash}{7dab8e0981c77de1a7b2b7b0c8841a7d}
+      \strng{authorfullhash}{7dab8e0981c77de1a7b2b7b0c8841a7d}
+      \strng{authorfullhashraw}{7dab8e0981c77de1a7b2b7b0c8841a7d}
       \field{labelalpha}{FN62}
       \field{sortinit}{F}
       \field{sortinithash}{2638baaa20439f1b5a8f80c6c08a13b4}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{issn}{00255521, 19031807}
       \field{journaltitle}{Mathematica Scandinavica}
-      \field{title}{THE BRAID GROUPS}
-      \field{urlday}{14}
-      \field{urlmonth}{7}
-      \field{urlyear}{2025}
+      \field{shorthand}{FN62}
+      \field{title}{The braid groups}
       \field{volume}{10}
       \field{year}{1962}
-      \field{urldateera}{ce}
       \field{pages}{119\bibrangedash 126}
       \range{pages}{8}
       \verb{urlraw}
@@ -178,10 +170,10 @@
     \endentry
     \entry{Hatcher}{book}{}{}
       \name{author}{1}{}{%
-        {{hash=0a94eadf86d8b878d4c37bc5640e53e3}{%
+        {{hash=60430c1ac989f9278a5d69515129a405}{%
            family={Hatcher},
            familyi={H\bibinitperiod},
-           given={Allen},
+           given={A.},
            giveni={A\bibinitperiod}}}%
       }
       \list{location}{1}{%
@@ -190,34 +182,30 @@
       \list{publisher}{1}{%
         {Cambridge University Press}%
       }
-      \strng{namehash}{0a94eadf86d8b878d4c37bc5640e53e3}
-      \strng{fullhash}{0a94eadf86d8b878d4c37bc5640e53e3}
-      \strng{fullhashraw}{0a94eadf86d8b878d4c37bc5640e53e3}
-      \strng{bibnamehash}{0a94eadf86d8b878d4c37bc5640e53e3}
-      \strng{authorbibnamehash}{0a94eadf86d8b878d4c37bc5640e53e3}
-      \strng{authornamehash}{0a94eadf86d8b878d4c37bc5640e53e3}
-      \strng{authorfullhash}{0a94eadf86d8b878d4c37bc5640e53e3}
-      \strng{authorfullhashraw}{0a94eadf86d8b878d4c37bc5640e53e3}
+      \strng{namehash}{60430c1ac989f9278a5d69515129a405}
+      \strng{fullhash}{60430c1ac989f9278a5d69515129a405}
+      \strng{fullhashraw}{60430c1ac989f9278a5d69515129a405}
+      \strng{bibnamehash}{60430c1ac989f9278a5d69515129a405}
+      \strng{authorbibnamehash}{60430c1ac989f9278a5d69515129a405}
+      \strng{authornamehash}{60430c1ac989f9278a5d69515129a405}
+      \strng{authorfullhash}{60430c1ac989f9278a5d69515129a405}
+      \strng{authorfullhashraw}{60430c1ac989f9278a5d69515129a405}
       \field{labelalpha}{Hat02}
       \field{sortinit}{H}
       \field{sortinithash}{23a3aa7c24e56cfa16945d55545109b5}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{isbn}{0-521-79160-X; 0-521-79540-0}
+      \field{isbn}{0-521-79160-X}
+      \field{shorthand}{Hat02}
       \field{title}{Algebraic topology}
       \field{year}{2002}
-      \field{pages}{xii+544}
-      \range{pages}{-1}
-      \verb{file}
-      \verb :C\:\\Users\\mat\\Documents\\Pdfs\\AT.pdf:PDF
-      \endverb
     \endentry
     \entry{may}{book}{}{}
       \name{author}{2}{}{%
-        {{hash=a07503557a6c96573699eccadf8c9aca}{%
+        {{hash=a1f7515d0722185458ff049120dd7047}{%
            family={Kříž},
            familyi={K\bibinitperiod},
-           given={Igor},
+           given={I.},
            giveni={I\bibinitperiod}}}%
         {{hash=11149a42a90779df0bd6b6539568f5ed}{%
            family={May},
@@ -225,28 +213,25 @@
            given={J.\bibnamedelimi P.},
            giveni={J\bibinitperiod\bibinitdelim P\bibinitperiod}}}%
       }
-      \list{language}{1}{%
-        {en}%
-      }
       \list{publisher}{1}{%
         {Société mathématique de France}%
       }
-      \strng{namehash}{3ea136122ec0a9a86591ea8fbf154af7}
-      \strng{fullhash}{3ea136122ec0a9a86591ea8fbf154af7}
-      \strng{fullhashraw}{3ea136122ec0a9a86591ea8fbf154af7}
-      \strng{bibnamehash}{3ea136122ec0a9a86591ea8fbf154af7}
-      \strng{authorbibnamehash}{3ea136122ec0a9a86591ea8fbf154af7}
-      \strng{authornamehash}{3ea136122ec0a9a86591ea8fbf154af7}
-      \strng{authorfullhash}{3ea136122ec0a9a86591ea8fbf154af7}
-      \strng{authorfullhashraw}{3ea136122ec0a9a86591ea8fbf154af7}
-      \field{labelalpha}{IM}
+      \strng{namehash}{b3adc3eb5c9789fd583cc221304b25b0}
+      \strng{fullhash}{b3adc3eb5c9789fd583cc221304b25b0}
+      \strng{fullhashraw}{b3adc3eb5c9789fd583cc221304b25b0}
+      \strng{bibnamehash}{b3adc3eb5c9789fd583cc221304b25b0}
+      \strng{authorbibnamehash}{b3adc3eb5c9789fd583cc221304b25b0}
+      \strng{authornamehash}{b3adc3eb5c9789fd583cc221304b25b0}
+      \strng{authorfullhash}{b3adc3eb5c9789fd583cc221304b25b0}
+      \strng{authorfullhashraw}{b3adc3eb5c9789fd583cc221304b25b0}
+      \field{labelalpha}{KM95}
       \field{sortinit}{K}
       \field{sortinithash}{c02bf6bff1c488450c352b40f5d853ab}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{number}{233}
       \field{series}{Astérisque}
-      \field{shorthand}{IM}
+      \field{shorthand}{KM95}
       \field{title}{Operads, algebras, modules and motives}
       \field{year}{1995}
       \verb{urlraw}
@@ -258,118 +243,133 @@
     \endentry
     \entry{ha}{unpublished}{}{}
       \name{author}{1}{}{%
-        {{hash=760ea879284b1a6eeaad87a82be8d1d7}{%
+        {{hash=4824f2fc2c61b9f4da55e476206c5db3}{%
            family={Lurie},
            familyi={L\bibinitperiod},
-           given={Jacob},
+           given={J.},
            giveni={J\bibinitperiod}}}%
       }
-      \strng{namehash}{760ea879284b1a6eeaad87a82be8d1d7}
-      \strng{fullhash}{760ea879284b1a6eeaad87a82be8d1d7}
-      \strng{fullhashraw}{760ea879284b1a6eeaad87a82be8d1d7}
-      \strng{bibnamehash}{760ea879284b1a6eeaad87a82be8d1d7}
-      \strng{authorbibnamehash}{760ea879284b1a6eeaad87a82be8d1d7}
-      \strng{authornamehash}{760ea879284b1a6eeaad87a82be8d1d7}
-      \strng{authorfullhash}{760ea879284b1a6eeaad87a82be8d1d7}
-      \strng{authorfullhashraw}{760ea879284b1a6eeaad87a82be8d1d7}
+      \strng{namehash}{4824f2fc2c61b9f4da55e476206c5db3}
+      \strng{fullhash}{4824f2fc2c61b9f4da55e476206c5db3}
+      \strng{fullhashraw}{4824f2fc2c61b9f4da55e476206c5db3}
+      \strng{bibnamehash}{4824f2fc2c61b9f4da55e476206c5db3}
+      \strng{authorbibnamehash}{4824f2fc2c61b9f4da55e476206c5db3}
+      \strng{authornamehash}{4824f2fc2c61b9f4da55e476206c5db3}
+      \strng{authorfullhash}{4824f2fc2c61b9f4da55e476206c5db3}
+      \strng{authorfullhashraw}{4824f2fc2c61b9f4da55e476206c5db3}
       \field{extraname}{1}
-      \field{labelalpha}{JL}
+      \field{labelalpha}{Lur17}
       \field{sortinit}{L}
       \field{sortinithash}{7c47d417cecb1f4bd38d1825c427a61a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{month}{09}
       \field{note}{Unpublished. Available online at \url{https://www.math.ias.edu/~lurie/}}
-      \field{shorthand}{JL}
+      \field{shorthand}{Lur17}
       \field{title}{Higher algebra}
       \field{year}{2017}
+      \verb{urlraw}
+      \verb https://www.math.ias.edu/~lurie/
+      \endverb
+      \verb{url}
+      \verb https://www.math.ias.edu/~lurie/
+      \endverb
     \endentry
     \entry{kerodon}{misc}{}{}
       \name{author}{1}{}{%
-        {{hash=760ea879284b1a6eeaad87a82be8d1d7}{%
+        {{hash=4824f2fc2c61b9f4da55e476206c5db3}{%
            family={Lurie},
            familyi={L\bibinitperiod},
-           given={Jacob},
+           given={J.},
            giveni={J\bibinitperiod}}}%
       }
-      \strng{namehash}{760ea879284b1a6eeaad87a82be8d1d7}
-      \strng{fullhash}{760ea879284b1a6eeaad87a82be8d1d7}
-      \strng{fullhashraw}{760ea879284b1a6eeaad87a82be8d1d7}
-      \strng{bibnamehash}{760ea879284b1a6eeaad87a82be8d1d7}
-      \strng{authorbibnamehash}{760ea879284b1a6eeaad87a82be8d1d7}
-      \strng{authornamehash}{760ea879284b1a6eeaad87a82be8d1d7}
-      \strng{authorfullhash}{760ea879284b1a6eeaad87a82be8d1d7}
-      \strng{authorfullhashraw}{760ea879284b1a6eeaad87a82be8d1d7}
+      \strng{namehash}{4824f2fc2c61b9f4da55e476206c5db3}
+      \strng{fullhash}{4824f2fc2c61b9f4da55e476206c5db3}
+      \strng{fullhashraw}{4824f2fc2c61b9f4da55e476206c5db3}
+      \strng{bibnamehash}{4824f2fc2c61b9f4da55e476206c5db3}
+      \strng{authorbibnamehash}{4824f2fc2c61b9f4da55e476206c5db3}
+      \strng{authornamehash}{4824f2fc2c61b9f4da55e476206c5db3}
+      \strng{authorfullhash}{4824f2fc2c61b9f4da55e476206c5db3}
+      \strng{authorfullhashraw}{4824f2fc2c61b9f4da55e476206c5db3}
       \field{extraname}{2}
-      \field{labelalpha}{Kerodon}
+      \field{labelalpha}{Lur18}
       \field{sortinit}{L}
       \field{sortinithash}{7c47d417cecb1f4bd38d1825c427a61a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{howpublished}{\url{https://kerodon.net}}
-      \field{shorthand}{Kerodon}
+      \field{shorthand}{Lur18}
       \field{title}{Kerodon}
       \field{year}{2018}
+      \verb{urlraw}
+      \verb https://kerodon.net
+      \endverb
+      \verb{url}
+      \verb https://kerodon.net
+      \endverb
     \endentry
     \entry{hopf}{unpublished}{}{}
       \name{author}{1}{}{%
-        {{hash=f05d2c19aa06489176806883cbcda665}{%
+        {{hash=0373bbb582a0bf4550d6ae3760b1ea23}{%
            family={Schweigert},
            familyi={S\bibinitperiod},
-           given={Christoph},
+           given={C.},
            giveni={C\bibinitperiod}}}%
       }
-      \strng{namehash}{f05d2c19aa06489176806883cbcda665}
-      \strng{fullhash}{f05d2c19aa06489176806883cbcda665}
-      \strng{fullhashraw}{f05d2c19aa06489176806883cbcda665}
-      \strng{bibnamehash}{f05d2c19aa06489176806883cbcda665}
-      \strng{authorbibnamehash}{f05d2c19aa06489176806883cbcda665}
-      \strng{authornamehash}{f05d2c19aa06489176806883cbcda665}
-      \strng{authorfullhash}{f05d2c19aa06489176806883cbcda665}
-      \strng{authorfullhashraw}{f05d2c19aa06489176806883cbcda665}
-      \field{labelalpha}{CS}
+      \strng{namehash}{0373bbb582a0bf4550d6ae3760b1ea23}
+      \strng{fullhash}{0373bbb582a0bf4550d6ae3760b1ea23}
+      \strng{fullhashraw}{0373bbb582a0bf4550d6ae3760b1ea23}
+      \strng{bibnamehash}{0373bbb582a0bf4550d6ae3760b1ea23}
+      \strng{authorbibnamehash}{0373bbb582a0bf4550d6ae3760b1ea23}
+      \strng{authornamehash}{0373bbb582a0bf4550d6ae3760b1ea23}
+      \strng{authorfullhash}{0373bbb582a0bf4550d6ae3760b1ea23}
+      \strng{authorfullhashraw}{0373bbb582a0bf4550d6ae3760b1ea23}
+      \field{labelalpha}{Sch23}
       \field{sortinit}{S}
       \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{month}{03}
       \field{note}{Unpublished. Available online at \url{https://www.math.uni-hamburg.de/home/schweigert/skripten/hskript.pdf}}
-      \field{shorthand}{CS}
+      \field{shorthand}{Sch23}
       \field{title}{Hopf algebras, quantum groups and topological field theory}
       \field{year}{2023}
+      \verb{urlraw}
+      \verb https://www.math.uni-hamburg.de/home/schweigert/skripten/hskript.pdf
+      \endverb
+      \verb{url}
+      \verb https://www.math.uni-hamburg.de/home/schweigert/skripten/hskript.pdf
+      \endverb
     \endentry
     \entry{yau}{book}{}{}
       \name{author}{1}{}{%
-        {{hash=c272ee37f752428d2d26faea0c4d2f18}{%
+        {{hash=6961ba69fa1657b94fd4ce3ce66970bc}{%
            family={Yau},
            familyi={Y\bibinitperiod},
-           given={Donald},
+           given={D.},
            giveni={D\bibinitperiod}}}%
       }
       \list{publisher}{1}{%
-        {WORLD SCIENTIFIC}%
+        {World Scientific}%
       }
-      \strng{namehash}{c272ee37f752428d2d26faea0c4d2f18}
-      \strng{fullhash}{c272ee37f752428d2d26faea0c4d2f18}
-      \strng{fullhashraw}{c272ee37f752428d2d26faea0c4d2f18}
-      \strng{bibnamehash}{c272ee37f752428d2d26faea0c4d2f18}
-      \strng{authorbibnamehash}{c272ee37f752428d2d26faea0c4d2f18}
-      \strng{authornamehash}{c272ee37f752428d2d26faea0c4d2f18}
-      \strng{authorfullhash}{c272ee37f752428d2d26faea0c4d2f18}
-      \strng{authorfullhashraw}{c272ee37f752428d2d26faea0c4d2f18}
-      \field{labelalpha}{DY}
+      \strng{namehash}{6961ba69fa1657b94fd4ce3ce66970bc}
+      \strng{fullhash}{6961ba69fa1657b94fd4ce3ce66970bc}
+      \strng{fullhashraw}{6961ba69fa1657b94fd4ce3ce66970bc}
+      \strng{bibnamehash}{6961ba69fa1657b94fd4ce3ce66970bc}
+      \strng{authorbibnamehash}{6961ba69fa1657b94fd4ce3ce66970bc}
+      \strng{authornamehash}{6961ba69fa1657b94fd4ce3ce66970bc}
+      \strng{authorfullhash}{6961ba69fa1657b94fd4ce3ce66970bc}
+      \strng{authorfullhashraw}{6961ba69fa1657b94fd4ce3ce66970bc}
+      \field{labelalpha}{Yau21}
       \field{sortinit}{Y}
       \field{sortinithash}{fd67ad5a9ef0f7456bdd9aab10fe1495}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{shorthand}{DY}
+      \field{shorthand}{Yau21}
       \field{title}{Infinity Operads and Monoidal Categories with Group Equivariance}
       \field{year}{2021}
       \verb{doi}
       \verb 10.1142/12687
-      \endverb
-      \verb{eprint}
-      \verb https://www.worldscientific.com/doi/pdf/10.1142/12687
       \endverb
       \verb{urlraw}
       \verb https://www.worldscientific.com/doi/abs/10.1142/12687

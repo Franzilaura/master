@@ -1,4 +1,107 @@
 %!TEX root = main.tex
 
-    \section{Introduction}
-    Coming soon
+\section{Introduction}
+
+
+
+There are diﬀerent types of algebra: associative, commutative, Lie, etc. and corresponding to them an appropriate notion of a module.
+It is often required to deal with these “up to homotopy”. 
+% I shall
+% give a very partial overview
+There was a needs to develop abstract frameworks in which to study algebras. One of which 
+was introduced by May in the 1970s in \cite{may} to study iterated loop spaces - operads.
+An operad is a mathematical structure that encodes operations with multiple
+inputs and a single output, along with rules for composing these operations.
+Operads have since been established as a fundamental framework across different fields 
+They provide a way
+to understand algebraic structures where operations can be composed in tree-like
+patterns.
+The power of operads lies in their ability to capture the essence of
+"operations and their symmetries" in a purely combinatorial way, while
+simultaneously encoding topological and algebraic information.
+% This dual
+% nature allows operads to serve as a bridge between seemingly disparate
+% mathematical domains, revealing unexpected connections and providing powerful
+% tools for computation and classification. This thesis explores 
+% [specific aspect
+% of operads relevant to your research], examining how [brief description of your
+% particular focus - e.g., "colored operads illuminate the structure of
+% multi-sorted algebraic theories" or "the homotopy theory of operads provides new
+% insights into rational homotopy theory"]. Through [methodology or approach], we
+% demonstrate [main contribution or result], contributing to our understanding of
+% both operadic theory itself and its applications to [relevant field]. Operads
+% were originally introduced to formalize the notion of operations with multiple
+% inputs and a single output, especially in contexts where operations may be
+% composed hierarchically. Since their inception in the 1970s by J. Peter May and
+% others, operads have become an indispensable tool in areas such as algebraic
+% topology, category theory, homotopy theory, and even mathematical physics. At
+% their core, operads encode the essence of compositional structure, abstracting
+% the behavior of functions, operations, and processes in a highly structured and
+% flexible way.
+The classical theory of operads focuses on symmetric operads—structures where
+the symmetric group actions capture the permutability of inputs. However, a
+growing body of work has sought to generalize operads by relaxing or modifying
+the symmetry conditions. In particular, braided operads arise as a natural
+intermediate between symmetric and nonsymmetric operads. Furthermore, braided operads have 
+found important applications; for example, Fiedorowicz established recognition principles in \cite{EO}
+that depend on the braided structure of a braided
+operad.
+% These structures
+% accommodate a notion of braiding—modeled by the braid group rather than the
+% symmetric group—allowing for more subtle symmetries in the composition of
+% operations. Such generalizations are especially relevant in contexts where
+% inputs to operations are not fully interchangeable, such as in quantum algebra
+% or braided monoidal categories.
+This thesis investigates the theory of braided operads and extends it to a new
+notion: colored braided operads.
+The goal is to provide both conceptual clarity
+and a structural foundation for these objects, with an emphasis on categorical
+formulations. 
+In particular, we follow a guiding principle: that operads can be described using functors
+that satisfy certain properties. This perspective shifts the focus from
+traditional presentations in terms of sets, groups, and actions, toward a more
+abstract, categorical formulation, ultimately leading to a more elegant and
+flexible framework.
+
+\medskip
+Section 2 begins with a general overview of operads. We get introduced to the
+usual notion of operads such as algebras and modules over an operad. Further, we see some common examples.
+After we established a good foundation, we
+develop the theory from
+a categorical standpoint following Jacob Lurie in Higher Algebra \cite{ha}. We show how operads can be understood as functors
+satisfying specific properties. This
+Section serves both as a review and as a foundation for the later parts.
+
+
+\medskip
+Section 3 introduces braided operads, starting with the motivation behind
+replacing the symmetric group with the braid group. We define braided operads
+formally and provide illustrative examples that highlight their distinct
+features. 
+% Throughout, we emphasize how the operadic structure adapts to the
+% presence of a braiding, and how this affects the interplay between operations.
+
+
+\medskip
+Section 4 proposes our own definition of colored braided operads, inspired by the
+need to manage multiple colors of inputs and outputs while
+retaining the braided structure. However, the aim in this Section
+is to establish a further definition based on functorial properties and categorical
+data — mirroring the approach taken in Section 2. A key factor is to find
+the target category for the later categorical definition for which the paper on braid groups by Fox and Neuwirth \cite{fox}
+will be useful.
+We then move on to 
+our first definition of a colored braided operad before we proceed to define a forgetful functor that is similar to the forgetful functor from Section 2. 
+Before investigating its properties, we see how it is related to braided monoidal structures.
+Finally, we verify the properties of the forgetful functor and see that this in fact gives an alternative
+definition for colored braided operads.
+
+\medskip
+This opens the door for further applications and generalizations to the $\infty$-categorical context.
+By the end of the thesis, we aim to have established a clear and coherent
+framework for thinking about braided and colored operads in categorical terms.
+The hope is that this perspective not only sheds light on the structures
+themselves but also provides
+tools and language that will be useful in future
+work 
+% at the intersection of category theory, algebra, and topology.

@@ -1,19 +1,26 @@
 \subsection{Properties of $\pi \colon \Bx \to \Brx$}
 
+In the previous section we have seen that similar to the symmetric case a
+functor into $\Brx$ satisfying the op-fibration condition and Segal condition
+induces a braided monoidal structure on the fiber category over $\langle 1
+\rangle$. For a colored braided operad $\B$, the forgetful functor
+\[
+    \pi \colon \Bx \to \Brx
+\]
+however does not satisfy the op-fibration condition in general. In this section,
+we investigate the properties of the forgetful functor $\pi$. Furthermore, we
+will see how to regain the structure of a colored braided operad from such a
+functor fulfilling these conditions. \todo{if we have the time}
 
-
-
-\todo{Uberleitung}
 \begin{defin}
     A morphism $\alpha \colon \langle n \rangle \to  \langle m \rangle$ in
-    $\Brx$ is called inert if it is inert in $Fin$, i.e. for every $i \in
+    $\Brx$ is called inert if it is inert in $\Fin$, i.e. for every $i \in
     \langle m \rangle^{\circ}$ the preimage $\alpha^{-1}(i)$ has exactly one
     element.
 \end{defin}
 
-\begin{eg}\label{eg:rho_i}
-    For $n \in \N$ and $1 \leq i \leq n$, write $\rho^i$ for the following inert
-    morphism in $\Brx$:
+\begin{eg}\label{eg:rho_i} For $n \in \N$ and $1 \leq i \leq n$, write $\rho^i$
+    for the following inert morphism in $\Brx$:
     \begin{align*}
         \rho^i \colon \langle n \rangle &\to  \langle 1 \rangle \\
         \rho^i (j) &= 
@@ -37,17 +44,18 @@
         \langle m \rangle$  in $\Brx$ and object $X \in \Bx$ there exists a
         $\pi$-cocartesian morphism $f \colon X \to X'$ lifting $\alpha$ . In
         particular $\alpha$ induces a functor 
-        $$\pi_{\alpha} \colon \Bx_{\langle
-        n \rangle} \to \Bx_{\langle m \rangle}$$.
+        $$\pi_{\alpha} \colon \Bx_{\langle n \rangle} \to \Bx_{\langle m
+        \rangle}$$.
 
-        % \item Let $X = [X_1, \dots, X_n] \in \Bx_{\langle n \rangle}$ and $X' =
-        % [X_1', \dots, X_m'] \in \Bx_{\langle m \rangle}$ be objects, $\alpha :
-        % \langle n \rangle \to \langle m \rangle$ be a morphism in $\Brx$ and let
-        % $\Hom_{\Bx}^{\alpha}(X, X')$ be the set if morphisms over $\alpha$. 
+        % \item Let $X = [X_1, \dots, X_n] \in \Bx_{\langle n \rangle}$ and $X'
+        % = [X_1', \dots, X_m'] \in \Bx_{\langle m \rangle}$ be objects, $\alpha
+        % : \langle n \rangle \to \langle m \rangle$ be a morphism in $\Brx$ and
+        % let $\Hom_{\Bx}^{\alpha}(X, X')$ be the set if morphisms over
+        % $\alpha$. 
         
         % Choose $\pi$-cocartesian morphisms $X' \to X'_i$ lying over the inert
-        % morphism $\rho^i \colon \langle n \rangle \to \langle 1 \rangle$ for $1
-        % \leq i \leq n$. Then the induced map
+        % morphism $\rho^i \colon \langle n \rangle \to \langle 1 \rangle$ for
+        % $1 \leq i \leq n$. Then the induced map
         % \[
         %     \Hom_{\Bx}^{\alpha}(X, X') \to \prod_{1 \leq i \leq n} \Hom_{\Bx}^{\rho^i \circ \alpha}(X, X_i')
         % \]
@@ -61,7 +69,7 @@
         \[
             \Bx_{\langle n \rangle} \cong \left(\Bx_{\langle 1 \rangle}\right)^n
         \]
-        induces by the morphism $\rho^i$ from Example \ref{eg:rho_i}.
+        induced by the morphism $\rho^i$ from Example \ref{eg:rho_i}.
     \end{enumerate}
 \end{prop}
 
@@ -163,8 +171,8 @@
         \begin{center}
             \begin{tikzcd}
                 {[X_1, \dots, X_n]} \arrow[rd, "h"'] \arrow[r, "f"] & { [Y_1,
-                \dots, Y_m]} \arrow[d, "\bar{h}", dashed, shift left]
-                & \rightarrow & \langle n \rangle \arrow[r, "\alpha"] \arrow[rd,
+                \dots, Y_m]} \arrow[d, "\bar{h}", dashed, shift left] &
+                \rightarrow & \langle n \rangle \arrow[r, "\alpha"] \arrow[rd,
                 "\alpha"'] & \langle m \rangle                   \\
                                                                     & {
                                                                     [\bar{Y}_1,
@@ -174,9 +182,8 @@
                                                                     "\bar{f}",
                                                                     dashed,
                                                                     shift left]
-                                                                    &
-                                                                    &
-                                                                    & \langle m
+                                                                    & & &
+                                                                    \langle m
                                                                     \rangle
                                                                     \arrow[u,
                                                                     "\id"']
@@ -217,8 +224,8 @@
                 {[Y_1'', \dots, Y_m'']}                         
             \end{tikzcd}
         \end{center}
-        \item For $n \in \N$, $1 \leq i \leq n$, the inert morphism induces by (1)
-        a functor on fiber categories
+        \item For $n \in \N$, $1 \leq i \leq n$, the inert morphism induces by
+        (1) a functor on fiber categories
         \[
             P^i \colon \Bx_{\langle n \rangle} \to \Bx_{\langle 1 \rangle} 
         \]
@@ -226,7 +233,84 @@
         \[
             \prod_{1 \leq i \leq n} P^i \colon \Bx_{\langle n \rangle} \to \left(\Bx_{\langle 1 \rangle}\right)^n
         \]
-        is fully faithful and essentially surjective. This follows immediately when considering
-        the construction of $P^i$.
+        is fully faithful and essentially surjective. This follows immediately
+        when considering the construction of $P^i$.
     \end{enumerate}
+\end{proof}
+
+In the last step, we want to sketch a reconstruction of a colored braided operad
+for the following statement:
+
+\begin{prop}
+    Let
+    \[
+        \pi \colon \D \to \Brx
+    \]
+    be a functor fulfilling the following conditions:
+    \begin{enumerate}
+    \item For every inert morphism $\alpha \colon \langle n \rangle \to \langle
+    m \rangle$  in $\Brx$ and object $X \in \Bx$ there exists a
+    $\pi$-cocartesian morphism $f \colon X \to X'$ lifting $\alpha$ . In
+    particular $\alpha$ induces a functor 
+    $$\pi_{\alpha} \colon \Bx_{\langle n \rangle} \to \Bx_{\langle m \rangle}$$.
+
+    % \item Let $X = [X_1, \dots, X_n] \in \Bx_{\langle n \rangle}$ and $X' =
+    % [X_1', \dots, X_m'] \in \Bx_{\langle m \rangle}$ be objects, $\alpha :
+    % \langle n \rangle \to \langle m \rangle$ be a morphism in $\Brx$ and let
+    % $\Hom_{\Bx}^{\alpha}(X, X')$ be the set if morphisms over $\alpha$. 
+    
+    % Choose $\pi$-cocartesian morphisms $X' \to X'_i$ lying over the inert
+    % morphism $\rho^i \colon \langle n \rangle \to \langle 1 \rangle$ for $1
+    % \leq i \leq n$. Then the induced map
+    % \[
+    %     \Hom_{\Bx}^{\alpha}(X, X') \to \prod_{1 \leq i \leq n} \Hom_{\Bx}^{\rho^i \circ \alpha}(X, X_i')
+    % \]
+    % is a homotopy equivalence. 
+    
+    % \item For every finite collection of objects $C_1, \dots, C_n \in
+    % \Ox_{\langle 1 \rangle}$, there exists an object $C \in \Ox_{\langle n
+    % \rangle}$ and a collection of $p$-cocartesian morphism $C \to C_i$
+    % covering $\rho^i \colon \langle n \rangle \to \langle 1 \rangle$.
+    \item For all $n \in \N$, there is an equivalence of categories
+    \[
+        \Bx_{\langle n \rangle} \cong \left(\Bx_{\langle 1 \rangle}\right)^n
+    \]
+    induced by the morphism $\rho^i$ from Example \ref{eg:rho_i}.
+    \end{enumerate}
+    Then we can reconstruct a colored braided operad $\B$ from $\D$ such that,
+    $\D \cong \Bx$ and the functor
+    \[
+        \Bx \cong \D \overset{\pi}{\to} \Brx
+    \]
+    is the usual forgetful functor from $\Bx$ to $\Brx$.
+\end{prop}
+
+\begin{proof}
+    Let
+    \[
+        \pi \colon \D \to \Brx
+    \]
+    be a functor fulfilling the conditions from the statement.
+    We will define a colored braided operad $\B$ from $\D$ and $\pi$.
+    The fiber category $\D_{\langle 1 \rangle}$ is the underlying category of $\B$.
+    The objects in $\D_{\langle 1 \rangle}$ are the colors of $\B$.
+    Let $I$ be a finite set, $\widetilde{I} \in \E_2(n)$ an $I$-labeled configuration, 
+    $\{X_i\}_{i \in I}$ a collection of colors and $Y$ a color.
+    For $\widetilde{I}$ we have a bijection $\iota \colon \langle n \rangle^{\circ} \to I$.
+    Using this bijection there is an object 
+    $$\left(X_{\iota(i)}\right)_{1 \leq i \leq n} \in \left(\Bx_{\langle 1 \rangle}\right)^n$$ 
+    corresponding to some
+    object $X$ in $\D_{\langle n \rangle}$ by the equivalence in condition (2)
+    Then, 
+    \[
+        \Mul_{\B}^{\widetilde{I}}\left(\{X_i\}_{i \in I}, Y\right)
+    \]
+    is the set of morphisms $f \colon X \to Y$ in $\D$ such that $\pi(f)$ corresponds to the active morphism
+    \[
+        \langle n \rangle \to \langle 1 \rangle
+    \]
+    with configuration $\widetilde{I}$ in $\Brx$.
+
+
+
 \end{proof}
