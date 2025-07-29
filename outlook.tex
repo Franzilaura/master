@@ -1,28 +1,27 @@
 \section{Outlook}
-Notes on outlook:
-\begin{itemize}
-    \item action operads: Could we define a functorial definition for any group operad?
-    \item functor $\pi$ gives equivalent definition of $\B$. Opening the door to the higher categorical context definition
-\end{itemize}
 
 
-\todo{algebras over colored braided operads ?
-Expect: Given a colored braided operad B we can define algebras over B valued in a braided monoidal category.}
 
+An interesting next step would be to consider algebras over colored braided
+operads. Similarily as we can define algebras over a colored symmetric operad
+$\O$ valued in a symmetric monoidal category, we expect that we can define
+algebras over a colored braided operad $\B$ valued in a braided monoidal
+category.
+\medskip
 
-\todo{some version of}
-\begin{defin}
-    A braided $\infty${\em-operad} is a functor $p \colon \Bx \to \nerv(\Brx)$ between
-    $\infty$-categories satisfying the following conditions:
+Eventually, we would like operadic fibrations to open the door to a higher categorical
+notion of a braided $\infty$-operad which could be defined as follows.
+
+\begin{defin} 
+    A braided $\infty${\em-operad} is a functor $p \colon \Bx \to \nerv(\Brx)$
+    between $\infty$-categories satisfying the following conditions:
     \begin{enumerate}[(i)]
-        \item For every inert morphism $f \colon \langle n \rangle \to \langle m
-        \rangle$ in $\nerv(\Brx)$ and object $C \in \Bx_{\langle m \rangle}$
-        there exists a $p$-cocartesian morphism $f \colon C \to C'$ in $\Bx$
-        lifting $f$. In particular $f$ induces a functor $f_{!} \colon
+        \item The functor $p$ is a categorical fibration by Definition \ref{def:cat-fib-infty}.
+        In particular $f$ induces a functor $f_{!} \colon
         \Bx_{\langle n \rangle} \to \Bx_{\langle m \rangle}$.
         \item Let $C \in \Bx_{\langle m \rangle}$ and $C' \in \Bx_{\langle n
-        \rangle}$ be objects, $f \colon \langle m \rangle \to \langle n \rangle$ be a
-        morphism in $\Brx$ and let $\Map_{\Bx}^f(C, C')$ be the union of
+        \rangle}$ be objects, $f \colon \langle m \rangle \to \langle n \rangle$
+        be a morphism in $\Brx$ and let $\Map_{\Bx}^f(C, C')$ be the union of
         connected components of $\Map_{\Bx}(C, C')$ which lie over $f$. Choose
         $p$-cocartesian morphisms $C' \to C'_i$ lying over the inert morphism
         $\rho^i \colon \langle n \rangle \to \langle 1 \rangle$ for $1 \leq i
@@ -37,3 +36,9 @@ Expect: Given a colored braided operad B we can define algebras over B valued in
         covering $\rho^i \colon \langle n \rangle \to \langle 1 \rangle$.
     \end{enumerate}
 \end{defin}
+
+Furthermore, we have seen the braid operad as an action operads in Section \ref{sec:colbraidop}, 
+which are the first
+step towards group operads following \cite{yau}. An intriguing question that remains open is
+whether the framework developed here can be generalized to other group operads.
+However, as our framework is very much tailored to the structure of braidings, we do not see a natural extension.

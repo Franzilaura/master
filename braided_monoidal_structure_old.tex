@@ -12,6 +12,34 @@ path so we then see why certain compositions of paths are homotopy equivalent.
 % Also, we do not care much about the size of the disks as we can expand and
 % shrink them continuously as needed.z
 
+
+
+First, we need to define what it means to be
+a op-fibration as a functor of $\Grp$-enriched categories:
+
+\begin{defin}
+    Let $P \colon \C \to \D $ be a functor of $\Grp$-enriched categories and $f
+    \colon x \to y$ a morphism in $\C$. We call $f$ {\em cocartesian} if for
+    any morphism $g \colon  y \to z$ in $\C$,
+    $\omega \colon P(x) \to P(z)$ in $\D$ and $2$-morphism $\eta \colon \omega \circ P(f) \cong P(g)$,
+    there is a unique morphism $\omega' \colon x \to z$ in $\C$ such that
+    $P(\omega')=\omega$ and there is $\eta' \colon \omega' \circ f \cong g$ such that $P(\eta')=\eta$. In a diagram this results
+    in the following:
+    \[
+        \begin{tikzcd}
+            y \arrow[r, "g"] \arrow[rd, "f"'] & z                                & {} \arrow[r, "P"] & {} & P(y) \arrow[r, "P(g)"] \arrow[rd, "P(f)"'] & P(z)           \\
+                                            & x \arrow[u, "\exists! \omega'"', dotted] &                   &    &                           & P(x) \arrow[u, "\omega"']
+        \end{tikzcd}
+    \]
+\end{defin}
+
+\begin{defin}
+    A functor $P \colon \C \to \D$ of $\Grp$-enriched categories is called 
+    a {\em (Grothendieck) op-fibration} if for every object $x$ in $\C$ and morphism
+    $f' \colon P(x) \to y'$ there exists a cocartesian morphism $f \colon x
+    \to y$ such that $P(f)=f'$.
+\end{defin}
+
 We follow the same approach as in the symmetic monoidal case in Section
 \ref{sec:operads}, i.e. we start with some category $\Cotimes$ and a functor
 $\pi \colon \Cotimes \to \Brx$, such that $\pi$ is an op-fibration and the
@@ -20,7 +48,7 @@ fibers of $\pi$ are given by the categories $\C^n \coloneqq \Cotimes_{\langle n
 
 If not stated otherwise, for $n \in \N$, a morphism $\langle n \rangle \to
 \langle 1 \rangle$ always refers to an active morphism in $\Brx$ for some
-configuration in $\E_2(n)$ from now.
+configuration in $\E_2(n)$ from now. 
 
 \begin{defin}
     An $\Brx$-monoidal category is a category $\Cotimes$ with a functor

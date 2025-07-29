@@ -41,7 +41,7 @@
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{month}{06}
-      \field{note}{Unpublished.}
+      \field{note}{Unpublished. M.Sc. thesis. University of Hamburg}
       \field{shorthand}{Boe25}
       \field{title}{Comparing different models of the little disk operad}
       \field{year}{2025}
@@ -278,7 +278,7 @@
       \verb https://www.math.ias.edu/~lurie/
       \endverb
     \endentry
-    \entry{kerodon}{misc}{}{}
+    \entry{hht}{misc}{}{}
       \name{author}{1}{}{%
         {{hash=4824f2fc2c61b9f4da55e476206c5db3}{%
            family={Lurie},
@@ -295,6 +295,43 @@
       \strng{authorfullhash}{4824f2fc2c61b9f4da55e476206c5db3}
       \strng{authorfullhashraw}{4824f2fc2c61b9f4da55e476206c5db3}
       \field{extraname}{2}
+      \field{labelalpha}{Lur08}
+      \field{sortinit}{L}
+      \field{sortinithash}{7c47d417cecb1f4bd38d1825c427a61a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{eprintclass}{math.CT}
+      \field{eprinttype}{arXiv}
+      \field{shorthand}{Lur08}
+      \field{title}{Higher Topos Theory}
+      \field{year}{2008}
+      \verb{eprint}
+      \verb math/0608040
+      \endverb
+      \verb{urlraw}
+      \verb https://arxiv.org/abs/math/0608040
+      \endverb
+      \verb{url}
+      \verb https://arxiv.org/abs/math/0608040
+      \endverb
+    \endentry
+    \entry{kerodon}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=4824f2fc2c61b9f4da55e476206c5db3}{%
+           family={Lurie},
+           familyi={L\bibinitperiod},
+           given={J.},
+           giveni={J\bibinitperiod}}}%
+      }
+      \strng{namehash}{4824f2fc2c61b9f4da55e476206c5db3}
+      \strng{fullhash}{4824f2fc2c61b9f4da55e476206c5db3}
+      \strng{fullhashraw}{4824f2fc2c61b9f4da55e476206c5db3}
+      \strng{bibnamehash}{4824f2fc2c61b9f4da55e476206c5db3}
+      \strng{authorbibnamehash}{4824f2fc2c61b9f4da55e476206c5db3}
+      \strng{authornamehash}{4824f2fc2c61b9f4da55e476206c5db3}
+      \strng{authorfullhash}{4824f2fc2c61b9f4da55e476206c5db3}
+      \strng{authorfullhashraw}{4824f2fc2c61b9f4da55e476206c5db3}
+      \field{extraname}{3}
       \field{labelalpha}{Lur18}
       \field{sortinit}{L}
       \field{sortinithash}{7c47d417cecb1f4bd38d1825c427a61a}

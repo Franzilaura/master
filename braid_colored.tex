@@ -115,7 +115,7 @@ instead of $\{1,...,n\}$.
         \[
             \widetilde{(\beta \circ \alpha)^{-1}(k)} \coloneqq \gamma\left(\widetilde{\beta^{-1}(k)}, (\widetilde{\alpha^{-1}(j)})_{j \in \beta^{-1}(k)}\right),%}\widetilde{\alpha^{-1}(j_1)}, \dots, \widetilde{\alpha^{-1}(j_p)}\right),
         \]
-        where $\gamma$ is the composition map defined in \ref{def:ilabeled}.
+        where $\gamma$ is the composition map defined in Definition \ref{def:ilabeled}.
         
         % analogously to the composition map in $\Ex$ as defined above.
         \item The identity morphism $\id_I$ is given by the identity on the
@@ -299,9 +299,6 @@ We are now ready to define a colored braided operad:
     colored braided operad and corresponds to the trivial braided operad we
     encountered in Example \ref{eg:braidedoperads}.
 \end{eg}
-
-\todo{Every colored braided operad B gives rise to a colored symmetric operad...
-(example, trivial braided operad to $E_2$)}
 
 
 \begin{eg}
@@ -577,10 +574,10 @@ We are now ready to define a colored braided operad:
     % dependence on the specific finite sets and their configurations. 
 \end{eg}
 
-\begin{rem}
-    Vice versa, we can define a colored braided operad with one color $\Bc$ from
-    a braided operad $\B$ in the classical sense. \todo{if time: sketch}
-\end{rem}
+% \begin{rem}
+%     Vice versa, we can define a colored braided operad with one color $\Bc$ from
+%     a braided operad $\B$ in the classical sense. \todo{if time: sketch}
+% \end{rem}
 
 
 \section{Braided Operadic Fibration}
@@ -636,7 +633,8 @@ operad, we now want to define a category $\Bx$ from a colored braided operad
 $\B$:
 
 \begin{defin}\label{def:B-tensor} Let $\B$ be a colored braided operad. We
-    define a category $\Bx$ in the following way:
+    define a $\Grp$-enriched category $\Bx$ in the following way:
+    \todo{enriched over groupoids, correctly defined?}
     \begin{enumerate}[(i)]
         \item The objects of $\Bx$ are finite sequences $\{X_i\}_{1 \leq i \leq
         n}$ of colors of $\B$.
@@ -665,13 +663,44 @@ $\B$:
         \[
             \gamma \colon \prod_{j \in \alpha'^{-1}(l)} \Mul_{\B}^{\widetilde{\alpha_j}}(\{X_i\}_{i \in \alpha^{-1}(j)},Y_j) \times \Mul_{\B}^{\widetilde{\alpha'_l}}(\{Y_i\}_{i \in \alpha'^{-1}(l)},Z_l) \to \Mul_{\B}^{\widetilde{\alpha''}_l}(\{X_i\}_{i \in \alpha''^{-1}(l)},Z_l).
         \] 
+        \item For morphisms $\phi, \psi \colon \{X_i\}_{1 \leq i \leq n} \to \{Y_j\}_{1 \leq j \leq m}$ with underlying morphism $\widetilde{\alpha_{\phi}}$ and $\widetilde{\alpha_{\psi}}$ respectively,
+        along with a $2$-morphism $\widetilde{\eta} \colon \widetilde{\alpha_{\phi}} \Rightarrow \widetilde{\alpha_{\psi}}$ in $\Brx$, a unique $2$-morphism exists
+        $\eta \colon \phi \to \psi$ if for all $1 \leq j \leq m$ the composition maps $\gamma$ corresponding to the following diagram:
+        \begin{center}
+            \begin{tikzpicture}
+                % Define node positions
+                \node (B) at (0, 2) {$\alpha_{\phi_j}$}; 
+                \node (C) at (3, 2) {$\alpha_{\psi_j}$}; 
+                \node (A) at (1.5, 0) {$\{j\}$};
+                % Draw arrows
+                \draw[->] (B) -- (C) node[midway, above] {$\id$}; 
+                \draw[->] (B) -- (A) node[midway, left] {$\widetilde{\alpha_{\phi_j}}$}; 
+                \draw[->] (C) -- (A) node[midway, right]
+                {$\widetilde{\alpha_{\psi_j}}$};
+                % Natural transformation arrow
+                \node[rotate=-40] at (1.4, 1.2) {$\Downarrow \eta_j$};
+                % \node at (1.7, 1.2) {$\eta$};
+            \end{tikzpicture}
+        \end{center}
+        satisfies $\gamma((\id_{X_i})_{i \in \alpha_{\phi_j}}, \psi_j) = \phi_j$.
+        The composition of $2$-morphisms is well-defined since for $2$-morphisms $\eta \colon \phi \Rightarrow \psi$, $\psi \Rightarrow \chi$ in $\Brx$,
+        as well as composition maps $\gamma$ corresponding to $\eta_j$ and $\epsilon_j$, the following holds for all $1 \leq j \leq m$:
+        \begin{align*}
+            \phi_j &= \gamma ((\id_{X_i})_{i \in \alpha_{\psi_j}}, \psi_j) \\
+            &= \gamma((\id_{X_i})_{i \in \alpha_{\psi_j}}, (\id_{X_i})_{i \in \alpha_{\chi_j}}, \chi_j) \\
+            &= ((\id_{X_i})_{i \in \alpha_{\chi_j}}, \chi_j).
+        \end{align*}
+
     \end{enumerate}
 \end{defin}
 
 \begin{eg}
     Applying Definition \ref{def:B-tensor} to the trivial unicolored braided
     operad from Example \ref{eg:trivial-col-br-op}, we obtain the category
-    $\Brx$.
+    $\Brx$. The defined forgetful functor is the identity functor on $\Brx$.
+    Further, we recall that there is a forgetful functor from $\Brx$ to $\Fin$
+    satisfying the conditions of a colored symmetric operad which is $\E_2$.
+    Thus, we note every every colored braided operad gives rise to a colored symmetric operad.
 \end{eg}
 
 Let $\B$ be a colored braided operad, then there is a forgetful functor
@@ -681,10 +710,12 @@ Let $\B$ be a colored braided operad, then there is a forgetful functor
 defined by:
 \begin{align*}
     [X_1, \dots, X_n] &\mapsto \langle n \rangle \\
-    (f \colon [X_1, \dots, X_n] \to [X_1', \dots, X_m']) &\mapsto (\alpha_f \colon \langle n \rangle \to \langle m \rangle)
+    (f \colon [X_1, \dots, X_n] \to [X_1', \dots, X_m']) &\mapsto (\alpha_f \colon \langle n \rangle \to \langle m \rangle) \\
+    (\eta \colon \psi \Rightarrow \phi) &\mapsto (\widetilde{\eta} \colon \alpha_{\phi} \Rightarrow \alpha_{\psi})
 \end{align*}
 where $\alpha_f$ refers to the morphism in $\Brx$ underlying $f$. It is straight
 forward to see that this defines a functor.
+
 
 Before we characterize the properties of the functor $\pi$, we analyze the special
 case when $\pi$ is an op-fibration that satisfies the Segal condition. In the
@@ -693,30 +724,7 @@ monoidal categories so that, for braided operads, we would expect to obtain
 braided monoidal categories.
 
 
-\begin{defin}
-    Let $P \colon \C \to \D $ be a functor of $\Grp$-enriched categories and $f
-    \colon x \to y$ a morphism in $\C$. We call $f$ {\em cocartesian} if for
-    any morphism $g \colon  y \to z$ in $\C$,
-    $\omega \colon P(x) \to P(z)$ in $\D$ and $2$-morphism $\eta \colon \omega \circ P(f) \cong P(g)$,
-    there is a unique morphism $\omega' \colon x \to z$ in $\C$ such that
-    $P(\omega')=\omega$ and there is $\eta' \colon \omega' \circ f \cong g$. In a diagram this results
-    in the following:
-    \[
-        \begin{tikzcd}
-            y \arrow[r, "g"] \arrow[rd, "f"'] & z                                & {} \arrow[r, "P"] & {} & P(y) \arrow[r, "P(g)"] \arrow[rd, "P(f)"'] & P(z)           \\
-                                            & x \arrow[u, "\exists! \omega'"', dotted] &                   &    &                           & P(x) \arrow[u, "\omega"']
-        \end{tikzcd}
-    \]
-\end{defin}
 
-\begin{defin}
-    A functor $P \colon \C \to \D$ of $\Grp$-enriched categories is called 
-    a {\em (Grothendieck) op-fibration} if for every object $x$ in $\C$ and morphism
-    $f' \colon P(x) \to y'$ there exists a cocartesian morphism $f \colon x
-    \to y$ such that $P(f)=f'$.
-\end{defin}
-
-\todo{define cocartesian and op-fibration}
 
 
 \input{braided_monoidal_structure_old.tex}

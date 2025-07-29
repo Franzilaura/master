@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.4.8)  29 JUL 2025 02:55
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.4.8)  30 JUL 2025 01:19
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -995,13 +995,14 @@ Package: xy 2013/10/06 Xy-pic version 3.8.9
 \L@=\dimen340
  loaded) (/usr/local/texlive/2025/texmf-dist/tex/generic/xypic/xypdf.tex  Xy-pic option: PDF driver v.1.7 Xy-pic pdf driver: `curve' extension support (/usr/local/texlive/2025/texmf-dist/tex/generic/xypic/xypdf-cu.tex loaded) loaded))
 \c@thm=\count486
+\c@sketchproof=\count487
 )
 
 Package biblatex Warning: 'babel/polyglossia' detected but 'csquotes' missing.
 (biblatex)                Loading 'csquotes' recommended.
 
-\@quotelevel=\count487
-\@quotereset=\count488
+\@quotelevel=\count488
+\@quotereset=\count489
 LaTeX Font Info:    Trying to load font information for T1+lmr on input line 4.
 (/usr/local/texlive/2025/texmf-dist/tex/latex/lm/t1lmr.fd
 File: t1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
@@ -1063,16 +1064,16 @@ LaTeX Font Info:    ... okay on input line 4.
 
 (/usr/local/texlive/2025/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count489
+\scratchcounter=\count490
 \scratchdimen=\dimen341
 \scratchbox=\box74
-\nofMPsegments=\count490
-\nofMParguments=\count491
+\nofMPsegments=\count491
+\nofMParguments=\count492
 \everyMPshowfont=\toks56
-\MPscratchCnt=\count492
+\MPscratchCnt=\count493
 \MPscratchDim=\dimen342
-\MPnumerator=\count493
-\makeMPintoPDFobject=\count494
+\MPnumerator=\count494
+\makeMPintoPDFobject=\count495
 \everyMPtoPDFconversion=\toks57
 ) (/usr/local/texlive/2025/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
@@ -1336,15 +1337,15 @@ Overfull \hbox (25.01282pt too wide) in paragraph at lines 266--280
 
 
 [36]
-Package hyperref Info: bookmark level for unknown todo defaults to 0 on input line 304.
-
 
 [37]
 
 [38]
 
 [39]
-Overfull \hbox (5.05504pt too wide) detected at line 667
+Package hyperref Info: bookmark level for unknown todo defaults to 0 on input line 637.
+
+Overfull \hbox (5.05504pt too wide) detected at line 665
 \OML/lmm/m/it/10 ^^M [] []  [] [][]\OT1/lmr/m/n/10 (\OMS/lmsy/m/n/10 f\OML/lmm/m/it/10 X[]\OMS/lmsy/m/n/10 g[]\OML/lmm/m/it/10 ; Y[]\OT1/lmr/m/n/10 ) \OMS/lmsy/m/n/10 ^^B [][]\OT1/lmr/m/n/10 (\OMS/lmsy/m/n/10 f\OML/lmm/m/it/10 Y[]\OMS/lmsy/m/n/10 g[]\OML/lmm/m/it/10 ; Z[]\OT1/lmr/m/n/10 ) \OMS/lmsy/m/n/10 ! [][]\OT1/lmr/m/n/10 (\OMS/lmsy/m/n/10 f\OML/lmm/m/it/10 X[]\OMS/lmsy/m/n/10 g[]\OML/lmm/m/it/10 ; Z[]\OT1/lmr/m/n/10 )\OML/lmm/m/it/10 :
  []
 
@@ -1417,65 +1418,71 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\ast' on input line 1.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 1.
 
 
 
 [49]
-Overfull \hbox (0.46759pt too wide) detected at line 175
+
+[50]
+Overfull \hbox (0.46759pt too wide) detected at line 180
 \OML/lmm/m/it/10 ^^M [] []  [] [][] [] \OMS/lmsy/m/n/10 ^^B [][] [] ! [][] [] \OML/lmm/m/it/10 :
  []
 
 
 
-[50]
-
-[51]))
+[51]
 
 [52]
 
-[53] (./outlook.tex
+[53]
 
-LaTeX Warning: Marginpar on page 54 moved.
+[54]))
 
-)
+[55] (./outlook.tex)
 
-[54] (./appendix.tex
+[56] (./appendix.tex
 
-[55])
+[57])
 
-[56]
-LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 31.
+[58]
+LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 26.
  (/usr/local/texlive/2025/texmf-dist/tex/latex/lm/t1lmtt.fd
 File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 
-[57
+[59
 
-] (./main.aux)
+]
+
+[60] (./main.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
  ***********
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 79F7A53BFB28DFA260E7B0D676D01244;2253.
+(rerunfilecheck)             Checksum: 64B24EE6E233CBFB81BEF8ACE1A338DA;2248.
 Package logreq Info: Writing requests to 'main.run.xml'.
 \openout1 = `main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 41804 strings out of 473190
- 811987 string characters out of 5715801
- 1569507 words of memory out of 5000000
- 64117 multiletter control sequences out of 15000+600000
+ 41848 strings out of 473190
+ 812927 string characters out of 5715801
+ 1567261 words of memory out of 5000000
+ 64151 multiletter control sequences out of 15000+600000
  680893 words of font info for 122 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  104i,18n,104p,1453b,1865s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/euler/eusm10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/euler/eusm5.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/euler/eusm7.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmbx7.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmbxi10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmex10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmmi10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmmi12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmmi5.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmmi6.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmmi7.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmmi9.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr17.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr5.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr7.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr9.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmri10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmsy5.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmsy7.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmsy8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmtt10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/stmaryrd/stmary10.pfb>
-Output written on main.pdf (57 pages, 698960 bytes).
+</usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/euler/eusm10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/euler/eusm5.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/euler/eusm7.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmbx7.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmbxi10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmex10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmmi10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmmi12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmmi5.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmmi6.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmmi7.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmmi9.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr17.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr5.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr7.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr9.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmri10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmri7.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmsy5.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmsy7.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmsy8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmtt10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/stmaryrd/stmary10.pfb>
+Output written on main.pdf (60 pages, 719492 bytes).
 PDF statistics:
- 841 PDF objects out of 1000 (max. 8388607)
- 706 compressed objects within 8 object streams
- 269 named destinations out of 1000 (max. 500000)
+ 876 PDF objects out of 1000 (max. 8388607)
+ 736 compressed objects within 8 object streams
+ 279 named destinations out of 1000 (max. 500000)
  125 words of extra memory for PDF output out of 10000 (max. 10000000)
 
