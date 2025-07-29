@@ -1,26 +1,26 @@
 \subsection{Braided Monoidal Structure}
 
-As we have already seen, symmetric monoidal categories are an example
-of colored symmetric operads and can be defined using an op-fibration over
-$\Fin$ that satisfies the Segal condition. In this section, we will define a
-braided monoidal structure on a category $\C$ that is induced by an op-fibration
-over the category $\Brx$ also satisfying the Segal condition. To do so, we will
-need to choose 2-morphisms in $\Brx$ on various occasions. We will refrain
-from specifying the paths between configurations in detail but rather describe
-the paths enough to understand from which homotopy class we choose a representative path so we
-then see why certain compositions of paths are homotopy equivalent. 
+As we have already seen, symmetric monoidal categories are an example of colored
+symmetric operads and can be defined using an op-fibration over $\Fin$ that
+satisfies the Segal condition. In this section, we will define a braided
+monoidal structure on a category $\C$ that is induced by an op-fibration over
+the category $\Brx$ also satisfying the Segal condition. To do so, we will need
+to choose 2-morphisms in $\Brx$ on various occasions. We will refrain from
+specifying the representative paths between configurations in detail but rather describe the
+paths enough to understand from which homotopy class we choose a representative
+path so we then see why certain compositions of paths are homotopy equivalent. 
 % Also, we do not care much about the size of the disks as we can expand and
 % shrink them continuously as needed.z
 
 We follow the same approach as in the symmetic monoidal case in Section
 \ref{sec:operads}, i.e. we start with some category $\Cotimes$ and a functor
-$\pi \colon \Cotimes \to \Brx$, such that $\pi$ is an op-fibration and the fibers
-of $\pi$ are given by the categories $\C^n \coloneqq \Cotimes_{\langle n
+$\pi \colon \Cotimes \to \Brx$, such that $\pi$ is an op-fibration and the
+fibers of $\pi$ are given by the categories $\C^n \coloneqq \Cotimes_{\langle n
 \rangle}$ for $n \geq 1$.
 
 If not stated otherwise, for $n \in \N$, a morphism $\langle n \rangle \to
 \langle 1 \rangle$ always refers to an active morphism in $\Brx$ for some
-configuration $c \in \E_2(n)$ from now.
+configuration in $\E_2(n)$ from now.
 
 \begin{defin}
     An $\Brx$-monoidal category is a category $\Cotimes$ with a functor
@@ -40,15 +40,77 @@ configuration $c \in \E_2(n)$ from now.
 
 \end{defin}
 
+Before, we investigate $\Brx$-monoidal categories in general, let us make the following observation
+for colored braided operads.
+
+\begin{rem}
+    Let $\B$ be a colored braided operad. 
+    If the forgetful functor
+    \[
+        \pi \colon \Bx \to \Brx
+    \]
+    is an op-fibration, then the following property holds for $\B$:
+
+    For every $I$-labeled
+    configuration $\widetilde{I}$ and every collection of colors $\{X_i\}_{i \in I}$,
+    there is a color
+    \[
+    \bigotimes_{i \in \widetilde{I}} X_i
+    \]
+    with a morphism
+    \[
+    f \in \Mul_{\B}^{\widetilde{I}}\left(\left\{X_i\right\}_{i \in I}, \bigotimes_{i \in \widetilde{I}} X_i\right)
+    \]
+    such that the following universal property holds:
+    
+    Let $Y$ be a color in
+    $\B$. Then for all $I$-labeled configurations $\widetilde{I}'$ and $g \in
+    \Mul_{\B}^{\widetilde{I}'}(\{X_i\}_{i \in I}, Y)$ there exists a unique
+    $$\bar{g} \in \Mul_{\B}^{\id^{(1)}}\left(\left\{\bigotimes_{i \in
+    \widetilde{I}} X_i\right\}, Y\right)$$
+    such that for a composition map $\gamma$ corresponding to any path $\eta$:
+    \begin{center}
+        \begin{tikzpicture}
+            % Define node positions
+            \node (B) at (0, 2) {$I$}; \node (C) at (3, 2) {$\{ 1 \}$}; \node
+            (A) at (1.5, 0) {$\{ 1 \}$};
+            
+            % Draw arrows
+            \draw[->] (B) -- (C) node[midway, above] {$\widetilde{I}'$};
+            \draw[->] (B) -- (A) node[midway, left] {$\widetilde{I}$}; \draw[->]
+            (C) -- (A) node[midway, right] {$\id^{(1)}$};
+            
+            % Natural transformation arrow
+            \node[rotate=-40] at (1.5, 1.2) {$\Downarrow \eta$};
+            % \node at (1.7, 1.2) {$\eta$};
+        \end{tikzpicture}
+    \end{center}
+    it hold:
+    \[
+        g = \gamma(f, \bar{g})
+    \]
+
+    This follows immediately from the op-fibration property since
+    we choose the color 
+    \[
+    \bigotimes_{i \in \widetilde{I}} X_i
+    \]
+    with its morphism $f$ to be a cocartesian lift of the morphism
+    \[
+        \langle n \rangle \overset{\widetilde{I}}{\to} \langle 1 \rangle
+    \]
+    in $\Brx$. The universal property is induced 
+    by the universal property of the cocartesian morphism.
+\end{rem}
 
 
-\begin{const}\label{con:brx_monoidal}
-For the next part, let $\pi \colon \Cotimes \to \Brx$ be a $\Brx$-monoidal
-category and we denote $\C \coloneqq \Cotimes_{\langle 1 \rangle}$. In this
-construction we aim to define a braided monoidal structure on $\C$. First,
-we introduce the following abuse of notation: For a $2$-morphism $\eta$, i.e. a
-path between two configurations $c_1, c_2 \in \E_2(n)$ in $\Brx$, we would write
-the following diagram:
+
+\begin{const}\label{con:brx_monoidal} For the next part, let $\pi \colon
+\Cotimes \to \Brx$ be a $\Brx$-monoidal category and we denote $\C \coloneqq
+\Cotimes_{\langle 1 \rangle}$. In this construction we aim to define a braided
+monoidal structure on $\C$. First, we introduce the following abuse of notation:
+For a $2$-morphism $\eta$, i.e. a path between two configurations $c_1, c_2 \in
+\E_2(n)$ in $\Brx$, we would write the following diagram:
 \begin{center}
     \begin{tikzpicture}
         % Define node positions
@@ -65,8 +127,7 @@ the following diagram:
 \end{center}
 
 However, we will use a slightly different notation for the sake of readability.
-Instead, we write dashed arrows for the $2$-morphism as in the
-diagram:
+Instead, we write dashed arrows for the $2$-morphism as in the diagram:
 
 \[    
     \begin{tikzcd}
@@ -255,9 +316,9 @@ which induces a functor $\Cotimes_{\langle 0 \rangle} \to \C$ giving us a tensor
 unit $\mathbf{1}$.
 \end{const}
 
-\begin{prop}\label{prop:braidmon}
-    The category $\C$ equipped with $(\otimes, b, a, \mathbf{1})$ as in
-    Construction \ref{con:brx_monoidal} defines a braided monoidal category.
+\begin{prop}\label{prop:braidmon} The category $\C$ equipped with $(\otimes, b,
+    a, \mathbf{1})$ as in Construction \ref{con:brx_monoidal} defines a braided
+    monoidal category.
 \end{prop}
 
 \begin{proof}
@@ -287,10 +348,11 @@ unit $\mathbf{1}$.
     %     \caption{example of a configuration of $\E_1$ being embedded in $\E_2$ along the horizontal line}
     % \end{figure}
 
-    First, the pentagon identity holds as compositions of $\E_1$-translations are
-    $\E_1$-translations and are unique up to homotopy. The unitality condition
-    holds analogously to the proof of Proposition \ref{SymMonBijection} using
-    the Segal condition. Hence, we focus on verifying the hexagon identities:
+    First, the pentagon identity holds as compositions of $\E_1$-translations
+    are $\E_1$-translations and are unique up to homotopy. The unitality
+    condition holds analogously to the proof of Proposition
+    \ref{SymMonBijection} using the Segal condition. Hence, we focus on
+    verifying the hexagon identities:
     \begin{enumerate}
         \item 
         \[
@@ -370,14 +432,11 @@ unit $\mathbf{1}$.
                                                 "c_{(A \otimes B) \otimes C}"',
                                                 bend right] \arrow[rdd, "c_{C
                                                 \otimes (A \otimes B)}", bend
-                                                left] \arrow[d, "\tau_2^3"] &
-                                                \\
+                                                left] \arrow[d, "\tau_2^3"] & \\
                                                 & \langle 2 \rangle \arrow[ld,
                                                 "\mu"'] \arrow[rd, "\mu \circ
-                                                \beta"]
-                                                &                   \\
-            \langle 1 \rangle \arrow[rr, "\htw", dashed] &
-            & \langle 1 \rangle
+                                                \beta"] &                   \\
+            \langle 1 \rangle \arrow[rr, "\htw", dashed] & & \langle 1 \rangle
         \end{tikzcd}
     \end{center}
     We observe, that the outer triangle commutes precisely because the inner
@@ -536,8 +595,8 @@ unit $\mathbf{1}$.
         \end{adjustbox}
     \end{center}
 
-    Analogously for the hexagon identity $(2)$, we consider the
-    composition of $2$-morphism in $\Brx$:
+    Analogously for the hexagon identity $(2)$, we consider the composition of
+    $2$-morphism in $\Brx$:
 
     \begin{center}
         \begin{adjustbox}{max height= 16cm}
@@ -663,5 +722,3 @@ unit $\mathbf{1}$.
     $\C$.
 
 \end{proof}
-
-\input{representable_mon.tex}

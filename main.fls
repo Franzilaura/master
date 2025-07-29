@@ -536,9 +536,6 @@ INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/lm/rm-lmbx7.tfm
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/lm/rm-lmbx5.tfm
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/lm/rm-lmbx9.tfm
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/lm/rm-lmbx6.tfm
-INPUT ./representable_mon.tex
-INPUT ./representable_mon.tex
-INPUT representable_mon.tex
 INPUT ./braided_fib.tex
 INPUT ./braided_fib.tex
 INPUT braided_fib.tex

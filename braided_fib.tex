@@ -47,60 +47,60 @@ functor fulfilling these conditions. \todo{if we have the time}
         $$\pi_{\alpha} \colon \Bx_{\langle n \rangle} \to \Bx_{\langle m
         \rangle}$$.
 
-        % \item Let $X = [X_1, \dots, X_n] \in \Bx_{\langle n \rangle}$ and $X'
-        % = [X_1', \dots, X_m'] \in \Bx_{\langle m \rangle}$ be objects, $\alpha
-        % : \langle n \rangle \to \langle m \rangle$ be a morphism in $\Brx$ and
-        % let $\Hom_{\Bx}^{\alpha}(X, X')$ be the set if morphisms over
-        % $\alpha$. 
+        \item Let $X = [X_1, \dots, X_n] \in \Bx_{\langle n \rangle}$ and $X' =
+        [X_1', \dots, X_m'] \in \Bx_{\langle m \rangle}$ be objects, $\alpha :
+        \langle n \rangle \to \langle m \rangle$ be a morphism in $\Brx$ and let
+        $\Hom_{\Bx}^{\alpha}(X, X')$ be the set if morphisms over $\alpha$. 
         
-        % Choose $\pi$-cocartesian morphisms $X' \to X'_i$ lying over the inert
-        % morphism $\rho^i \colon \langle n \rangle \to \langle 1 \rangle$ for
-        % $1 \leq i \leq n$. Then the induced map
-        % \[
-        %     \Hom_{\Bx}^{\alpha}(X, X') \to \prod_{1 \leq i \leq n} \Hom_{\Bx}^{\rho^i \circ \alpha}(X, X_i')
-        % \]
-        % is a homotopy equivalence. 
-        
-        % \item For every finite collection of objects $C_1, \dots, C_n \in
-        % \Ox_{\langle 1 \rangle}$, there exists an object $C \in \Ox_{\langle n
-        % \rangle}$ and a collection of $p$-cocartesian morphism $C \to C_i$
-        % covering $\rho^i \colon \langle n \rangle \to \langle 1 \rangle$.
-        \item For all $n \in \N$, there is an equivalence of categories
+        Choose $\pi$-cocartesian morphisms $X' \to X'_i$ lying over the inert
+        morphism $\rho^i \colon \langle n \rangle \to \langle 1 \rangle$ for $1
+        \leq i \leq n$. Then the induced map
         \[
-            \Bx_{\langle n \rangle} \cong \left(\Bx_{\langle 1 \rangle}\right)^n
+            \Hom_{\Bx}^{\alpha}(X, X') \to \prod_{1 \leq i \leq n} \Hom_{\Bx}^{\rho^i \circ \alpha}(X, X_i')
         \]
-        induced by the morphism $\rho^i$ from Example \ref{eg:rho_i}.
+        is an equivalence of groupoids. 
+        
+        \item For every finite collection of objects $X_1, \dots, X_n \in
+        \Bx_{\langle 1 \rangle}$, there exists an object $X \in \Bx_{\langle n
+        \rangle}$ and a collection of $p$-cocartesian morphism $X \to X_i$
+        covering $\rho^i \colon \langle n \rangle \to \langle 1 \rangle$.
+        % \item For all $n \in \N$, there is an equivalence of categories
+        % \[
+        %     \Bx_{\langle n \rangle} \cong \left(\Bx_{\langle 1 \rangle}\right)^n
+        % \]
+        % induced by the morphism $\rho^i$ from Example \ref{eg:rho_i}.
     \end{enumerate}
 \end{prop}
-
+\todo{Reread proof}
 \begin{proof}
     Let $B$ be a colored braided operad and $\pi \colon \Bx \to \Brx$ the above
     defined forgetful functor.
     \begin{enumerate}
-        \item Let $\alpha \colon \langle n \rangle \to  \langle m \rangle$ be
-        an inert morphism in $\Brx$, i.e. for a restriction to the active subset of
-        $\langle n \rangle$, there is a bijection of finite sets:
+        \item Let $\widetilde{\alpha} \colon \langle n \rangle \to  \langle m
+        \rangle$ be an inert morphism in $\Brx$, i.e. for a restriction to the
+        active subset of $\langle n \rangle$, there is a bijection of finite
+        sets:
         \[
-            \alpha' \colon \alpha^{-1}(\langle m \rangle^{\circ}) \to \langle m \rangle^{\circ}
+            \alpha \colon \alpha^{-1}(\langle m \rangle^{\circ}) \to \langle m \rangle^{\circ}
         \]
         and configurations $\widetilde{\alpha}_j \in \E_2(1)$ for all $j \in
-        \langle m \rangle^{\circ}$. We denote $\alpha^{-1}(j) = \{i_j\}$ for all
-        $1 \leq j \leq m$. Further, let $[X_1, \dots, X_n]$ be an object in
-        $\Bx$. Then, we define
+        \langle m \rangle^{\circ}$. We denote $\alpha^{-1}(j) = \{\alpha_j\}$
+        for all $1 \leq j \leq m$. Further, let $[X_1, \dots, X_n]$ be an object
+        in $\Bx$. Then, we define
         \[
             f \colon [X_1, \dots, X_n] \to [X_1', \dots, X_m']
         \]
         as follows:
 
-        We set the underlying morphism $\alpha_f = \alpha$. Further, we define
-        $X_j = X_{i_j}$ and
+        We set the underlying morphism $\widetilde{\alpha_f} =
+        \widetilde{\alpha}$. Further, we define $X_j = X_{\alpha_j}$ and
         \[
-            f_j \in \Mul_{\B}(\{X_{i_j}\},X_{i_j})
+            f_j \in \Mul_{\B}(\{X_{\alpha_j}\},X_{\alpha_j})
         \]
-        to be the identity $f_j = \id_{X_{i_j}}$. We need to verify that $f$ is
-        in fact cocartesian. Let $g \colon [X_1, \dots, X_n] \to [Y_1, \dots,
-        Y_l]$ with underlying morphism $\pi(g) = \beta$ and the following
-        diagram in $\Br$:
+        to be the identity $f_j = \id_{X_{\alpha_j}}$. We need to verify that
+        $f$ is in fact cocartesian. Let $g \colon [X_1, \dots, X_n] \to [Y_1,
+        \dots, Y_l]$ with underlying morphism $\pi(g) = \widetilde{\beta}$ and
+        the following diagram in $\Brx$:
             \begin{center}
             \begin{tikzpicture}
                 % Define node positions
@@ -109,9 +109,10 @@ functor fulfilling these conditions. \todo{if we have the time}
                 \rangle$};
                 
                 % Draw arrows
-                \draw[->] (B) -- (C) node[midway, above] {\small $\alpha$};
-                \draw[->] (B) -- (A) node[midway, left] {\small $\beta$};
-                \draw[->] (C) -- (A) node[midway, right] {\small $\omega$};
+                \draw[->] (B) -- (C) node[midway, above] {\small
+                $\widetilde{\alpha}$}; \draw[->] (B) -- (A) node[midway, left]
+                {\small $\widetilde{\beta}$}; \draw[->] (C) -- (A) node[midway,
+                right] {\small $\widetilde{\omega}$};
                 
                 % Natural transformation arrow
                 \node at (1.5, 1.2) {$\overset{\eta}{\Leftarrow}$};
@@ -120,10 +121,37 @@ functor fulfilling these conditions. \todo{if we have the time}
         \end{center}
         We define $\bar{f} \colon  [X_1', \dots, X_m'] \to [X_1'', \dots,
         X_l'']$ in the following. We set the underlying morphism
-        $\alpha_{\bar{f}} = \omega$. Without loss of generality, we can assume
-        by Remark \ref{rem:e2_1_paths} that $\widetilde{\alpha}_j =
-        \id^{(i_j)}$. Hence, we gain $\widetilde{\omega}_k$ as an
-        $\beta^{-1}(k)$-labeled configuration. This diagram in $\Br$:
+        $\widetilde{\alpha_{\bar{f}}} = \widetilde{\omega}$. We claim that  
+        without loss of generality, we can assume that $\widetilde{\alpha}_j$ is
+        a trivial configuration because of the following fact: For any
+        configurations $c, c' \in \E_2(1)$ there is exactly one homotopy class
+        of paths from $c$ to $c'$ because the unit disk is contractible.
+        Therefore, if $\widetilde{\alpha}_j$ is not trivial then there is a
+        canonical extension 
+        \begin{center}
+            \begin{tikzpicture}
+                % Define node positions
+                \node (B) at (0, 2) {$\langle n \rangle$}; \node (C) at (3, 2)
+                {$\langle m \rangle$}; \node (D) at (1.5, 4) {$\langle m
+                \rangle$}; \node (A) at (1.5, 0) {$\langle l \rangle$};
+                
+                % Draw arrows
+                \draw[->] (B) -- (C) node[midway, above] {$\widetilde{\alpha}$};
+                \draw[->] (B) -- (A) node[midway, left] {$\widetilde{\beta}$};
+                \draw[->] (C) -- (A) node[midway, right] {$\widetilde{\omega}$};
+                \draw[->] (B) -- (D) node[midway, left] {$\widetilde{\alpha'}$};
+                \draw[->] (D) -- (C) node[midway, right] {$\id$};
+                
+                % Natural transformation arrow
+                \node[rotate=-40] at (1.5, 1.2) {$\Downarrow \eta$}; \node at
+                (1.5, 2.8) {$\cong$};
+                % \node at (1.7, 1.2) {$\eta$};
+            \end{tikzpicture}
+        \end{center}
+        where $\widetilde{\alpha'}$ is $\alpha' = \alpha$ on finite pointed sets
+        but equipped with the trivial collection of configurations
+        $\{\id^{\alpha_j}\}_{j \in J}$. Hence, we gain $\widetilde{\omega}_k$ as
+        an $\beta^{-1}(k)$-labeled configuration. This diagram in $\Br$:
         \begin{center}
             \begin{tikzpicture}
                 % Define node positions
@@ -154,8 +182,8 @@ functor fulfilling these conditions. \todo{if we have the time}
         property in $\B$ and is precisely why $\bar{f}_k$ can not be chosen
         differently. Hence, $\bar{f}$ is unique. 
         
-        Furthermore, with this property the morphism $\alpha$ induces a functor
-        of fibers
+        Furthermore, with this property the morphism $\widetilde{\alpha}$
+        induces a functor of fibers
         \[
             \Bx_{\langle n \rangle} \to \Bx_{\langle m \rangle}
         \]
@@ -166,14 +194,16 @@ functor fulfilling these conditions. \todo{if we have the time}
         where $[Y_1, \dots, Y_m]$ corresponds to a cocartesian morphism $f
         \colon [X_1, \dots, X_n] \to [Y_1, \dots, Y_m]$ in $\Bx$. For a
         different choice of cocartesian morphism $h \colon [X_1, \dots, X_n] \to
-        [\bar{Y}_1, \dots, \bar{Y}_m]$ we obtain, due to the cocartesian property,
-        two unique lifts $\bar{f}, \bar{h}$ that must be inverse to one another:
+        [\bar{Y}_1, \dots, \bar{Y}_m]$ we obtain, due to the cocartesian
+        property, two unique lifts $\bar{f}, \bar{h}$ that must be inverse to
+        one another:
         \begin{center}
             \begin{tikzcd}
                 {[X_1, \dots, X_n]} \arrow[rd, "h"'] \arrow[r, "f"] & { [Y_1,
                 \dots, Y_m]} \arrow[d, "\bar{h}", dashed, shift left] &
-                \rightarrow & \langle n \rangle \arrow[r, "\alpha"] \arrow[rd,
-                "\alpha"'] & \langle m \rangle                   \\
+                \rightarrow & \langle n \rangle \arrow[r, "\widetilde{\alpha}"]
+                \arrow[rd, "\widetilde{\alpha}"'] & \langle m \rangle
+                \\
                                                                     & {
                                                                     [\bar{Y}_1,
                                                                     \dots,
@@ -189,8 +219,8 @@ functor fulfilling these conditions. \todo{if we have the time}
                                                                     "\id"']
             \end{tikzcd}
         \end{center}
-        Hence, the functor is well-defined on objects up to unique
-        isomorphism. For morphisms we define:
+        Hence, the functor is well-defined on objects up to unique isomorphism.
+        For morphisms we define:
         \[
             (g \colon [X_1, \dots, X_n] \to [X_1', \dots, X_n'])  \mapsto (\bar{f} \colon [Y_1, \dots, Y_m] \to [Y_1', \dots, Y_m'])
         \]
@@ -201,10 +231,12 @@ functor fulfilling these conditions. \todo{if we have the time}
                 {[X_1, \dots, X_n]} \arrow[r, "f!"] \arrow[d, "g"'] & {[Y_1,
                 \dots, Y_m]} \arrow[d, "\bar{f}", dashed] & {} \arrow[r, "\pi",
                 shift right=9] & {} & \langle n \rangle \arrow[d, "\id"]
-                \arrow[r, "\alpha"] & \langle m \rangle \arrow[d, "\id"] \\
+                \arrow[r, "\widetilde{\alpha}"] & \langle m \rangle \arrow[d,
+                "\id"] \\
                 {[X_1', \dots, X_n']} \arrow[r, "f'!"]              & {[Y_1',
                 \dots, Y_m']}                            & &    & \langle n
-                \rangle \arrow[r, "\alpha"]                  & \langle m \rangle                 
+                \rangle \arrow[r, "\widetilde{\alpha}"]                  &
+                \langle m \rangle                 
             \end{tikzcd}
         \end{center}
 
@@ -215,8 +247,8 @@ functor fulfilling these conditions. \todo{if we have the time}
         \dots, X_n'], \; g \colon [X_1', \dots, X_n'] \to [X_1'', \dots, X_n'']
         \]
         is being respected as the composition of the unique lifts $\bar{f}$ and
-        $\bar{f}'$ lift the diagram and therefore have to be the unique lift
-        for $g' \circ g$ and $f$:
+        $\bar{f}'$ lift the diagram and therefore have to be the unique lift for
+        $g' \circ g$ and $f$:
         \begin{center}
             \begin{tikzcd}
                 {[X_1, \dots, X_n]} \arrow[r, "!f"] \arrow[d, "g"']     & {[Y_1,
@@ -227,22 +259,32 @@ functor fulfilling these conditions. \todo{if we have the time}
                 {[Y_1'', \dots, Y_m'']}                         
             \end{tikzcd}
         \end{center}
-        \item For $n \in \N$, $1 \leq i \leq n$, the inert morphism
+        \item \todo{write down}
+        % \item For $n \in \N$, $1 \leq i \leq n$, the inert morphism
+        % \[
+        %     \rho^i \langle n \rangle \to \langle 1 \rangle,
+        % \]
+        % as defined in \ref{eg:rho_i}, induces a functor on fiber categories:
+        % \[
+        %     P^i \colon \Bx_{\langle n \rangle} \to \Bx_{\langle 1 \rangle}.
+        % \]
+        % Thus,
+        % \[
+        %     \prod_{1 \leq i \leq n} P^i \colon \Bx_{\langle n \rangle} \to \left(\Bx_{\langle 1 \rangle}\right)^n
+        % \]
+        % is fully faithful and essentially surjective. This follows immediately
+        % when considering the construction of $P^i$.
+        \item By construction of $\Bx$ the following holds: For $X_1, \dots,
+        X_n$ colors in $\B$ the morphism
         \[
-            \rho^i \langle n \rangle \to \langle 1 \rangle,
+            \phi \colon [X_1, \dots, X_n] \to [X_i]
         \]
-        as defined in \ref{eg:rho_i}, induces a functor on fiber categories:
-        \[
-            P^i \colon \Bx_{\langle n \rangle} \to \Bx_{\langle 1 \rangle}.
-        \]
-        Thus,
-        \[
-            \prod_{1 \leq i \leq n} P^i \colon \Bx_{\langle n \rangle} \to \left(\Bx_{\langle 1 \rangle}\right)^n
-        \]
-        is fully faithful and essentially surjective. This follows immediately
-        when considering the construction of $P^i$.
+        with $\rho^i$ and $\phi_i = \id_{X_i}$ covers $\rho^i$ for all $1 \leq i
+        \leq n$.
     \end{enumerate}
 \end{proof}
+
+
 
 In the last step, we want to sketch a reconstruction of a colored braided operad
 for the following statement:
@@ -255,33 +297,33 @@ for the following statement:
     be a functor fulfilling the following conditions:
     \begin{enumerate}
     \item For every inert morphism $\alpha \colon \langle n \rangle \to \langle
-    m \rangle$ in $\Brx$ and object $X \in \Bx$ there exists a
-    $\pi$-cocartesian morphism $f \colon X \to X'$ lifting $\alpha$. In
-    particular, $\alpha$ induces a functor:
+    m \rangle$ in $\Brx$ and object $X \in \Bx$ there exists a $\pi$-cocartesian
+    morphism $f \colon X \to X'$ lifting $\alpha$. In particular, $\alpha$
+    induces a functor:
     $$\pi_{\alpha} \colon \Bx_{\langle n \rangle} \to \Bx_{\langle m \rangle}.$$
 
-    % \item Let $X = [X_1, \dots, X_n] \in \Bx_{\langle n \rangle}$ and $X' =
-    % [X_1', \dots, X_m'] \in \Bx_{\langle m \rangle}$ be objects, $\alpha :
-    % \langle n \rangle \to \langle m \rangle$ be a morphism in $\Brx$ and let
-    % $\Hom_{\Bx}^{\alpha}(X, X')$ be the set if morphisms over $\alpha$. 
+    \item Let $X \in \Bx_{\langle n \rangle}$ and $X' \in \Bx_{\langle m
+    \rangle}$ be objects, $\alpha : \langle n \rangle \to \langle m \rangle$ be
+    a morphism in $\Brx$ and let $\Hom_{\Bx}^{\alpha}(X, X')$ be the isomorphism
+    class of morphisms which lie over $\alpha$. 
     
-    % Choose $\pi$-cocartesian morphisms $X' \to X'_i$ lying over the inert
-    % morphism $\rho^i \colon \langle n \rangle \to \langle 1 \rangle$ for $1
-    % \leq i \leq n$. Then the induced map
-    % \[
-    %     \Hom_{\Bx}^{\alpha}(X, X') \to \prod_{1 \leq i \leq n} \Hom_{\Bx}^{\rho^i \circ \alpha}(X, X_i')
-    % \]
-    % is a homotopy equivalence. 
-    
-    % \item For every finite collection of objects $C_1, \dots, C_n \in
-    % \Ox_{\langle 1 \rangle}$, there exists an object $C \in \Ox_{\langle n
-    % \rangle}$ and a collection of $p$-cocartesian morphism $C \to C_i$
-    % covering $\rho^i \colon \langle n \rangle \to \langle 1 \rangle$.
-    \item For all $n \in \N$, there is an equivalence of categories
+    Choose $\pi$-cocartesian morphisms $X' \to X'_i$ lying over the inert
+    morphism $\rho^i \colon \langle n \rangle \to \langle 1 \rangle$ for $1 \leq
+    i \leq n$. Then the induced map
     \[
-        \Bx_{\langle n \rangle} \cong \left(\Bx_{\langle 1 \rangle}\right)^n
+        \Hom_{\Bx}^{\alpha}(X, X') \to \prod_{1 \leq i \leq n} \Hom_{\Bx}^{\rho^i \circ \alpha}(X, X_i')
     \]
-    induced by the morphism $\rho^i$ from Example \ref{eg:rho_i}.
+    is an equivalence of groupoids. 
+    
+    \item For every finite collection of objects $X_1, \dots, X_n \in
+    \Bx_{\langle 1 \rangle}$, there exists an object $X \in \Bx_{\langle n
+    \rangle}$ and a collection of $\pi$-cocartesian morphism $X \to X_i$
+    covering $\rho^i \colon \langle n \rangle \to \langle 1 \rangle$.
+    % \item For all $n \in \N$, there is an equivalence of categories
+    % \[
+    %     \Bx_{\langle n \rangle} \cong \left(\Bx_{\langle 1 \rangle}\right)^n
+    % \]
+    % induced by the morphism $\rho^i$ from Example \ref{eg:rho_i}.
     \end{enumerate}
     Then we can reconstruct a colored braided operad $\B$ from $\D$ such that,
     $\D \cong \Bx$ and the functor
@@ -292,6 +334,7 @@ for the following statement:
 \end{prop}
 
 \begin{proof}
+    \todo{fix proof since bijection is now missing}
     Let
     \[
         \pi \colon \D \to \Brx
@@ -319,12 +362,12 @@ for the following statement:
 
     The composition map is induced by the composition map in $\D$.
     \todo{elaborate on this if time} 
-    The identity morphisms in $\B$ are given by
-    the identity morphisms in the fiber category $\D_{\langle 1 \rangle}$, i.e.,
-    for each color $X \in \D_{\langle 1 \rangle}$, the identity morphism $\id_X$
-    in $\D$ defines the identity morphism in $\Mul_{\B}^{\id}(\{X\}, X)$.
-    The associativity requirement is met as the composition if defined via the
-    composition map in $\D$ which is associative.
-    The unitality condition is also induced by the unitality in $\D$.
+    The identity morphisms in $\B$ are given by the identity morphisms in the
+    fiber category $\D_{\langle 1 \rangle}$, i.e., for each color $X \in
+    \D_{\langle 1 \rangle}$, the identity morphism $\id_X$ in $\D$ defines the
+    identity morphism in $\Mul_{\B}^{\id}(\{X\}, X)$. The associativity
+    requirement is met as the composition if defined via the composition map in
+    $\D$ which is associative. The unitality condition is also induced by the
+    unitality in $\D$.
     \todo{equivalence}
 \end{proof}
