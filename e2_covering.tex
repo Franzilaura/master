@@ -6,9 +6,11 @@ Example \ref{eg:operads} which we introduced as the little 2-disks operad. So in
 each configuration space $\E_2(n)$ we have $n$ disks embedded into a large disk
 by translation and resizing such that the images of the embedding do not intersect. We use topological
 terms when talking about $\E_2$. What really is happening is we apply them
-level-wise. We will see that the universal coverings of $\E_2(n)$ for all $n \in \N$
+level-wise. We will see that $\widetilde{E_2}(n)$, the universal coverings of $\E_2(n)$ for all $n \in \N$,
 can be equipped with an operadic structure as well as a braid action. Hence, we
-obtain another example of a braided operad. 
+obtain another example of a braided operad.
+Note that later there will be an alternative construction of $\widetilde{E_2}$ via Example \ref{eg:br-fib-trivial}
+applied to the trivial braided operad.
 
 
 The operadic structure of $\E_2$ requires each configuration to have labels as they are necessary to define the
@@ -96,7 +98,7 @@ them. Hence, let us recall the definition of $\Ex$:
         configurations $\{c'_k\}_{1 \leq k \leq l}$. 
     \end{center}
     Then, the configuration $c'_k$ is labeled by $\alpha'^{-1}=\left\{j_1^{(k)},
-    \dots, j_p^{(k)}\right\}$. So, with the composition map $\gamma$ we obtain a configuration 
+    \dots, j_p^{(k)}\right\}$. Thus, with the composition map $\gamma$ we obtain a configuration 
     \[
         \gamma(c'_k, c_{j_1}, \dots, c_{j_p})
     \]
@@ -261,7 +263,7 @@ unique up to homotopy equivalence.
                 \node at (-8, 0) {$\hookrightarrow$}; 
             \end{tikzpicture}
         \end{center}
-        \caption{example of a configuration of $\E_1$ being embedded in $\E_2$
+        \caption{Example of a configuration of $\E_1$ being embedded in $\E_2$
         along the horizontal line}
     \end{figure}
     Further for any $n \in \N$, two configurations $c_1, c_2 \in \E_2(n)$ that
@@ -391,12 +393,12 @@ unique up to homotopy equivalence.
     need to have a look at the definition. Note, that in the definition $\tau
     \in \E_1(j)$ is a path that resizes and translates the disks along the
     horizontal line. Hence, there is no braid crossing. Further, we know that composition of paths
-    is associative up to homotopy. So, for 
+    is associative up to homotopy. Thus, for 
 
     $$(\alpha, (\alpha_s)_{1 \leq s \leq k}, (\alpha_r)_{1 \leq r \leq j}) \in
     \E_2(k) \times \prod_{s=1}^{k} \E_2(j_s) \times \prod_{r=1}^{j} \E_2(i_r)$$
 
-    we have a homotopic equivalence:
+    we have a homotopy equivalence:
     \begin{align*}
         \left(\alpha \circ (\alpha_s)_{1 \leq s \leq k} \circ \tau^{(k)}\right) \circ \left(\alpha'_r\right)_{1 \leq r \leq j} \circ \tau^{(j)} 
         &\simeq 
@@ -442,10 +444,10 @@ unique up to homotopy equivalence.
 \begin{rem}
     This construction of an operadic structure on the universal covering of a
     topological operad can be given in a more general setting, which we do not
-    require at this point. But in \cite[Lemma 4.1.12]{adrian} you can find a
+    require at this point. But in \cite[Lemma 4.1.12]{adrian} one can find a
     more general statement on how to construct an operadic structure on the
     collection of level-wise universal coverings of a sufficiently connected
-    topological operad as long as there is a suboperad of $\E_1$ into the
+    topological operad as long as there is a suboperad of $\E_1$ contained in the
     topological operad.
 \end{rem}
    

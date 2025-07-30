@@ -3,18 +3,20 @@
 % \begin{document}
 \section{Operads}\label{sec:operads}
     % \cite{ha}
-    Operads are a concept that originally occurred when studying loop spaces.
-    Let $\Omega X$ be the space of based loops in a topological space $X$. Its
-    structure reflects an interesting form of algebraic composition. The
-    composition of loops is only associative up to homotopy equivalence meaning
-    that loop spaces behave like a monoid in a homotopy-theoretic sense, but not
-    in a strict algebraic sense. An operad can be thought of as a structure that
-    encodes a family of operations, each of which has a certain number of
-    inputs, and a way to compose these operations. The composition of operations
-    in an operad satisfies associativity and unit laws. 
+    The concept of operads was first introduced in the study of loop spaces. In
+    this section, we use this example to illustrate the motivation and basic
+    notions of operads. Let $\Omega X$ be the space of based loops in a
+    connected topological space $X$. Its structure reflects an interesting form
+    of algebraic composition. The composition of loops is only associative up to
+    homotopy equivalence meaning that loop spaces behave like a monoid in a
+    homotopy-theoretical sense, but not in a strict algebraic sense. An operad can
+    be thought of as a structure that encodes a family of operations, each of
+    which has a certain number of inputs, and a way to compose these operations.
+    The composition of operations in an operad satisfies associativity and unit
+    laws. 
 
     Let $\alpha \colon [0,1] \to X$ and $\beta\colon [0,1] \to X$ be loops in
-    $X$ having the same base point $x_0$. Their composition $\beta \circ \alpha$
+    $X$ with the same base point $x_0$. Their composition $\beta \circ \alpha$
     is usually defined by splitting the unit interval in half, i.e.
     \[ \beta \circ \alpha (s) \coloneqq
         \begin{cases}
@@ -41,17 +43,16 @@
             \\
             \gamma(4s-3) & \text{for } s \in \big(\frac{3}{4}, 1\big].
         \end{cases}
-    \] The choice of splitting the unit interval in half is merely a
-    convention. Hence, composition of loops can be thought of as splitting
-    intervals in an arbitrary manner; or in other words embedding unit intervals
-    into a unit interval $I$ such that the image of the inner intervals are
-    disjoint
+    \] The choice of splitting the unit interval in half is merely a convention.
+    Hence, composition of loops can be thought of as splitting intervals in an
+    arbitrary manner; or in other words embedding unit intervals into a unit
+    interval $I$ such that the image of the inner intervals are disjoint
 
     \[
         \big[[I_1] \dots [I_i] \dots [I_n]\big].
     \]
     
-    So, for an ordered family of loops $\{\alpha_i \colon I_i \to X\}_{1 \leq i
+    So, for an ordered family of based loops $\{\alpha_i \colon I_i \to X\}_{1 \leq i
     \leq n}$ there is a unique map $f \in \Emb(I_1, \dots, I_n, I)$ for each
     order preserving concatenation $\beta$ such that $\beta \circ f (I_i) =
     \alpha_i$ for all $1 \leq i \leq n$. We denote the set of embeddings by
@@ -103,8 +104,8 @@
     
     % In the next section we will then consider braided operads and we work
     % towards defining braided colored operads. Ultimately, our goal is a purely
-    % functorial definition of a braided colored operad, such that we can lift the
-    % concept to an $\infty$-categorial context as well. 
+    % functorial definition of a braided colored operad, such that we can lift
+    % the concept to an $\infty$-categorial context as well. 
 
     \subsection{Planar and Symmetric Operads}
 
@@ -121,7 +122,7 @@
         where $\sum_{1 \leq i \leq k} j_i = j$ such that the following
         associativity and unitality constraints hold:
         \begin{enumerate}
-            \item For any choice of integers
+            \item For any choice of natural numbers
             \[
                 n,  \ j_1, \dots, j_k, \ i_1, \dots, i_j
             \]
@@ -182,7 +183,7 @@
         
             \item At the beginning of the section we already saw that the
             concatenation of loops defines an operad: Let $\C = \Top$. Thus, we
-            can define the \textit{operad of little interval} $\E$ as
+            can define the \textit{operad of little intervals} $\E$ as
             \[
                 \E(n) = \Emb(I_1, \dots, I_n, I),
             \]
@@ -207,7 +208,7 @@
             \[
                 \HHom\left(X^{\otimes k}, X\right) \otimes \bigotimes_s \HHom\left(X^{\otimes j_s}, X\right) \to \HHom\left(X^{\otimes j}, X\right)
             \]
-            is given by composition:
+            is given by the composite:
             
             \begin{center}
                 \begin{tikzcd}
@@ -442,8 +443,7 @@
                 \end{center}
     \end{defin}
 
-    As already mentioned, we introduce operads as a tool to generally encode
-    algebraic structure.
+    We introduce operads as a tool to generally encode algebraic structure.
         
     \begin{defin}
         Let $\O$ be an operad in $\C$. An $\O${\em -algebra} is an object A in
@@ -451,7 +451,7 @@
         \[
             \theta \colon \O(j) \otimes A^j \rightarrow A,
         \]
-        such that the following associativity, unitality and equivariant
+        such that the following associativity, unitality and equivariance
         conditions hold:
         \begin{enumerate}
             \item Associativity:
@@ -588,8 +588,8 @@
                 \times \dots \times \Ass(j_k) & \to \Ass(k)\\
                 (\sigma, \tau_1, \dots, \tau_k) & \mapsto \sigma(\tau_1 \oplus \dots \oplus \tau_k)
             \end{align*}
-            We also refer to this operad as the \emph{symmetry operad}
-            $\S$ later on.
+            We also refer to this operad as the \emph{symmetry operad} $\S$
+            later on.
             
             \item Nevertheless, the operad $\Comm_{\Set}(n) = \ast$ with the
             trivial action of $S_n$ is an interesting operad, as it is the {\em
@@ -700,8 +700,7 @@
             \begin{center}
                 \begin{tikzcd}
                     \bigsqcup_{j = 1}^l \dd^n \arrow[r, "{\gamma(f,(g_i)_{1 \leq
-                    i \leq k})}"] \arrow[d, "\cong"] & \dd^n
-                    \\
+                    i \leq k})}"] \arrow[d, "\cong"] & \dd^n \\
                     \bigsqcup_{i =1}^k \left(\bigsqcup_{p =1}^{l_k} \dd^n
                     \right) \arrow[r, "\bigsqcup g_i ~"] & \bigsqcup_{i =1}^k
                     \dd^n \arrow[u, "f"]
@@ -748,7 +747,7 @@
             the entire thesis. There are other models for the $\E_n$ operads. In
             fact there are recognition principles for $\E_n$ operads \cite{EO},
             which will be the motivation for Section \ref{sec:braidedoperads}.
-            However, we will not discuss these other models here. So, when we
+            However, we will not discuss these other models here. When we
             talk about $\E_n$ we are referring to the little $n$-disk operad
             $\dd_n$.
         \end{enumerate}
@@ -759,12 +758,12 @@
     \subsection{Colored Operads}
     
     Following \cite{ha}, the goal of this section is to introduce colored
-    operads in such a way that we can define colored $\infty$-operads later on.
-    A symmetric monoidal category is an example of a colored operad. Thus, we
-    focus on this special case first. We will show that a symmetric
-    monoidal category can be defined in a purely functorial way. After that we
-    then follow this approach and define the more general notion of a colored operad in
-    a similar way.
+    operads in such a way that allows us to define $\infty$-operads later on. A
+    symmetric monoidal category is an example of a colored operad. Thus, we
+    focus on this special case first. We will show that a symmetric monoidal
+    category can be defined in a purely functorial way. After that we then
+    follow this approach and define the more general notion of a colored operad
+    in a similar way.
     
     Let us start by introducing some terminology from \cite{kerodon}.
     
@@ -820,14 +819,15 @@
         \to y$ such that $P(f)=f'$.
     \end{defin}
 
-    If not stated otherwise, when we talk about fibrations and op-fibrations in
+    Unless stated otherwise, when we talk about fibrations and op-fibrations in
     this thesis, we will always mean Grothendieck fibrations and Grothendieck
-    op-fibrations, respectively. Also note, that in \cite[\href{https://kerodon.net/tag/01RF}{Definition 01RF}]{kerodon}, these terms
-    are referred to as cartesian and cocartesian fibrations. However, we choose
-    to use the terminology used in \cite{ha}.
+    op-fibrations, respectively. Also note, that in
+    \cite[\href{https://kerodon.net/tag/01RF}{Definition 01RF}]{kerodon}, these
+    terms are referred to as cartesian and cocartesian fibrations. However, we
+    choose to use the terminology used in \cite{ha}.
     
-    In the next part, we will construct a functor having certain properties from
-    a symmetric monoidal category. We will then see that the functor encodes all
+    In the next part, we will construct a functor with certain properties from
+    a symmetric monoidal category. We then see that this functor encodes all
     the necessary data of the symmetric monoidal category.
 
     \begin{defin}\label{Cxdef} Let $\C$ be a symmetric monoidal category. The
@@ -878,7 +878,7 @@
         \end{itemize}
     \end{defin}
     
-      It is clear that this defines a category. Further, note that this category
+      It is clear that this defines a category. Moreover, note that this category
       is equivalent to the category of finite sets with a distinguished point
       since for any finite set $I$ we have an isomorphism $I_* \cong \langle n
       \rangle$, where $n$ is the cardinality of $I$. For all $1 \leq i \leq n$,
@@ -911,8 +911,8 @@
           is an isomorphism of categories. This holds, since for all morphisms
           in $\C_0^{\otimes}$ the family of morphisms $f_j$ in $\C_0$ is
           trivial, in other words there is nothing to forget. Hence, $\Fin$ is
-          obtained as the simplest example of the construction of a $\Cotimes$
-          category.
+          obtained as the simplest example of the construction of a
+          $\Cotimes$-category.
 
           Furthermore, we note that the forgetful functor $P \colon \Cotimes \to
           \Fin$ can be retrieved from a unique symmetric monoidal functor $F
@@ -995,7 +995,7 @@
             functor that sends $[C]$ to $C$. Let $f \colon [C] \to [C']$ be a
             morphism in $\Cotimes_{\langle 1 \rangle}$, then $\alpha_f =
             \id_{\{1\}}$ and there is just one morphism $f_1 \colon C \to C'$
-            corresponding to $f$. So, we define $F(f) = f_1$. It follows by
+            corresponding to $f$. Thus, we define $F(f) = f_1$. It follows by
             definition that $F$ is fully faithful and essentially surjective,
             i.e. an equivalence of categories.
 
@@ -1122,8 +1122,8 @@ right candidate for $\C$ is $\D_{\langle 1 \rangle}$.
         \D_{\langle 0 \rangle} \times \D_{\langle 1 \rangle} \arrow[r, "\eta
         \times \id"] & \D_{\langle 1 \rangle} \times \D_{\langle 1 \rangle}
         \arrow[r, "\cong"] & \D_{\langle 2 \rangle} \arrow[rd, "\otimes"] & \\
-        \C \arrow[u, "\cong"'] \arrow[d, "\cong"] & &
-        & \D_{\langle 1 \rangle} \\
+        \C \arrow[u, "\cong"'] \arrow[d, "\cong"] & & & \D_{\langle 1 \rangle}
+        \\
         \D_{\langle 1 \rangle} \times \D_{\langle 0 \rangle} \arrow[r, "\id
         \times \eta"]           & \D_{\langle 1 \rangle} \times \D_{\langle 1
         \rangle} \arrow[r, "\cong"] & \D_{\langle 2 \rangle} \arrow[ru,
@@ -1259,8 +1259,8 @@ right candidate for $\C$ is $\D_{\langle 1 \rangle}$.
     \[
         P \colon \Cotimes \to \deltast.
     \]
-    This functor is an op-fibration. The proof of Proposition \ref{m1m2}
-    applies analogously. Note that for the proof, the fact that morphisms in $\deltast$
+    This functor is an op-fibration. The proof of Proposition \ref{m1m2} applies
+    analogously. Note that for the proof, the fact that morphisms in $\deltast$
     preserve the order is essential, otherwise we could not define
     \[
              \omega_j \colon \bigotimes_{\alpha_{\omega}(k)=j} C_k' \cong \bigotimes_{\alpha_{\omega}(k)=j} \bigotimes_{\alpha_f(i)=k} C_i \cong \bigotimes_{\alpha_g(k)=j} C_k \xrightarrow{g_j} C_j''
@@ -1561,8 +1561,8 @@ $\alpha^{-1}(\langle m \rangle^{\circ})$.
     and for all $k \in \langle l \rangle$ we can define $h_k = g_k$. Thus, we
     have constructed a morphism 
 
-    $$h \colon \{X_j'\}_{j \in \langle m \rangle} \to \{X''_k\}_{k \in \langle
-    l \rangle},$$
+    $$h \colon \{X_j'\}_{j \in \langle m \rangle} \to \{X''_k\}_{k \in \langle l
+    \rangle},$$
     
     such that $h \circ f = g$ and $\pi(h)=\omega$. 
 \end{proof}

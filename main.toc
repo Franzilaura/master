@@ -1,16 +1,16 @@
 \babel@toc {english}{}\relax 
-\contentsline {section}{\numberline {1}Introduction}{3}{section.0.1}%
-\contentsline {section}{\numberline {2}Operads}{4}{section.0.2}%
-\contentsline {subsection}{\numberline {2.1}Planar and Symmetric Operads}{5}{subsection.0.2.1}%
-\contentsline {subsection}{\numberline {2.2}Colored Operads}{13}{subsection.0.2.2}%
-\contentsline {section}{\numberline {3}Braided Operads}{24}{section.0.3}%
-\contentsline {subsection}{\numberline {3.1}Action Operad}{25}{subsection.0.3.1}%
-\contentsline {subsection}{\numberline {3.2}Universal Covering of $\E _2$}{26}{subsection.0.3.2}%
-\contentsline {section}{\numberline {4}Colored Braided Operads}{34}{section.0.4}%
-\contentsline {subsection}{\numberline {4.1}Colored Braided Operads}{34}{subsection.0.4.1}%
-\contentsline {section}{\numberline {5}Braided Operadic Fibration}{39}{section.0.5}%
-\contentsline {subsection}{\numberline {5.1}Braided Monoidal Structure}{41}{subsection.0.5.1}%
-\contentsline {subsection}{\numberline {5.2}Properties of $\pi \colon \EuScript {B}^{\otimes }\to \EuScript {B} \text {r}_{\ast }$}{50}{subsection.0.5.2}%
-\contentsline {section}{\numberline {6}Outlook}{56}{section.0.6}%
-\contentsline {section}{\numberline {7}Appendix}{57}{section.0.7}%
+\contentsline {section}{\numberline {1}Introduction}{1}{section.0.1}%
+\contentsline {section}{\numberline {2}Operads}{3}{section.0.2}%
+\contentsline {subsection}{\numberline {2.1}Planar and Symmetric Operads}{4}{subsection.0.2.1}%
+\contentsline {subsection}{\numberline {2.2}Colored Operads}{12}{subsection.0.2.2}%
+\contentsline {section}{\numberline {3}Braided Operads}{23}{section.0.3}%
+\contentsline {subsection}{\numberline {3.1}Action Operad}{24}{subsection.0.3.1}%
+\contentsline {subsection}{\numberline {3.2}Universal Covering of $\E _2$}{25}{subsection.0.3.2}%
+\contentsline {section}{\numberline {4}Colored Braided Operads}{33}{section.0.4}%
+\contentsline {subsection}{\numberline {4.1}Colored Braided Operads}{33}{subsection.0.4.1}%
+\contentsline {subsection}{\numberline {4.2}Braided Operadic Fibrations}{39}{subsection.0.4.2}%
+\contentsline {subsubsection}{\numberline {4.2.1}Braided Monoidal Structure}{41}{subsubsection.0.4.2.1}%
+\contentsline {subsubsection}{\numberline {4.2.2}Properties of $\pi \colon \EuScript {B}^{\otimes }\to \EuScript {B} \text {r}_{\ast }$}{49}{subsubsection.0.4.2.2}%
+\contentsline {section}{\numberline {5}Outlook}{55}{section.0.5}%
+\contentsline {section}{\numberline {6}Appendix}{56}{section.0.6}%
 \contentsfinish 

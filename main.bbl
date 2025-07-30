@@ -116,6 +116,7 @@
       \field{labeltitlesource}{title}
       \field{eprintclass}{math.AT}
       \field{eprinttype}{arXiv}
+      \field{note}{(accessed 22.4.2025). Available online at \url{https://arxiv.org/abs/math/9808089}}
       \field{shorthand}{Fie99}
       \field{title}{Constructions of $E_n$ Operads}
       \field{year}{1999}
@@ -267,7 +268,7 @@
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{month}{09}
-      \field{note}{Unpublished. Available online at \url{https://www.math.ias.edu/~lurie/}}
+      \field{note}{Unpublished. (accessed 10.5.2025). Available online at \url{https://www.math.ias.edu/~lurie/}}
       \field{shorthand}{Lur17}
       \field{title}{Higher algebra}
       \field{year}{2017}
@@ -302,6 +303,7 @@
       \field{labeltitlesource}{title}
       \field{eprintclass}{math.CT}
       \field{eprinttype}{arXiv}
+      \field{note}{(accessed 20.7.2025). Available online at \url{https://arxiv.org/abs/math/0608040}}
       \field{shorthand}{Lur08}
       \field{title}{Higher Topos Theory}
       \field{year}{2008}
@@ -338,6 +340,7 @@
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{howpublished}{\url{https://kerodon.net}}
+      \field{note}{(accessed 10.7.2025)}
       \field{shorthand}{Lur18}
       \field{title}{Kerodon}
       \field{year}{2018}
@@ -370,7 +373,7 @@
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{month}{03}
-      \field{note}{Unpublished. Available online at \url{https://www.math.uni-hamburg.de/home/schweigert/skripten/hskript.pdf}}
+      \field{note}{Unpublished. (accessed 31.11.2024). Available online at \url{https://www.math.uni-hamburg.de/home/schweigert/skripten/hskript.pdf}}
       \field{shorthand}{Sch23}
       \field{title}{Hopf algebras, quantum groups and topological field theory}
       \field{year}{2023}

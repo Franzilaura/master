@@ -1,16 +1,20 @@
-\subsection{Properties of $\pi \colon \Bx \to \Brx$}
+\subsubsection{Properties of $\pi \colon \Bx \to \Brx$}
 
-In the previous section we have seen that similar to the symmetric case a
+In the previous section we have seen that similar to the symmetric case a 
 functor into $\Brx$ satisfying the op-fibration condition and Segal condition
 induces a braided monoidal structure on the fiber category over $\langle 1
-\rangle$. For a colored braided operad $\B$, the forgetful functor
+\rangle$. However, for a colored braided operad $\B$, the forgetful functor
 \[
     \pi \colon \Bx \to \Brx
 \]
-however does not satisfy the op-fibration condition in general. In this section,
+does not satisfy the op-fibration condition in general. 
+
+In this section,
 we investigate the properties of the forgetful functor $\pi$. Furthermore, we
-will see how to regain the structure of a colored braided operad from such a
-functor fulfilling these properties.
+will see how to reconstruct the structure of a colored braided operad from such a
+functor fulfilling these properties. This reconstruction together with the construction developing the forgetful functor $\pi$
+then finally induces an equivalence, thus verifying that colored braided operads can indeed be formulated
+in a categorical framework.
 
 \begin{defin}
     A morphism $\alpha \colon \langle n \rangle \to  \langle m \rangle$ in
@@ -34,24 +38,28 @@ functor fulfilling these properties.
 
 
 
-\begin{prop}
-    Let $\B$ be a colored braided operad. The forgetful functor
+\begin{prop}\label{prop:Bx-fib-properties} Let $\B$ be a colored braided operad.
+    The forgetful functor
     \[
         \pi \colon \Bx \to \Brx
     \]
     has the following properties:
     \begin{enumerate}
-        \item For every inert morphism $\alpha \colon \langle n \rangle \to
-        \langle m \rangle$  in $\Brx$ and object $X \in \Bx$ there exists a
-        $\pi$-cocartesian morphism $f \colon X \to X'$ lifting $\alpha$ . In
-        particular $\alpha$ induces a functor 
-        $$\pi_{\alpha} \colon \Bx_{\langle n \rangle} \to \Bx_{\langle m
-        \rangle}$$.
+        \item For every inert morphism $\widetilde{\alpha} \colon \langle n
+        \rangle \to \langle m \rangle$  in $\Brx$ and object $X \in \Bx$ there
+        exists a $\pi$-cocartesian morphism $f \colon X \to X'$ lifting
+        $\widetilde{\alpha}$ . In particular $\widetilde{\alpha}$ induces a
+        functor 
+        $$\pi_{\widetilde{\alpha}} \colon \Bx_{\langle n \rangle} \to
+        \Bx_{\langle m \rangle}.$$
         \item For object $X,Y$ in $\Bx$ the functor
         \[
                 \Hom_{\Bx}(X,Y) \to \Hom_{\Brx}(\pi(X),\pi(Y))
         \]
-        is a fibration. 
+        is a fibration.
+        \item For a morphism $\widetilde{\alpha}$ in $\Brx$, the groupoid of
+        morphisms lying over $\widetilde{\alpha}$:
+        $$\Hom_{\D}^{\widetilde{\alpha}}(X, X')$$ is discrete. 
         \item Let $X = [X_1, \dots, X_n] \in \Bx_{\langle n \rangle}$ and $X' =
         [X_1', \dots, X_m'] \in \Bx_{\langle m \rangle}$ be objects, $\alpha :
         \langle n \rangle \to \langle m \rangle$ be a morphism in $\Brx$ and let
@@ -81,10 +89,10 @@ functor fulfilling these properties.
     Let $B$ be a colored braided operad and $\pi \colon \Bx \to \Brx$ the above
     defined forgetful functor.
     \begin{enumerate}
-        \item \todo{nur cocartesian lift für inerts bisher gezeigt}Let
-        $\widetilde{\alpha} \colon \langle n \rangle \to  \langle m \rangle$ be
-        an inert morphism in $\Brx$, i.e. for a restriction to the active subset
-        of $\langle n \rangle$, there is a bijection of finite sets:
+        \item Let $\widetilde{\alpha} \colon \langle n \rangle \to  \langle m
+        \rangle$ be an inert morphism in $\Brx$, i.e. for a restriction to the
+        active subset of $\langle n \rangle$, there is a bijection of finite
+        sets:
         \[
             \alpha \colon \alpha^{-1}(\langle m \rangle^{\circ}) \to \langle m \rangle^{\circ}
         \]
@@ -263,16 +271,15 @@ functor fulfilling these properties.
                 {[Y_1'', \dots, Y_m'']}                         
             \end{tikzcd}
         \end{center}
-        \item \todo{korrigieren, ich hab op-fib gezeigt}Let
-        $\phi \colon [X_1, \dots, X_n] \to [Y_1, \dots, Y_m]$ be a morphism in
-        $\Bx$ with $\pi(\phi)=\alpha_{\phi}$ and $\eta \colon \alpha_{\phi}
-        \Rightarrow \alpha$ a $2$-morphism in $\Brx$. Then, we define a
-        cartesian lift
+        \item Let $\phi \colon [X_1, \dots, X_n] \to [Y_1, \dots, Y_m]$ be a
+        morphism in $\Bx$ with $\pi(\phi)=\alpha_{\phi}$ and $\widetilde{\eta} \colon
+        \alpha_{\phi} \Rightarrow \alpha$ a $2$-morphism in $\Brx$. Then, we
+        define a lift
         \[
             \psi \colon [X_1, \dots, X_n] \to [Y_1, \dots, Y_m]
         \]
         as follows: The underlying morphism we chose to be
-        $\alpha_{\psi}=\alpha$. Furthermore, the $2$-morphism $\eta$ gives rise
+        $\alpha_{\psi}=\alpha$. Furthermore, the $2$-morphism $\widetilde{\eta}$ gives rise
         to the following diagram in $\Br$:
         \begin{center}
             \begin{tikzpicture}
@@ -287,7 +294,7 @@ functor fulfilling these properties.
                 node[midway, right] {\small $\widetilde{\alpha_{\phi_j}}$};
                 
                 % Natural transformation arrow
-                \node at (1.5, 1.2) {$\overset{\eta_j}{\Leftarrow}$};
+                \node at (1.5, 1.2) {$\overset{\widetilde{\eta_j}}{\Leftarrow}$};
                 % \node[rotate=-40] at (1.5, 1.2) {$\Downarrow \eta$};
             \end{tikzpicture}
         \end{center}
@@ -299,31 +306,29 @@ functor fulfilling these properties.
         \[
             \psi_j \coloneqq \gamma\left((\id_{X_i})_{i \in \alpha_{\psi_j}}, \phi_j\right).
         \]
-        We need to see that $\eta \phi \to \psi$ is indeed cocartesian. This
-        however is true due to the fact that all $2$-morphisms have inverses in
-        $\Bx$.
-        % Let $\epsilon \colon \chi \Rightarrow \psi$ be another
-        % $2$-morphism in $\Bx$ and $\widetilde{\delta}$ $2$-morphism in $\Brx$
-        % such that $\widetilde{\eta} \circ \delta = \widetilde{\epsilon}$. Note,
-        % that the following hold for all $1 \leq j \leq m$:
+        Thus, this constructs a $2$-morphism $\bar{\eta} \colon \phi \to \psi$ such that $\pi(\bar{\eta}) = \widetilde{\eta}$.
+        Note, that for the same construction for $\widetilde{\eta}^{-1}$, we obtain $\bar{\eta}^{-1}$.
+        % Let $\epsilon \colon \chi \Rightarrow \psi$ be another $2$-morphism in
+        % $\Bx$ and $\widetilde{\delta}$ $2$-morphism in $\Brx$ such that
+        % $\widetilde{\eta} \circ \delta = \widetilde{\epsilon}$. Note, that the
+        % following hold for all $1 \leq j \leq m$:
         % \[
         %     \gamma((\id_{X_i})_{i \in \alpha_{\phi_j}}, \phi_j) = \psi_j = \gamma((\id_{X_i})_{i \in \alpha_{\chi_j}}, \chi_j)
         % \]
         % Then for the composition map for $\eta_j^{-1}$ together with the
         % associativity and unitality condition in $\B$ we obtain:
-        % \begin{align*}
-        %     \phi_j &= \gamma ((\id_{X_i})_{i \in \alpha_{\psi_j}}, \psi_j) \\
-        %     &= \gamma((\id_{X_i})_{i \in \alpha_{\psi_j}}, (\id_{X_i})_{i \in \alpha_{\chi_j}}, \chi_j) \\
-        %     &= ((\id_{X_i})_{i \in \alpha_{\chi_j}}, \chi_j)
-        % \end{align*}
-        % So, $\epsilon = \eta^{-1} \circ \chi$ can be lifted to a $2$-morphism in
-        % $\Bx$.
-        % \item The third property follows immediately from the construction on
-        % $\Bx$. Since for morphisms $\phi, \psi \colon [X_1, \dots, X_n] \to
-        % [Y_1, \dots, Y_m]$ a $2$-morphism $\eta \colon \phi \to \psi$ with
-        % underlying $2$-morphism $\widetilde{\eta}$ is defined by
-        % $\widetilde{\eta}_j$ for all $1 \leq j \leq m$.
-        % \item For $n \in \N$, $1 \leq i \leq n$, the inert morphism
+        % \begin{align*} \phi_j &= \gamma ((\id_{X_i})_{i \in \alpha_{\psi_j}},
+        % \psi_j) \\
+        %     &= \gamma((\id_{X_i})_{i \in \alpha_{\psi_j}}, (\id_{X_i})_{i \in
+        %     \alpha_{\chi_j}}, \chi_j) \\
+        %     &= ((\id_{X_i})_{i \in \alpha_{\chi_j}}, \chi_j) \end{align*} So,
+        % $\epsilon = \eta^{-1} \circ \chi$ can be lifted to a $2$-morphism in
+        % $\Bx$. \item The third property follows immediately from the
+        % construction on $\Bx$. Since for morphisms $\phi, \psi \colon [X_1,
+        % \dots, X_n] \to [Y_1, \dots, Y_m]$ a $2$-morphism $\eta \colon \phi
+        % \to \psi$ with underlying $2$-morphism $\widetilde{\eta}$ is defined
+        % by $\widetilde{\eta}_j$ for all $1 \leq j \leq m$. \item For $n \in
+        % \N$, $1 \leq i \leq n$, the inert morphism
         % \[
         %     \rho^i \langle n \rangle \to \langle 1 \rangle,
         % \]
@@ -337,7 +342,9 @@ functor fulfilling these properties.
         % \]
         % is fully faithful and essentially surjective. This follows immediately
         % when considering the construction of $P^i$.
-        \item By construction of $\Bx$ the following holds: For $X_1, \dots,
+        \item[3. + 4.] This follows immediately by construction of $\Bx$ and the
+        unitality condition in $\B$.
+        \item[5.] By construction of $\Bx$ the following holds: For $X_1, \dots,
         X_n$ colors in $\B$ the morphism
         \[
             \phi \colon [X_1, \dots, X_n] \to [X_i]
@@ -347,31 +354,27 @@ functor fulfilling these properties.
     \end{enumerate}
 \end{proof}
 
-We introduce from \cite[Corollary 2.4.6.5]{hht} the following notion of
-categorical fibrations:
-\begin{defin}\label{def:cat-fib-infty} Let $p \colon \C \to \D$ be a map of
-    simplicial sets, where $\D$ is an $\infty$-category. We call $p$ a
-    categorical fibration if the following conditions hold:
-    \begin{enumerate}[(i)]
-        \item The map $p$ is an inner fibration as defined in
-        \cite[\href{https://kerodon.net/tag/01BA}{Definition 01BA}]{kerodon},
-        i.e. every lifting problem for $0 < i < n$:
-        \begin{center}
-            \begin{tikzcd}
-                \Lambda_i^n \arrow[r] \arrow[d]       & \C \arrow[d] \\
-                \Delta^n \arrow[r] \arrow[ru, dashed] & \D          
-            \end{tikzcd}
-        \end{center}
+The Corollary in \cite[Corollary 2.4.6.5]{hht} gives a definition of a
+categorical fibration for simplicial sets. For a functor of $\Grp$-enriched
+categories this breaks down to the following definition:
+%  the following notion of categorical fibrations:
+% \begin{defin}\label{def:cat-fib-infty} Let $p \colon \C \to \D$ be a map of
+% simplicial sets, where $\D$ is an $\infty$-category. We call $p$ a categorical
+% fibration if the following conditions hold: \begin{enumerate}[(i)] \item The
+% map $p$ is an inner fibration as defined in
+% \cite[\href{https://kerodon.net/tag/01BA}{Definition 01BA}]{kerodon}, i.e.
+% every lifting problem for $0 < i < n$: \begin{center} \begin{tikzcd}
+% \Lambda_i^n \arrow[r] \arrow[d]       & \C \arrow[d] \\
+%                 \Delta^n \arrow[r] \arrow[ru, dashed] & \D          
+%             \end{tikzcd} \end{center}
 
-        admits a solution.
-        \item For every equivalence $f \colon D \to D'$ in $\D$ and every object
-        $C \in \C$ with $p(C) = D$, there exists an equivalence $\bar{f} \colon
-        C \to C'$ in $\C$ with $p(\bar{f}) = f$.
-    \end{enumerate}
-\end{defin}
+%         admits a solution.
+%         \item For every equivalence $f \colon D \to D'$ in $\D$ and every object
+%         $C \in \C$ with $p(C) = D$, there exists an equivalence $\bar{f} \colon
+%         C \to C'$ in $\C$ with $p(\bar{f}) = f$.
+%     \end{enumerate}
+% \end{defin}
 
-For a functor of $\Grp$-enriched categories this breaks down to the following
-definition:
 \begin{defin}\label{def:cat-fib-grpd} Let $p \colon \C \to \D$ be a functor of
     $\Grp$-enriched category. We call $p$ a categorical fibration if the
     following conditions hold:
@@ -384,12 +387,11 @@ definition:
         %     \end{tikzcd} \end{center}
 
         % admits a solution.
-        \item For all object $X,Y$ in $\C$ the functor \todo{dont understand why
-        (i) above translates into this}
+        \item For every pair of objects $X,Y$ in $\C$ the functor
         \[
             p \colon \Hom_{\C}(X,Y) \to \Hom_{\D}(p(X), p(Y))
         \]
-        is a fibration.
+        is an fibration. 
         \item For every equivalence $f \colon D \to D'$ in $\D$ and every object
         $C \in \C$ with $p(C) = D$, there exists an equivalence $\bar{f} \colon
         C \to C'$ in $\C$ with $p(\bar{f}) = f$.
@@ -398,44 +400,42 @@ definition:
 
 \begin{rem}
     Note that an equivalence $\widetilde{\alpha} \colon \langle n \rangle \to
-    \langle m \rangle$ in $\Brx$ is an inert morphism as the restriction to
-    $\alpha^{-1}(\langle m \rangle^{\circ})$ has to be a bijection.
-    \todo{is this true? isn't bijection on image enough?x}
-    Thus, condition (ii) from Definition \ref{def:cat-fib-grpd} for a functor
-    $p$ translates to:
-    \begin{itemize}
-    \item For every inert morphism $\alpha \colon \langle n \rangle \to \langle
-    m \rangle$ in $\Brx$ and object $X \in \D$ there exists a $p$-cocartesian
-    morphism $f \colon X \to X'$ lifting $\alpha$.
-    \end{itemize}
+    \langle m \rangle$ in $\Brx$ is in particular an inert morphism as the
+    restriction to $\alpha^{-1}(\langle m \rangle^{\circ})$ is a bijection.
+    Thus, in the proof of Proposition \ref{prop:Bx-fib-properties} the
+    construction of the cocartesian lift of an inert morphism implies condition
+    (ii) from Definition \ref{def:cat-fib-grpd} for the forgetful functor $\pi
+    \colon \Bx \to \Brx$.
 \end{rem}
 
-\begin{defin}
+\begin{defin}\label{def:operadicfib}
     An {\em operadic fibration} is a functor between $\Grp$-enriched categories
     \[
         \pi \colon \D \to \Brx
     \]
     satisfying the following conditions:
     \begin{enumerate}[(i)]
-    % \item For every inert morphism $\alpha \colon \langle n \rangle \to
-    % \langle m \rangle$ in $\Brx$ and object $X \in \D$ there exists a
-    % $\pi$-cocartesian morphism $f \colon X \to X'$ lifting $\alpha$. In
-    % particular, $\alpha$ induces a functor: $$\pi_{\alpha} \colon \Bx_{\langle
-    % n \rangle} \to \Bx_{\langle m \rangle}.$$
-    \item The functor $\pi$ is a categorical fibration by Definition
-    \ref{def:cat-fib-grpd}. In particular, $\alpha$ induces a functor:
-    $$\pi_{\alpha} \colon \D_{\langle n \rangle} \to \D_{\langle m \rangle}.$$
+    \item The functor $\pi$ is a categorical fibration (c.f. Definition
+    \ref{def:cat-fib-grpd}).
+    \item For every inert morphism $\widetilde{\alpha} \colon \langle n \rangle
+    \to \langle m \rangle$ in $\Brx$ and object $X \in \D$ there exists a
+    $\pi$-cocartesian morphism $f \colon X \to X'$ lifting $\widetilde{\alpha}$. In
+    particular, $\widetilde{\alpha}$ induces a functor: $$\pi_{\widetilde{\alpha}} \colon
+    \Bx_{\langle n \rangle} \to \Bx_{\langle m \rangle}.$$
+    \item For a morphism $\widetilde{\alpha}$ in $\Brx$, the groupoid of
+    morphisms lying over $\widetilde{\alpha}$:
+    $$\Hom_{\D}^{\widetilde{\alpha}}(X, X')$$ is discrete.
     \item Let $X \in \D_{\langle n \rangle}$ and $X' \in \D_{\langle m \rangle}$
-    be objects, $\alpha : \langle n \rangle \to \langle m \rangle$ be a morphism
-    in $\Brx$ and let $\Hom_{\D}^{\alpha}(X, X')$ be the 
+    be objects, $\widetilde{\alpha}  : \langle n \rangle \to \langle m \rangle$
+    be a morphism in $\Brx$ and let $\Hom_{\D}^{\widetilde{\alpha}}(X, X')$ be the 
     % isomorphism class of 
-    morphisms which lie over $\alpha$. 
+    morphisms which lie over $\widetilde{\alpha}$. 
     
     Choose $\pi$-cocartesian morphisms $X' \to X'_i$ lying over the inert
     morphism $\rho^i \colon \langle n \rangle \to \langle 1 \rangle$ for $1 \leq
     i \leq n$. Then the induced map
     \[
-        \Hom_{\D}^{\alpha}(X, X') \to \prod_{1 \leq i \leq n} \Hom_{\D}^{\rho^i \circ \alpha}(X, X_i')
+        \Hom_{\D}^{\widetilde{\alpha}}(X, X') \to \prod_{1 \leq i \leq n} \Hom_{\D}^{\rho^i \circ \widetilde{\alpha}}(X, X_i')
     \]
     is an equivalence of groupoids. 
     
@@ -472,7 +472,6 @@ operad. Defining the equivalence should then be straightforward by the
 construction.
 
 \begin{proof}
-    \todo{fix proof}
     Let
     \[
         \pi \colon \D \to \Brx
@@ -485,8 +484,9 @@ construction.
     Let $I$ be a finite set with $|I|=n$, $\widetilde{I} \in \E_2(n)$ an
     $I$-labeled configuration, $\{X_i\}_{i \in I}$ a collection of colors and
     $Y$ a color. For a choice of bijection $\iota \colon I \cong \langle n
-    \rangle$, we get by (iii) that there is an object $X \in \D_{\langle n \rangle}$ 
-    and a collection of morphisms $X \to X_i$ covering $\rho^i$ for $i \in I$. Then, 
+    \rangle$, we get by (iii) that there is an object $X \in \D_{\langle n
+    \rangle}$ and a collection of morphisms $X \to X_i$ covering $\rho^i$ for $i
+    \in I$. Then, 
     \[
         \Mul_{\B}^{\widetilde{I}}\left(\{X_i\}_{i \in I}, Y\right)
     \]
@@ -496,18 +496,97 @@ construction.
         \langle n \rangle \to \langle 1 \rangle
     \]
     with configuration $\widetilde{I}$ in $\Brx$.
-    \todo{now just take union of these sets?}
+    For the following triangle in $\Br$:
+            \begin{center}
+            \begin{tikzpicture}
+                % Define node positions
+                \node (B) at (0, 2) {$I$}; \node (C) at (3, 2) {$J$}; \node (A)
+                at (1.5, 0) {$\{ 1 \}$};
+                
+                % Draw arrows
+                \draw[->] (B) -- (C) node[midway, above] {$\widetilde{\alpha}$};
+                \draw[->] (B) -- (A) node[midway, left] {$\widetilde{I}$};
+                \draw[->] (C) -- (A) node[midway, right] {$\widetilde{J}$};
+                
+                % Natural transformation arrow
+                \node[rotate=-40] at (1.5, 1.2) {$\Downarrow \eta$};
+                % \node at (1.7, 1.2) {$\eta$};
+            \end{tikzpicture}
+        \end{center}
+    along with collection of colors $\{X_i\}_{i \in I}, \{Y_j\}_{j \in J}$ and
+    color $Z$, we define a composition map via the composition in $\D$ as
+    follows: For chosen bijections of $I \cong \langle n \rangle^{\circ}$, $J
+    \cong \langle m \rangle^{\circ}$ we obtain the following diagram in $\Brx$:
+    \begin{center}
+        \begin{tikzpicture}
+            % Define node positions
+            \node (B) at (0, 2) {$\langle n \rangle$}; \node (C) at (3, 2)
+            {$\langle m \rangle$}; \node (A) at (1.5, 0) {$\langle 1 \rangle$};
+            
+            % Draw arrows
+            \draw[->] (B) -- (C) node[midway, above] {$\widetilde{\alpha}$};
+            \draw[->] (B) -- (A) node[midway, left] {$\widetilde{I}$}; \draw[->]
+            (C) -- (A) node[midway, right] {$\widetilde{J}$};
+            
+            % Natural transformation arrow
+            \node[rotate=-40] at (1.5, 1.2) {$\Downarrow \eta$};
+            % \node at (1.7, 1.2) {$\eta$};
+        \end{tikzpicture}
+    \end{center}
+    where $\widetilde{I}$, $\widetilde{J}$, $\widetilde{\alpha}_j$ denote the
+    corresponding configurations in $\E_2$ after identification via the
+    bijections. Furthermore, note that by conditions (iv) and (v), for  colores
+    $\{X_i\}_{i \in \alpha_j}$ there is an object $X^{(\alpha_j)}$ in
+    $\D_{\langle |\alpha_j| \rangle}$ and morphisms $X^{(\alpha_j)} \to X_i$
+    covering $rho^i$. For $\{X^{(\alpha_j)}\}_{1 \leq j \leq m}$ there is also
+    an object X with morphisms $X \to X^{(\alpha_j)}$ covering $\rho^j$, $1 \leq
+    j \leq m$. We observe that $X$ with the composite morphism $X \to X_i$ cover
+    $\rho^i$. The following composition in $\D$:
+    \[
+       \theta \colon \prod_{1 \leq j \leq m} \Hom^{\rho^j}(X, X^{(\alpha_j)}) \times \Hom^{\widetilde{\alpha}_j}(X^{(\alpha_j)}, Y_j) \to \prod_{1 \leq j \leq m} \Hom^{\rho^j \circ \widetilde{\alpha}} (X, Y_j) \cong \Hom^{\widetilde{\alpha}}(X, Y)
+    \]
 
-    The composition map is induced by the composition map in $\D$. 
-    \todo{define composition}
+    % \[
+    % \prod_{\1 \leq j \leq m} \Hom^{\rho^j \circ \widetilde{\alpha}} (X, Y_j)
+    % \cong \Hom^{\widetilde{\alpha}}(X, Y)
+    % \]
+    Let $\theta'$ be the restriction of $\theta$ to the covering morphisms $X
+    \to X^{(\alpha_j)}$. The restriction to the image of $\theta'$ of the
+    following composition map in $\D$
+    \[
+        \Hom^{\widetilde{\alpha}}(X, Y) \times \Hom^{\widetilde{J}}(Y, Z) \to \Hom^{\widetilde{I}}(X, Z)
+    \]
+    defines a composition map:
+    \[
+        \gamma \colon \prod_{j \in J} \Mul_{\B}^{\widetilde{\alpha}_j}(\{X_i\}_{i \in \alpha_j}, Y_j) \times \Mul_{\B}^{\widetilde{J}}(\{Y_j\}_{j \in J}, Z) \to \Mul_{\B}^{\widetilde{I}}(\{X_i\}_{i \in I}, Z).
+    \]
+
+    This construction is well-defined. 
+    % When choosing covering morphisms $X \to
+    % X_i$ for $\rho^i$ we can assume they are cocartesian lifts. If not, then
+    % there is a cocartesian lift $X \to X_i'$ for $\rho^i$ and $X$ because of
+    % property (ii). Then, there is a unique morphism $X_i' \to X_i$ lying over an
+    % equivalence in $\Brx$. By (i), there is an equivalence $X_i' \cong X_i$ in
+    % $\D$.
+    \todo{What about different choices of X?}
+
+     
+    % with morphisms $X \to X_$ covering $\rho^i$ for $1 \leq i \leq n$, as well
+    % as an object $Y$ in $\D_{\langle m \rangle}$ with morphisms $Y \to Y_j$
+    % covering $\rho^j$ for $1 \leq j \leq m$.
+
+
+
+
     The identity morphisms in $\B$ are given by the identity morphisms in the
     fiber category $\D_{\langle 1 \rangle}$, i.e., for each color $X \in
     \D_{\langle 1 \rangle}$, the identity morphism $\id_X$ in $\D$ defines the
     identity morphism in $\Mul_{\B}^{\id}(\{X\}, X)$. The associativity
-    requirement is met as the composition if defined via the composition map in
+    requirement is met as the composition is defined via the composition map in
     $\D$ which is associative. The unitality condition is also induced by the
     unitality in $\D$. This construction gives raise to an equivalence of
     categories $\Bx \cong \D$ such that the composition $\Bx \cong \D \to \Brx$
     is indeed the forgetful functor.
 \end{proof}
+
 
