@@ -97,8 +97,8 @@
     to monoids that can be considered as single object categories, operads can
     be considered as single object multicategories. In this section, we define
     the notion of a planar and a symmetric operad as they were introduced by May
-    in \cite{may}. Then, we will move on to the more general notion of a colored
-    operad following \cite{ha}. We will establish a second equivalent definition
+    in \cite{may}. Then, we move on to the more general notion of a colored
+    operad following \cite{ha}. We establish a second equivalent definition
     of a colored operad that is purely categorical, meaning we can therefore
     phrase it in an $\infty$-categorial context.
     
@@ -146,7 +146,7 @@
                     \P(k) \otimes \left(\bigotimes_{s=1}^k \left(\P(j_s) \otimes
                     \bigotimes_{q=1}^{j_s} \P (i_{g_{s-1}+q})\right)\right)
                     \arrow[rr, "\id \otimes (\otimes_s \gamma)"'] &  & \P(k)
-                    \otimes \left((\bigotimes_{s=1}^k \P(h_s)\right) \arrow[u,
+                    \otimes \left(\bigotimes_{s=1}^k \P(h_s)\right) \arrow[u,
                     "\gamma"']
                 \end{tikzcd}
                 \end{center}
@@ -165,14 +165,14 @@
                 \end{center}
         \end{enumerate}
     \end{defin}
-
+\newpage
     \begin{egs}\label{egs_planar_operad} Let us consider some examples of planar
         operads in a symmetric monoidal category $\C$:
         \begin{enumerate} 
             \item The \textit{associative operad} $\Ass$ is the operad whose
-            algebras are associative monoids. We will define what it means to be
+            algebras are associative monoids. We define what it means to be
             an algebra over an operad later. However, the associative planar
-            operad in $\C$ is the operad $\Ass_{\C}(n) = \I$ for all $i \in \N$
+            operad in $\C$ is the operad $\Ass_{\C}(n) = \I$ for all $n \in \N$
             with $\id_{\I}$ being the unit and the composition map being the
             canonical isomorphism. Hence, for $\C=\Set$, the category of sets
             equipped with the cartesian symmetric monoidal structure, we obtain
@@ -225,7 +225,7 @@
         \end{enumerate}
     \end{egs}
 
-    For another example of an operad, which we will encounter a lot throughout
+    For another example of an operad, which we encounter a lot throughout
     this thesis, we need to recall the definition of the braid group first.
 
     \begin{defin}
@@ -301,7 +301,7 @@
     \end{rem}
 
     We state some facts about braid groups that are known and can, for example,
-    be found in \cite{yau}.
+    be found in \cite[Chapter 5]{yau}.
     
     \begin{rem}\label{braidfacts}
         \begin{enumerate}
@@ -335,7 +335,7 @@
             \leq j \leq n$. Then the following holds in $B_{k_1 + \dots + k_n}$:
             \begin{align*}
                 (\sigma \rho)(k_1, \dots, k_n) &= \sigma(k_{\bar{\rho}^{-1}(1)}, \dots, k_{\bar{\rho}^{-1}(n)}) \cdot \rho(k_1, \dots, k_n), \\
-                \sigma(k_1, \dots, k_n) \cdot (\tau_1 \oplus \dots \oplus \tau_n) &= (\tau_{\bar{\sigma}^{-1}(1)} \oplus \dots \oplus \tau_{\bar{\sigma}^{-1}(n)} \cdot \sigma(k_1, \dots, k_n),
+                \sigma(k_1, \dots, k_n) \cdot (\tau_1 \oplus \dots \oplus \tau_n) &= \left(\tau_{\bar{\sigma}^{-1}(1)} \oplus \dots \oplus \tau_{\bar{\sigma}^{-1}(n)}\right) \cdot \sigma(k_1, \dots, k_n),
             \end{align*}
             where $\bar{\sigma} = \pi(\sigma)$ and $\bar{\rho} =   \pi(\rho)$.
         \end{enumerate}
@@ -406,7 +406,7 @@
 
     \medskip
 
-    When we later discuss operads, we seldomly focus on planar operads but will
+    When we later discuss operads, we seldomly focus on planar operads but
     work with symmetric operads instead.
 
     \begin{defin}\label{operad} A {\em (symmetric) operad} $\O$ in $\C$ is a
@@ -446,7 +446,7 @@
     We introduce operads as a tool to generally encode algebraic structure.
         
     \begin{defin}
-        Let $\O$ be an operad in $\C$. An $\O${\em -algebra} is an object A in
+        Let $\O$ be an operad in $\C$. An $\O${\em -algebra} is an object $A$ in
         $\C$ with maps for $j \in \N$:
         \[
             \theta \colon \O(j) \otimes A^j \rightarrow A,
@@ -575,7 +575,7 @@
             % However, this is not the case. 
             For $\C = \Set$, we can equip the associative operad:
             $$\Ass_{\Set}^{\text{planar}}(n) = \ast$$ with the trivial action of
-            $S_n$. Yet this appears to be too restrictive: The equivariance
+            $S_n$. Yet this appears to be too restrictive. The equivariance
             condition implies that algebras over this operad are not just
             monoids but commutative monoids. To distinguish operations after
             acting by $S_n$, we can think of a more suited candidate:
@@ -599,7 +599,7 @@
             
             \item The {\em little $n$-disk operad} $\dd_n$ is an important
             example of an operad in the category of topological spaces $\Top$.
-            For all $n \in \N$ we will define $\dd_n(k)$ as a topological space
+            For all $n \in \N$ we define $\dd_n(k)$ as a topological space
             representing the space of $k$ disjoint little disks inside the unit
             disk in the plane. Let $n \in \N$ and 
             \[
@@ -643,7 +643,7 @@
             \begin{itemize}
                 \item Start with a configuration in $\dd_n(k)$, which gives $k$
                 disks inside the unit disk.
-                \item Each of the $k$ disks is treated as a new "unit disk" in
+                \item Each of the $k$ disks is treated as a new ``unit disk'' in
                 which a configuration from $\dd_n(l_1), \dd_n(l_2), \dots,
                 \dd_n(l_k)$ can be inserted.
                 \item The configurations from $\dd_n(l_1), \dd_n(l_2), \dots,
@@ -730,24 +730,26 @@
             k}) \in \dd_n(k) \times \dd_n(l_1) \times \cdots \times \dd_n(l_k)$,
             we have:
             \begin{align*}
-                \sigma \circ \gamma ((f, (g_i)_{1 \leq i \leq k})) &= \sigma\left(\bigsqcup_{i=1}^k f_i \circ g_i \right) \\
+                \sigma \circ \gamma (f, (g_i)_{1 \leq i \leq k}) &= \sigma\left(\bigsqcup_{i=1}^k f_i \circ g_i \right) \\
                 &= \bigsqcup_{i=1}^k f_{\sigma(i)}\circ g_{\sigma(i)} \\
-                &= \gamma \left( (f_{\sigma(1)} \sqcup \dots \sqcup f_{\sigma(k)}, g_{\sigma(1)}, \dots, g_{\sigma(k)}\right) \\
-                &= \gamma \circ (\sigma \times \sigma^{-1}) ((f, (g_i)_{1 \leq i \leq k})) \\
+                &= \gamma \left( f_{\sigma(1)} \sqcup \dots \sqcup f_{\sigma(k)}, g_{\sigma(1)}, \dots, g_{\sigma(k)}\right) \\
+                &= \gamma \circ (\sigma \times \sigma^{-1}) (f, (g_i)_{1 \leq i \leq k}) \\
             \end{align*}
             and 
             \begin{align*}
                 (\tau_1 \oplus \dots \oplus \tau_k) \circ \gamma ((f, (g_i)_{1 \leq i \leq k})) &= (\tau_1 \oplus \dots \oplus \tau_k) \left(\bigsqcup_{i=1}^k f_i \circ g_i \right) \\
                 &= \bigsqcup_{i=1}^k f_i \circ {\tau_i(g_i)} \\
-                &= \gamma \left( (f, \tau_1(g_1), \dots, \tau_k(g_k)\right) \\
-                &= \gamma \circ (\tau_1 \times \dots \times \tau_k) ((f, (g_i)_{1 \leq i \leq k})). \\
+                &= \gamma \left( f, \tau_1(g_1), \dots, \tau_k(g_k)\right) \\
+                &= \gamma \circ (\tau_1 \times \dots \times \tau_k) (f, (g_i)_{1 \leq i \leq k}). \\
             \end{align*}
             The little $n$-disk operad $\dd_n$ is a model of the $\E_n$ operad
             and specifically $\E_2$ will be of great importance to us throughout
             the entire thesis. There are other models for the $\E_n$ operads. In
-            fact there are recognition principles for $\E_n$ operads \cite{EO},
-            which will be the motivation for Section \ref{sec:braidedoperads}.
-            However, we will not discuss these other models here. When we
+            fact, there are recognition principles for $\E_n$ operads \cite{EO},
+            which are the motivation for Section \ref{sec:braidedoperads}.
+            However, we will not discuss these other models here.
+            For different models of $\E_2$ we refer to \cite{adrian}.
+            When we
             talk about $\E_n$ we are referring to the little $n$-disk operad
             $\dd_n$.
         \end{enumerate}
@@ -760,7 +762,7 @@
     Following \cite{ha}, the goal of this section is to introduce colored
     operads in such a way that allows us to define $\infty$-operads later on. A
     symmetric monoidal category is an example of a colored operad. Thus, we
-    focus on this special case first. We will show that a symmetric monoidal
+    focus on this special case first. We show that a symmetric monoidal
     category can be defined in a purely functorial way. After that we then
     follow this approach and define the more general notion of a colored operad
     in a similar way.
@@ -820,13 +822,13 @@
     \end{defin}
 
     Unless stated otherwise, when we talk about fibrations and op-fibrations in
-    this thesis, we will always mean Grothendieck fibrations and Grothendieck
+    this thesis, we always mean Grothendieck fibrations and Grothendieck
     op-fibrations, respectively. Also note, that in
     \cite[\href{https://kerodon.net/tag/01RF}{Definition 01RF}]{kerodon}, these
     terms are referred to as cartesian and cocartesian fibrations. However, we
     choose to use the terminology used in \cite{ha}.
     
-    In the next part, we will construct a functor with certain properties from
+    In the next part, we construct a functor with certain properties from
     a symmetric monoidal category. We then see that this functor encodes all
     the necessary data of the symmetric monoidal category.
 
@@ -999,7 +1001,7 @@
             definition that $F$ is fully faithful and essentially surjective,
             i.e. an equivalence of categories.
 
-            First, we will show that for any morphism $\langle n \rangle \to
+            First, we show that for any morphism $\langle n \rangle \to
             \langle m \rangle$ the op-fibration condition (M1) induces a functor
             of fiber categories $A \colon \Cotimes_{\langle n \rangle} \to
             \Cotimes_{\langle m \rangle}$: Let $\alpha \colon \langle n \rangle
@@ -1103,7 +1105,7 @@ right candidate for $\C$ is $\D_{\langle 1 \rangle}$.
 
  \begin{proof}
     Let $\D$ be a category and $P \colon \D \to \Fin$ a functor satisfying the
-    op-fibration condition (M1) and the Segal condition (M2). We will equip $\C
+    op-fibration condition (M1) and the Segal condition (M2). We equip $\C
     \coloneqq \D_{\langle 1 \rangle}$ with a symmetric monoidal structure and
     see that there is an equivalence of categories $\Cotimes \cong \D$.
     \begin{enumerate}
@@ -1115,7 +1117,7 @@ right candidate for $\C$ is $\D_{\langle 1 \rangle}$.
         
     \item There is a unique morphism $\eta \colon \langle 0 \rangle \to \langle
     1 \rangle$ in $\Fin$ defining a functor $\D_{\langle 0 \rangle} \to \C$,
-    which gives us a unique object $I$ in $\C$. This object $I$ will serve as
+    which gives us a unique object $I$ in $\C$. This object $I$ serves as
     the tensor unit which follows from the commuting diagram:
     \begin{center}
         \begin{tikzcd}
@@ -1277,7 +1279,7 @@ right candidate for $\C$ is $\D_{\langle 1 \rangle}$.
     preserving and can be considered in $\deltast$.
 \end{rem}
 
-We will now introduce the notion of a colored operad and will move on to see
+Now, we introduce the notion of a colored operad and move on to see
 that, similarly to describing a symmetric monoidal structure via a functor
 satisfying the op-fibration condition (M1) and Segal condition (M2), there is
 also a functor satisfying similar properties that encodes the data of a colored
@@ -1374,14 +1376,14 @@ operad.
     \begin{enumerate}
         \item A colored operad with one color is a symmetric operad in $\Set$ as
         defined in Definition \ref{operad}. Let $\O$ be a colored operad with
-        one color $X$. We will construct a symmetric operad $\P$ from $\O$.
+        one color $X$. We construct a symmetric operad $\P$ from $\O$.
         Since $\O$ is a colored operad with only one color, we define the family
         of objects $\P(n)$ for $n \in \mathbb{N}$ as:
         \[
             \P(n) \coloneqq \Mul_{\O}(\{X\}_{1\leq i \leq n}, X).
         \]
         The composition maps from $\O$ for natural number indexing then defines
-        the composition maps of $\P$ 
+        the composition maps of $\P$:
         \[
             \gamma: \P(k) \times \P(j_1) \times \cdots \times \P(j_k) \to \P(j),
         \]
@@ -1417,7 +1419,7 @@ operad.
         \]
         We obtain the composition map and operadic unit similarly to the example
         for a one colored operad. However, since the indexing maps need to be
-        order preserving we will not obtain a permutation of labels because
+        order preserving we do not obtain a permutation of labels because
         there is only one bijective order preserving map between finite ordered
         sets.
     \end{enumerate}
@@ -1426,7 +1428,7 @@ operad.
 \begin{egs}
     \begin{enumerate}
         \item Let $\C$ be a symmetric monoidal category. By setting for a finite
-        family of objects $\{X_i\}_{i \in I}$ and object $Y$ in $\C$
+        family of objects $\{X_i\}_{i \in I}$ and object $Y$ in $\C$:
         \[
             \Mul_{\C}(\{X_i\}_{i \in I}, Y) \coloneqq \Hom(\otimes_{i \in I} X_i, Y),
         \]
@@ -1458,7 +1460,7 @@ operad.
         \gamma((f,g,\id))$. The tensor unit $I$ is the representing object of
         the functor sending an object $Z$ in $\C$ to $\Mul_{\C}(\emptyset, Z)$.
         This example is even clearer when we have the functorial definition of a
-        colored operad later on as it will be a generalization of Proposition
+        colored operad later on as it is a generalization of Proposition
         \ref{m1m2} and Proposition \ref{SymMonBijection} illustrates how to
         reconstruct the symmetric monoidal category.
         
@@ -1496,12 +1498,12 @@ operad.
         \langle m \rangle$ and $\alpha' \colon \langle m \rangle \to \langle k
         \rangle$, we define $\bar{\alpha} = \alpha'\circ \alpha$ and
         \[
-            \{(\phi' \circ \phi)_l \in  \Mul_{\O}(\{X_i\}_{i \in \bar{\alpha}^{-1}(l)}, Z_l)\}_{1 \leq l \leq k}
+            \{(\phi' \circ \phi)_l \in  \Mul_{\O}(\{X_i\}_{i \in \bar{\alpha}^{-1}(l)}, Z_l)\}_{1 \leq l \leq k},
         \]
         where $(\phi' \circ \phi)_l$ is applying the following composition map
         to $((\phi_i)_{i \in \alpha^{-1}(l)}, \phi'_l)$
         \[
-            \gamma \colon \prod_{j \in \alpha'^{-1}(l)} \Mul_{\O}(\{X_i\}_{i \in \alpha^{-1}(j)},Y_j) \times \Mul_{\O}(\{Y_i\}_{i \in \alpha'^{-1}(l)},Z_l) \to \Mul_{\O}(\{X_i\}_{i \in \bar{\alpha}^{-1}(l)},Z_l)
+            \gamma \colon \prod_{j \in \alpha'^{-1}(l)} \Mul_{\O}(\{X_i\}_{i \in \alpha^{-1}(j)},Y_j) \times \Mul_{\O}(\{Y_i\}_{i \in \alpha'^{-1}(l)},Z_l) \to \Mul_{\O}(\{X_i\}_{i \in \bar{\alpha}^{-1}(l)},Z_l).
         \] 
     \end{enumerate}
 \end{defin}
@@ -1551,7 +1553,7 @@ $\alpha^{-1}(\langle m \rangle^{\circ})$.
 
     It is left to show that $f$ is in fact cocartesian. Let $g \colon \{X_i\}_{i
     \in I} \to \{X''_k\}_{k \in \langle  l \rangle}$ be a morphism in $\Ox$ and
-    $\omega \colon \langle m \rangle \to \langle l \rangle$ a morphisn in $\Fin$
+    $\omega \colon \langle m \rangle \to \langle l \rangle$ a morphism in $\Fin$
     such that $\pi(g) = \omega \circ \pi(f)$. Due to the fact of $\pi(f)$ being
     a bijection on the restriction, we observe that $\omega$ is determined by
     $\pi(g)$. It follows that
@@ -1599,7 +1601,7 @@ This gives us an alternative definition of a colored operad. Instead of seeing a
 colored operad as a categorical structure $\O$ equipped with an extensive notion
 of morphisms, we can now view colored operads as a category $\Ox$ equipped with
 a forgetful functor $\pi \colon \Ox \to \Fin$ satisfying conditions such as
-$\Ox_{\langle n \rangle} \cong (\Ox_{\langle 1 \rangle})^n$ and $\O =
+$\Ox_{\langle n \rangle} \cong (\Ox_{\langle 1 \rangle})^n$, and $\O =
 \Ox_{\langle 1 \rangle}$ inherits the structure of a colored operad. Even though
 the conditions $\pi$ has to satisfy seem tedious, the second definition is
 phrased entirely in the language of category theory and can therefore be

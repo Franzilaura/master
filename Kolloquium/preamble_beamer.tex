@@ -1,0 +1,187 @@
+%!TEX root = presentation.tex
+
+\usepackage{graphicx} % Required for inserting images
+%\usepackage{bookman}
+\usepackage{tikz}
+\usetikzlibrary{positioning}
+%\usepackage{cancel}
+\usepackage{multirow}
+\usepackage{listings}
+\usepackage{caption}
+\usepackage{amsmath,amssymb,amsthm,amsfonts,amsxtra,mathtools}
+\usepackage[ngerman, english]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+
+\usepackage{tikz}
+\usetikzlibrary{cd}
+% \usetikzlibrary{braids}
+% \usetikzlibrary{matrix}
+\tikzset{
+  every picture/.prefix style={
+    execute at begin picture=\shorthandoff{"}
+  }
+}
+
+\usepackage{stmaryrd}
+% \usepackage{amsfonts}
+% \usepackage[margin =3.25cm]{geometry}
+% \usepackage{amssymb}
+% \usepackage{graphicx}
+\usepackage[mathscr]{euscript}
+\usepackage[english]{babel}
+% \usepackage{cite}
+\usepackage{lmodern}
+\usepackage{appendix}
+%Auflistungen ändern
+\usepackage{enumerate}
+% \usepackage{titlesec}
+% \usepackage{titletoc}
+% \usepackage{fancyhdr} %header package
+% \usepackage{setspace}
+
+
+
+%\usepackage{algpseudocode}
+
+\usepackage{hyperref}
+%für algorithmen
+%\usepackage{algorithmic}
+\usepackage{algpseudocodex}
+\algrenewcommand\alglinenumber[1]{\bf{\footnotesize #1}}
+\algrenewcommand\algorithmicrequire{\bf{Input:}}
+\algrenewcommand\algorithmicensure{\bf{Output:}}
+
+\usetheme{CambridgeUS}%Boadilla}
+\usecolortheme{dolphin}
+\usefonttheme{professionalfonts}
+
+\setbeamertemplate{theorems}[numbered]
+\newtheorem{remark}{Remark} %for remark 
+
+\setbeamercovered{highly dynamic}
+
+\newcounter{saveenumi}
+\newcommand{\seti}{\setcounter{saveenumi}{\value{enumi}}}
+\newcommand{\conti}{\setcounter{enumi}{\value{saveenumi}}}
+
+\newcommand{\abs}[1]{\left\lvert#1\right\rvert}
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+\newcommand{\SPAN}[1]{\textup{span}\left\lbrace #1 \right\rbrace }
+
+\newcommand{\state}[1]{\vert #1 \rangle}
+\newcommand{\linearf}[1]{\langle #1 \vert}
+
+\resetcounteronoverlays{saveenumi}
+
+\renewcommand\thetheorem{\arabic{lecture}.\arabic{theorem}}
+\renewcommand\theremark{\arabic{lecture}.\arabic{remark}}
+\makeatletter
+\@addtoreset{theorem}{lecture}
+\@addtoreset{remark}{lecture}
+\makeatother
+
+
+
+\newcounter{Def}
+\setcounter{Def}{1}
+%\newtheorem{Definition}[Def]{Definition}
+\theoremstyle{plain}
+\newtheorem{thm}{Theorem}[section]
+\newtheorem{prop}[thm]{Proposition}
+\newtheorem{lem}[thm]{Lemma}
+\newtheorem{cor}[thm]{Corollary}
+\newtheorem{cla}[thm]{Claim}
+\newtheorem{sketchproof}{Sketch of Proof}
+
+%Style definition für Definitionen und Beispiele...
+\theoremstyle{definition}
+\newtheorem{defin}[thm]{Definition}
+\newtheorem{eg}[thm]{Example}
+\newtheorem{egs}[thm]{Examples}
+\newtheorem{rem}[thm]{Remark}
+\newtheorem{nota}[thm]{Notation}
+\newtheorem{const}[thm]{Construction}
+
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+%Mathoperators
+\DeclareMathOperator{\Set}{\textbf{Set}}
+\DeclareMathOperator{\Plop}{\textbf{PlanarOp}}
+\DeclareMathOperator{\Ch}{\textbf{Ch}}
+\DeclareMathOperator{\Mod}{\textbf{-mod}}
+\DeclareMathOperator{\Grp}{\textbf{Grpd}}
+\DeclareMathOperator{\Top}{\textbf{Top}}
+\DeclareMathOperator{\Cat}{\textbf{Cat}}
+\DeclareMathOperator{\Vect}{\textbf{Vect}}
+\DeclareMathOperator{\id}{Id}
+\DeclareMathOperator{\htw}{hT}
+\DeclareMathOperator{\op}{op}
+\DeclareMathOperator*{\colim}{colim}
+\DeclareMathOperator{\Mul}{Mul}
+\DeclareMathOperator{\Map}{Map}
+\DeclareMathOperator{\Hom}{Hom}
+\DeclareMathOperator{\HHom}{\underline{Hom}}
+\DeclareMathOperator{\Emb}{Emb}
+\DeclareMathOperator{\Conf}{Conf}
+\DeclareMathOperator{\End}{End}
+\DeclareMathOperator{\Ev}{Ev}
+\DeclareMathOperator{\Cyl}{Cyl}
+\DeclareMathOperator{\Path}{Path}
+\DeclareMathOperator{\Fun}{Fun}
+\DeclareMathOperator{\Br}{BR}
+\DeclareMathOperator{\Brr}{BR_{\ast}}
+\DeclareMathOperator{\Ass}{Ass^{\otimes}}
+\DeclareMathOperator{\dd}{D}
+\DeclareMathOperator{\ld}{L}
+\DeclareMathOperator{\E}{E}
+\DeclareMathOperator{\Ex}{\E_2^{\otimes}}
+\DeclareMathOperator{\Es}{\E_2 \slash S}
+\DeclareMathOperator{\Comm}{Comm^{\otimes}}
+\DeclareMathOperator{\Ho}{Ho}
+\DeclareMathOperator{\coker}{coker}
+\DeclareMathOperator{\T}{T}
+\DeclareMathOperator{\I}{I}
+\DeclareMathOperator{\inter}{int}
+\DeclareMathOperator{\act}{active}
+\DeclareMathOperator{\acthom}{\Hom^{\act}}
+
+
+
+
+%nice Buchstaben fuer categorien
+\usepackage[mathscr]{euscript}
+% \renewcommand{\S}{\mathscr{S}}
+\renewcommand{\P}{\mathscr{P}}
+\renewcommand{\S}{\mathscr{S}}
+\newcommand{\C}{\mathscr{C}}
+\renewcommand{\O}{\mathscr{O}}
+\newcommand{\B}{\mathscr{B}}
+\newcommand{\D}{\mathscr{D}}
+\newcommand{\nerv}{\mathscr{N}}
+\newcommand{\W}{\mathscr{W}}
+\newcommand{\Fib}{\mathscr{F} \text{ib}}
+\newcommand{\Cof}{\mathscr{C} \text{of}}
+\newcommand{\M}{\mathscr{M}}
+\newcommand{\X}{\mathcal{X}}
+\newcommand{\ind}{\text{ind-}\C}
+% \newcommand{\I}{\mathcal{I}}
+\newcommand{\chains}{\Ch_k^\I}
+\newcommand{\Cotimes}{\mathscr{C}^{\otimes}}
+\newcommand{\Ox}{\mathscr{O}^{\otimes}}
+\newcommand{\Bx}{\mathscr{B}^{\otimes}}
+\newcommand{\Bc}{\mathscr{B}_{\text{color}}}
+\newcommand{\Fin}{\mathscr{F} \text{in}_{\ast}}
+\newcommand{\Brx}{\mathscr{B} \text{r}_{\ast}}
+% \newcommand{\Br}{\mathscr{B} \mathscr{R}}
+% \newcommand{\Brr}{\mathscr{B}\mathscr{R}_*}
+\newcommand{\deltast}{\Delta_{\ast}}
+\usepackage{hyperref}
+
+
+\title{Braided Operads}
+\author{Franziska Ahrens}
+\date{05.08.2025}

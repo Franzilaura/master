@@ -18,17 +18,19 @@
         \end{enumerate}
     \end{thm}
 
-    In the sketch of the proof, it is stated that "the definition of operads can
+    In the sketch of the proof, it is stated that ''the definition of operads can
     be reformulated using actions by braid groups in place of actions by
-    symmetric groups"~\cite{EO}. As braided operads are a useful tool, e.g.
+    symmetric groups''~\cite{EO}. As braided operads are a useful tool, e.g.
     recognizing $\E_n$-operads, we want to gain a deeper understanding of
-    them. Further, we have already seen that colored operads
+    them. We introduce the existing notion of a braided operad following \cite[Chapter 4,5]{yau}
+    and see first examples. Further, we have already seen that colored operads
     correspond to functor over finite pointed sets $\Fin$ as well as
     colored planar operads correspond to functors over $\deltast$ with 
     certain properties. We are
     hoping to find a suitable category, such that colored braided operads
     correspond to functors over this category satisfying similar 
     properties as in the other cases. 
+    
     
     % To do so, we first need to develop the language for it. Meaning we will
     % need to develop a concept of braided colored operads which we will work
@@ -39,8 +41,8 @@
     It might be interesting to try to define braided operads in braided monoidal
     categories rather than symmetric monoidal categories, potentially yielding
     interesting examples. However, it is not straightforward how to do this since
-    shuffling objects would not be a canonical isomorphism. So for now, we will
-    stay in a symmetric monoidal category $\C$.
+    shuffling objects would not be a canonical isomorphism. So for now, we stay
+    in a symmetric monoidal category $\C$.
 
 \begin{defin}\label{def-br-operad} A {\em braided operad} $\O$ in $\C$ is a
     planar operad as defined in Definition \ref{planaroperad} with an action of
@@ -118,7 +120,7 @@
     \begin{enumerate}
         \item Again, let us consider the operad in $\Set$ defined by the
         singleton set in each degree $n \in \N$. The braid group acts trivially.
-        When we consider algebras over this operad, we will again obtain
+        When we consider algebras over this operad, we again obtain
         commutative algebras.
         \item We have already encountered an example of a planar operad in
         Example \ref{braidop} which can be lifted to a braided operad - the
@@ -128,11 +130,11 @@
     
 \end{eg}
 
-\subsection{Action Operad}
+\subsection{Action Operads}
 For this section, we remain in the symmetric monoidal category of sets equipped
-with the cartesian symmetric monoidal structure. We will introduce an action
-operad that acts on planar operads and this relates to braided operads following
-\cite{yau}. A future idea would be that the theory on braided operads can be extended,
+with the cartesian symmetric monoidal structure. We introduce an action
+operad that acts on planar operads and relates to braided operads following
+\cite[Chapter 4]{yau}. A future idea would be that the theory on braided operads can be extended,
 in a sense, to group action operads.
 
 \begin{defin}

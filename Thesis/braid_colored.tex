@@ -1,49 +1,56 @@
 \section{Colored Braided Operads}\label{sec:colbraidop}
 
-\textcolor{red}{In this section we provide two original definitions of colored braided operads and develop the theory connecting them.
-We start with a first direct definition that allows us to understand colored braided operads in a similar way as colored 
-symmetric operad from their classical Definition \ref{coloroperad}.
-However, a generalization of colored braided operads to the $\infty$-categorical context requires a categorical definition.
-To provide this, we follow an approach similar to the construction of the forgetful functor $\Ox \to \Fin$ from a colored operad $\O$, outlined in Section \ref{sec:operads}.
-Doing so, we draw inspiration from Lurie's treatment of $\infty$-operads and his illustrations of the little disks operad as developed in \cite[Section 2]{ha}.
-Concretely, we define a category $\Bx$ from a colored braided operad $\B$ and a base category $\Brx$, such that there is a forgetful functor $\pi \colon \Bx \to \Brx$ that encodes all the necessary datum of $\B$.
-As a first example of a colored braided operad $\B$ defined via a functor into $\Brx$, we see how an op-fibration in this setting induces a braided monoidal structure on the underlying category $\B$.
-Afterwards, we examine the general properties of $\pi$ in more detail and do the work to show that it indeed gives us the categorical definition we are looking for.}
+In this section we provide two original definitions of colored
+braided operads and develop a theory connecting them. We start with a first
+direct definition that allows us to understand colored braided operads in a
+similar way as colored symmetric operads from their classical Definition
+\ref{coloroperad}. However, a generalization of colored braided operads to the
+$\infty$-categorical context requires a categorical definition. To provide this,
+we follow an approach similar to the construction of the forgetful functor $\Ox
+\to \Fin$ from a colored operad $\O$, outlined in Section \ref{sec:operads}.
+Doing so, we draw inspiration from Lurie's treatment of $\infty$-operads and his
+illustrations of the little disks operad as developed in \cite[Section 2]{ha}.
+Concretely, we define a category $\Bx$ from a colored braided operad $\B$ and a
+base category $\Brx$, such that there is a forgetful functor $\pi \colon \Bx \to
+\Brx$ that encodes all the necessary data of $\B$. As a first example of a
+colored braided operad $\B$ defined via a functor into $\Brx$, we see how an
+op-fibration in this setting induces a braided monoidal structure on the
+underlying category $\B$. Afterwards, we examine the general properties of $\pi$
+in more detail and do the work to show that it indeed gives us the categorical
+definition we are looking for.
 
 
-% Finally, we get to the central goal of this thesis. At the heart of this section are
-% our two definitions for colored braided operads and the theory connecting them.
-% The theory follows the approach from Section \ref{sec:operads} but in a new
-% context. Our approach is inspired in many ways by the very general treatment of
-% $\infty$-operads as developed in \cite{ha}.
-% Nevertheless, our definition of a colored braided operad, in particular, valued
-% in arbitrary symmetric monoidal categories, seems to be new.
-% We start by giving our first definition of a colored
-% braided operads $\B$ and finally find a functor $\pi \colon \Bx \to \Brx$ that
-% encodes all the necessary data of $\B$. Before we move on to investigate the
-% properties of the functor, we look at our main example of a colored braided
-% operad -- a braided monoidal category. We will phrase such a category in the
-% language of both definitions -- classical and categorical. Afterwards, we move on
-% to understand the general properties of the functor $\pi$ and give a sketch on
-% how to reconstruct a colored braided operad in the classical sense from $\pi$.
-% As the second definition is phrased categorically, the notion can eventually be
+% Finally, we get to the central goal of this thesis. At the heart of this
+% section are our two definitions for colored braided operads and the theory
+% connecting them. The theory follows the approach from Section
+% \ref{sec:operads} but in a new context. Our approach is inspired in many ways
+% by the very general treatment of $\infty$-operads as developed in \cite{ha}.
+% Nevertheless, our definition of a colored braided operad, in particular,
+% valued in arbitrary symmetric monoidal categories, seems to be new.
+
+% We start by giving our first definition of a colored braided operad $\B$ and
+% finally find a functor $\pi \colon \Bx \to \Brx$ that encodes all the
+% necessary data of $\B$. Before we move on to investigate the properties of the
+% functor, we look at our main example of a colored braided operad -- a braided
+% monoidal category. We will phrase such a category in the language of both
+% definitions -- classical and categorical. Afterwards, we move on to understand
+% the general properties of the functor $\pi$ and give a sketch on how to
+% reconstruct a colored braided operad in the classical sense from $\pi$. As the
+% second definition is phrased categorically, the notion can eventually be
 % lifted to an $\infty$-categorical context.
 
 \subsection{Colored Braided Operads}
 
 In this section we give our first definition of a colored braided operad and
-consider some examples. We begin with some necessary terminology.
-
-We introduce a slightly more general variant of the space of little disks
-$\E_2(n)$ introduced in Example \ref{eg:operads}.
-
-Let $\dd^2$ denote the closed unit disk in $\R^2$. We recall a little disk from
-Example \ref{eg:operads} which is defined as an embedding $f \colon \dd^2 \to
-\dd^2$ of the following form:
+consider some examples. We begin with some necessary terminology. We introduce a
+slightly more general variant of the space of little disks $\E_2(n)$ introduced
+in Example \ref{eg:operads}. Let $\dd^2$ denote the closed unit disk in $\R^2$.
+We recall a little disk from Example \ref{eg:operads} which is defined as an
+embedding $f \colon \dd^2 \to \dd^2$ of the following form:
 \[
     f(r_1, r_2) \coloneqq (c_1, c_2) + \lambda(r_1, r_2)
 \]
-for $(c_1, c_n) \in \dd^2$ and $\lambda \in \R$ such that
+for $(c_1, c_2) \in \dd^2$ and $\lambda \in \R$ such that
 \[
     0 < \lambda \leq 1 - \sum_{i=1}^{2} c_i^2.     
 \]
@@ -54,7 +61,7 @@ equip the space of continuous maps $C\left(\bigsqcup_{i \in I} \dd^2,
 \begin{defin}\label{def:ilabeled} For a finite set $I$, we define a topological
 space
 \[
-    \dd(I) \coloneqq \left\{ \bigsqcup_{i \in I} f_i \in C\left(\bigsqcup_{i \in I} \dd^2, \dd^2\right) \colon \inter(f_i) \cap \inter(f_j) = \emptyset  \; \text{and} \; f_i, f_j \in \ld \; \text{ for all } i \not= j\right\}.
+    \dd(I) \coloneqq \left\{ \bigsqcup_{i \in I} f_i \in C\left(\bigsqcup_{i \in I} \dd^2, \dd^2\right) \colon \inter(f_i) \cap \inter(f_j) = \emptyset  \; \text{and} \; f_i, f_j \in \ld \; \text{ for all } i \not= j\right\}
 \]
 with the subspace topology. We refer to the points of $\dd(I)$ as $I$-labeled
 configurations. 
@@ -65,16 +72,16 @@ For a map of finite sets $\alpha \colon I \to J$, a $J$-labeled configuration
 $\widetilde{J}$ along with $\alpha^{-1}(j)$-labeled configurations 
 $$\left\{\widetilde{\alpha^{-1}(j)}\right\}_{j \in J},$$ we obtain an
 $I$-labeled configuration $\widetilde{I}$ by nesting the various disks in
-analogy to the definition of $E_2$ in Example \ref{eg:operads}. Hence, for any
+analogy to the definition of $\E_2$ in Example \ref{eg:operads}. Hence, for any
 map of finite sets $\alpha \colon I \to J$ we obtain a composition map:
 
 \begin{equation}\label{eq:defcomp}
-    \gamma: D(J) \times \prod_{j \in J} D(\alpha^{-1}(j)) \to D(I).
+    \gamma: \dd(J) \times \prod_{j \in J} \dd(\alpha^{-1}(j)) \to \dd(I).
 \end{equation}
 \end{defin}
 
-In other words, we simply consider the little disks in $\E_2(n)$ as labeled by $I$
-instead of $\{1,...,n\}$. 
+In other words, we simply consider the little disks in $\E_2(n)$ as labeled by
+$I$ instead of $\{1,...,n\}$. 
 
 \begin{defin}
     A category $\C$ is called a groupoid if every morphism in $\C$ has an
@@ -95,14 +102,15 @@ instead of $\{1,...,n\}$.
 
 
 \begin{defin}
-    We define the $\Grp$-enriched category $\Br$ of {\em braided sets} as follows:
+    We define the $\Grp$-enriched category $\Br$ of {\em braided sets} as
+    follows:
     \begin{enumerate}[(i)]
         \item The objects of $\Br$ are finite sets.
         \item A morphism $\widetilde{\alpha} \colon I \to J$ in $\Br$ consists
         of a map of finite sets  $\alpha \colon I \to J$ and a collection of
         labeled configurations
         \[
-            \left\{\widetilde{\alpha^{-1}(j)} \in D(\alpha^{-1}(j))\right\}_{j \in J}
+            \left\{\widetilde{\alpha^{-1}(j)} \in D(\alpha^{-1}(j))\right\}_{j \in J}.
         \]
 
         % $$\left\{\widetilde{\alpha}_j \in
@@ -110,7 +118,7 @@ instead of $\{1,...,n\}$.
         \begin{enumerate}
             \item For morphisms
         \[
-            \widetilde{\alpha} \colon I \to J, \quad \widetilde{\beta} \colon J \to K
+            \widetilde{\alpha} \colon I \to J, \quad \widetilde{\beta} \colon J \to K,
         \]
         
         the composition $\widetilde{\beta} \circ \widetilde{\alpha}$ consists of
@@ -126,32 +134,33 @@ instead of $\{1,...,n\}$.
         \[
             \widetilde{(\beta \circ \alpha)^{-1}(k)} \coloneqq \gamma\left(\widetilde{\beta^{-1}(k)}, (\widetilde{\alpha^{-1}(j)})_{j \in \beta^{-1}(k)}\right),%}\widetilde{\alpha^{-1}(j_1)}, \dots, \widetilde{\alpha^{-1}(j_p)}\right),
         \]
-        where $\gamma$ is the composition map from
-        (\ref{eq:defcomp}).
+        where $\gamma$ is the composition map from (\ref{eq:defcomp}).
         
         % analogously to the composition map in $\Ex$ as defined above.
         \item The identity morphism $\id_I$ is given by the identity on the
-        finite set $I$ and the collection of identity configurations $\{\id^{(i)}
-        \in D(\{i\})\}_{i \in I}$.
+        finite set $I$ and the collection of identity configurations
+        $\left\{\id^{(i)} \in D(\{i\})\right\}_{i \in I}$.
         \end{enumerate}
         \item For morphisms $\widetilde{\alpha}, \widetilde{\beta} \colon I \to
         J$ in $\Br$ with the same underlying map $\alpha = \beta$, a
-        $2$-morphism in $\Br$ consists of a family of homotopy classes of paths in $\dd(\alpha^{-1}(j))$
+        $2$-morphism in $\Br$ consists of a family of homotopy classes of paths
+        in $\dd(\alpha^{-1}(j))$
         \[
             \left\{\eta_j \colon \widetilde{\alpha^{-1}(j)} \Rightarrow \widetilde{\beta^{-1}(j)}\right\}_{j \in J}.
         \]
     \end{enumerate}
 \end{defin}
-This defines a strict $2$-category where all $2$-morphisms are invertible, i.e. a $\Grp$-enriched category. Note
-that a morphism $I \to \{1\}$ in $\Br$ simply consists of an $I$-labeled
-configuration $\widetilde{I}$ which we usually use to denote the morphism. 
+This defines a strict $2$-category where all $2$-morphisms are invertible, i.e.
+a $\Grp$-enriched category. Note that a morphism $I \to \{1\}$ in $\Br$ simply
+consists of an $I$-labeled configuration $\widetilde{I}$ which we usually use to
+denote the morphism. 
 
 \begin{nota}
-    To avoid clumsy notation, for a morphism $\widetilde{\alpha} \colon I \to J$ in $\Br$, we write
-    $$\alpha_j \coloneqq \alpha^{-1}(j)$$ 
-    for the preimage and 
-    $$\widetilde{\alpha_j} \coloneqq \widetilde{\alpha^{-1}(j)}$$
-    for the configurations.
+    To avoid clumsy notation, for a morphism $\widetilde{\alpha} \colon I \to J$
+    in $\Br$, we write
+    $$\alpha_j \coloneqq \alpha^{-1}(j)$$ for the preimage and 
+    $$\widetilde{\alpha_j} \coloneqq \widetilde{\alpha^{-1}(j)}$$ for the
+    configurations.
 \end{nota}
 
     
@@ -199,7 +208,7 @@ We are now ready to define the concept of a colored braided operad:
         along with collections of colors $\{X_i\}_{i \in I}$, $\{Y_j\}_{j \in
         J}$ and color $Z$, a composition map:
         \[
-            \gamma \colon \prod_{j \in J} \Mul_{\B}^{\widetilde{\alpha_j}}\left(\{X_i\}_{i \in \alpha_j}, Y_j\right) \times \Mul_{\B}^{\widetilde{J}}\left(\{Y_j\}_{j\in J}, Z\right) \to \Mul_{\B}^{\widetilde{I}}\left(\{X_i\}_{i \in I}, Z\right)  
+            \gamma \colon \prod_{j \in J} \Mul_{\B}^{\widetilde{\alpha_j}}\left(\{X_i\}_{i \in \alpha_j}, Y_j\right) \times \Mul_{\B}^{\widetilde{J}}\left(\{Y_j\}_{j\in J}, Z\right) \to \Mul_{\B}^{\widetilde{I}}\left(\{X_i\}_{i \in I}, Z\right).  
         \]
         \item For any $I$-labeled configuration $\widetilde{I}$ with $|I|=1$ and
         color $X$, a morphism
@@ -410,7 +419,7 @@ We are now ready to define the concept of a colored braided operad:
     the definition of $\Bc$. We recall from Lemma \ref{lem:fundamentalgroup}
     that the fundamental group of the space of unordered disks $\E_2(n) \slash
     S_n$ is the braid group. Let $\sigma \in B_n$ and $\bar{\sigma} \in S_n$
-    denoting its underlying permutation. Then, we have the following commuting
+    denote its underlying permutation. Then, we have the following commuting
     diagram in $\Br$ corresponding uniquely to a homotopy class of loops in the
     unordered configurations space, hence a braid:
     \begin{center}
@@ -505,7 +514,7 @@ We are now ready to define the concept of a colored braided operad:
             {$\overset{\Leftarrow}{\sigma}$};
         \end{tikzpicture}
     \end{center}
-    Note, that the left triangle is defining $\theta$ and is a
+    Note, that the left triangle is defining $\theta$ and is an
     $\E_1$-translation. Furthermore, let $\rho_l \in B_{j_l}$ for $1 \leq l \leq
     k$ and $\rho_1 \oplus \cdots \oplus \rho_k$ denotes the sum of braidings on
     $k$ blocks with each block having $j_l$ strands. Then the second
@@ -629,7 +638,7 @@ introduce a pointed variant of the category $\Br$ of braided sets from above.
 \end{defin}
 
 \begin{rem}
-    Note that that $\Brr$ is equivalent to $\Brx$ in the analogous way as $\Fin$
+    Note that $\Brr$ is equivalent to $\Brx$ in the analogous way as $\Fin$
     is equivalent to the category of finite sets with a distinguished point.
 \end{rem}
 
@@ -657,7 +666,7 @@ $\B$:
         is given by a map $\widetilde{\alpha} \colon \langle m \rangle \to
         \langle n \rangle$ in $\Brx$ together with a family of morphisms
         \[
-            \{ \phi_j \in \Mul_{\B}^{\widetilde{\alpha_j}}(\{X_i\}_{i \in \alpha^{-1}(j)}, Y_j)\}_{1 \leq j \leq n}
+            \left\{ \phi_j \in \Mul_{\B}^{\widetilde{\alpha_j}}(\{X_i\}_{i \in \alpha^{-1}(j)}, Y_j)\right\}_{1 \leq j \leq n}
         \]
         in $\B$. We call $\widetilde{\alpha}$ the underlying morphism of $\phi$.
         \item Composition of morphisms is determined by the composition in
@@ -668,7 +677,7 @@ $\B$:
         \widetilde{\alpha'} \circ \widetilde{\alpha}$ and the family of
         morphisms
         \[
-            \{(\phi' \circ \phi)_l \in  \Mul_{\B}^{\widetilde{\alpha''_l}}(\{X_i\}_{i \in \alpha''^{-1}(l)}, Z_l)\}_{1 \leq l \leq k},
+            \left\{(\phi' \circ \phi)_l \in  \Mul_{\B}^{\widetilde{\alpha''_l}}(\{X_i\}_{i \in \alpha''^{-1}(l)}, Z_l)\right\}_{1 \leq l \leq k},
         \]
         where $(\phi' \circ \phi)_l$ is applying to $((\phi_i)_{i \in
         \alpha''^{-1}(l)}, \phi'_l)$ the following composition map 
@@ -682,12 +691,12 @@ $\B$:
 
         $$\bar{\eta} \colon \phi \to \psi$$
 
-        consist of
-        a $2$-morphism 
-        $$\widetilde{\eta} \colon \widetilde{\alpha_{\phi}} \Rightarrow \widetilde{\alpha_{\psi}}$$
+        consist of a $2$-morphism 
+        $$\widetilde{\eta} \colon \widetilde{\alpha_{\phi}} \Rightarrow
+        \widetilde{\alpha_{\psi}}$$
 
-        in $\Brx$ such that for all $1 \leq j \leq m$ the composition maps $\gamma$ corresponding to the
-        following diagram:
+        in $\Brx$ such that for all $1 \leq j \leq m$ the composition maps
+        $\gamma$ corresponding to the following diagram:
         \begin{center}
             \begin{tikzpicture}
                 % Define node positions
@@ -699,16 +708,17 @@ $\B$:
                 \draw[->] (C) -- (A) node[midway, right]
                 {$\widetilde{\alpha_{\psi_j}}$};
                 % Natural transformation arrow
-                \node[rotate=-40] at (1.4, 1.2) {$\Downarrow \widetilde{\eta}_j$};
+                \node[rotate=-40] at (1.4, 1.2) {$\Downarrow
+                \widetilde{\eta}_j$};
                 % \node at (1.7, 1.2) {$\eta$};
             \end{tikzpicture}
         \end{center}
-        satisfies $\gamma((\id_{X_i})_{i \in \alpha_{\phi_j}}, \psi_j) =
+        satisfy $\gamma((\id_{X_i})_{i \in \alpha_{\phi_j}}, \psi_j) =
         \phi_j$. The composition of $2$-morphisms is well-defined since for
-        $2$-morphisms $\bar{\eta} \colon \phi \Rightarrow \psi$, $\bar{\epsilon} \colon \psi \Rightarrow
-        \chi$, as well as composition maps $\gamma, \gamma'$ corresponding to
-        $\widetilde{\eta}_j$ and $\widetilde{\epsilon}_j$, the following holds for all $1 \leq j \leq
-        m$:
+        $2$-morphisms $\bar{\eta} \colon \phi \Rightarrow \psi$, $\bar{\epsilon}
+        \colon \psi \Rightarrow \chi$, as well as composition maps $\gamma,
+        \gamma'$ corresponding to $\widetilde{\eta}_j$ and
+        $\widetilde{\epsilon}_j$, the following holds for all $1 \leq j \leq m$:
         \begin{align*}
             \phi_j &= \gamma ((\id_{X_i})_{i \in \alpha_{\psi_j}}, \psi_j) \\
             &= \gamma((\id_{X_i})_{i \in \alpha_{\psi_j}}, \gamma'((\id_{X_i})_{i \in \alpha_{\chi_j}}, \chi_j)) \\
@@ -721,7 +731,7 @@ $\B$:
 \begin{defin}
 Let $\B$ be a colored braided operad, then we define a forgetful functor
 \[
-    \pi \colon \Bx \to \Brx,
+    \pi \colon \Bx \to \Brx
 \]
 as follows:
 \begin{align*}
@@ -729,20 +739,19 @@ as follows:
     (f \colon [X_1, \dots, X_n] \to [X_1', \dots, X_m']) &\mapsto (\alpha_f \colon \langle n \rangle \to \langle m \rangle) \\
     (\eta \colon \psi \Rightarrow \phi) &\mapsto (\widetilde{\eta} \colon \alpha_{\phi} \Rightarrow \alpha_{\psi})
 \end{align*}
-where $\alpha_f$ refers to the morphism in $\Brx$ underlying $f$ and $\widetilde{\eta}$ the $2$-morphism underlying $\eta$. 
+where $\alpha_f$ refers to the morphism in $\Brx$ underlying $f$ and
+$\widetilde{\eta}$ the $2$-morphism underlying $\eta$. 
 \end{defin}
-It is straight
-forward to see that this defines a functor.
+It is straight forward to see that this defines a functor.
 
-\begin{eg}\label{eg:br-fib-trivial}
-    The category corresponding, under the construction of Definition \ref{def:B-tensor}, 
-    to the trivial unicolored braided
-    operad from Example \ref{eg:trivial-col-br-op} is the category $\Brx$.
-    The defined forgetful functor is the identity functor on $\Brx$.
-    Further, we recall that there is a forgetful functor from $\Brx$ to $\Fin$
-    satisfying the conditions of a colored symmetric operad which is equivalent to $\E_2$.
-    Thus, we note every colored braided operad gives rise to a colored
-    symmetric operad.
+\begin{eg}\label{eg:br-fib-trivial} The category corresponding, under the
+    construction of Definition \ref{def:B-tensor}, to the trivial unicolored
+    braided operad from Example \ref{eg:trivial-col-br-op}, is the category
+    $\Brx$. The defined forgetful functor is the identity functor on $\Brx$.
+    Further, we recall that there is a forgetful functor from $\Brx$ to $\Fin$,
+    satisfying the conditions of a colored symmetric operad which is equivalent
+    to $\E_2$. Thus, we note every colored braided operad gives rise to a
+    colored symmetric operad.
 \end{eg}
 
 Before we characterize the properties of the functor $\pi$, we analyze the

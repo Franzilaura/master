@@ -1,0 +1,99 @@
+%!TEX root = main.tex
+
+\section{Introduction}
+
+Algebraic structures such as associative algebras, commutative algebras, and Lie
+algebras frequently require study ``up to homotopy'', necessitating the
+development of abstract frameworks capable of capturing their essential
+properties while allowing for higher-order deformations. One such framework,
+introduced by May in \cite{may1972} for the study of iterated loop spaces, is the
+theory of operads. 
+% There are different types of algebras: associative, commutative, Lie, etc.
+% %  as well as corresponding to them an appropriate notion of a module. 
+% It is often required to deal with these "up to homotopy". There was a need to
+% develop abstract frameworks in which one can study algebras. One of which was
+% introduced by May in \cite{may1972} in order to be able to study iterated loop
+% spaces-operads. 
+An operad is a mathematical structure that encodes operations
+with multiple inputs and a single output, along with rules for composing these
+operations. Operads have since been established as a fundamental framework
+across different fields. They provide a way to understand algebraic structures
+where operations can be composed in tree-like patterns. The power of operads
+lies in their ability to capture the essence of ``operations and their
+symmetries'' in a purely combinatorial way, while simultaneously encoding
+topological and algebraic information.
+
+The classical theory of operads focuses on symmetric operads -- structures where
+the symmetric group actions capture the permutability of inputs. However, a
+growing body of work has sought to generalize operads by relaxing or modifying
+the symmetry conditions. In particular, braided operads arise as a natural
+intermediate between symmetric and nonsymmetric operads. Furthermore, braided
+operads have found important applications; for example, Fiedorowicz established
+recognition principles in \cite{EO} that depend on the braided structure of a
+braided operad.
+
+\medskip
+
+This thesis investigates the theory of braided operads and extends it to a new
+notion: colored braided operads. The goal is to provide both conceptual clarity
+and a structural foundation for these objects, with an emphasis on categorical
+formulations. In particular, we follow a guiding principle: that operads can be
+described using ``weak fibrations''. This perspective shifts the focus from
+traditional presentations in terms of sets, groups, and actions, toward a more
+abstract, categorical formulation, ultimately leading to a more elegant and
+flexible framework.
+
+\medskip
+
+Section \ref{sec:operads} begins with a general overview of operads. We
+introduce the usual notion of operads as well as algebras and modules over an
+operad and take a look at some common examples. After establishing the
+mathematical foundation, we develop the theory from a categorical standpoint. We
+examine how operads can be understood as functors satisfying specific
+properties. This section is both, a review of the existing theory on
+operads following \cite{may} and colored symmetric operads \cite{ha} as well as it
+serves as a foundation for Section \ref{sec:colbraidop}. The part about colored
+operads and symmetric monoidal categories and in particular the developemnt of
+functors encoding these structures, directly follows Lurie's work in \cite[Section 2.1]{ha} with slightly more
+details.
+
+
+\medskip
+Section \ref{sec:braidedoperads} introduces braided operads, starting with the
+motivation behind replacing the symmetric group with the braid group. We
+formally define braided operads and provide illustrative examples that highlight
+their distinct features following \cite[Section 4,5]{yau}. Further, we state and sketch the work of Fox and
+Neuwirth from \cite{fox}. Moreover, we give a brief introduction into action
+operads from \cite{yau}.
+% Throughout, we emphasize how the operadic structure adapts to the presence of
+% a braiding, and how this affects the interplay between operations.
+
+
+\medskip
+Section \ref{sec:colbraidop} proposes our own definition of colored braided
+operads, inspired by the need to manage multiple colors of inputs and outputs
+while retaining the braided structure. However, the aim in this section is to
+establish a second definition of colored braided operads based on functorial
+properties and categorical data -- mirroring the approach taken in Section
+\ref{sec:operads}. A key factor is to find the target category for the later
+categorical definition, for which the paper on braid groups by Fox and Neuwirth
+\cite{fox} is useful. After we have given our first definition of a colored
+braided operad, we proceed to define a forgetful functor that is similar to the
+functor from Section \ref{sec:operads}. Before investigating its
+properties, we see how it is related to braided monoidal structures. Finally, we
+verify the properties of the forgetful functor and see that this in fact provides a
+second definition for colored braided operads. The given definitions of colored
+braided operads (c.f. Definition \ref{def:col-br-op}) and operadic fibrations
+(c.f. Definition \ref{def:operadicfib}) are our own new research as well as the examples and
+given proofs in this section. However, it is influenced and inspired by Lurie's
+work on colored symmetric operads and $\infty$-operads in \cite{ha}.
+
+\medskip
+The definition of operadic fibrations opens the door for further applications
+and generalizations to the $\infty$-categorical context. At the end, we
+have established
+ a clear and coherent framework for thinking about braided and
+colored operads in categorical terms. The hope is that this perspective not only
+sheds light on the structures themselves but also provides tools and language
+that can be useful in future work.
+% at the intersection of category theory, algebra, and topology.

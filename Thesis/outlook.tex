@@ -1,0 +1,84 @@
+\section{Outlook}
+
+
+The original research conducted in this thesis has led us to define operadic
+fibrations (c.f. Definition \ref{def:operadicfib}) that are equivalent to
+colored braided operads in $\Set$ (c.f. Definition \ref{def:col-br-op}). However, our
+definition of colored braided operads can be stated with values in any symmetric
+monoidal category. This allows us to finally think about further generalizations
+of our definition of operadic fibrations as well as colored braided operads. In
+fact, we think that in Definition \ref{def:operadicfib} dropping the condition:
+\begin{itemize}
+    \item [(iii)] For a morphism $\widetilde{\alpha}$ in $\Brx$, the groupoid of
+    morphisms lying over $\widetilde{\alpha}$:
+    $$\Hom_{\D}^{\widetilde{\alpha}}(X, X')$$ is discrete.
+\end{itemize}
+could lead us to an equivalence to colored braided operads in $\Grp$. Perhaps a
+further generalization could steer us to the following definition of a braided
+$\infty$-operad:
+\begin{defin} 
+    A braided $\infty${\em-operad} is a functor $p \colon \Bx \to \nerv(\Brx)$
+    between $\infty$-categories satisfying the following conditions:
+    \begin{enumerate}[(i)]
+         \item The functor $p$ is a categorical fibration (c.f. Definition
+         \cite[Corollary 2.4.6.5]{hht}).
+
+        \item For every inert morphism $\widetilde{\alpha} \colon \langle n
+        \rangle \to \langle m \rangle$ in $\Brx$ and object $X \in \Bx$ there
+        exists a $\pi$-coCartesian morphism $f \colon X \to X'$ lifting
+        $\widetilde{\alpha}$. In particular, $\widetilde{\alpha}$ induces a
+        functor: $$\pi_{\widetilde{\alpha}} \colon \Bx_{\langle n \rangle} \to
+        \Bx_{\langle m \rangle}.$$
+        % \item Let $C \in \Bx_{\langle m \rangle}$ and $C' \in \Bx_{\langle n
+        % \rangle}$ be objects, $f \colon \langle m \rangle \to \langle n
+        % \rangle$ be a morphism in $\Brx$ and let $\Map_{\Bx}^f(C, C')$ be the
+        % union of connected components of $\Map_{\Bx}(C, C')$ which lie over
+        % $f$. Choose $p$-cocartesian morphisms $C' \to C'_i$ lying over the
+        % inert morphism $\rho^i \colon \langle n \rangle \to \langle 1 \rangle$
+        % for $1 \leq i \leq n$. Then the induced map
+        % \[
+        %     \Map_{\Bx}^f(C, C') \to \prod_{1 \leq i \leq n} \Map_{\Bx}^{\rho^i \circ f}(C, C_i')
+        % \]
+        % is a homotopy equivalence.
+
+
+    \item Let $C \in \Bx_{\langle n \rangle}$ and $C' \in \Bx_{\langle m
+    \rangle}$ be objects, $\widetilde{\alpha}  : \langle n \rangle \to \langle m
+    \rangle$ be a morphism in $\Brx$ and let $\Map_{\Bx}^{\widetilde{\alpha}}(X,
+    X')$ be the morphisms which lie over $\widetilde{\alpha}$. Choose
+    $\pi$-cocartesian morphisms $C' \to C'_i$ lying over the inert morphism
+    $\rho^i \colon \langle n \rangle \to \langle 1 \rangle$ for $1 \leq i \leq
+    n$. Then the induced map
+    \[
+        \Map_{\Bx}^{\widetilde{\alpha}}(C, C') \to \prod_{1 \leq i \leq n} \Map_{\Bx}^{\rho^i \circ \widetilde{\alpha}}(C, C_i')
+    \]
+    is a homotopy equivalence.
+    
+    \item For every finite collection of objects $C_1, \dots, C_n \in
+    \Bx_{\langle 1 \rangle}$, there exists an object $C \in \D_{\langle n
+    \rangle}$ and a collection of $\pi$-cocartesian morphisms $C \to C_i$
+    covering $\rho^i \colon \langle n \rangle \to \langle 1 \rangle$.
+    \end{enumerate}
+\end{defin}
+We suspect that this definition of a braided $\infty$-operad is equivalent to
+colored braided operads in $\Top$.
+ 
+\medskip
+
+Another interesting next step would be to study algebras over colored braided
+operads. Similarily as we can define algebras over a colored symmetric operad
+$\O$ valued in a symmetric monoidal category, we expect that we can define
+algebras over a colored braided operad $\B$ valued in a braided monoidal
+category. Moreover, one could consider further examples of colored braided
+operads and their algebras.
+% For instance, one could consider the colored braided operad that has $\Z$ and
+% composition is restricted such that the the little disks () can only be
+% inserted in a bigger disk if the sum of their colors is equal to the 
+
+
+Furthermore, we have seen the braid operad as an action operad in Section
+\ref{sec:colbraidop}, which is the first step towards group operads following
+\cite{yau}. An intriguing question that remains open is whether the framework
+developed here can be generalized to other group operads. However, as our
+framework is very much tailored to the structure of braidings, we do not see a
+natural extension.

@@ -2,10 +2,10 @@
 
 As we have already seen, symmetric monoidal categories are an example of colored
 symmetric operads and can be defined using an op-fibration over $\Fin$ that
-satisfies the Segal condition. In this section, we will define a braided
+satisfies the Segal condition. In this section, we define a braided
 monoidal structure on a category $\C$ that is induced by an op-fibration over
-the category $\Brx$ also satisfying the Segal condition. To do so, we will need
-to choose 2-morphisms in $\Brx$ on various occasions. We will refrain from
+the category $\Brx$ also satisfying the Segal condition. To do so, we need
+to choose 2-morphisms in $\Brx$ on various occasions. We refrain from
 specifying the representative paths between configurations in detail but rather describe the
 paths enough to understand from which homotopy class we choose a representative
 path so we then see why certain compositions of paths are homotopy equivalent. 
@@ -40,7 +40,7 @@ a op-fibration as a functor of $\Grp$-enriched categories:
     \to y$ such that $P(f)=f'$.
 \end{defin}
 
-We follow the same approach as in the symmetic monoidal case in Section
+We follow the same approach as in the symmetric monoidal case in Section
 \ref{sec:operads}, i.e. we start with some category $\Cotimes$ and a functor
 $\pi \colon \Cotimes \to \Brx$, such that $\pi$ is an op-fibration and the
 fibers of $\pi$ are given by the categories $\C^n \coloneqq \Cotimes_{\langle n
@@ -68,7 +68,7 @@ configuration in $\E_2(n)$ from now.
 
 \end{defin}
 
-Before, we investigate $\Brx$-monoidal categories in general, let us make the following observation
+Before we investigate $\Brx$-monoidal categories in general, let us make the following observation
 for colored braided operads.
 
 \begin{rem}
@@ -113,12 +113,12 @@ for colored braided operads.
             % \node at (1.7, 1.2) {$\eta$};
         \end{tikzpicture}
     \end{center}
-    it hold:
+    it holds:
     \[
         g = \gamma(f, \bar{g})
     \]
 
-    This follows immediately from the op-fibration property since
+    This follows immediately from the op-fibration property, since
     we choose the color 
     \[
     \bigotimes_{i \in \widetilde{I}} X_i
@@ -138,7 +138,7 @@ for colored braided operads.
 \Cotimes_{\langle 1 \rangle}$. In this construction we aim to define a braided
 monoidal structure on $\C$. First, we introduce the following abuse of notation:
 For a $2$-morphism $\eta$, i.e. a path between two configurations $c_1, c_2 \in
-\E_2(n)$ in $\Brx$, we would write the following diagram:
+\E_2(n)$ in $\Brx$, we would write the following diagram below:
 \begin{center}
     \begin{tikzpicture}
         % Define node positions
@@ -154,7 +154,7 @@ For a $2$-morphism $\eta$, i.e. a path between two configurations $c_1, c_2 \in
     \end{tikzpicture}
 \end{center}
 
-However, we will use a slightly different notation for the sake of readability.
+However, we use a slightly different notation for the sake of readability.
 Instead, we write dashed arrows for the $2$-morphism as in the diagram:
 
 \[    
@@ -194,7 +194,7 @@ Since $\pi$ satisfies the op-fibration condition (M1) and the Segal condition
 (M2), we have that for any $(A,B) \in \C^2 \cong \Cotimes_{\langle 2 \rangle}$,
 there is a cocartesian lift $(A,B) \to A \otimes B$ for $\mu \in \Brx$. The
 cocartesian property ensures that the choice is unique up to unique isomorphism.
-So, we obtain a well-defined functor
+So, we obtain a well-defined functor:
 \[
     \otimes \colon \C^2 \to \C.
 \]
@@ -209,9 +209,9 @@ Further, we consider the following diagram in $\Brx$:
 Note, that analogous to $\beta$ inducing $\otimes$, we obtain for $\otimes \circ
 \beta$ a different functor:
 \[
-    \otimes' \colon \C^2 \to \C.
+    \otimes' \colon \C^2 \to \C
 \]
-Filling the diagram, i.e. providing commutativity data means choosing a homotopy
+Filling the diagram, i.e. providing commutativity data, means choosing a homotopy
 class of paths from the basepoint configuration, corresponding to $\mu$, to the
 twisted basepoint configuration, corresponding to $\mu \circ \beta$. We choose
 this to be the class of the half twist which we denote by $\htw$.
@@ -262,7 +262,7 @@ Thus, we obtain two commuting diagrams in $\Cotimes$:
 A \otimes B \arrow[r, "b", dashed, shift left]  & B \otimes A \arrow[l, "b^{-1}", dashed, shift left]
 \end{tikzcd}
 \]
-The morphism $b$ is the induced morphism from the cocartesian morphism $\otimes$
+The morphism $b$ is induced by the cocartesian morphism $\otimes$
 while $b^{-1}$ is induced by $\otimes \circ \beta'$. They are inverse to one
 another since lifts with chosen source are unique and the identity is already a
 lift. The induced morphism $b$ is a unique isomorphism due to the fact that
@@ -305,7 +305,7 @@ For the associator we consider the following diagram in $\Brx$:
     \]
     To fill the diagram, we choose a homotopy class of paths $\eta$ that only
     translates the middle points of the disks along the horizontal line and
-    shrinks or expands the disks as needed. This is a $\E_1$-translation as
+    shrinks or expands the disks as needed. This is an $\E_1$-translation as
     defined in Remark \ref{rem:e1-translation} and is therefore unique as such.
     \begin{center}
         \begin{tikzpicture}
@@ -445,12 +445,12 @@ unit $\mathbf{1}$.
     % leading tot he following diagram...}
     The commutativity of the triangle diagrams on the side means choosing a path
     as representative of a homotopy class of paths from one configuration to
-    another while filling the tetrahedron in $\Brx$ means verifying that the
+    another, while filling the tetrahedron in $\Brx$ means verifying that the
     paths are from the same homotopy class, i.e. there exists a homotopy between
     the paths. As it turns out we do not make any new choices of paths. The
     paths are induced by the half twist $\htw$ we chose to define $\otimes$.
 
-    Let us understand where the diagram or more precisely the configurations
+    Let us understand where the diagram, or more precisely the configurations
     come from. The morphisms corresponding to $c_{(A \otimes B) \otimes C}$ and
     $c_{C \otimes (A \otimes B)}$ respectively factor through $\langle 2
     \rangle$ in the following way:

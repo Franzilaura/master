@@ -6,7 +6,7 @@ A first intuition led us to the assumption that colored braided operads might
 have a functor into the crossed simplicial braid group as defined in \cite{Dyckerhoff} such that
 it fibered over inert morphisms and satisfied a weak version of a Segal condition.
 However, we discovered that we were too quick to make this assumption. 
-We will elaborate in the following why this did not work out as we hoped originally.
+We elaborate in the following why this did not work out as we hoped originally.
 
 \begin{defin}\label{crossed_braid} The {\em crossed simplicial braid group} is a category $\Delta B$ equipped with an embedding
 	$\iota:\Delta \to \Delta B$ such that:
@@ -30,11 +30,11 @@ We will elaborate in the following why this did not work out as we hoped origina
     that we say it is an empty pencil $p_j$ if $\phi_f^{-1}(j) = \emptyset$.
     
     Then we obtain a braid on $m$ strands in the following way:
-    First, we consider $p_1, \dots, p_n$ as $n$ strand such that we can braid by $b_g$. Then, 
+    First, we consider $p_1, \dots, p_n$ as $n$ strands such that we can braid by $b_g$. Then, 
     we forget the empty pencil strands; in other words we restrict the action of $b_g$ to the 
     subset $J \subset [n]$ such that $p_j$ is not empty for all $j \in J$. However, for notation reason and without loss of generality, we assume that there are no empty pencils.    
     We obtain a braiding on $m$ strands if we consider the action of $b_g$ on the pencils as a 
-    block braiding on $m$ strand. Each pencil corresponds to a block having the length of the 
+    block braiding on $m$ strands. Each pencil corresponds to a block having the length of the 
     pencils width. The blocks are ordered by $[n]$.
 
     Geometrically this can be thought of as braiding the pencils. Then, as the order within the pencil remains unchanged, we can cut a pencil $[j, j_1, \dots, j_s]$ into its $s$ underlying strands. The resulting braid corresponds to $b_g(s_1, \dots, s_n) \circ b_f$ where $s_j$ is the width of the pencil $p_j$ for $j \in [n]$.
@@ -57,11 +57,11 @@ We would hope to gain a new functorial definition of a colored operad with the c
 
 However, this causes some issues. 
 We would assume a braided monoidal category to be an example of the new colored operad.
-The construction of the braided monoidal structure should be analoguously to the symmetric case.
+The construction of the braided monoidal structure should be analogous to the symmetric case.
 
 Meaning, the morphism in $\sigma_0 \in \Delta B$ should induce a braiding defining a braided monoidal structure 
 on the underlying category of $\Ox$ using the op-fibration and Segal property.
-Thus, similarily to the symmetric case we would want to live $\sigma_0$ using the op-fibration condition.
+Thus, similarily to the symmetric case we would want to lift $\sigma_0$ using the op-fibration condition.
 Hence, the following diagram would have to commute in $\Delta B$:
 
 \begin{center}
@@ -73,7 +73,7 @@ Hence, the following diagram would have to commute in $\Delta B$:
 
 
 This is not the case in $\Delta B$. However, we were hopeful that by fixing this we might obtain the 
-final candidate for a op-fibration.
+final candidate for an op-fibration.
 So we define a category $\Delta B'$ from $\Delta B$ by requiring for all $n \in \N$ and $1 \leq i \leq n$
 \[
     \tau_i^n \circ \sigma_i = \tau_i^n.
@@ -123,7 +123,7 @@ Order preserving maps in $\Delta$ also have graphical interpretation given by th
     \end{tikzpicture}
 \end{center}
 
-and face maps
+and face maps:
 
 \begin{center}
         \begin{tikzpicture}
@@ -195,7 +195,7 @@ Unfortunately, we face the next challenge as we discovered that we obtain a brai
 where we would not expect one and moreover where we not want a braid group action:
 
 Let $\sigma \in B_n$, then for $\sigma \colon [n] \to [n]$ we obtain cocartesian morphisms in $\Ox_{[n]}$ for
-each $X \in \Ox_{[n]} \cong \O^n$, so the braid group $B_n$ acts on $\O^n$. However, we would expect only to
+each $$X \in \Ox_{[n]} \cong \O^n,$$ so the braid group $B_n$ acts on $\O^n$. However, we would expect to only
 gain a symmetric group action on $\O^n$.
 
 Thus, we have to conclude that the crossed simplicial braid group is not the right candidate for

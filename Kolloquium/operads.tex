@@ -1,0 +1,127 @@
+\section{Operads}
+
+\begin{frame}{Operads}
+      \begin{defin}
+        An {\em operad} $\O$ in $\C$
+        consists of 
+        \begin{itemize}
+        \item a family of objects $(\O(j))_{j \in \N}$
+        \item a unit morphism $\eta \colon k \rightarrow \O(1)$
+        \item a composition morphism
+        \[
+            \gamma \colon \O(k) \otimes \O(j_1) \otimes \cdots \otimes \O(j_k) \rightarrow \O(j),
+        \]
+        where $\sum_{1 \leq i \leq k} j_i = j$ 
+        \item an action of $S_n$ on $\O(n)$ 
+        \end{itemize}
+        such that suitable
+        associativity, equivariance, unitality constraints hold.
+      \end{defin}
+\end{frame}
+
+\begin{frame}[fragile]
+    \begin{defin}
+     Let $P \colon \C \to \D $ be a functor of arbitrary categories and $f
+        \colon x \to y$ a morphism in $\C$.
+        We call $f$ {\em cocartesian} if for any morphism $g \colon  y \to z$ in $\C$ and
+        $\omega \colon P(x) \to P(z)$ in $\D$ with $\omega \circ P(f) = P(g)$,
+        there is a unique morphism $\omega' \colon x \to z$ such that
+        $P(\omega')=\omega$ and $\omega' \circ f = g$. In a diagram this results
+        in the following:
+        \begin{center}
+         \begin{tikzcd}
+                y \arrow[r, "g"] \arrow[rd, "f"'] & z                                & {} \arrow[r, "P"] & {} & P(y) \arrow[r, "P(g)"] \arrow[rd, "P(f)"'] & P(z)           \\
+                                             & x \arrow[u, "\exists! \omega'"', dotted] &                   &    &                           & P(x) \arrow[u, "\omega"']
+            \end{tikzcd}
+        \end{center}
+      \end{defin}
+\end{frame}
+
+\begin{frame}[fragile]
+  \small{\begin{defin} 
+    A {\em colored operad} $\O$ consists of:
+    \begin{enumerate}[(i)]
+        \item A collection $\{X,Y,Z, \dots\}$ which we call
+        \emph{colors}.
+        \item For finite collection of colors $\{X_i\}_{i \in I}$,
+        color $Y$, a set:
+        $\Mul_{\O}(\{X_i\}_{i \in I}, Y)$ called the set of morphisms.
+        \item For a finite map $I \to J$ with fibers $I_j$, $j
+        \in J$, collections of colors $\{X_i\}_{i \in I}$, $\{Y_j\}_{j \in J}$,
+        color $Z$, a composition map:
+        \[
+            \prod_{j \in J} \Mul_{\O}(\{X_i\}_{i \in I_j}, Y_j) \times \Mul_{\O}(\{Y_j\}_{j\in J}, Z) \to \Mul_{\O}(\{X_i\}_{i \in I}, Z).  
+        \]
+        \item A collection of morphisms 
+        $$\{ \id_X \in \Mul_{\O}(\{X\},X)\}_{X \in \O}$$ called the identity
+        morphisms.
+        \end{enumerate}
+        The data needs to fulfill suitable associativity and unitality conditions.
+    %     \begin{enumerate}
+    %         \item The identity morphisms are a left and right unit with respect
+    %         to the composition map $\gamma$, i.e. the following diagrams
+    %         commute:
+    %         \begin{center}
+    %             \begin{tikzcd}
+    %                 {\Mul_{\O}(X_I, Y)} \arrow[r, "\cong"] \arrow[d, "\id"] &
+    %                 {\Mul_{\O}(X_I, Y) \times \{\id_Y\}} \arrow[d, hook] \\
+    %                 {\Mul_{\O}(X_I, Y)}                                     &
+    %                 {\Mul_{\O}(X_I, Y) \times \Mul_{\O}((Y), Y)} \arrow[l, hook]
+    %             \end{tikzcd}
+    %         \end{center}
+       
+    %         \begin{center}
+    %             \begin{tikzcd}
+    %                 {\Mul_{\O}(X_I, Y)} \arrow[r, "\cong"] \arrow[d, "\id"] &
+    %                 {\left(\prod_{i \in I} \{\id_{X_i}\}\right) \times
+    %                 \Mul_{\O}(X_I, Y)} \arrow[d, hook]           \\
+    %                 {\Mul_{\O}(X_I, Y)}                                     &
+    %                 {\left(\prod_{i \in I} \Mul_{\O}((X_i), X_i)\right) \times
+    %                 \Mul_{\O}(X_I, Y)} \arrow[l, hook]
+    %             \end{tikzcd}                                             
+    %         \end{center}
+    %     \item For every sequence of finite maps $I \to J \to K$, collections of
+    %     objects $X_I = \{X_i\}_{i \in I}$, $Y_J = \{Y_j\}_{j \in J}$, $W_K =
+    %     \{W_k\}_{k \in K}$ and object $Z \in \O$, the following diagram
+    %     commutes:
+    %     \begin{center}
+    %     \begin{adjustbox}{max width=\textwidth}
+    %         \begin{tikzcd}
+    %             {\prod_{j \in J} \Mul_{\O}(X_{I_j}, Y_j) \times \prod_{k \in K}
+    %             \Mul_{\O}(Y_J, W_k) \times \Mul_{\O}(W_K, Z)} \arrow[rd, "\id
+    %             \times \gamma"] \arrow[dd, "(\gamma \circ s) \times \id"] & \\
+    %                         & {\prod_{j \in J} \Mul_{\O}(X_{I_j}, Y_j) \times
+    %                         \Mul_{\O}(Y_J, Z)} \arrow[dd] \\
+    %             {\prod_{k \in K} \Mul_{\O}(X_{I_k}, W_k) \times \Mul_{\O}(W_K,
+    %             Z)} \arrow[rd] & \\
+    %                         & {\Mul_{\O}(X_I, Z)}         
+    %         \end{tikzcd}
+    %         \end{adjustbox}
+    %     \end{center}
+    % \end{enumerate}
+  \end{defin}}
+\end{frame}
+
+\begin{frame}
+  \small{\begin{eg}
+ Let $\C$ be a symmetric monoidal category. By setting for a finite
+        family of objects $\{X_i\}_{i \in I}$ and object $Y$ in $\C$:
+        \[
+            \Mul_{\C}(\{X_i\}_{i \in I}, Y) \coloneqq \Hom(\otimes_{i \in I} X_i, Y),
+        \]
+        % \todo{define order of tensoring: what is our convention? (from left to
+        % right)}
+        we can define a colored operad $\C$. The composition is given by
+        \begin{align*}
+            \prod_{j \in J} \Hom(\otimes_{i \in I_j} X_i, Y_j) \times \Hom(\otimes_{j \in J} Y_j, Z) &\to \Hom(\otimes_{i \in I} X_i, Z) \\
+            ((f_j)_{j \in J}, g) &\mapsto g \circ (\otimes_{j \in J} f_j) \\
+        \end{align*}
+        with $\{ \id_X\}_{X \in \C}$ being the unit and associativity holds
+        since for $(f_j \colon \bigotimes_{i \in I_j} X_i \to Y_j)_{j \in J}$,
+        $(g_k \colon \bigotimes_{j \in J_k} Y_j \to W_k)_{k \in K}$, $h \colon
+        \bigotimes_{k \in K} W_k \to Z$, we have
+        \[
+            h \circ \bigotimes_{k \in K} \left(g_k \circ \bigotimes_{j \in J_k} f_j\right) = h \circ \bigotimes_{k \in K} g_k \circ \bigotimes_{j \in J} f_j.
+        \]
+      \end{eg}}
+\end{frame}

@@ -11,7 +11,7 @@ does not satisfy the op-fibration condition in general.
 
 In this section,
 we investigate the properties of the forgetful functor $\pi$. Furthermore, we
-will see how to reconstruct the structure of a colored braided operad from such a
+see how to reconstruct the structure of a colored braided operad from such a
 functor fulfilling these properties. This reconstruction together with the construction developing the forgetful functor $\pi$
 then finally induces an equivalence, thus verifying that colored braided operads can indeed be formulated
 in a categorical framework.
@@ -30,7 +30,7 @@ in a categorical framework.
         \rho^i (j) &= 
         \begin{cases}
             1 & i=j \\
-            * & \text{else}.
+            * & \text{else},
         \end{cases}
     \end{align*}
     together with $\id^{(i)}$. 
@@ -52,7 +52,7 @@ in a categorical framework.
         functor 
         $$\pi_{\widetilde{\alpha}} \colon \Bx_{\langle n \rangle} \to
         \Bx_{\langle m \rangle}.$$
-        \item For object $X,Y$ in $\Bx$ the functor
+        \item For every pair of objects $X,Y$ in $\Bx$ the functor
         \[
                 \Hom_{\Bx}(X,Y) \to \Hom_{\Brx}(\pi(X),\pi(Y))
         \]
@@ -64,7 +64,6 @@ in a categorical framework.
         [X_1', \dots, X_m'] \in \Bx_{\langle m \rangle}$ be objects, $\alpha :
         \langle n \rangle \to \langle m \rangle$ be a morphism in $\Brx$ and let
         $\Hom_{\Bx}^{\alpha}(X, X')$ be the set if morphisms over $\alpha$. 
-        
         Choose $\pi$-cocartesian morphisms $X' \to X'_i$ lying over the inert
         morphism $\rho^i \colon \langle n \rangle \to \langle 1 \rangle$ for $1
         \leq i \leq n$. Then the induced map
@@ -163,8 +162,8 @@ in a categorical framework.
         \end{center}
         where $\widetilde{\alpha'}$ is $\alpha' = \alpha$ on finite pointed sets
         but equipped with the trivial collection of configurations
-        $\{\id^{\alpha_j}\}_{j \in J}$. Hence, we gain $\widetilde{\omega}_k$ as
-        an $\beta^{-1}(k)$-labeled configuration. This diagram in $\Br$:
+        $\{\id^{(\alpha_j)}\}_{j \in J}$. Hence, we gain $\widetilde{\omega}_k$ as
+        a $\beta^{-1}(k)$-labeled configuration. The diagram in $\Br$ below:
         \begin{center}
             \begin{tikzpicture}
                 % Define node positions
@@ -190,8 +189,9 @@ in a categorical framework.
         \[
             \bar{f}_k \coloneqq \gamma((\id_{X_p})_{p \in {\beta^{-1}(k)}}, g_k).
         \]
-        Note, applying the composition, of almost the same diagram but for
-        $\eta$, to $\bar{f}_k$ we obtain $g_k$. This follows from the unitality
+        Note that we obtain $g_k$, when we apply the composition, induced by 
+        almost the same diagram but for
+        $\eta$, to the morphism $\bar{f}_k$. This follows from the unitality
         property in $\B$ and is precisely why $\bar{f}_k$ can not be chosen
         differently. Hence, $\bar{f}$ is unique. 
         
@@ -206,7 +206,7 @@ in a categorical framework.
         \]
         where $[Y_1, \dots, Y_m]$ corresponds to a cocartesian morphism $f
         \colon [X_1, \dots, X_n] \to [Y_1, \dots, Y_m]$ in $\Bx$. For a
-        different choice of cocartesian morphism $h \colon [X_1, \dots, X_n] \to
+        different choice of a cocartesian morphism $h \colon [X_1, \dots, X_n] \to
         [\bar{Y}_1, \dots, \bar{Y}_m]$ we obtain, due to the cocartesian
         property, two unique lifts $\bar{f}, \bar{h}$ that must be inverse to
         one another:
@@ -256,10 +256,10 @@ in a categorical framework.
         The composition of two morphisms 
         \[
         g \colon [X_1, \dots, X_n] \to [X_1',
-        \dots, X_n'], \; g \colon [X_1', \dots, X_n'] \to [X_1'', \dots, X_n'']
+        \dots, X_n'], \; g' \colon [X_1', \dots, X_n'] \to [X_1'', \dots, X_n'']
         \]
         is being respected as the composition of the unique lifts $\bar{f}$ and
-        $\bar{f}'$ lift the diagram and therefore have to be the unique lift for
+        $\bar{f}'$, lifts the diagram below and therefore have to be the unique lift for
         $g' \circ g$ and $f$:
         \begin{center}
             \begin{tikzcd}
@@ -307,7 +307,7 @@ in a categorical framework.
             \psi_j \coloneqq \gamma\left((\id_{X_i})_{i \in \alpha_{\psi_j}}, \phi_j\right).
         \]
         Thus, this constructs a $2$-morphism $\bar{\eta} \colon \phi \to \psi$ such that $\pi(\bar{\eta}) = \widetilde{\eta}$.
-        Note, that for the same construction for $\widetilde{\eta}^{-1}$, we obtain $\bar{\eta}^{-1}$.
+        Note, that with the same construction for $\widetilde{\eta}^{-1}$, we obtain $\bar{\eta}^{-1}$.
         % Let $\epsilon \colon \chi \Rightarrow \psi$ be another $2$-morphism in
         % $\Bx$ and $\widetilde{\delta}$ $2$-morphism in $\Brx$ such that
         % $\widetilde{\eta} \circ \delta = \widetilde{\epsilon}$. Note, that the
@@ -391,7 +391,7 @@ categories this breaks down to the following definition:
         \[
             p \colon \Hom_{\C}(X,Y) \to \Hom_{\D}(p(X), p(Y))
         \]
-        is an fibration. 
+        is a fibration.
         \item For every equivalence $f \colon D \to D'$ in $\D$ and every object
         $C \in \C$ with $p(C) = D$, there exists an equivalence $\bar{f} \colon
         C \to C'$ in $\C$ with $p(\bar{f}) = f$.
@@ -427,10 +427,9 @@ categories this breaks down to the following definition:
     $$\Hom_{\D}^{\widetilde{\alpha}}(X, X')$$ is discrete.
     \item Let $X \in \D_{\langle n \rangle}$ and $X' \in \D_{\langle m \rangle}$
     be objects, $\widetilde{\alpha}  : \langle n \rangle \to \langle m \rangle$
-    be a morphism in $\Brx$ and let $\Hom_{\D}^{\widetilde{\alpha}}(X, X')$ be the 
+    be a morphism in $\Brx$ and let $$\Hom_{\D}^{\widetilde{\alpha}}(X, X')$$ be the 
     % isomorphism class of 
     morphisms which lie over $\widetilde{\alpha}$. 
-    
     Choose $\pi$-cocartesian morphisms $X' \to X'_i$ lying over the inert
     morphism $\rho^i \colon \langle n \rangle \to \langle 1 \rangle$ for $1 \leq
     i \leq n$. Then the induced map
@@ -467,7 +466,7 @@ categories this breaks down to the following definition:
     \]
     is the usual forgetful functor from $\Bx$ to $\Brx$.
 \end{prop}
-For this statement, we will only sketch a reconstruction of a colored braided
+For this statement, we only sketch a reconstruction of a colored braided
 operad. Defining the equivalence should then be straightforward by the
 construction.
 
@@ -476,15 +475,16 @@ construction.
     \[
         \pi \colon \D \to \Brx
     \]
-    be an operadic fibration. We will define a colored braided operad $\B$ from
+    be an operadic fibration. We define a colored braided operad $\B$ from
     $\D$ and $\pi$. The fiber category $\D_{\langle 1 \rangle}$ is the
     underlying category of $\B$. The objects in $\D_{\langle 1 \rangle}$ are the
     colors of $\B$. 
     
     Let $I$ be a finite set with $|I|=n$, $\widetilde{I} \in \E_2(n)$ an
     $I$-labeled configuration, $\{X_i\}_{i \in I}$ a collection of colors and
-    $Y$ a color. For a choice of bijection $\iota \colon I \cong \langle n
-    \rangle$, we get by (iii) that there is an object $X \in \D_{\langle n
+    $Y$ a color. A priori we choose a bijection $\iota \colon I \cong \langle n
+    \rangle$ for every finite set $I$. 
+    By (iii) we get that there is an object $X \in \D_{\langle n
     \rangle}$ and a collection of morphisms $X \to X_i$ covering $\rho^i$ for $i
     \in I$. Then, 
     \[
@@ -513,9 +513,9 @@ construction.
                 % \node at (1.7, 1.2) {$\eta$};
             \end{tikzpicture}
         \end{center}
-    along with collection of colors $\{X_i\}_{i \in I}, \{Y_j\}_{j \in J}$ and
+    along with collections of colors $\{X_i\}_{i \in I}, \{Y_j\}_{j \in J}$ and
     color $Z$, we define a composition map via the composition in $\D$ as
-    follows: For chosen bijections of $I \cong \langle n \rangle^{\circ}$, $J
+    follows: Via the chosen bijections of $I \cong \langle n \rangle^{\circ}$, $J
     \cong \langle m \rangle^{\circ}$ we obtain the following diagram in $\Brx$:
     \begin{center}
         \begin{tikzpicture}
@@ -535,13 +535,13 @@ construction.
     \end{center}
     where $\widetilde{I}$, $\widetilde{J}$, $\widetilde{\alpha}_j$ denote the
     corresponding configurations in $\E_2$ after identification via the
-    bijections. Furthermore, note that by conditions (iv) and (v), for  colores
+    bijections. Furthermore, note that by conditions (iv) and (v), for  colors
     $\{X_i\}_{i \in \alpha_j}$ there is an object $X^{(\alpha_j)}$ in
-    $\D_{\langle |\alpha_j| \rangle}$ and morphisms $X^{(\alpha_j)} \to X_i$
-    covering $rho^i$. For $\{X^{(\alpha_j)}\}_{1 \leq j \leq m}$ there is also
-    an object X with morphisms $X \to X^{(\alpha_j)}$ covering $\rho^j$, $1 \leq
-    j \leq m$. We observe that $X$ with the composite morphism $X \to X_i$ cover
-    $\rho^i$. The following composition in $\D$:
+    $\D_{\langle |\alpha_j| \rangle}$ and coCartesian morphisms $X^{(\alpha_j)} \to X_i$
+    covering $\rho^i$. For $\{X^{(\alpha_j)}\}_{1 \leq j \leq m}$ there is also
+    an object X with morphisms $X \to X^{(\alpha_j)}$ covering $\rho^j$ for $1 \leq
+    j \leq m$. We observe that $X$ with the composite morphism $X \to X_i$ covers
+    $\rho^i$. We consider the following composition in $\D$:
     \[
        \theta \colon \prod_{1 \leq j \leq m} \Hom^{\rho^j}(X, X^{(\alpha_j)}) \times \Hom^{\widetilde{\alpha}_j}(X^{(\alpha_j)}, Y_j) \to \prod_{1 \leq j \leq m} \Hom^{\rho^j \circ \widetilde{\alpha}} (X, Y_j) \cong \Hom^{\widetilde{\alpha}}(X, Y)
     \]
@@ -568,23 +568,16 @@ construction.
     % property (ii). Then, there is a unique morphism $X_i' \to X_i$ lying over an
     % equivalence in $\Brx$. By (i), there is an equivalence $X_i' \cong X_i$ in
     % $\D$.
-    \todo{What about different choices of X?}
-
-     
     % with morphisms $X \to X_$ covering $\rho^i$ for $1 \leq i \leq n$, as well
     % as an object $Y$ in $\D_{\langle m \rangle}$ with morphisms $Y \to Y_j$
     % covering $\rho^j$ for $1 \leq j \leq m$.
-
-
-
-
     The identity morphisms in $\B$ are given by the identity morphisms in the
-    fiber category $\D_{\langle 1 \rangle}$, i.e., for each color $X \in
+    fiber category $\D_{\langle 1 \rangle}$, i.e. for each color $X \in
     \D_{\langle 1 \rangle}$, the identity morphism $\id_X$ in $\D$ defines the
     identity morphism in $\Mul_{\B}^{\id}(\{X\}, X)$. The associativity
     requirement is met as the composition is defined via the composition map in
     $\D$ which is associative. The unitality condition is also induced by the
-    unitality in $\D$. This construction gives raise to an equivalence of
+    unitality in $\D$. This construction gives rise to an equivalence of
     categories $\Bx \cong \D$ such that the composition $\Bx \cong \D \to \Brx$
     is indeed the forgetful functor.
 \end{proof}

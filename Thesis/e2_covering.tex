@@ -5,11 +5,13 @@ universal coverings of $\E_2$ of each degree. We recall the operad $\E_2$ from
 Example \ref{eg:operads} which we introduced as the little 2-disks operad. So in
 each configuration space $\E_2(n)$ we have $n$ disks embedded into a large disk
 by translation and resizing such that the images of the embedding do not intersect. We use topological
-terms when talking about $\E_2$. What really is happening is we apply them
-level-wise. We will see that $\widetilde{E_2}(n)$, the universal coverings of $\E_2(n)$ for all $n \in \N$,
-can be equipped with an operadic structure as well as a braid action. Hence, we
+terms when talking about $\E_2$. What really happens is that we apply them
+level-wise. We see that $\widetilde{E_2}(n)$, the universal coverings of $\E_2(n)$ for all $n \in \N$,
+can be equipped with an operadic structure as well as a braid action. 
+We state and sketch results from \cite{fox}, as it is the key factor to establish a braid action.
+Hence, we
 obtain another example of a braided operad.
-Note that later there will be an alternative construction of $\widetilde{E_2}$ via Example \ref{eg:br-fib-trivial}
+Note that later there is an alternative construction of $\widetilde{E_2}$ via Example \ref{eg:br-fib-trivial}
 applied to the trivial braided operad.
 
 
@@ -26,7 +28,7 @@ We denote the family of these quotient spaces by $\E_2 \slash S$. Note that this
 an operad any longer as the composition map requires labels. 
 
 
-The following lemma will be essential to establish a braid group action on 
+The following lemma is essential to establish a braid group action on 
 the universal covering $\widetilde{\E_2}(n)$.
 
 \begin{lem}\label{lem:fundamentalgroup} The following statements hold for every
@@ -38,9 +40,9 @@ the universal covering $\widetilde{\E_2}(n)$.
     \end{enumerate}
 \end{lem}
 
-We will not prove the
+We do not prove the
 lemma here. A proof by Fox and Neuwirth can be found in \cite{fox}. However, we
-will give a sketch of why this is the case at the end of the section.
+give a sketch of why this is the case at the end of the section.
 
 Before we get started, we need to define what it means to be a universal
 covering of a topological operad.
@@ -60,7 +62,7 @@ covering of a topological operad.
 
 To be able to talk about universal covers and fundamental groups
 we need to choose a basepoint. So formally, for any choice of a basepoint on
-each level $n$, permuting its labels will give us a different point in
+each level $n$, permuting its labels gives us a different point in
 $\E_2(n)$. Hence, if we consider a loop at a basepoint we are required to end
 the loop with the same labeling of the configuration of the basepoint.
 That is the reason why when considering the fundamental group of $\E_2(n)$ over some basepoint, we
@@ -74,7 +76,7 @@ the universal covering of $E_2 \slash S$ to the universal covering of
 $\E_2$.
 
 In this part,
-we will work a lot with $\Ex$ which is constructed from $\E_2$ using Definition \ref{def:Ox}. This gives us a nice way to talk about configurations and paths between
+we work a lot with $\Ex$ which is constructed from $\E_2$ using Definition \ref{def:Ox}. This gives us a nice way to talk about configurations and paths between
 them. Hence, let us recall the definition of $\Ex$:
 \begin{rem}\label{rem:ex}
     The objects of $\Ex$ are the finite pointed sets $\langle n \rangle$ for all
@@ -95,7 +97,7 @@ them. Hence, let us recall the definition of $\Ex$:
     and 
     \begin{center}
         $\alpha' \colon \langle m \rangle \to \langle l \rangle$ with
-        configurations $\{c'_k\}_{1 \leq k \leq l}$. 
+        configurations $\{c'_k\}_{1 \leq k \leq l}$,
     \end{center}
     Then, the configuration $c'_k$ is labeled by $\alpha'^{-1}=\left\{j_1^{(k)},
     \dots, j_p^{(k)}\right\}$. Thus, with the composition map $\gamma$ we obtain a configuration 
@@ -127,10 +129,10 @@ them. Hence, let us recall the definition of $\Ex$:
         \end{tikzpicture}
     \end{center}
 \end{eg}
-The category $\Ex$ will be an essential ingredient to establish colored braided
+The category $\Ex$ is an essential ingredient to establish colored braided
 operads.
 
-Note that when identifying labels, this can interpreted in
+Note that when identifying labels, this can interpreted
 in $\Ex$ as identifying $f, g \colon \langle n \rangle \to \langle m \rangle$
 if there exists a commuting diagram in $\Ex$
 \begin{center}
@@ -168,7 +170,7 @@ $\widetilde{\E_2(n) \slash S_n}$ which we define by:
 with projection map:
 \begin{align*}
     p \colon \widetilde{\E_2(n) \slash S_n} &\to \E_2(n) \slash S_n \\
-    \gamma &\mapsto \gamma(1)
+    \gamma &\mapsto \gamma(1).
 \end{align*}
 The topology of the covering and the fact that it defines a universal covering
 of $\E_2(n) \slash S_n$ is shown in Section 1.3 in \cite{Hatcher}. Analogously,
@@ -191,13 +193,13 @@ and define its universal covering similarly:
 with projection map:
 \begin{align*}
     p \colon \widetilde{\E_2(n)} &\to \E_2(n) \\
-    \gamma &\mapsto \gamma(1)
+    \gamma &\mapsto \gamma(1).
 \end{align*}
 There is a homeomorphism for each $n \in \N$:
 \begin{align*}
     \widetilde{\E_2}(n) &\cong \widetilde{\E_2 \slash S}(n) \\
     (\gamma \colon b_n \rightsquigarrow c) &\mapsto (\bar{\gamma} \colon \bar{b}_n \rightsquigarrow \bar{c}) \\
-    (\gamma \colon b_n \rightsquigarrow c') &\mapsfrom (\bar{\gamma} \colon \bar{b}_n \rightsquigarrow \bar{c}) \\
+    (\gamma \colon b_n \rightsquigarrow c') &\mapsfrom (\bar{\gamma} \colon \bar{b}_n \rightsquigarrow \bar{c}),
 \end{align*}
 where we forget labels in one direction and in the reverse direction we label
 the basepoint $\bar{b}_n$ from left to right. The labeling of $c'$ is then
@@ -236,14 +238,14 @@ Essentially, $\sigma \in S_n$ fixes the labels such that we can consider
 $\gamma$ as a path in $\widetilde{\E_2}$.
 \end{const}
 
-We will use this representation to define an operadic structure on
+We use this representation to define an operadic structure on
 $\widetilde{\E_2} \slash S$ such that the covering is a morphism of operads and
 then further use it to define a braid action on the universal covering.
 
 First, we notice a specific translation between certain configurations that are
 unique up to homotopy equivalence.
 
-\begin{rem}[$\E_1$ translation]\label{rem:e1-translation} First, we observe that
+\begin{rem}[$\E_1$ translation]\label{rem:e1-translation} We observe that
     there is an embedding of $\E_1$ into $\E_2$ along the horizontal axis.
 
     \begin{figure}[h!]
@@ -363,9 +365,9 @@ unique up to homotopy equivalence.
 
             \node at (0,0) {$\rightsquigarrow$};
         \end{tikzpicture}
-        \caption{example of $\bar{\alpha} \circ (\alpha_1, \dots, \alpha_3)$ for
+        \caption{Example of $\bar{\alpha} \circ (\alpha_1, \dots, \alpha_3)$ for
         $\bar{\alpha} \in \widetilde{E_2}(3)$ and $\alpha_1, \alpha_2, \alpha_3
-        \in \widetilde{E_2}(2)$}
+        \in \widetilde{E_2}(2)$.}
     \end{figure}
 
     Further, let $\tau$ be the unique $\E_1$ translation from $b_j$ to
