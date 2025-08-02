@@ -13,10 +13,26 @@
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 
+%bibliography
+\usepackage[
+    backend=biber,
+    natbib=true,
+    style=alphabetic,
+    mincitenames = 4,
+    maxcitenames = 6,
+    minbibnames = 4,
+    maxbibnames = 6,
+    sorting=nty,
+    url = false,
+    doi = false,
+    isbn = false,
+    eprint =false
+]{biblatex}
+\addbibresource{bibliography.bib}
 
 \usepackage{tikz}
 \usetikzlibrary{cd}
-% \usetikzlibrary{braids}
+\usetikzlibrary{braids}
 % \usetikzlibrary{matrix}
 \tikzset{
   every picture/.prefix style={
@@ -40,6 +56,7 @@
 % \usepackage{titletoc}
 % \usepackage{fancyhdr} %header package
 % \usepackage{setspace}
+\usepackage{adjustbox}
 
 
 

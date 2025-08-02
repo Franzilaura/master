@@ -1,5 +1,9 @@
 \section{Operads}
 
+\begin{frame}{}
+    \tableofcontents[currentsection]
+\end{frame}
+
 \begin{frame}{Operads}
       \begin{defin}
         An {\em operad} $\O$ in $\C$
@@ -19,6 +23,65 @@
       \end{defin}
 \end{frame}
 
+\begin{frame}{Little Disk Operad in $\Top$}
+  Let $\dd^2$ be the closed unit disk in $\R^2$. 
+  A \emph{little disk} is
+  an embedding $f \colon \dd^2 \to \dd^2$ of the following form:
+  \[
+    f(r_1, \dots, r_n) \coloneqq (c_1, \dots, c_n) 
+  + \lambda(r_1, \dots, r_n)
+  \]
+  for $(c_1, \dots, c_n) \in \dd^n$ and $\lambda \in \R$ such that
+  \[
+      0 < \lambda \leq 1 - \sum_{i=1}^{n} c_i^2.     
+  \]
+  \[
+      \E_2(k) \coloneqq \left\{ f_1 \sqcup \dots \sqcup f_k  \colon \inter(f_i) \cap \inter(f_j) = \emptyset \right\}.
+  \]
+\end{frame}
+
+
+\begin{frame}[fragile]{Little Disk Operad in $\Top$}
+  \begin{center}
+  \begin{adjustbox}{max width=11cm}
+      \begin{tikzpicture}
+        % First element (left)
+        \draw[thick] (-3,0) circle (2); \draw[thick] (-3.8, 1)
+        circle (0.5); \draw[thick] (-1.8, 1) circle (0.25);
+        \draw[thick] (-3, -0.5) circle (1); \node at (-3.8, 1)
+        {\small $1$}; \node at (-1.8, 1) {\small $2$}; \node at (-3,
+        -0.5) {\small $3$};
+    
+        \node at (-0.5,0) {$\circ_3$};
+
+        \draw[thick] (2,0) circle (2); 
+        \draw[thick] (1,0.7) circle (0.5); 
+        \draw[thick] (2.5,0.25) circle (0.7); 
+        \draw[thick] (1,-0.8) circle (0.45); 
+        \node at (1,0.7) {\small $1$}; 
+        \node at (2.5,0.25) {\small $2$}; 
+        \node at (1,-0.8) {\small $3$};
+                        
+        \node at (4.5,0) {$\rightarrow$};
+                  
+        \draw[thick] (7,0) circle (2);
+        \draw[thick] (6.2, 1) circle (0.5);
+        \draw[thick] (8.2, 1) circle (0.25);
+        \draw[dotted] (7, -0.5) circle (1);
+        \draw[thick] (6.5, -0.15) circle (0.25);
+        \draw[thick] (7.5, -0.375) circle (0.35);
+        \draw[thick] (6.5, -0.9) circle (0.225);
+        \node at (6.2, 1) {\small $1$};
+        \node at (8.2, 1) {\small $2$};
+        \node at (6.5, -0.15) {\small $3$};
+        \node at (7.5, -0.375) {\small $4$};
+        \node at (6.5, -0.9) {\small $5$};
+      \end{tikzpicture}
+  \end{adjustbox}
+  \end{center}
+
+\end{frame}
+
 \begin{frame}[fragile]
     \begin{defin}
      Let $P \colon \C \to \D $ be a functor of arbitrary categories and $f
@@ -30,7 +93,7 @@
         in the following:
         \begin{center}
          \begin{tikzcd}
-                y \arrow[r, "g"] \arrow[rd, "f"'] & z                                & {} \arrow[r, "P"] & {} & P(y) \arrow[r, "P(g)"] \arrow[rd, "P(f)"'] & P(z)           \\
+                y \arrow[r, "g"] \arrow[rd, "f!"'] & z                                & {} \arrow[r, "P"] & {} & P(y) \arrow[r, "P(g)"] \arrow[rd, "P(f)"'] & P(z)           \\
                                              & x \arrow[u, "\exists! \omega'"', dotted] &                   &    &                           & P(x) \arrow[u, "\omega"']
             \end{tikzcd}
         \end{center}
@@ -57,48 +120,7 @@
         morphisms.
         \end{enumerate}
         The data needs to fulfill suitable associativity and unitality conditions.
-    %     \begin{enumerate}
-    %         \item The identity morphisms are a left and right unit with respect
-    %         to the composition map $\gamma$, i.e. the following diagrams
-    %         commute:
-    %         \begin{center}
-    %             \begin{tikzcd}
-    %                 {\Mul_{\O}(X_I, Y)} \arrow[r, "\cong"] \arrow[d, "\id"] &
-    %                 {\Mul_{\O}(X_I, Y) \times \{\id_Y\}} \arrow[d, hook] \\
-    %                 {\Mul_{\O}(X_I, Y)}                                     &
-    %                 {\Mul_{\O}(X_I, Y) \times \Mul_{\O}((Y), Y)} \arrow[l, hook]
-    %             \end{tikzcd}
-    %         \end{center}
-       
-    %         \begin{center}
-    %             \begin{tikzcd}
-    %                 {\Mul_{\O}(X_I, Y)} \arrow[r, "\cong"] \arrow[d, "\id"] &
-    %                 {\left(\prod_{i \in I} \{\id_{X_i}\}\right) \times
-    %                 \Mul_{\O}(X_I, Y)} \arrow[d, hook]           \\
-    %                 {\Mul_{\O}(X_I, Y)}                                     &
-    %                 {\left(\prod_{i \in I} \Mul_{\O}((X_i), X_i)\right) \times
-    %                 \Mul_{\O}(X_I, Y)} \arrow[l, hook]
-    %             \end{tikzcd}                                             
-    %         \end{center}
-    %     \item For every sequence of finite maps $I \to J \to K$, collections of
-    %     objects $X_I = \{X_i\}_{i \in I}$, $Y_J = \{Y_j\}_{j \in J}$, $W_K =
-    %     \{W_k\}_{k \in K}$ and object $Z \in \O$, the following diagram
-    %     commutes:
-    %     \begin{center}
-    %     \begin{adjustbox}{max width=\textwidth}
-    %         \begin{tikzcd}
-    %             {\prod_{j \in J} \Mul_{\O}(X_{I_j}, Y_j) \times \prod_{k \in K}
-    %             \Mul_{\O}(Y_J, W_k) \times \Mul_{\O}(W_K, Z)} \arrow[rd, "\id
-    %             \times \gamma"] \arrow[dd, "(\gamma \circ s) \times \id"] & \\
-    %                         & {\prod_{j \in J} \Mul_{\O}(X_{I_j}, Y_j) \times
-    %                         \Mul_{\O}(Y_J, Z)} \arrow[dd] \\
-    %             {\prod_{k \in K} \Mul_{\O}(X_{I_k}, W_k) \times \Mul_{\O}(W_K,
-    %             Z)} \arrow[rd] & \\
-    %                         & {\Mul_{\O}(X_I, Z)}         
-    %         \end{tikzcd}
-    %         \end{adjustbox}
-    %     \end{center}
-    % \end{enumerate}
+
   \end{defin}}
 \end{frame}
 
@@ -116,12 +138,141 @@
             \prod_{j \in J} \Hom(\otimes_{i \in I_j} X_i, Y_j) \times \Hom(\otimes_{j \in J} Y_j, Z) &\to \Hom(\otimes_{i \in I} X_i, Z) \\
             ((f_j)_{j \in J}, g) &\mapsto g \circ (\otimes_{j \in J} f_j) \\
         \end{align*}
-        with $\{ \id_X\}_{X \in \C}$ being the unit and associativity holds
-        since for $(f_j \colon \bigotimes_{i \in I_j} X_i \to Y_j)_{j \in J}$,
-        $(g_k \colon \bigotimes_{j \in J_k} Y_j \to W_k)_{k \in K}$, $h \colon
-        \bigotimes_{k \in K} W_k \to Z$, we have
-        \[
-            h \circ \bigotimes_{k \in K} \left(g_k \circ \bigotimes_{j \in J_k} f_j\right) = h \circ \bigotimes_{k \in K} g_k \circ \bigotimes_{j \in J} f_j.
-        \]
+        with $\{ \id_X\}_{X \in \C}$ being the unit.
       \end{eg}}
 \end{frame}
+
+\begin{frame}
+    \begin{defin}
+        The {\em category of finite pointed sets} $\Fin$ is defined as
+        follows:
+        \begin{itemize}
+            \item For each $n \in \N$, we write $\langle n \rangle^{\circ} :=
+            \{1, \dots, n\}$. An objects of $\Fin$ is $ \langle n \rangle :=
+            \langle n \rangle^{\circ}_*$ for all $n \in \N$.
+            \item A morphism $\alpha \colon \langle n \rangle \to \langle m
+            \rangle$ is a map of finite sets where $\alpha(*)=*$.
+        \end{itemize}
+    \end{defin}
+\end{frame}
+
+\begin{frame}
+   \begin{defin}\label{def:Ox} \small{For $\O$ being a colored operad, the category $\Ox$
+    is defined in the following way:
+    \begin{enumerate}[(i)]
+        \item The objects of $\Ox$ are finite sequences of colors of $\O$.
+        \item For $\{X_i\}_{1 \leq i \leq m}$, $\{Y_j\}_{1 \leq j \leq n}$
+        objects in $\Ox$. A morphism
+            $\phi \colon \{X_i\}_{1 \leq i \leq m} \to \{Y_j\}_{1 \leq j \leq n}$
+        is given by
+        
+        \begin{itemize}
+          \item $\alpha \colon \langle m \rangle \to \langle n
+        \rangle$ map in $\Fin$.
+        \item family of morphisms
+        \[
+            \{ \phi_j \in \Mul_{\O}(\{X_i\}_{i \in \alpha^{-1}(j)}, Y_j)\}_{1 \leq j \leq n}
+        \]
+        in $\O$.
+        \end{itemize}
+        
+        \item Composition of morphisms $\phi, \phi'$ is determined by the composition in
+        $\Fin$ and $\O$, i.e. $\bar{\alpha} = \alpha'\circ \alpha$ and
+        $
+            (\phi' \circ \phi)_l \in  \Mul_{\O}(\{X_i\}_{i \in \bar{\alpha}^{-1}(l)}, Z_l)%\}_{1 \leq l \leq k},
+        $
+        % where $(\phi' \circ \phi)_l$ is applying the following composition map
+        % to $((\phi_i)_{i \in \alpha^{-1}(l)}, \phi'_l)$
+        by applying $\gamma$ to $((\phi_i)_{i \in \alpha^{-1}(l)}, \phi'_l)$
+        % \[
+        %     \gamma \colon \prod_{j \in \alpha'^{-1}(l)} \Mul_{\O}(\{X_i\}_{i \in \alpha^{-1}(j)},Y_j) \times \Mul_{\O}(\{Y_i\}_{i \in \alpha'^{-1}(l)},Z_l) \to \Mul_{\O}(\{X_i\}_{i \in \bar{\alpha}^{-1}(l)},Z_l).
+        % \]
+    \end{enumerate}}
+\end{defin}
+\end{frame}
+
+\begin{frame}
+  Let $\O$ be a colored operad. There is a forgetful functor 
+\[
+\pi \colon \Ox \to \Fin
+\]
+  \begin{prop}\label{m1m2} If $\O$ was induces by a symmetric monoidal category $\C$, the following conditions hold for $\pi$:
+    \begin{enumerate}[(M1)]
+        \item \textbf{Op-fibration condition:} $\pi$ is a Grothendieck
+        op-fibration. 
+        \item \textbf{Segal condition:} $\C \cong
+        \Ox_{\langle 1 \rangle}$ and
+        $\Ox_{\langle n \rangle} \cong \C^n$.
+    \end{enumerate}
+  \end{prop}
+
+  \begin{prop}
+    $$\{\text{symmetric monoidal categories}\} \cong \left\{\begin{aligned}\text{op-fibrations } \D \to \Fin \\
+      \text{ satisfying Segal condition}\end{aligned}\right\}$$
+  \end{prop}
+\end{frame}
+
+\begin{frame}[fragile]{Symmetric Monoidal Structure on $\C \coloneqq \D_{\langle 1 \rangle}$ }
+  Let $\pi \colon \D \to \Fin$ a functor satisfying (M1) and (M2).
+    \small{\begin{table}[h]
+        \centering
+        \renewcommand{\arraystretch}{1.9} % Increase row height for better readability
+        \begin{tabular}{|p{0.45\textwidth}|p{0.45\textwidth}|}
+            \hline
+            $\D$ & $\Fin$ \\
+            \hline
+            tensor product: $\bigotimes \colon \C^2 \cong \D_{\langle 2 \rangle} \rightarrow \C$ & $\alpha \colon \langle 2 \rangle \to \langle 1 \rangle$ active \\
+            \hline
+            braiding: $b_{A,B} A \otimes B \cong B \otimes A$  &      $\begin{aligned}
+                                                            \beta \colon \langle 2 \rangle &\to \langle 2 \rangle \\
+                                                                1 &\mapsto 2 \\
+                                                                2 &\mapsto 1. \\
+                                                            \end{aligned}$ \\
+            \hline
+           associator: $a_{A,B,C} \colon (A \otimes B) \otimes C \cong A \otimes (B \otimes C)$ &  $\begin{aligned}
+                                                                                                      \tau^3_i \colon \langle 3 \rangle &\to \langle 2 \rangle \\
+                                                                                                      j &\mapsto \begin{cases}
+                                                                                                          j &  1 \leq j \leq i \\
+                                                                                                          j-1 & i < j \leq n \\
+                                                                                                          \ast & j=\ast.
+                                                                                                      \end{cases}
+                                                                                                  \end{aligned}$ \\
+            \hline
+            tensor unit: $\D_{\langle 0 \rangle} \to \C$ & $\eta \colon \langle 0 \rangle \to \langle
+    1 \rangle$ \\
+    \hline
+        \end{tabular}
+    \end{table}}
+    
+\end{frame}
+
+
+\begin{frame}
+    \small{\begin{defin}
+    An $\infty${\em-operad} is a functor $p \colon \Ox \to \nerv(\Fin)$ between
+    $\infty$-categories satisfying the following conditions:
+    \begin{enumerate}[(i)]
+        \item For every inert morphism $f \colon \langle n \rangle \to \langle m
+        \rangle$ in $\nerv(\Fin)$ and object $C \in \Ox_{\langle m \rangle}$,
+        there exists a $p$-cocartesian morphism $f \colon C \to C'$ in $\Ox$
+        lifting $f$. In particular $f$ induces a functor $f_{!} \colon
+        \Ox_{\langle n \rangle} \to \Ox_{\langle m \rangle}$.
+        \item Let $C \in \Ox_{\langle m \rangle}$ and $C' \in \Ox_{\langle n
+        \rangle}$ be objects, $f : \langle m \rangle \to \langle n \rangle$ be a
+        morphism in $\Fin$ and let $\Map_{\Ox}^f(C, C')$ be the union of
+        connected components of $\Map_{\Ox}(C, C')$ which lie over $f$. Choose
+        $p$-cocartesian morphisms $C' \to C'_i$ lying over the inert morphism
+        $\rho^i \colon \langle n \rangle \to \langle 1 \rangle$ for $1 \leq i
+        \leq n$. Then the induced map
+        \[
+            \Map_{\Ox}^f(C, C') \to \prod_{1 \leq i \leq n} \Map_{\Ox}^{\rho^i \circ f}(C, C_i')
+        \]
+        is a homotopy equivalence.
+        \item For every finite collection of objects $C_1, \dots, C_n \in
+        \Ox_{\langle 1 \rangle}$, there exists an object $C \in \Ox_{\langle n
+        \rangle}$ and a collection of $p$-cocartesian morphisms $C \to C_i$
+        covering $\rho^i \colon \langle n \rangle \to \langle 1 \rangle$.
+    \end{enumerate}
+\end{defin}}
+\end{frame}
+
