@@ -4,7 +4,7 @@
     \tableofcontents[currentsection]
 \end{frame}
 
-\begin{frame}{Operads}
+\begin{frame}{Operads Definition}
       \begin{defin}
         An {\em operad} $\O$ in $\C$
         consists of 
@@ -28,12 +28,12 @@
   A \emph{little disk} is
   an embedding $f \colon \dd^2 \to \dd^2$ of the following form:
   \[
-    f(r_1, \dots, r_n) \coloneqq (c_1, \dots, c_n) 
-  + \lambda(r_1, \dots, r_n)
+    f(r_1, r_2) \coloneqq (c_1, c_2) 
+  + \lambda(r_1, r_2)
   \]
-  for $(c_1, \dots, c_n) \in \dd^n$ and $\lambda \in \R$ such that
+  for $(c_1, c_2) \in \dd^2$ and $\lambda \in \R$ such that
   \[
-      0 < \lambda \leq 1 - \sum_{i=1}^{n} c_i^2.     
+      0 < \lambda \leq 1 - \sum_{i=1}^{2} c_i^2.     
   \]
   \[
       \E_2(k) \coloneqq \left\{ f_1 \sqcup \dots \sqcup f_k  \colon \inter(f_i) \cap \inter(f_j) = \emptyset \right\}.
@@ -42,6 +42,14 @@
 
 
 \begin{frame}[fragile]{Little Disk Operad in $\Top$}
+  Composition map is defined by ``inserting configurations'':
+\[
+\begin{aligned}
+  \gamma \colon \E_2(k) \times \E_2(j_1) \times \dots \times \E_2(j_k) &\to \E_2(j) \\
+  (c, c_1, \dots, c_k) &\mapsto c(c_1, \dots, c_k)
+  \end{aligned}
+\]
+  
   \begin{center}
   \begin{adjustbox}{max width=11cm}
       \begin{tikzpicture}
@@ -82,49 +90,51 @@
 
 \end{frame}
 
-\begin{frame}[fragile]
+\begin{frame}[fragile]{Cocartesian Morphism}
     \begin{defin}
-     Let $P \colon \C \to \D $ be a functor of arbitrary categories and $f
-        \colon x \to y$ a morphism in $\C$.
-        We call $f$ {\em cocartesian} if for any morphism $g \colon  y \to z$ in $\C$ and
+     Let $P \colon \C \to \D $ be a functor.
+        We call a morphism $f_! \colon x \to y$ in $\C$ {\em cocartesian} if for any morphism $g \colon  y \to z$ in $\C$ and
         $\omega \colon P(x) \to P(z)$ in $\D$ with $\omega \circ P(f) = P(g)$,
         there is a unique morphism $\omega' \colon x \to z$ such that
         $P(\omega')=\omega$ and $\omega' \circ f = g$. In a diagram this results
         in the following:
         \begin{center}
          \begin{tikzcd}
-                y \arrow[r, "g"] \arrow[rd, "f!"'] & z                                & {} \arrow[r, "P"] & {} & P(y) \arrow[r, "P(g)"] \arrow[rd, "P(f)"'] & P(z)           \\
+                y \arrow[r, "g"] \arrow[rd, "f_!"'] & z                                & {} \arrow[r, "P"] & {} & P(y) \arrow[r, "P(g)"] \arrow[rd, "P(f)"'] & P(z)           \\
                                              & x \arrow[u, "\exists! \omega'"', dotted] &                   &    &                           & P(x) \arrow[u, "\omega"']
             \end{tikzcd}
         \end{center}
       \end{defin}
+
+      \begin{defin}
+        We call $P$ a (Grothendieck) op-fibration if for any $X$ in $\C$ and $f \colon P(X) \to Z$ in $\D$, there is a cocartesian lift $f_! \colon X \to Y$ in $\C$, $P(f_!)=f$.
+      \end{defin}
 \end{frame}
 
-\begin{frame}[fragile]
+\begin{frame}[fragile]{Colored Operads}
   \small{\begin{defin} 
     A {\em colored operad} $\O$ consists of:
     \begin{enumerate}[(i)]
-        \item A collection $\{X,Y,Z, \dots\}$ which we call
+        \item A collection $\{X,Y,Z, \dots\}$ of
         \emph{colors}.
-        \item For finite collection of colors $\{X_i\}_{i \in I}$,
-        color $Y$, a set:
-        $\Mul_{\O}(\{X_i\}_{i \in I}, Y)$ called the set of morphisms.
-        \item For a finite map $I \to J$ with fibers $I_j$, $j
-        \in J$, collections of colors $\{X_i\}_{i \in I}$, $\{Y_j\}_{j \in J}$,
-        color $Z$, a composition map:
+        \item For colors $\{X_i\}_{i \in I}$,
+        color $Y$, a {\em set of morphisms}:
+        $\Mul_{\O}(\{X_i\}_{i \in I}, Y)$.
+        \item For a finite map $I \to J$ with fibers $I_j$, $j \in J$, 
+        % collections of colors $\{X_i\}_{i \in I}$, $\{Y_j\}_{j \in J}$,
+        % color $Z$, 
+        a composition map:
         \[
             \prod_{j \in J} \Mul_{\O}(\{X_i\}_{i \in I_j}, Y_j) \times \Mul_{\O}(\{Y_j\}_{j\in J}, Z) \to \Mul_{\O}(\{X_i\}_{i \in I}, Z).  
         \]
-        \item A collection of morphisms 
-        $$\{ \id_X \in \Mul_{\O}(\{X\},X)\}_{X \in \O}$$ called the identity
-        morphisms.
+        \item For every color $X$ an identiy morphism $\id_X \in \Mul_{\O}(\{X\},X)$.
         \end{enumerate}
         The data needs to fulfill suitable associativity and unitality conditions.
 
   \end{defin}}
 \end{frame}
 
-\begin{frame}
+\begin{frame}{Symmetric Monoidal Category As Colored Operad}
   \small{\begin{eg}
  Let $\C$ be a symmetric monoidal category. By setting for a finite
         family of objects $\{X_i\}_{i \in I}$ and object $Y$ in $\C$:
@@ -142,21 +152,20 @@
       \end{eg}}
 \end{frame}
 
-\begin{frame}
+\begin{frame}{Finite Pointed Sets}
     \begin{defin}
         The {\em category of finite pointed sets} $\Fin$ is defined as
         follows:
         \begin{itemize}
-            \item For each $n \in \N$, we write $\langle n \rangle^{\circ} :=
-            \{1, \dots, n\}$. An objects of $\Fin$ is $ \langle n \rangle :=
-            \langle n \rangle^{\circ}_*$ for all $n \in \N$.
+            \item An objects of $\Fin$ is $ 
+            \langle n \rangle \coloneqq \{1, \dots, n, \ast\} $ for all $n \in \N$.
             \item A morphism $\alpha \colon \langle n \rangle \to \langle m
             \rangle$ is a map of finite sets where $\alpha(*)=*$.
         \end{itemize}
     \end{defin}
 \end{frame}
 
-\begin{frame}
+\begin{frame}{Categorical Definition of $\O$}
    \begin{defin}\label{def:Ox} \small{For $\O$ being a colored operad, the category $\Ox$
     is defined in the following way:
     \begin{enumerate}[(i)]
@@ -191,12 +200,13 @@
 \end{defin}
 \end{frame}
 
-\begin{frame}
+\begin{frame}{Categorical Definition of $\O$}
   Let $\O$ be a colored operad. There is a forgetful functor 
 \[
 \pi \colon \Ox \to \Fin
 \]
-  \begin{prop}\label{m1m2} If $\O$ was induces by a symmetric monoidal category $\C$, the following conditions hold for $\pi$:
+\pause
+  \begin{prop}\label{m1m2} If $\O$ was induced by a symmetric monoidal category $\C$, then:
     \begin{enumerate}[(M1)]
         \item \textbf{Op-fibration condition:} $\pi$ is a Grothendieck
         op-fibration. 
@@ -205,58 +215,97 @@
         $\Ox_{\langle n \rangle} \cong \C^n$.
     \end{enumerate}
   \end{prop}
-
+\pause
   \begin{prop}
     $$\{\text{symmetric monoidal categories}\} \cong \left\{\begin{aligned}\text{op-fibrations } \D \to \Fin \\
       \text{ satisfying Segal condition}\end{aligned}\right\}$$
   \end{prop}
 \end{frame}
 
-\begin{frame}[fragile]{Symmetric Monoidal Structure on $\C \coloneqq \D_{\langle 1 \rangle}$ }
-  Let $\pi \colon \D \to \Fin$ a functor satisfying (M1) and (M2).
-    \small{\begin{table}[h]
-        \centering
-        \renewcommand{\arraystretch}{1.9} % Increase row height for better readability
-        \begin{tabular}{|p{0.45\textwidth}|p{0.45\textwidth}|}
-            \hline
-            $\D$ & $\Fin$ \\
-            \hline
-            tensor product: $\bigotimes \colon \C^2 \cong \D_{\langle 2 \rangle} \rightarrow \C$ & $\alpha \colon \langle 2 \rangle \to \langle 1 \rangle$ active \\
-            \hline
-            braiding: $b_{A,B} A \otimes B \cong B \otimes A$  &      $\begin{aligned}
-                                                            \beta \colon \langle 2 \rangle &\to \langle 2 \rangle \\
-                                                                1 &\mapsto 2 \\
-                                                                2 &\mapsto 1. \\
-                                                            \end{aligned}$ \\
-            \hline
-           associator: $a_{A,B,C} \colon (A \otimes B) \otimes C \cong A \otimes (B \otimes C)$ &  $\begin{aligned}
-                                                                                                      \tau^3_i \colon \langle 3 \rangle &\to \langle 2 \rangle \\
-                                                                                                      j &\mapsto \begin{cases}
-                                                                                                          j &  1 \leq j \leq i \\
-                                                                                                          j-1 & i < j \leq n \\
-                                                                                                          \ast & j=\ast.
-                                                                                                      \end{cases}
-                                                                                                  \end{aligned}$ \\
-            \hline
-            tensor unit: $\D_{\langle 0 \rangle} \to \C$ & $\eta \colon \langle 0 \rangle \to \langle
-    1 \rangle$ \\
-    \hline
-        \end{tabular}
-    \end{table}}
-    
+% \begin{frame}[fragile]{Symmetric Monoidal Structure on $\mathcal{C} \coloneqq \mathcal{D}_{\langle 1 \rangle}$}
+% Let $\pi \colon \mathcal{D} \to \mathrm{Fin}$ a functor satisfying (M1) and (M2).
+
+% \centering
+% \renewcommand{\arraystretch}{1.9} % Increase row height for better readability
+% \begin{tabular}{|p{0.45\textwidth}|p{0.45\textwidth}|}
+% \hline
+% $\mathcal{D}$ & $\mathrm{Fin}$ \\
+% \hline
+% tensor product: \\ $\bigotimes \colon \mathcal{C}^2 \cong \mathcal{D}_{\langle 2 \rangle} \rightarrow \mathcal{C}$ & $\alpha \colon \langle 2 \rangle \to \langle 1 \rangle$ active \\
+% \hline
+% braiding: $b_{A,B} \colon A \otimes B \cong B \otimes A$ & $\begin{aligned}
+% \beta \colon \langle 2 \rangle &\to \langle 2 \rangle \\
+% 1 &\mapsto 2 \\
+% 2 &\mapsto 1
+% \end{aligned}$ \\
+% \hline
+% associator: $a_{A,B,C} \colon (A \otimes B) \otimes C \cong A \otimes (B \otimes C)$ & $\begin{aligned}
+% \tau^3_i \colon \langle 3 \rangle &\to \langle 2 \rangle \\
+%  j &\mapsto \begin{cases}
+%  j & 1 \leq j \leq i \\
+%  j-1 & i < j \leq n \\
+% \ast & j=\ast
+% \end{cases}
+% \end{aligned}$ \\
+% \hline
+% tensor unit: $\mathcal{D}_{\langle 0 \rangle} \to \mathcal{C}$ & $\eta \colon \langle 0 \rangle \to \langle 1 \rangle$ \\
+% \hline
+% \end{tabular}
+% \end{frame}
+
+\begin{frame}[fragile]{Symmetric Monoidal Structure on $\mathcal{C} \coloneqq \mathcal{D}_{\langle 1 \rangle}$}
+Let $\pi \colon \mathcal{D} \to \Fin$ an op-fibration satisfying the Segal condition.
+
+Let $\mu \colon \langle 2 \rangle \to \langle 1 \rangle$ active morphism in $\Fin$.
+Then for every $(A,B) \in \C^2$ there is a cocartesian lift $\mu$: $(A,B) \to A \otimes B$.
+Thus, a functor
+\[
+   \bigotimes \colon \mathcal{C}^2 \rightarrow \mathcal{C}
+\]
+For $\beta \colon  \langle 2 \rangle \to \langle 2 \rangle$ with $\beta(1)=2$, $\beta(2)=1$. We lift the following diagram:
+\[
+% https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRAAoBBUgIQEoQAX1LpMufIRQBGclVqMWbdj1KcBw0djwEiMqXPrNWiEDwAEAHQsQ8AW3hnOQkSAxaJRMvuqHFJzpbWdg48zpriOigAzLI+CsYgVgx0YADmDDBmAEyBAE4p6awarmLaksgALLHyRmxJBRnZeQ1FLm4R5THeNX6JFslpjVLNg63hZURV3b4J9aNmw1b5o0JyMFCp8ESgAGa5ELZIZCA4EEhSxXsHR9SnSDEgyQBGMAwACqUeJrlYqQAWOBAcVqJisNiw9gQl32h0QMhOZ0QWWBvTBwShLiusIedyR1AYWDACSgdDgf3WQJ6CSeYRAWKQVQRSAAbCjZhZbExKc9Xh93JEQD9-oDoddEIzcQBWNl1CwvHB0Wn0xDSpmIADsMtBHK5othrLVmqpsqwUFWgiAA
+\begin{tikzcd}
+{(A,B)} \arrow[r] \arrow[d, "\otimes"'] & {(B,A)} \arrow[d, "\otimes"] & {\overset{\pi}{\rightarrow}} & \langle 2 \rangle \arrow[d, "\mu"'] \arrow[r, "\beta"] & \langle 2 \rangle \arrow[d, "\mu"] \\
+A \otimes B \arrow[r, "b", dashed]      & B \otimes A                  &  & \langle 1 \rangle \arrow[r, "\id"]                     & \langle 1 \rangle                 
+\end{tikzcd}
+\]
+
+Thus, we have a symmetric braiding:
+\[
+  b_{A,B} \colon A \otimes B \cong B \otimes A
+\]  
 \end{frame}
 
+% \begin{frame}{Symmetric Monoidal Structure on $\mathcal{C} \coloneqq \mathcal{D}_{\langle 1 \rangle}$}
+% associator: $a_{A,B,C} \colon (A \otimes B) \otimes C \cong A \otimes (B \otimes C)$
+  
+% $\begin{aligned}
+% \tau^3_i \colon \langle 3 \rangle &\to \langle 2 \rangle \\
+%  j &\mapsto \begin{cases}
+%  j & 1 \leq j \leq i \\
+%  j-1 & i < j \leq n \\
+% \ast & j=\ast
+% \end{cases}
+% \end{aligned}$
 
-\begin{frame}
+% tensor unit: 
+% $\mathcal{D}_{\langle 0 \rangle} \to \mathcal{C}$ to $\eta \colon \langle 0 \rangle \to \langle 1 \rangle$ 
+
+% \end{frame}
+
+
+\begin{frame}{$\infty$-operad}
     \small{\begin{defin}
-    An $\infty${\em-operad} is a functor $p \colon \Ox \to \nerv(\Fin)$ between
-    $\infty$-categories satisfying the following conditions:
+    An $\infty${\em-operad} is a functor $p \colon \Ox \to \nerv(\Fin)$ of
+    $\infty$-categories such that:
     \begin{enumerate}[(i)]
         \item For every inert morphism $f \colon \langle n \rangle \to \langle m
-        \rangle$ in $\nerv(\Fin)$ and object $C \in \Ox_{\langle m \rangle}$,
-        there exists a $p$-cocartesian morphism $f \colon C \to C'$ in $\Ox$
-        lifting $f$. In particular $f$ induces a functor $f_{!} \colon
-        \Ox_{\langle n \rangle} \to \Ox_{\langle m \rangle}$.
+        \rangle$ in $\nerv(\Fin)$, object $C \in \Ox_{\langle m \rangle}$,
+        there is a $p$-cocartesian morphism $f \colon C \to C'$ in $\Ox$
+        lifting $f$. 
+        % In particular $f$ induces a functor $f_{!} \colon
+        % \Ox_{\langle n \rangle} \to \Ox_{\langle m \rangle}$.
         \item Let $C \in \Ox_{\langle m \rangle}$ and $C' \in \Ox_{\langle n
         \rangle}$ be objects, $f : \langle m \rangle \to \langle n \rangle$ be a
         morphism in $\Fin$ and let $\Map_{\Ox}^f(C, C')$ be the union of
@@ -268,7 +317,7 @@
             \Map_{\Ox}^f(C, C') \to \prod_{1 \leq i \leq n} \Map_{\Ox}^{\rho^i \circ f}(C, C_i')
         \]
         is a homotopy equivalence.
-        \item For every finite collection of objects $C_1, \dots, C_n \in
+        \item For every finite collection $C_1, \dots, C_n \in
         \Ox_{\langle 1 \rangle}$, there exists an object $C \in \Ox_{\langle n
         \rangle}$ and a collection of $p$-cocartesian morphisms $C \to C_i$
         covering $\rho^i \colon \langle n \rangle \to \langle 1 \rangle$.
